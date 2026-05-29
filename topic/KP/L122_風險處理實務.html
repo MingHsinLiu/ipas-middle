@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>iPAS 資訊安全工程師 考試重點 - 風險處理實務</title>
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>iPAS 資訊安全工程師 考試重點</h1>
+            <div>風險處理實務</div>
+        </div>
+
+        <div class="controls">
+             <div class="filter-container">
+                <label for="categoryFilter" class="filter-label">篩選主題：</label>
+                <select id="categoryFilter">
+                    <option value="all">全部主題</option>
+                    <option value="1">風險處理策略概論</option>
+                    <option value="2">風險規避 (Avoidance)</option>
+                    <option value="3">風險接受 (Acceptance)</option>
+                    <option value="4">風險轉移 (Sharing/Transfer)</option>
+                    <option value="5">風險降低 (Mitigation) - 總論與技術</option>
+                    <option value="6">風險降低 (Mitigation) - 管理與流程</option>
+                    <option value="7">風險處理計畫與文件</option>
+                    <option value="8">風險處理實施與殘餘風險</>
+                </select>
+            </div>
+
+            <div class="star-filter-container">
+                <label for="starFilter" class="star-filter-label">重要性：</label>
+                <select id="starFilter">
+                    <option value="all">全部重要性</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="3">★★★</option>
+                    <option value="2">★★</option>
+                    <option value="1">★</option>
+                </select>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+        </div>
+
+        <div class="categories-container">
+            <div class="categories-title">主題分類</div>
+            <div class="categories-grid" id="categoriesGrid">
+                <div class="category-item" onclick="filterByCategory(1)">
+                    <div class="category-number">1</div>
+                    <div class="category-text">策略概論</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(2)">
+                    <div class="category-number">2</div>
+                    <div class="category-text">規避</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(3)">
+                    <div class="category-number">3</div>
+                    <div class="category-text">接受</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(4)">
+                    <div class="category-number">4</div>
+                    <div class="category-text">轉移</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(5)">
+                    <div class="category-number">5</div>
+                    <div class="category-text">降低 (技術)</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(6)">
+                    <div class="category-number">6</div>
+                    <div class="category-text">降低 (管理)</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(7)">
+                    <div class="category-number">7</div>
+                    <div class="category-text">計畫與文件</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(8)">
+                    <div class="category-number">8</div>
+                    <div class="category-text">實施與殘餘風險</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="focus-points-container" id="focusPointsContainer">
+
+            <!-- Category 1: 風險處理策略概論 -->
+            <div class="focus-card" data-category="1" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-01</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">風險處理</span> (<span class="english-fullname">Risk Treatment</span>) 的定義與目的</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">風險處理</span>是<span class="chinese-proper-noun">風險管理</span>流程的<span class="highlight">第三階段</span>，其<span class="highlight">目的</span>是<span class="highlight">選擇和實施措施來改變風險</span>，使其<span class="highlight">落入組織可接受的風險準則範圍內</span>。這是根據<span class="chinese-proper-noun">風險評估</span>結果進行的決策過程。
+                        對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="1" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-02</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">風險處理</span>的<span class="highlight">四大主要策略</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        掌握<span class="chinese-proper-noun">風險處理</span>的<span class="highlight">四大主要策略</span>（通常稱為<span class="english-fullname">The 4 Ts</span> 或<span class="english-fullname">4 Rs</span>）：<span class="highlight">風險規避</span> (<span class="english-fullname">Risk Avoidance</span>)、<span class="highlight">風險接受</span> (<span class="english-fullname">Risk Acceptance</span>/<span class="english-fullname">Retention</span>)、<span class="highlight">風險轉移</span> (<span class="english-fullname">Risk Sharing</span>/<span class="english-fullname">Transfer</span>)、<span class="highlight">風險降低</span> (<span class="english-fullname">Risk Mitigation</span>)。理解這四種策略<span class="highlight">並非相互排斥</span>，可以組合使用 (Q22 I21, Q33 I21, Q34 I21, Q26 RISKANAL)。
+                        對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-03</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">選擇最適合的<span class="chinese-proper-noun">風險處理策略</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="highlight">選擇最適合的風險處理策略</span>需要考量多種因素，包括<span class="chinese-proper-noun">風險等級</span>、<span class="highlight">風險擁有者</span>的意見、<span class="highlight">實施成本</span>、<span class="highlight">潛在效益</span>、<span class="highlight">技術可行性</span>、<span class="chinese-proper-noun">法規要求</span>以及<span class="highlight">組織的風險偏好</span>。這通常涉及<span class="chinese-proper-noun">成本效益分析</span> (Q27 I21, Q33 I21, Q25 RISKANAL, Q49 RISKANAL)。
+                         對應能力：資訊安全管理概論 K03, K04, K11, K17, 資訊安全規劃實務 K03, K11, L12301
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-04</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">風險處理的<span class="highlight">決策依據</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險處理</span>的決策應基於<span class="highlight">風險評估的結果</span>，與<span class="chinese-proper-noun">風險接受準則</span>進行比較。對於<span class="highlight">不可接受的風險</span>，必須選擇並實施處理策略，使其<span class="highlight">降低到可接受的水平</span>。對於<span class="highlight">可接受的風險</span>，可以決定接受（保留）。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 2: 風險規避 (Avoidance) -->
+            <div class="focus-card" data-category="2" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-05</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險規避</span> (<span class="english-fullname">Risk Avoidance</span>) 的定義</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險規避</span>是<span class="highlight">採取行動來避免</strong>風險的策略，通常意味著<span class="highlight">決定不參與或停止導致該風險的活動</span>。這是<span class="highlight">消除風險</strong>的一種方式，但可能<span class="highlight">犧牲潛在的業務機會或利益</span>。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301, Q26 RISKANAL
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="2" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-06</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">風險規避</span>的適用情境與例子</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">風險規避</span>通常適用於<span class="highlight">風險等級極高</span>，且<span class="highlight">難以或無法有效降低</span>，或<span class="highlight">處理成本過於高昂</span>的情況。例子包括：<span class="highlight">決定不開發或部署某高風險應用程式</span>、<span class="highlight">停止使用</span>已知存在嚴重且無法修補漏洞的系統、將特定高風險業務流程<span class="highlight">完全外包</span>（如將金流外包 - Q22 I21）。
+                        對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="2" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-07</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險規避</span>的<span class="highlight">缺點</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險規避</span>雖然消除了特定風險，但其<span class="highlight">主要缺點</span>是可能導致<span class="highlight">錯失重要的業務機會</span>或<span class="highlight">利益</span>，或需要<span class="highlight">改變核心業務模式</span>。因此，這是<span class="highlight">最後的手段</span>，除非風險無法透過其他策略有效管理。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 3: 風險接受 (Acceptance) -->
+            <div class="focus-card" data-category="3" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-08</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險接受</span> (<span class="english-fullname">Risk Acceptance</span>/<span class="english-fullname">Retention</span>) 的定義</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險接受</span>是<span class="highlight">有意識地決定不採取任何行動</strong>來改變風險的策略，即<span class="highlight">組織自行承擔</span>風險的潛在影響。這通常適用於<span class="highlight">風險等級低於可接受準則</span>的情況。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301, Q26 RISKANAL
+                     </div>
+                 </div>
+            </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-09</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">風險接受</span>的適用情境與例子</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">風險接受</span>適用於：<span class="highlight">風險等級非常低</span>，<span class="highlight">不太可能發生</span>或<span class="highlight">發生後影響極小</span>；<span class="highlight">實施處理措施的成本</span>遠<span class="highlight">高於</span>潛在的<span class="chinese-proper-noun">風險損失</span>；或者在<span class="highlight">短期內</span>無法實施處理措施。例如，接受某些非關鍵系統的低風險漏洞。
+                          對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301, Q25 RISKANAL 提及 SOC 目標，可能與風險接受相關。
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-10</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險接受</span>的<span class="highlight">正式核准</span>與<span class="chinese-proper-noun">文件化</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="highlight">風險接受</span>必須是<span class="highlight">經過評估並由風險擁有者或更高層管理正式核准</strong>的<span class="highlight">有意識決策</span>。所有被接受的風險，特別是<span class="chinese-proper-noun">殘餘風險</span>，都需要被<span class="highlight">文件化記錄</span>在<span class="chinese-proper-noun">風險登記冊</span>中，並說明<span class="highlight">接受的理由</span> (Q27 I21, Q34 I21, Q33 RISKANAL)。
+                         對應能力：資訊安全管理概論 K04, K10, K11, 資訊安全規劃實務 K03, K11, L12301
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 4: 風險轉移 (Sharing/Transfer) -->
+            <div class="focus-card" data-category="4" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-11</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險轉移</span>/<span class="chinese-proper-noun">分擔</span> (<span class="english-fullname">Risk Sharing</span>/<span class="english-fullname">Transfer</span>) 的定義</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險轉移</span>是將<span class="highlight">風險的潛在影響</span>或<span class="highlight">管理責任</span>轉嫁給<span class="highlight">第三方</span>的策略。這並非消除風險，而是<span class="highlight">由其他實體承擔部分或全部風險</span>。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301, Q26 RISKANAL
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="4" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-12</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">風險轉移</span>的常見方式與例子</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解<span class="chinese-proper-noun">風險轉移</span>的常見方式包括：<span class="highlight">購買網路安全保險</span>（將財務損失風險轉移給保險公司）、<span class="highlight">透過合約將某些安全責任或風險轉移給委外廠商或雲服務提供商</span>（Q6 I21 複委託合約、Q28 I21 要求廠商保證金）。
+                        對應能力：資訊安全管理概論 K04, K11, K17, K18, 資訊安全規劃實務 K03, K11, K12, K13, L12301
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="4" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-13</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險轉移</span>的<span class="highlight">限制與考量</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險轉移</span>並非萬靈丹。組織<span class="highlight">不能將所有責任完全轉移</span>，特別是涉及<span class="chinese-proper-noun">法律合規</span>和<span class="chinese-proper-noun">聲譽損害</span>的風險通常無法轉移。需要<span class="highlight">仔細審查合約條款</span>，確保風險轉移的範圍和條件明確。即使轉移了風險，組織可能仍需進行<span class="highlight">監督</span>。
+                         對應能力：資訊安全管理概論 K04, K11, K17, 資訊安全規劃實務 K03, K11, K12, K13, L12301
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 5: 風險降低 (Mitigation) - 總論與技術 -->
+            <div class="focus-card" data-category="5" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-14</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險降低</span> (<span class="english-fullname">Risk Mitigation</span>) 的定義與目標</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">風險降低</span>是<span class="highlight">實施一個或多個控制措施</span>來<span class="highlight">減少</span>風險的<span class="chinese-proper-noun">可能性</span>或<span class="chinese-proper-noun">影響</span>的策略。這是<span class="highlight">最常用</span>的風險處理策略，涵蓋了<span class="english-abbr">ISMS</span> 控制措施中的大部分內容。目標是將風險<span class="highlight">降低到組織可接受的水平</span>。
+                         對應能力：資訊安全管理概論 K04, K11, K13, K14, K15, K16, K18, 資訊安全規劃實務 K03, K05, K08, K11, K16, L12301, Q26 RISKANAL
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="5" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-15</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">實施<span class="chinese-proper-noun">資訊安全控制措施</span>進行<span class="chinese-proper-noun">風險降低</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">風險降低</span>主要是透過<span class="highlight">實施適當的資訊安全控制措施</span>來實現。這些控制措施可參考<span class="english-abbr">ISO</span>/<span class="english-abbr">IEC</span> 27002 附錄 A 的分類 (如物理、技術、組織控制)。選擇哪些控制措施應<span class="highlight">基於風險評估的結果</strong>和<span class="chinese-proper-noun">風險處理計畫</span> (Q16 ISMS_建置)。
+                        對應能力：資訊安全管理概論 K04, K09, K11, K13, K14, K15, K16, K18, 資訊安全規劃實務 K01, K03, K05, K08, K11, K16
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="5" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-16</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">存取控制</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">存取控制</span>是重要的技術性<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">減少未經授權存取</span>造成的<span class="chinese-proper-noun">機密性</span>和<span class="chinese-proper-noun">完整性</span>風險。具體技術包括<span class="chinese-proper-noun">強身分驗證</span>（<span class="chinese-proper-noun">多因子驗證</span> - Q1 I21, Q6 ACDOSOD）、<span class="chinese-proper-noun">授權機制</span>（<span class="chinese-proper-noun">最小權限原則</span> - Q4 ACDOSOD）、<span class="chinese-proper-noun">特權存取管理</span> (<span class="english-abbr">PAM</span> - Q9 ACDOSOD) 等。
+                         對應能力：資訊安全管理概論 K05, K13, K14, 資訊安全規劃實務 K05, K13
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-17</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">加密</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">加密</span>是保護<span class="chinese-proper-noun">資料機密性</span>的關鍵技術措施。透過對<span class="highlight">靜態資料</span>（如資料庫、文件 - Q20 SECARCH）和<span class="highlight">傳輸中資料</span>（如網路通訊 - Q14 SECARCH）進行加密，可以顯著降低資料在未經授權的情況下被讀取的風險。這需要配合有效的<span class="chinese-proper-noun">金鑰管理</span> (Q28 ACDOSOD, Q53 RISKANAL)。
+                          對應能力：資訊安全管理概論 K06, K13, K14, 資訊安全規劃實務 K05, K14
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="5">
+                  <div class="focus-id">#RISKTREAT-18</div>
+                  <div class="focus-importance">★★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">弱點修補</span>與<span class="chinese-proper-noun">安全更新</span></div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      <span class="chinese-proper-noun">弱點修補</span> (<span class="english-fullname">Patching</span>) 是<span class="highlight">降低技術弱點被利用的可能性</span>的<span class="highlight">最直接有效</strong>的方法。這包括對<span class="highlight">作業系統、應用程式、韌體</span>等進行<span class="highlight">定期安全更新</span>。不及時修補<span class="chinese-proper-noun">弱點</span>會顯著增加風險 (Q1 I22, Q2 I22, Q18 I21 提及 EOS 風險)。這屬於<span class="chinese-proper-noun">弱點管理</span>流程 (Q46 ACDOSOD)。
+                      對應能力：資訊安全管理概論 K15, 資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11
+                  </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-19</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">安全組態管理</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">安全組態管理</span>是確保<span class="highlight">系統、應用程式、網路設備</span>按照<span class="highlight">安全基準</span>進行配置，<span class="highlight">移除不必要的服務、功能或預設憑證</span>。這可以<span class="highlight">消除常見的配置錯誤弱點</span> (Q21 I21, Q42 ACDOSOD)。
+                         對應能力：資訊安全管理概論 K14, 資訊安全防護實務 K06, K07
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-20</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">網路分區</span>與<span class="chinese-proper-noun">微隔離</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">網路分區</span>與<span class="chinese-proper-noun">微隔離</span> (<span class="english-fullname">Micro-Segmentation</span>) 是<span class="chinese-proper-noun">降低內部橫向移動風險</span>的重要技術。將網路分割成<span class="highlight">小的、隔離的區域</span>，並<span class="highlight">嚴格控制區域間的流量</span>，可以限制攻擊者在突破周邊防線後在內部擴散 (Q11 I21, Q8 SECARCH)。
+                          對應能力：資訊安全管理概論 K14, 資訊安全規劃實務 K05, K14
+                      </div>
+                  </div>
+             </div>
+            <div class="focus-card" data-category="5" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-21</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">入侵偵測</span>與<span class="chinese-proper-noun">防禦系統</span> (<span class="english-abbr">IDS</span>/<span class="english-abbr">IPS</span>)</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        <span class="english-abbr">IDS</span>/<span class="english-abbr">IPS</span> 是技術性<span class="chinese-proper-noun">風險降低</span>措施，主要用於<span class="highlight">偵測或阻止</span>對網路或系統的<span class="highlight">攻擊行為</span> (Q4 I21)。它們通過<span class="highlight">比對流量模式、簽名或行為異常</span>來識別惡意活動。
+                        對應能力：資訊安全管理概論 K15, 資訊安全規劃實務 K08
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="5" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-22</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">網頁應用程式防火牆</span> (<span class="english-abbr">WAF</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="english-abbr">WAF</span> 是專門針對<span class="highlight">Web 應用程式層面的攻擊</span>（如<span class="english-fullname">SQL Injection</span>, <span class="english-abbr">XSS</span>）的技術性<span class="chinese-proper-noun">風險降低</span>措施。它位於 Web 伺服器前，<span class="highlight">過濾進出 Web 應用程式的 HTTP 流量</span> (Q13 I22)。
+                         對應能力：資訊安全技術概論 K09, 資訊安全防護實務 K07, K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-23</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">資料外洩防護</span> (<span class="english-abbr">DLP</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">資料外洩防護</span> (<span class="english-fullname">Data Loss Prevention</span>, <span class="english-abbr">DLP</span>) 是技術性<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">監控、偵測和阻止敏感資訊未經授權離開組織內部</span>（如透過電子郵件、<span class="english-abbr">USB</span> 裝置、上傳）。它旨在保護<span class="chinese-proper-noun">機密性</span> (Q12 I22)。
+                         對應能力：資訊安全管理概論 K12, K14, 資訊安全防護實務 K06
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="5" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-24</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">技術性<span class="chinese-proper-noun">風險降低</span>措施：安全<span class="chinese-proper-noun">編碼實踐</span>與<span class="chinese-proper-noun">測試</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        在<span class="chinese-proper-noun">SSDLC</span> 中遵循<span class="highlight">安全編碼實踐</span>，並進行<span class="chinese-proper-noun">原始碼檢測</span> (<span class="english-abbr">SAST</span>)、<span class="chinese-proper-noun">動態應用安全測試</span> (<span class="english-abbr">DAST</span>) 和<span class="chinese-proper-noun">滲透測試</span>，是<span class="highlight">降低應用程式層面弱點</span>和<span class="chinese-proper-noun">配置錯誤</span>風險的關鍵技術措施 (Q20 I22, Q28 I22, Q24 SECARCH)。
+                        對應能力：資訊安全管理概論 K16, 資訊安全技術概論 K07, K08, S15
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 6: 風險降低 (Mitigation) - 管理與流程 -->
+            <div class="focus-card" data-category="6" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-25</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">資安意識與教育訓練</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        提高員工的<span class="highlight">資安意識</span>並提供<span class="highlight">定期教育訓練</span>是重要的管理性<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">減少人為錯誤</span>、應對<span class="chinese-proper-noun">社交工程</span>攻擊 (<span class="highlight">Phishing</span> - Q26 I21 案例) 以及確保員工遵循<span class="chinese-proper-noun">資安政策和程序</span> (Q3 I21, Q8 I21, Q28 ACDOSOD)。
+                        對應能力：資訊安全管理概論 K10, K18, 資訊安全規劃實務 K01, K16
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="6" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-26</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">職務區隔</span> (<span class="english-abbr">SoD</span>)</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">職務區隔</span> (<span class="english-fullname">Separation of Duties</span>, <span class="english-abbr">SoD</span>) 是管理性<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">降低單一人員舞弊或重大錯誤</span>的風險。將關鍵業務流程的<span class="highlight">衝突步驟</span>分配給<span class="highlight">不同人員</span>。在無法完全區隔時，應實施<span class="chinese-proper-noun">補償性控制</span> (Q10 I21, Q19 ACDOSOD)。
+                          對應能力：資訊安全管理概論 K10, 資訊安全規劃實務 K01, K10
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-27</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">資訊安全事件管理</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         有效的<span class="chinese-proper-noun">資訊安全事件管理</span>流程是<span class="highlight">降低安全事件影響</span>的重要管理性措施。包括<span class="highlight">制定應變計畫</span>、<span class="highlight">組建應變團隊</span>、<span class="highlight">快速偵測、圍堵、根除和復原</span>。這能縮短停機時間，<span class="highlight">降低損失</span> (Q8 I21, Q19 I21, Q26 ACDOSOD)。
+                         對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08, K16
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-28</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">備份與復原計畫</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="highlight">定期備份</span>和<span class="highlight">測試復原計畫</span>是<span class="highlight">降低資料丟失和系統停機影響</span>的關鍵管理性措施。特別是在面對<span class="chinese-proper-noun">勒索軟體</span>或<span class="chinese-proper-noun">災難</span>時，可靠的備份是<span class="chinese-proper-noun">復原</strong>的基礎 (Q26 I21 案例, Q22 ISMS_建置, Q34 ISMS_建置, Q37 ISMS_建置)。
+                          對應能力：資訊安全管理概論 K08, K12, 資訊安全規劃實務 K08
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-id">#RISKTREAT-29</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：物理安全控制</div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      保護<span class="highlight">資訊資產所在實體位置</span>的安全控制，如<span class="highlight">門禁系統、監控攝影</span>、<span class="highlight">環境監控</span>（溫濕度、消防）等，屬於物理性<span class="chinese-proper-noun">風險降低</span>措施。這能<span class="highlight">降低物理偷竊、破壞或環境災害</span>的風險 (Q20 ACDOSOD)。
+                      對應能力：資訊安全管理概論 K12, K14
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-30</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：合規性管理</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         確保組織遵循<span class="highlight">相關法律、法規、標準和合約要求</span>，本身就是一種重要的管理性<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">降低因違規造成的罰款、法律責任和聲譽損害</span>等風險 (Q24 I21)。
+                         對應能力：資訊安全管理概論 K02, K10, K17, 資訊安全規劃實務 K02, K12, K13
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-31</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：安全變更管理</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="highlight">安全變更管理</span>流程是確保對<span class="highlight">系統、應用、組態</span>的任何<span class="highlight">變更</span>都經過<span class="highlight">風險評估</span>和<span class="highlight">核准</span>，並且<span class="highlight">不會引入新的弱點</span>或<span class="highlight">破壞現有控制措施</span>。這是<span class="highlight">降低因變更導致風險</span>的重要管理性措施 (Q21 I21)。
+                          對應能力：資訊安全管理概論 K14, 資訊安全規劃實務 K05
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-32</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：供應商安全要求</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         在與<span class="highlight">供應商或第三方</span>的<span class="highlight">合約</span>中<span class="highlight">明確規定資安要求</span>（如<span class="chinese-proper-noun">修補責任</span>、安全標準遵循、稽核權），是<span class="highlight">降低供應鏈風險</span>的重要管理性措施 (Q6 I21, Q31 I21, Q39 I22, Q43 ACDOSOD)。
+                         對應能力：資訊安全管理概論 K17, 資訊安全規劃實務 K12, K13, K17
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-33</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">管理性<span class="chinese-proper-noun">風險降低</span>措施：<span class="chinese-proper-noun">遠端工作安全政策</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        制定和實施<span class="highlight">針對遠端工作</span>的<span class="highlight">安全政策和程序</span>，如要求使用<span class="chinese-proper-noun">VPN</span>、<span class="chinese-proper-noun">多因子驗證</span>、<span class="highlight">裝置加密</span>、以及對員工<span class="highlight">遠端工作環境</span>的安全指導，是<span class="highlight">降低遠端存取風險</span>的重要措施 (Q18 I21 提及遠端存取)。
+                        對應能力：資訊安全管理概論 K14, K18, 資訊安全規劃實務 K05, K13
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 7: 風險處理計畫與文件 -->
+            <div class="focus-card" data-category="7" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-34</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險處理計畫</span> (<span class="english-fullname">Risk Treatment Plan</span>, <span class="english-abbr">RTP</span>) 的制定</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">風險處理計畫</span>是<span class="highlight">詳細說明</span>如何處理每個<span class="highlight">不可接受風險</span>的<span class="highlight">關鍵文件</span>。計畫內容應包括：<span class="highlight">選擇的處理選項</span>、<span class="highlight">將實施的具體控制措施</span>（參考 <span class="english-abbr">ISO</span> 27002 <span class="english-fullname">Annex A</span>）、<span class="highlight">負責實施的個人或部門</span>、<span class="highlight">所需的資源</span>（預算、人力）、以及<span class="highlight">實施的時程</span> (Q31 RISKANAL)。
+                         對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12302
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="7" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-35</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">風險處理計畫</span>的<span class="highlight">核准</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">風險處理計畫</span>必須<span class="highlight">由風險擁有者或更高層管理正式核准</span>後方可實施 (Q27 I21, Q34 I21, Q23 RISKANAL)。這確保了計畫與組織的風險偏好和業務目標一致，並且分配了必要的資源。
+                         對應能力：資訊安全管理概論 K04, K10, K11, 資訊安全規劃實務 K03, K11
+                     </div>
+                 </div>
+            </div>
+             <div class="focus-card" data-category="7" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-36</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">適用性聲明</span> (<span class="english-fullname">Statement of Applicability</span>, <span class="english-abbr">SoA</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">適用性聲明</span>是<span class="english-abbr">ISMS</span> 的<span class="highlight">必要文件</span>，它<span class="highlight">彙總了風險處理計畫的結果</span>。其中應<span class="highlight">列出 ISMS 範圍內選擇的所有控制措施</span>（通常參考 <span class="english-abbr">ISO</span> 27002 <span class="english-fullname">Annex A</span>），說明<span class="highlight">為何選擇這些控制措施</span>（基於風險評估和處理），並<span class="highlight">說明為何未包含</span> <span class="english-abbr">Annex A</span> 中<span class="highlight">其他控制措施</span>的理由 (Q15 ISMS_建置)。
+                         對應能力：資訊安全管理概論 K04, K09, K11, 資訊安全規劃實務 K01, K03, K11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-37</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">風險登記冊</span> (<span class="english-fullname">Risk Register</span>) 的更新</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">風險登記冊</span>應在<span class="chinese-proper-noun">風險處理</span>階段進行<span class="highlight">更新</span>，記錄每個風險的<span class="highlight">處理策略</span>、<span class="highlight">實施的控制措施</span>、<span class="highlight">處理狀態</span>以及<span class="chinese-proper-noun">殘餘風險</span>。它是<span class="chinese-proper-noun">風險管理</span>和<span class="chinese-proper-noun">風險監控</span>的<span class="highlight">核心工具</span> (Q22 RISKANAL)。
+                          對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-38</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">與利害關係人<span class="chinese-proper-noun">溝通風險處理計畫</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">風險處理計畫</span>應<span class="highlight">溝通給相關的利害關係人</span>，包括<span class="highlight">風險擁有者</span>、<span class="highlight">負責實施控制措施的部門</span>、以及其他可能受影響的內部或外部團體。確保各方<span class="highlight">了解其責任</span>並支持計畫的實施。
+                          對應能力：資訊安全管理概論 K10, K11, 資訊安全規劃實務 K03, K11
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 8: 風險處理實施與殘餘風險 -->
+            <div class="focus-card" data-category="8" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-39</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">實施<span class="chinese-proper-noun">風險處理計畫</span>的挑戰</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="highlight">實施風險處理計畫</span>可能面臨各種挑戰，例如<span class="highlight">資源不足</span>（預算、人力）、<span class="highlight">技術複雜性</span>、<span class="highlight">業務部門的阻力</span>、<span class="highlight">變更管理問題</span>、以及<span class="highlight">實施過程中可能引入新的風險</span> (Q35 I21)。需要有效的專案管理和溝通來克服這些挑戰。
+                        對應能力：資訊安全管理概論 K08, K10, K11, K14, 資訊安全規劃實務 K03, K08, K11
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="8" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-40</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">殘餘風險</span> (<span class="english-fullname">Residual Risk</span>) 的定義與來源</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          掌握<span class="chinese-proper-noun">殘餘風險</span>是<span class="highlight">在實施風險處理措施後仍然存在的風險</span>。其來源可能是<span class="highlight">控制措施本身無法完全消除風險</span>、<span class="highlight">控制措施實施不徹底</span>、<span class="highlight">實施過程中引入新風險</span>，或者<span class="highlight">成本效益分析後決定接受的風險</span> (Q33 RISKANAL)。
+                          對應能力：資訊安全管理概論 K04, K11, 資訊安全規劃實務 K03, K11, L12301, Q33 I21, Q34 I21
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-41</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">殘餘風險</span>的<span class="chinese-proper-noun">文件化</span>、<span class="chinese-proper-noun">核准</span>與<span class="chinese-proper-noun">溝通</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         強調<span class="highlight">所有殘餘風險</span>都必須被<span class="highlight">文件化記錄</span>在<span class="chinese-proper-noun">風險登記冊</span>中，並<span class="highlight">由風險擁有者或更高層管理正式核准接受</span> (Q27 I21, Q34 I21)。必須<span class="highlight">將殘餘風險告知相關的利害關係人</span>，確保他們了解風險的存在和已採取的措施。
+                         對應能力：資訊安全管理概論 K04, K10, K11, 資訊安全規劃實務 K03, K11, L12301
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-42</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">殘餘風險</span>的<span class="chinese-proper-noun">監控</span>與<span class="chinese-proper-noun">審查</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解對<span class="chinese-proper-noun">殘餘風險</span>的<span class="highlight">持續監控和定期審查</span>是<span class="chinese-proper-noun">風險管理</span>流程的<span class="highlight">重要環節</span>。這確保<span class="highlight">殘餘風險</span>仍然在可接受的水平，並且所實施的<span class="chinese-proper-noun">控制措施</span>仍然<span class="highlight">有效</span>。審查應基於<span class="highlight">內部稽核</span>、<span class="chinese-proper-noun">事件分析</span>和環境變化 (Q34 I21 提及殘餘風險定期審查)。
+                          對應能力：資訊安全管理概論 K04, K09, K11, K15, 資訊安全規劃實務 K03, K11
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-43</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">評估<span class="chinese-proper-noun">風險處理措施</span>的<span class="highlight">有效性</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解實施<span class="chinese-proper-noun">風險處理措施</span>後，需要<span class="highlight">評估其是否達到了預期降低風險的效果</span>。這可以透過<span class="highlight">安全測試</span>（如<span class="chinese-proper-noun">滲透測試</span>、<span class="chinese-proper-noun">弱點掃描複測</span> - Q17 I21 提及複測）、<span class="highlight">稽核</span>、<span class="highlight">績效指標監控</span>等方式進行。這也是<span class="chinese-proper-noun">殘餘風險</span>評估的輸入。
+                          對應能力：資訊安全管理概論 K04, K09, K11, K15, 資訊安全規劃實務 K03, K11
+                      </div>
+                  </div>
+             </div>
+            <div class="focus-card" data-category="8" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-44</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">將<span class="chinese-proper-noun">風險處理</span>整合到<span class="chinese-proper-noun">營運流程</span>中</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="highlight">風險處理</span>不應是獨立於日常運作的活動，而應<span class="highlight">整合到現有的業務和 IT 營運流程中</span>。例如，<span class="chinese-proper-noun">弱點修補</span>整合到變更管理流程，<span class="chinese-proper-noun">安全監控</span>整合到 IT 營運流程中。
+                        對應能力：資訊安全管理概論 K08, K14, 資訊安全規劃實務 K03, K08, K11
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-45</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">管理<span class="chinese-proper-noun">實施過程中可能引入的新風險</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解在<span class="highlight">實施風險處理措施</span>時，可能會<span class="highlight">引入新的風險</span>（如部署安全工具導致系統不穩定 - Q35 I21）。需要<span class="highlight">識別和評估</span>這些新風險，並規劃相應的處理措施，確保「舊病」未除，「新病」又來。
+                          對應能力：資訊安全管理概論 K04, K11, K14, 資訊安全規劃實務 K03, K11, L12303
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-46</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">確保<span class="chinese-proper-noun">風險處理措施</span>的<span class="highlight">文件化</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解所有<span class="highlight">已選擇和實施的風險處理措施</span>都應被<span class="highlight">文件化記錄</span>，包括<span class="highlight">控制措施的名稱、描述、實施位置、配置細節</span>。這有助於確保<span class="highlight">控制措施</span>被正確地實施和維護，並支持<span class="chinese-proper-noun">稽核</span>和<span class="chinese-proper-noun">管理審查</span>。
+                         對應能力：資訊安全管理概論 K09, K11, 資訊安全規劃實務 K03, K11, L12302
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="8" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#RISKTREAT-47</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">將<span class="chinese-proper-noun">風險處理</span>結果回饋到<span class="chinese-proper-noun">風險評估</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">風險處理</span>的結果（特別是<span class="chinese-proper-noun">殘餘風險</span>的水平）應<span class="highlight">回饋到風險評估流程</span>。這構成<span class="chinese-proper-noun">風險管理</span>的<span class="highlight">閉環</span>。透過評估<span class="chinese-proper-noun">控制措施</span>的<span class="highlight">有效性</span>，可以更準確地評估<span class="chinese-proper-noun">殘餘風險</span>，並在必要時啟動新的<span class="chinese-proper-noun">風險處理循環</span>。
+                        對應能力：資訊安全管理概論 K04, K09, K11, 資訊安全規劃實務 K03, K11
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="8" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-48</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="english-abbr">SOC</span>, <span class="english-abbr">SIEM</span>, <span class="english-abbr">SOAR</span> 在<span class="chinese-proper-noun">風險降低</span>中的作用</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">安全監控中心</span> (<span class="english-abbr">SOC</span>)、<span class="chinese-proper-noun">安全性資訊與事件管理</span> (<span class="english-abbr">SIEM</span>) 和<span class="chinese-proper-noun">資安協作自動化應變</span> (<span class="english-abbr">SOAR</span>) 是提高<span class="highlight">偵測和應變能力</span>的技術和組織性措施，屬於技術性<span class="chinese-proper-noun">風險降低</span>的一環。它們幫助<span class="highlight">縮短應變時間</span>，<span class="highlight">限制事件影響</span> (Q25, Q26, Q27 I21)。
+                         對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-49</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">與<span class="chinese-proper-noun">法律合規</span>相關的<span class="chinese-proper-noun">風險處理</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         針對<span class="highlight">法規要求</span>產生的<span class="chinese-proper-noun">風險</span>，主要的<span class="chinese-proper-noun">風險處理</span>策略是<span class="chinese-proper-noun">風險降低</span>，即<span class="highlight">實施控制措施</span>來符合法規要求（<span class="chinese-proper-noun">合規性控制</span>）。通常不能簡單地<span class="chinese-proper-noun">規避</span>或<span class="chinese-proper-noun">轉移</span>法律義務。對於未能完全符合的部分，可能需要評估<span class="chinese-proper-noun">殘餘風險</span>並獲得核准。
+                         對應能力：資訊安全管理概論 K02, K04, K11, K17, 資訊安全規劃實務 K02, K03, K11, K12, K13
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-50</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">資產<span class="chinese-proper-noun">銷毀與處置</span>的<span class="chinese-proper-noun">安全</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         在<span class="highlight">資訊資產生命週期</span>結束時，<span class="highlight">安全地銷毀或處置</span>資產是重要的<span class="chinese-proper-noun">風險降低</span>措施，用於<span class="highlight">防止敏感資訊洩漏</span>。這包括對硬碟、儲存媒體進行<span class="highlight">數據擦除</span>、<span class="highlight">物理破壞</span>或<span class="highlight">去磁</span>等。
+                         對應能力：資訊安全管理概論 K12, K14
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-51</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">使用<span class="chinese-proper-noun">誘餌系統</span> (<span class="english-fullname">Honeypot</span>) 進行<span class="chinese-proper-noun">風險降低</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         部署<span class="chinese-proper-noun">誘餌系統</span>是<span class="highlight">降低風險</span>的一種方式，透過<span class="highlight">吸引攻擊者遠離真實系統</span>，<span class="highlight">延遲攻擊者進程</span>，並收集<span class="chinese-proper-noun">威脅情資</span>。它既是<span class="chinese-proper-noun">事中偵測</span>，也是一種<span class="chinese-proper-noun">風險降低</span>或<span class="chinese-proper-noun">風險轉移</span> (將攻擊者注意力轉移) 的手段 (Q23 I22, Q52 ACDOSOD)。
+                         對應能力：資訊安全管理概論 K15, 資訊安全規劃實務 K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#RISKTREAT-52</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">將<span class="chinese-proper-noun">風險管理</span>與<span class="english-abbr">AI</span>/<span class="english-fullname">Generative AI</span> 結合</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解如何利用<span class="chinese-proper-noun">AI</span>/<span class="chinese-proper-noun">生成式AI</span> 工具協助<span class="chinese-proper-noun">風險管理</span>流程，例如利用 AI 分析大量安全日誌進行<span class="chinese-proper-noun">風險識別</span>和<span class="chinese-proper-noun">評估</span>，或利用 AI 生成風險報告。同時，也需管理使用 AI 帶來的<span class="chinese-proper-noun">風險</span>。
+                         對應能力：L11101 K09, K10, K12, K13, K15, K20, P1.3.1, S03, S05, S07, S11, S13, S14, S20
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-53</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">風險擁有者</span>在<span class="chinese-proper-noun">風險處理實施</span>中的角色</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">風險擁有者</span>不僅負責<span class="chinese-proper-noun">核准風險處理計畫</span>，還需<span class="highlight">監督和確保</strong>計畫得到<span class="highlight">有效實施</span>。他們是推動<span class="chinese-proper-noun">風險處理</span>措施落實的關鍵人物。
+                          對應能力：資訊安全管理概論 K04, K10, K11, 資訊安全規劃實務 K03, K11, L12302
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#RISKTREAT-54</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">在<span class="chinese-proper-noun">專案管理</span>中考慮<span class="chinese-proper-noun">風險處理</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解在進行<span class="highlight">資訊安全或 IT 相關專案</span>時，應將<span class="chinese-proper-noun">風險評估與處理</span>作為專案管理過程的<span class="highlight">一個重要環節</span>。專案啟動時進行<span class="chinese-proper-noun">風險評估</span>，並在專案執行過程中實施<span class="chinese-proper-noun">風險處理計畫</span>，監控新出現的風險。
+                          對應能力：資訊安全管理概論 K08, K11, 資訊安全規劃實務 P1.2.1, P1.3.1, P2.1.1, K03, K08, K11
+                      </div>
+                  </div>
+             </div>
+
+
+             <!-- Placeholder for No Results -->
+             <div id="noResultsMessage">沒有找到符合條件的重點。</div>
+
+        </div><!-- end focus-points-container -->
+
+        <div class="back-to-top" id="backToTop">↑</div>
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>iPAS 資訊安全工程師 考試重點 - 安全評估實務：滲透測試、程式碼分析、資安健診</title>
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>iPAS 資訊安全工程師 考試重點</h1>
+            <div>安全評估實務：滲透測試、程式碼分析、資安健診</div>
+        </div>
+
+        <div class="controls">
+             <div class="filter-container">
+                <label for="categoryFilter" class="filter-label">篩選主題：</label>
+                <select id="categoryFilter">
+                    <option value="all">全部主題</option>
+                    <option value="1">安全評估概論</option>
+                    <option value="2">弱點掃描 (Vulnerability Scan)</option>
+                    <option value="3">滲透測試 (Penetration Testing)</>
+                    <option value="4">程式碼安全測試 (Code Security Testing)</>
+                    <option value="5">資安健診 (Security Health Check)</>
+                    <option value="6">安全評估與弱點管理</>
+                    <option value="7">安全評估與攻擊手法/漏洞</>
+                    <option value="8">安全評估流程與報告</>
+                </select>
+            </div>
+
+            <div class="star-filter-container">
+                <label for="starFilter" class="star-filter-label">重要性：</label>
+                <select id="starFilter">
+                    <option value="all">全部重要性</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="3">★★★</option>
+                    <option value="2">★★</option>
+                    <option value="1">★</option>
+                </select>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+        </div>
+
+        <div class="categories-container">
+            <div class="categories-title">主題分類</div>
+            <div class="categories-grid" id="categoriesGrid">
+                <div class="category-item" onclick="filterByCategory(1)">
+                    <div class="category-number">1</div>
+                    <div class="category-text">評估概論</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(2)">
+                    <div class="category-number">2</div>
+                    <div class="category-text">弱點掃描</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(3)">
+                    <div class="category-number">3</div>
+                    <div class="category-text">滲透測試</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(4)">
+                    <div class="category-number">4</div>
+                    <div class="category-text">程式碼安全測試</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(5)">
+                    <div class="category-number">5</div>
+                    <div class="category-text">資安健診</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(6)">
+                    <div class="category-number">6</div>
+                    <div class="category-text">評估與弱點管理</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(7)">
+                    <div class="category-number">7</div>
+                    <div class="category-text">評估與攻擊手法/漏洞</div>
+                </div>
+                 <div class="category-item" onclick="filterByCategory(8)">
+                    <div class="category-number">8</div>
+                    <div class="category-text">評估流程與報告</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="focus-points-container" id="focusPointsContainer">
+
+            <!-- Category 1: 安全評估概論 -->
+            <div class="focus-card" data-category="1" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-01</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">資訊安全評估</span>的<span class="highlight">目的</span>與重要性</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">資訊安全評估</span>（包括<span class="chinese-proper-noun">弱點掃描</span>、<span class="chinese-proper-noun">滲透測試</span>、<span class="chinese-proper-noun">程式碼分析</span>、<span class="chinese-proper-noun">資安健診</span>等）是<span class="highlight">系統性地檢查和測試</span>組織的<span class="highlight">安全狀態</span>。其<span class="highlight">主要目的</span>是<span class="highlight">識別安全弱點</span>、<span class="highlight">評估控制措施的有效性</span>，並<span class="highlight">提供改進安全防護的建議</span>。它是<span class="chinese-proper-noun">風險評估</span>和<span class="chinese-proper-noun">風險處理</span>的<span class="highlight">關鍵輸入</span>。
+                        對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="1" data-stars="4">
+                <div class="focus-id">#ASSEST-02</div>
+                <div class="focus-importance">★★★★</div>
+            </div>
+            <div class="focus-topic-container">
+                <div class="focus-topic">不同<span class="chinese-proper-noun">安全評估方法</span>的<span class="highlight">區別與適用性</span></div>
+            </div>
+            <div class="focus-details-container">
+                <div class="details-header">核心概念</div>
+                <div class="details-content">
+                    理解<span class="highlight">不同的安全評估方法有不同的側重點和目的</span>。例如，<span class="chinese-proper-noun">弱點掃描</span>用於<span class="highlight">廣泛識別已知弱點</span>；<span class="chinese-proper-noun">滲透測試</span>用於<span class="highlight">模擬攻擊者實際利用漏洞</span>；<span class="chinese-proper-noun">程式碼分析</span>用於在開發階段<span class="highlight">檢查程式碼缺陷</span>；<span class="chinese-proper-noun">資安健診</span>是一個更全面的<span class="highlight">體檢</span>。應根據<span class="highlight">評估目標、預算和範圍</span>選擇適合的方法 (Q20 I22 提及不同測試方法)。
+                    對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                </div>
+            </div>
+             <div class="focus-card" data-category="1" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-03</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">主動</span>與<span class="chinese-proper-noun">被動</span>安全評估</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解<span class="chinese-proper-noun">安全評估</span>可以分為<span class="highlight">主動</span> (<span class="english-fullname">Active</span>) 和<span class="highlight">被動</span> (<span class="english-fullname">Passive</span>) 方式。<span class="highlight">主動評估</span>（如<span class="chinese-proper-noun">弱點掃描</span>、<span class="chinese-proper-noun">滲透測試</span>）<span class="highlight">直接與目標系統互動</span>以尋找<span class="chinese-proper-noun">弱點</span>。 <span class="highlight">被動評估</span>（如<span class="highlight">日誌分析</span>、<span class="chinese-proper-noun">配置審查</span>、<span class="highlight">文件審查</span>）<span class="highlight">不與目標系統直接互動</span>。
+                         對應能力：資訊安全技術概論 K08, K19
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-04</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">安全評估</span>在<span class="chinese-proper-noun">SSDLC</span> 中的角色</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解在<span class="chinese-proper-noun">安全開發生命週期</span> (<span class="english-fullname">SSDLC</span>) 的各個階段都應融入<span class="highlight">安全評估</span>活動。例如，<span class="highlight">設計階段</span>進行<span class="chinese-proper-noun">威脅建模</span>和<span class="chinese-proper-noun">架構審查</span>，<span class="highlight">編碼階段</span>進行<span class="chinese-proper-noun">程式碼分析</span> (<span class="english-abbr">SAST</span>)，<span class="highlight">測試階段</span>進行<span class="chinese-proper-noun">滲透測試</span> (<span class="english-abbr">DAST</span>, <span class="english-abbr">Pen Testing</span>) (Q20 I22 提及開發測試階段的安全活動)。
+                         對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-05</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">安全評估</span>結果的利用</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">安全評估</span>的結果（如<span class="chinese-proper-noun">弱點報告</span>）應被用於<span class="highlight">更新風險登記冊</span>、<span class="highlight">優先排序弱點修補</span>、<span class="highlight">實施風險處理措施</span>、<span class="highlight">改進安全控制措施</span>，並作為<span class="chinese-proper-noun">管理審查</span>和<span class="chinese-proper-noun">持續改進</span>的輸入 (Q1 I22, Q17 I21, Q27 I21)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K03, K11, K19
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 2: 弱點掃描 (Vulnerability Scan) -->
+            <div class="focus-card" data-category="2" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-06</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">弱點掃描</span> (<span class="english-fullname">Vulnerability Scan</span>) 的定義與目的</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">弱點掃描</span>是使用<span class="highlight">自動化工具</span>，對系統、網路、應用程式進行<span class="highlight">廣泛、快速的檢查</span>，以<span class="highlight">識別已知安全弱點</span>的過程。其<span class="highlight">目的</span>是<span class="highlight">全面了解資產中已知的漏洞</span>，並<span class="highlight">優先排序修補工作</span>。它是<span class="chinese-proper-noun">偵測性控制</span>的一種 (Q4 I21, Q1 I22, Q11 I21)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11, S13
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="2" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-07</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">弱點掃描器</span>的類型與功能</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解不同類型的<span class="chinese-proper-noun">弱點掃描器</span>：<span class="highlight">網路掃描器</span>（檢查主機、服務、通訊埠）、<span class="highlight">應用程式掃描器</span>（檢查 Web 應用程式漏洞）、<span class="highlight">資料庫掃描器</span>等。常見工具如 <span class="english-fullname">Nessus</span> (Q17 I21 提及)、<span class="english-fullname">OpenVAS</span>。這些工具通常包含<span class="highlight">大量已知漏洞的簽名庫</span>。
+                        對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11, S13
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="2" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-08</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">弱點掃描</span>的<span class="highlight">限制</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">弱點掃描</span>的<span class="highlight">主要限制</span>：它<span class="highlight">主要基於已知漏洞資料庫</span>，<span class="highlight">難以發現零日漏洞、邏輯漏洞或需要多個漏洞組合</span>才能利用的問題 (Q43 PRACTICE)。它<span class="highlight">不會實際利用漏洞</span>，因此無法評估風險的<span class="highlight">真實影響</span>。可能會產生<span class="highlight">誤報</span> (<span class="english-fullname">False Positive</span>)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11, S13
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="2" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-09</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">弱點掃描</span>在<span class="chinese-proper-noun">弱點管理</span>中的角色</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">弱點掃描</span>是<span class="chinese-proper-noun">弱點管理</span>流程中<span class="highlight">風險識別</span>階段的<span class="highlight">主要工具</span>。掃描結果是後續<span class="highlight">評估、優先排序和修補</span>工作的基礎 (Q1 I22 提及掃描結果)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="2" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-10</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">定期弱點掃描</span>的必要性</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">IT 環境是動態變化</span>的（新系統上線、配置變更、新<span class="chinese-proper-noun">弱點</span>被發現）。因此，<span class="chinese-proper-noun">弱點掃描</span>應<span class="highlight">定期進行</span>（如每季一次），並在<span class="highlight">重大變更後立即進行</span>，以確保<span class="chinese-proper-noun">弱點</span>被及時發現 (Q1 I22 提及定期掃描, Q17 I21 提及評估時機)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                 </div>
+             </div>
+
+            <!-- Category 3: 滲透測試 (Penetration Testing) -->
+            <div class="focus-card" data-category="3" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-11</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span> (<span class="english-fullname">Penetration Testing</span>) 的定義與目的</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">滲透測試</span>是一種<span class="highlight">授權的、主動的安全評估方法</span>，透過<span class="highlight">模擬真實攻擊者的行為和技巧</span>，以<span class="highlight">識別和驗證實際可被利用的安全弱點</span>，並評估攻擊成功的<span class="highlight">潛在影響</span>。其<span class="highlight">目的</span>是<span class="highlight">深入了解安全防護的有效性</span> (Q20 I22, Q28 I22, Q38 I22 題組)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11, S15
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="3" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-12</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">不同<span class="chinese-proper-noun">滲透測試</span>類型：黑箱、灰箱、白箱</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解<span class="chinese-proper-noun">滲透測試</span>根據測試團隊對目標的了解程度分為不同類型：<span class="highlight">黑箱測試</span> (<span class="english-fullname">Black Box</span> - 測試者對目標<span class="highlight">一無所知</span>，模擬外部未知攻擊者)、<span class="highlight">灰箱測試</span> (<span class="english-fullname">Grey Box</span> - 測試者擁有<span class="highlight">部分資訊</span>，如使用者帳號或系統架構，模擬內部人員或已知情者)、<span class="highlight">白箱測試</span> (<span class="english-fullname">White Box</span> - 測試者擁有<span class="highlight">所有資訊</span>，如原始碼、架構圖，模擬具備內部知識或資源的攻擊者) (Q45 PRACTICE)。
+                        對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-13</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>的<span class="highlight">階段</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解<span class="chinese-proper-noun">滲透測試</span>通常包含多個階段：<span class="highlight">偵察</span> (<span class="english-fullname">Reconnaissance</span> - 收集目標資訊)、<span class="highlight">掃描</span> (<span class="english-fullname">Scanning</span> - 發現活動主機、服務、<span class="chinese-proper-noun">弱點</span>)、<span class="highlight">漏洞利用</span> (<span class="english-fullname">Exploitation</span> - 實際攻擊利用<span class="chinese-proper-noun">弱點</span>)、<span class="highlight">後滲透</span> (<span class="english-fullname">Post-Exploitation</span> - 維持存取、<span class="chinese-proper-noun">權限提升</span>、<span class="chinese-proper-noun">橫向移動</span>、數據<span class="chinese-proper-noun">外洩</span>)、<span class="highlight">報告</span>。理解攻擊鏈中的階段有助於理解<span class="chinese-proper-noun">滲透測試</span>的流程 (Q38 VTAM)。
+                         對應能力：資訊安全技術概論 K08, K09, K19, 資訊安全防護實務 K08, S11, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-14</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>與<span class="chinese-proper-noun">弱點掃描</span>的<span class="highlight">區別</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          掌握<span class="chinese-proper-noun">弱點掃描</span>是<span class="highlight">自動化、廣泛、不實際利用</span>，用於<span class="highlight">識別已知弱點</span>清單。而<span class="chinese-proper-noun">滲透測試</span>是<span class="highlight">手動或半自動化、有針對性、實際利用漏洞</span>，用於<span class="highlight">驗證漏洞、評估實際風險</span>和<span class="highlight">防護有效性</span>。兩者相輔相成。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                  <div class="focus-id">#ASSEST-15</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>中的<span class="chinese-proper-noun">漏洞利用</span></div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      在<span class="chinese-proper-noun">滲透測試</span>的<span class="highlight">漏洞利用階段</span>，測試者使用特定的<span class="highlight">漏洞利用工具</span> (<span class="english-fullname">Exploit</span>) 或<span class="highlight">技術</span>來<span class="highlight">證明發現的弱點是可被實際攻擊</span>的 (Q37 VTAM)。這一步驟是<span class="chinese-proper-noun">滲透測試</span>與<span class="chinese-proper-noun">弱點掃描</span>的<span class="highlight">主要區別</span>之一。
+                      對應能力：資訊安全技術概論 K08, K09, K19, 資訊安全防護實務 K08, S15
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-16</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>中的<span class="chinese-proper-noun">權限提升</span>與<span class="chinese-proper-noun">持久化</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         在<span class="chinese-proper-noun">滲透測試</span>的<span class="highlight">後滲透階段</span>，測試者會嘗試<span class="highlight">權限提升</span> (<span class="english-fullname">Privilege Escalation</span>)，以獲取對系統的<span class="highlight">更高控制權</span> (Q39 I22, Q39 VTAM)。他們也會嘗試建立<span class="chinese-proper-noun">持久化</span> (<span class="english-fullname">Persistence</span>) 機制，以<span class="highlight">維持對系統的長期存取</span>，模擬攻擊者的真實行為 (Q36 I22, Q40 VTAM)。
+                         對應能力：資訊安全技術概論 K08, K09, K19, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-17</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>中的<span class="chinese-proper-noun">橫向移動</span>與目標達成</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          在<span class="chinese-proper-noun">滲透測試</span>中，測試者在獲取一個系統的控制權後，會嘗試在內部網路中進行<span class="highlight">橫向移動</span> (<span class="english-fullname">Lateral Movement</span> - Q41 VTAM)，尋找並存取其他高價值目標或數據。最終目標是證明攻擊者能達到特定目標，如<span class="chinese-proper-noun">數據外洩</span>或服務中斷。
+                          對應能力：資訊安全技術概論 K08, K09, K19
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-18</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>常用工具與框架</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解<span class="chinese-proper-noun">滲透測試</span>團隊常用的工具和框架，如 <span class="english-fullname">Metasploit</span> (<span class="chinese-proper-noun">漏洞利用</span>框架)、<span class="english-fullname">Nmap</span> (網路掃描)、<span class="english-fullname">Burp Suite</span> (<span class="chinese-proper-noun">Web</span> 應用測試)、<span class="english-fullname">Wireshark</span> (網路封包分析)、<span class="english-fullname">Kali Linux</span> (預裝許多工具的作業系統)。
+                         對應能力：資訊安全技術概論 K08, K09, K19, 資訊安全防護實務 S10
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-19</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">滲透測試報告</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">滲透測試</span>的最終輸出是詳細的<span class="highlight">測試報告</span>。報告應包含<span class="highlight">測試範圍、方法、發現的所有漏洞</span>（包括如何利用、影響）、<span class="highlight">風險評估</span>、以及<span class="highlight">詳細的修補建議</span>。報告應清晰、準確，並提供技術和管理層都能理解的資訊 (Q59 SECARCH)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 4: 程式碼安全測試 (Code Security Testing) -->
+            <div class="focus-card" data-category="4" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-20</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">程式碼安全測試</span>的目的</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">程式碼安全測試</span>旨在<span class="highlight">在軟體開發階段</span>或之後，<span class="highlight">檢查應用程式的原始碼或運行行為</span>，以<span class="highlight">識別和定位程式碼中的安全缺陷</span> (<span class="chinese-proper-noun">弱點</span>)。這比在部署後發現問題成本更低。
+                        對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="4" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-21</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">靜態應用安全測試</span> (<span class="english-abbr">SAST</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">靜態應用安全測試</span> (<span class="english-fullname">Static Application Security Testing</span>, <span class="english-abbr">SAST</span>) 是一種<span class="highlight">不運行程式碼</span>，透過<span class="highlight">分析原始碼</span>或<span class="highlight">二進位碼</span>來<span class="highlight">尋找已知安全漏洞或編碼標準違規</span>的<span class="highlight">白箱測試</span>方法。它通常在<span class="highlight">開發早期</span>集成到開發流程中 (Q20 I22, Q28 I22, Q29 I22, Q53 ACDOSOD)。
+                         對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-22</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">動態應用安全測試</span> (<span class="english-abbr">DAST</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">動態應用安全測試</span> (<span class="english-fullname">Dynamic Application Security Testing</span>, <span class="english-abbr">DAST</span>) 是一種<span class="highlight">在應用程式運行時</span>，從外部發送<span class="highlight">惡意輸入</span>並觀察其<span class="highlight">響應</span>來<span class="highlight">尋找安全漏洞</span>的<span class="highlight">黑箱測試</span>方法。它可以發現<span class="highlight">運行時</span>的問題，如<span class="chinese-proper-noun">注入漏洞</span>、<span class="chinese-proper-noun">跨站腳本</span> (Q20 I22, Q46 PRACTICE)。
+                         對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-23</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="english-abbr">SAST</span> 與<span class="english-abbr">DAST</span> 的<span class="highlight">區別</span>與<span class="highlight">結合</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="english-abbr">SAST</span> 在<span class="highlight">開發早期</span>發現<span class="highlight">程式碼本身</span>的<span class="chinese-proper-noun">弱點</span>，但難以發現<span class="highlight">配置問題</span>或<span class="highlight">運行時邏輯錯誤</span>。<span class="english-abbr">DAST</span> 在<span class="highlight">運行時</span>發現問題，但<span class="highlight">無法精確定位到原始碼中的漏洞位置</span>。兩者<span class="highlight">相輔相成</span>，結合使用能提供更全面的應用安全測試。
+                          對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-24</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">使用<span class="chinese-proper-noun">程式碼分析工具</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          了解用於<span class="chinese-proper-noun">程式碼安全測試</span>的自動化工具，如商業的 <span class="english-fullname">Fortify</span> (Q17 I21 提及)、<span class="english-fullname">Checkmarx</span>，開源的 <span class="english-fullname">SonarQube</span> 等。<span class="english-abbr">SAST</span> 工具分析原始碼，<span class="english-abbr">DAST</span> 工具測試運行中的應用程式。這些工具能<span class="highlight">自動識別常見漏洞模式</span>，提高效率。
+                          對應能力：資訊安全技術概論 K08, K16, 資訊安全防護實務 K08, S15
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-25</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">第三方軟體<span class="chinese-proper-noun">元件安全測試</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解組織使用的<span class="highlight">第三方軟體元件</span>（如開源庫、商業組件）可能包含<span class="chinese-proper-noun">已知漏洞</span> (Q37 I22 提及清查)。需要對這些元件進行安全測試或<span class="highlight">檢查已知的漏洞資料庫</span> (<span class="english-abbr">CVE</span>/<span class="english-abbr">NVD</span>)，以<span class="highlight">識別風險</span>。使用<span class="chinese-proper-noun">軟體物料清單</span> (<span class="english-fullname">SBOM</span>) 有助於此 (Q40 I22, Q20 I22)。
+                         對應能力：資訊安全技術概論 K08, K16, K17, 資訊安全防護實務 K08, S11, S13
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 5: 資安健診 (Security Health Check) -->
+            <div class="focus-card" data-category="5" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-26</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">資安健診</span> (<span class="english-fullname">Security Health Check</span>) 的定義與目的</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">資安健診</span>是一個<span class="highlight">廣泛的安全評估</span>，類似於對組織資安狀態進行「<span class="highlight">體檢</span>」。它通常<span class="highlight">涵蓋多個安全領域</span>（如網路、系統、應用、政策、流程），旨在<span class="highlight">全面了解組織的安全態勢</span>，<span class="highlight">識別潛在風險和不足</span> (Q17 I21 提及資安人員重新檢視與評估)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="5" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-27</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">資安健診</span>通常包含的<span class="highlight">評估項目</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解<span class="chinese-proper-noun">資安健診</span>的評估項目通常包括：<span class="highlight">弱點掃描</span>、<span class="highlight">安全配置審查</span>、<span class="highlight">安全政策與程序審查</span>、<span class="highlight">實體安全檢查</span>、<span class="highlight">人員訪談</span>、<span class="highlight">合規性檢查</span>。它通常<span class="highlight">不會進行實際的漏洞利用</span>（與<span class="chinese-proper-noun">滲透測試</span>不同）。
+                        對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K09, K10, K12, K13, K14, K17
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="5" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-28</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">資安健診</span>的<span class="highlight">執行時機</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">資安健診</span>應<span class="highlight">定期進行</span>，例如每年一次，以<span class="highlight">持續了解組織的安全狀態</span>。此外，在<span class="highlight">發生重大安全事件</span>後、<span class="highlight">引入新系統或技術</span>後、<span class="highlight">組織發生重大變動</span>（如併購）後，也應考慮進行<span class="chinese-proper-noun">資安健診</span>。這與<span class="chinese-proper-noun">風險評估</span>的時機相似 (Q17 I21)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K04, K09, K11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-29</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">第三方機構進行<span class="chinese-proper-noun">資安健診</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          委託<span class="highlight">獨立的第三方機構</span>進行<span class="chinese-proper-noun">資安健診</span>可以提供<span class="highlight">客觀的評估</span>，並具備<span class="highlight">更廣泛的專業知識和經驗</span>。這也是滿足某些<span class="chinese-proper-noun">法規或合約要求</span>的方式 (Q7 I21 提及第三方測試)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K17
+                      </div>
+                 </div>
+             </div>
+
+            <!-- Category 6: 安全評估與弱點管理 -->
+            <div class="focus-card" data-category="6" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-30</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">安全評估結果</span>與<span class="chinese-proper-noun">弱點管理</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="highlight">弱點掃描</span>、<span class="chinese-proper-noun">滲透測試</span>、<span class="chinese-proper-noun">程式碼分析</span>、<span class="chinese-proper-noun">資安健診</span>等<span class="chinese-proper-noun">安全評估</span>活動的<span class="highlight">核心輸出</span>是發現的<span class="chinese-proper-noun">弱點</span>。這些<span class="chinese-proper-noun">弱點</span>需要被納入<span class="highlight">弱點管理</span>流程 (<span class="highlight">識別、評估、修補、監控</span>) (Q1 I22, Q46 ACDOSOD)。
+                        對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="6" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-31</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">根據<span class="chinese-proper-noun">安全評估結果</span><span class="highlight">優先排序弱點修補</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="highlight">並非所有弱點都需要立即修補</span>。應根據<span class="highlight">風險評估的結果</span>，特別是<span class="highlight">弱點的嚴重性</span>、<span class="highlight">可利用性</span>以及<span class="highlight">受影響資產的重要性</span>，對發現的<span class="chinese-proper-noun">弱點</span>進行<span class="highlight">優先排序</span> (Q1 I22, Q17 I22, Q47 PRACTICE)。高風險<span class="chinese-proper-noun">弱點</span>應優先處理。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-32</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">將<span class="chinese-proper-noun">安全評估結果</span><span class="highlight">回饋</span>到<span class="chinese-proper-noun">風險管理</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">安全評估</span>發現的<span class="chinese-proper-noun">弱點</span>和<span class="chinese-proper-noun">漏洞利用</span>證據是<span class="chinese-proper-noun">風險評估</span>（特別是<span class="highlight">可能性</span>和<span class="highlight">影響</span>）的<span class="highlight">重要輸入</span>。評估結果應<span class="highlight">更新風險登記冊</span>，並驅動<span class="chinese-proper-noun">風險處理</span>決策 (Q27 I21, Q30 ASSEST)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K03, K11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-33</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">驗證<span class="chinese-proper-noun">弱點修補</span>的<span class="highlight">有效性</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          在<span class="highlight">修補弱點</span>後，需要<span class="highlight">重新進行掃描或測試</span>，以<span class="highlight">驗證修補是否成功且有效</span>，並且<span class="highlight">沒有引入新的問題</span>。這通常透過<span class="highlight">弱點掃描複測</span> (<span class="english-fullname">Rescan</span>) 或針對性的<span class="chinese-proper-noun">滲透測試</span>來完成 (Q17 I21 提及弱點掃描複測)。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 7: 安全評估與攻擊手法/漏洞 -->
+            <div class="focus-card" data-category="7" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-34</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">利用<span class="chinese-proper-noun">滲透測試</span>識別<span class="chinese-proper-noun">OWASP Top 10</span> 漏洞</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        <span class="chinese-proper-noun">滲透測試</span>是<span class="highlight">識別 Web 應用程式</span>中<span class="english-abbr">OWASP</span> <span class="english-abbr">Top</span> 10 <span class="chinese-proper-noun">弱點</span>的<span class="highlight">有效方法</span>。例如，透過構造惡意輸入測試是否能利用<span class="chinese-proper-noun">注入漏洞</span>、嘗試未經授權的頁面存取測試<span class="chinese-proper-noun">失效的存取控制</span>、或檢查預設<span class="chinese-proper-noun">配置</span>測試<span class="chinese-proper-noun">安全配置錯誤</span> (Q32 I22 提及 OWASP Top 25)。
+                        對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11, S15
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="7" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-35</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">如何測試<span class="english-fullname">SQL Injection</span> 漏洞</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          測試<span class="english-fullname">SQL Injection</span> 漏洞涉及在應用程式的<span class="highlight">輸入欄位</span>（如登入頁面、搜索欄）注入<span class="highlight">惡意 SQL 語法</span>（如 `' or '1'='1` --`, `' OR 1=1 /*` -- Q38 I22 提及測試語法），觀察應用程式或資料庫的<span class="highlight">響應</span>是否異常，以<span class="highlight">判斷漏洞是否存在</span> (Q16 I21, Q38 I22 題組情境)。
+                          對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11, S15
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-36</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">如何測試檔案上傳<span class="chinese-proper-noun">弱點</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         測試檔案上傳<span class="chinese-proper-noun">弱點</span>涉及嘗試<span class="highlight">上傳包含惡意程式碼</span>但<span class="highlight">偽裝成合法檔案類型</span>（如圖片、txt）的文件，或嘗試上傳到<span class="highlight">Web 可執行目錄</span>。如果伺服器<span class="highlight">未對檔案類型、內容或儲存位置進行嚴格驗證和限制</span>，則存在<span class="chinese-proper-noun">弱點</span> (Q3 I22, Q33 I22 情境, Q35 I22)。
+                         對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-37</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">如何測試<span class="chinese-proper-noun">權限提升</span> (<span class="english-fullname">Privilege Escalation</span>)</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          測試<span class="chinese-proper-noun">權限提升</span>通常在<span class="highlight">獲取低權限帳號存取權後進行</span>。測試者嘗試利用系統<span class="chinese-proper-noun">弱點</span>、<span class="chinese-proper-noun">配置錯誤</span>（如<span class="highlight">寬鬆的檔案權限</span>、<span class="highlight">可寫入的系統目錄</span>）或<span class="chinese-proper-noun">應用程式漏洞</span>來<span class="highlight">獲取系統管理員或 root 權限</span> (Q39 I22 情境)。
+                          對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11, S15
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="4">
+                  <div class="focus-id">#ASSEST-38</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic">如何測試<span class="chinese-proper-noun">持久化</span> (<span class="english-fullname">Persistence</span>)</div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      測試<span class="chinese-proper-noun">持久化</span>通常在獲取系統控制權後進行。測試者嘗試使用<span class="highlight">作業系統的排程功能</span>（如 <span class="english-fullname">crontab</span>）、<span class="highlight">啟動項</span>、<span class="highlight">使用者配置文件</span> (<span class="english-abbr">.~/.bashrc</span>)、<span class="highlight">服務</strong>等方式，<span class="highlight">植入後門或反向連接命令</span>，然後重啟系統或等待觸發，檢查是否能<span class="highlight">維持存取</span> (Q36 I22 案例)。
+                      對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S15
+                  </div>
+             </div>
+             <div class="focus-card" data-category="7" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-39</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">如何測試<span class="chinese-proper-noun">DLL Side-Loading</span> 漏洞</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         測試<span class="chinese-proper-noun">DLL Side-Loading</span> 涉及了解應用程式<span class="highlight">載入 DLL 的順序</span>，並嘗試在<span class="highlight">優先搜尋的目錄中放置惡意的 DLL 文件</span>。如果合法應用程式載入了惡意 <span class="english-abbr">DLL</span>，則漏洞存在 (Q30 I22 案例)。
+                         對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="7" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#ASSEST-40</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">測試<span class="chinese-proper-noun">AI 模型</span>的安全</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        測試<span class="chinese-proper-noun">AI 模型</span>安全是一個新興領域，可能涉及測試<span class="highlight">模型的韌性</span>（如對抗<span class="highlight">對抗性攻擊</span>），以及測試<span class="highlight">AI 系統的介面</span> (<span class="chinese-proper-noun">API</span>)，如輸入<span class="highlight">驗證</span>和<span class="highlight">存取控制</span> (Q31 I22)。
+                        對應能力：資訊安全技術概論 K08, S10, S15
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 8: 安全評估流程與報告 -->
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-41</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">安全評估</span>的<span class="highlight">範圍界定</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         在進行任何<span class="chinese-proper-noun">安全評估</span>前，<span class="highlight">明確界定評估的範圍</span>至關重要。範圍應明確<span class="highlight">包含哪些系統、網路、應用程式或資產</span>，<span class="highlight">允許使用的測試方法</span>（如是否允許<span class="chinese-proper-noun">漏洞利用</span>），以及<span class="highlight">禁區</span>（如不能測試生產數據）。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-42</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">安全評估報告</span>的<span class="highlight">內容</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">安全評估</span>的最終輸出是詳細的<span class="highlight">報告</span>。報告應包含<span class="highlight">評估概述</span>、<span class="highlight">範圍</span>、<span class="highlight">方法</span>、<span class="highlight">發現的所有弱點</span>（包括<span class="chinese-proper-noun">弱點描述</span>、<span class="chinese-proper-noun">嚴重性</span>、<span class="highlight">影響</span>、<span class="highlight">可利用性</span>）、<span class="highlight">風險評估</span>、以及<span class="highlight">詳細的修補或緩解建議</span> (Q19 ASSEST)。報告應有<span class="highlight">技術細節</span>供工程師參考，也有<span class="highlight">非技術總結</span>供管理層閱讀。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 K08, S11
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-43</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">安全評估</span>結果的<span class="highlight">溝通</span>與<span class="highlight">追蹤</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">安全評估</span>報告應<span class="highlight">溝通</span>給相關的<span class="highlight">利害關係人</span>（如系統擁有者、管理層、開發團隊）。需要建立<span class="highlight">追蹤機制</span>，確保發現的<span class="chinese-proper-noun">弱點</span>得到<span class="highlight">適當的處理和修補</span>，並定期<span class="highlight">監控修補進度</span> (Q1 I22 提及修補時程)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K03, K11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-44</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">內部團隊與第三方機構進行<span class="chinese-proper-noun">安全評估</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          組織可以<span class="highlight">自行</span>組建團隊進行部分<span class="chinese-proper-noun">安全評估</span>（如日常<span class="chinese-proper-noun">弱點掃描</span>），也可以<span class="highlight">委託第三方機構</span>進行（如<span class="chinese-proper-noun">滲透測試</span>、<span class="chinese-proper-noun">資安健診</span> - Q7 I21）。第三方機構通常能提供<span class="highlight">獨立、客觀的視角</span>和<span class="highlight">專業能力</span>。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K17, 資訊安全規劃實務 K08
+                      </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                  <div class="focus-id">#ASSEST-45</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic">將<span class="chinese-proper-noun">安全評估</span>結果<span class="highlight">回饋</span>到<span class="chinese-proper-noun">安全開發</span></div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      <span class="chinese-proper-noun">安全評估</span>（特別是<span class="chinese-proper-noun">程式碼分析</span>和<span class="chinese-proper-noun">滲透測試</span>）發現的<span class="chinese-proper-noun">弱點</span>和<span class="chinese-proper-noun">漏洞利用</span>證據應<span class="highlight">回饋</span>給開發團隊，以<span class="highlight">改進安全編碼實踐</span>、<span class="highlight">加強安全培訓</span>，並<span class="highlight">更新安全開發標準和工具</span>。這是<span class="chinese-proper-noun">SSDLC</span> 的<span class="highlight">持續改進</span>環節。
+                      對應能力：資訊安全技術概論 K08, K16, K19, 資訊安全防護實務 K08, S15
+                  </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-46</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">安全評估的<span class="highlight">法律和倫理考量</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         進行<span class="chinese-proper-noun">安全評估</span>（特別是<span class="chinese-proper-noun">滲透測試</span>）必須<span class="highlight">獲得明確的授權</span>，並<span class="highlight">遵守法律和倫理規範</span>。未經授權的掃描或測試可能構成非法活動。應在<span class="highlight">合約中明確評估的範圍和限制</span>。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K02, K10, K17
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-47</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">測試環境與生產環境的安全考量</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理想情況下，<span class="highlight">安全評估</span>應在<span class="highlight">與生產環境相似但隔離的測試環境</span>中進行，以<span class="highlight">避免影響業務運作</span>或<span class="highlight">洩漏生產數據</span>。如果必須在生產環境進行測試，應<span class="highlight">謹慎評估風險</span>，在<span class="highlight">離峰時段</span>進行，並有<span class="highlight">應變計畫</span>。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-48</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">紅隊演練</span> (<span class="english-fullname">Red Teaming</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="chinese-proper-noun">紅隊演練</span>是一種<span class="highlight">更全面、更真實</span>的<span class="chinese-proper-noun">安全評估</span>，<span class="highlight">模擬具有真實攻擊者能力和戰術</span>的團隊，在<span class="highlight">不被藍隊</span>（防禦團隊）<span class="highlight">發現的情況下</span>，嘗試達成特定的預設目標。這有助於測試組織的<span class="highlight">整體防禦、偵測和應變能力</span> (Q33 I22 情境提到紅隊演練)。
+                         對應能力：資訊安全技術概論 K08, K19
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-id">#ASSEST-49</div>
+                 <div class="focus-importance">★★★★</div>
+             </div>
+             <div class="focus-topic-container">
+                 <div class="focus-topic"><span class="chinese-proper-noun">藍隊演練</span> (<span class="english-fullname">Blue Teaming</span>)</div>
+             </div>
+             <div class="focus-details-container">
+                 <div class="details-header">核心概念</div>
+                 <div class="details-content">
+                     <span class="chinese-proper-noun">藍隊演練</span>是<span class="highlight">防禦團隊</span>在模擬攻擊情境下，<span class="highlight">測試其偵測和應變能力</span>的活動。它通常與<span class="chinese-proper-noun">紅隊演練</span>結合進行，<span class="highlight">紅隊</span>發起攻擊，<span class="chinese-proper-noun">藍隊</span>則嘗試<span class="highlight">偵測、分析、圍堵</span>和<span class="highlight">復原</span>。
+                     對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K08
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#ASSEST-50</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">自動化在<span class="chinese-proper-noun">安全評估</span>中的應用</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="highlight">自動化工具</span>在<span class="chinese-proper-noun">安全評估</span>中扮演重要角色，如<span class="chinese-proper-noun">自動化的弱點掃描器</span>、<span class="chinese-proper-noun">程式碼分析工具</span>、以及部分<span class="chinese-proper-noun">滲透測試</span>工具。自動化可以提高<span class="highlight">評估的效率和頻率</span>，但也<span class="highlight">無法取代</span>手動的深入分析和邏輯判斷（Q38 I22 提及自動化工具）。
+                          對應能力：資訊安全技術概論 K08, K19, 資訊安全防護實務 S07, S10
+                      </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-51</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="english-abbr">CISA Zero Trust Maturity Model</span> 中的評估</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解<span class="english-abbr">CISA</span> 的<span class="chinese-proper-noun">零信任成熟度模型</span> (<span class="english-abbr">ZTMM</span>) 提供了一個框架，用於<span class="highlight">評估組織實施零信任架構的進度</span>。評估應涵蓋身份、設備、網路、應用/工作負載、數據等<span class="highlight">不同支柱</span>的安全狀態，這也是一種廣泛的<span class="chinese-proper-noun">資安健診</span>或評估 (Q31 I21 提及 CISA ZTMM)。
+                         對應能力：資訊安全規劃實務 K01, K14
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-52</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">持續安全評估 (Continuous Security Assessment)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="highlight">持續安全評估</span>是一種<span class="highlight">自動化和頻繁</span>的安全評估方式，例如<span class="highlight">持續的漏洞掃描</span>、<span class="highlight">程式碼分析</strong>集成到<span class="highlight">開發管線</span>中。這比<span class="highlight">定期、手動的評估</span>更能<span class="highlight">及時發現新出現的弱點</span>，適應快速變化的環境。
+                         對應能力：資訊安全技術概論 K08, K16, K19, 資訊安全防護實務 K08, S11, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-53</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">安全評估作為<span class="chinese-proper-noun">風險管理</span>的<span class="highlight">輸入</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         再次強調<span class="highlight">安全評估</span>是<span class="chinese-proper-noun">風險管理</span>流程的<span class="highlight">關鍵輸入</span>。發現的<span class="chinese-proper-noun">弱點</span>及其<span class="chinese-proper-noun">可利用性</span>幫助評估<span class="chinese-proper-noun">可能性</span>，<span class="chinese-proper-noun">漏洞利用</span>成功證明了<span class="chinese-proper-noun">弱點</span>的真實性並幫助評估<span class="chinese-proper-noun">影響</span>。評估結果直接<span class="highlight">驅動風險處理</span>決策 (Q27 I21, Q35 RISKANAL)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全規劃實務 K03, K11
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-54</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">從<span class="chinese-proper-noun">資安事件</span>中學習改進<span class="chinese-proper-noun">安全評估</span>方法</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         <span class="highlight">分析真實發生的安全事件</span>可以幫助<span class="highlight">發現現有安全評估方法可能存在的盲點或不足</span>。例如，如果某次攻擊利用了<span class="chinese-proper-noun">弱點掃描</span>或<span class="chinese-proper-noun">滲透測試</span>未發現的<span class="chinese-proper-noun">弱點</span>，應檢討是否需要<span class="highlight">調整評估範圍、方法或工具</span>。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K08, K15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="8" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ASSEST-55</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">管理<span class="chinese-proper-noun">第三方服務</span>的<span class="chinese-proper-noun">安全評估</span>要求</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         在與<span class="highlight">第三方服務提供商</span>合作時，組織應在<span class="highlight">合約</span>中<span class="highlight">明確安全評估的要求</span>，例如要求提供<span class="highlight">定期的漏洞掃描報告</span>、<span class="chinese-proper-noun">滲透測試結果</span>、或<span class="highlight">第三方安全認證</span>（如 <span class="english-abbr">ISO</span> 27001, <span class="english-abbr">SOC</span> 報告）(Q7 I21)。
+                         對應能力：資訊安全技術概論 K08, K19, 資訊安全管理概論 K17, K18, 資訊安全規劃實務 K08, K17
+                     </div>
+                 </div>
+             </div>
+
+
+             <!-- Placeholder for No Results -->
+             <div id="noResultsMessage">沒有找到符合條件的重點。</div>
+
+        </div><!-- end focus-points-container -->
+
+        <div class="back-to-top" id="backToTop">↑</div>
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

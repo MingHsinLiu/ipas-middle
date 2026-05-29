@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>iPAS 資訊安全工程師 考試重點 - 資安管理實務：存取控制、縱深防禦、職務區隔</title>
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>iPAS 資訊安全工程師 考試重點</h1>
+            <div>資安管理實務：存取控制、縱深防禦、職務區隔 (SOD)</div>
+        </div>
+
+        <div class="controls">
+             <div class="filter-container">
+                <label for="categoryFilter" class="filter-label">篩選主題：</label>
+                <select id="categoryFilter">
+                    <option value="all">全部主題</option>
+                    <option value="1">存取控制 (Access Control)</option>
+                    <option value="2">縱深防禦 (Defense in Depth)</option>
+                    <option value="3">職務區隔 (Separation of Duties)</option>
+                    <option value="4">相關管理控制與流程</option>
+                    <option value="5">資安治理與框架關聯</option>
+                    <option value="6">實務應用與案例</option>
+                </select>
+            </div>
+
+            <div class="star-filter-container">
+                <label for="starFilter" class="star-filter-label">重要性：</label>
+                <select id="starFilter">
+                    <option value="all">全部重要性</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="3">★★★</option>
+                    <option value="2">★★</option>
+                    <option value="1">★</option>
+                </select>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+        </div>
+
+        <div class="categories-container">
+            <div class="categories-title">主題分類</div>
+            <div class="categories-grid" id="categoriesGrid">
+                <div class="category-item" onclick="filterByCategory(1)">
+                    <div class="category-number">1</div>
+                    <div class="category-text">存取控制</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(2)">
+                    <div class="category-number">2</div>
+                    <div class="category-text">縱深防禦</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(3)">
+                    <div class="category-number">3</div>
+                    <div class="category-text">職務區隔 (SOD)</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(4)">
+                    <div class="category-number">4</div>
+                    <div class="category-text">相關管理控制與流程</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(5)">
+                    <div class="category-number">5</div>
+                    <div class="category-text">資安治理與框架關聯</div>
+                </div>
+                <div class="category-item" onclick="filterByCategory(6)">
+                    <div class="category-number">6</div>
+                    <div class="category-text">實務應用與案例</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="focus-points-container" id="focusPointsContainer">
+
+            <!-- Category 1: 存取控制 (Access Control) -->
+            <div class="focus-card" data-category="1" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-01</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">存取控制</span> (<span class="english-fullname">Access Control</span>) 的定義與目的</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">存取控制</span>是<span class="chinese-proper-noun">資訊安全管理</span>中的<span class="highlight">核心機制</span>，旨在<span class="highlight">限制對資訊資產的存取</span>。其<span class="highlight">主要目的</span>是<span class="highlight">確保只有被授權的實體</span> (如使用者、系統或程式) 才能在<span class="highlight">被授權的時間</span>、以<span class="highlight">被授權的方式</span>存取<span class="highlight">被授權的資源</span>。這直接關係到<span class="chinese-proper-noun">機密性</span>、<span class="chinese-proper-noun">完整性</span>和<span class="chinese-proper-noun">可用性</span>的保護。
+                        對應能力：資訊安全管理概論 K05, K13, K14, 資訊安全規劃實務 K05, K13
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="1" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-02</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">存取控制</span>的三個<span class="highlight">核心要素</span>：識別、驗證、授權</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">存取控制</span>流程涉及三個連續步驟：<span class="highlight">識別</span> (<span class="english-fullname">Identification</span> - 聲明自己的身份，如使用者名稱)、<span class="highlight">驗證</span> (<span class="english-fullname">Authentication</span> - 證明身份的真實性，如密碼、憑證、生物特徵 - Q1 I21, Q23 I21) 和<span class="highlight">授權</span> (<span class="english-fullname">Authorization</span> - 確認已驗證的實體對特定資源擁有何種操作權限，如讀、寫、執行)。
+                        對應能力：資訊安全管理概論 K05, K13, K14, 資訊安全規劃實務 K05, K13
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="1" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-03</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">常見的<span class="chinese-proper-noun">存取控制模型</span>：<span class="english-abbr">DAC</span>, <span class="english-abbr">MAC</span>, <span class="english-abbr">RBAC</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解三種基本的<span class="chinese-proper-noun">存取控制模型</span>：<span class="chinese-proper-noun">自主存取控制</span> (<span class="english-fullname">Discretionary Access Control</span>, <span class="english-abbr">DAC</span> - 由資源擁有者決定權限)、<span class="chinese-proper-noun">強制存取控制</span> (<span class="english-fullname">Mandatory Access Control</span>, <span class="english-abbr">MAC</span> - 基於安全等級和分類的嚴格規則，常用於軍事/政府)、以及<span class="chinese-proper-noun">角色基礎存取控制</span> (<span class="english-fullname">Role-Based Access Control</span>, <span class="english-abbr">RBAC</span> - 權限基於使用者所扮演的角色，<span class="highlight">最常用於企業環境</span>)。
+                         對應能力：資訊安全管理概論 K13, K14, 資訊安全規劃實務 K05
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-04</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">存取控制原則</span>：<span class="chinese-proper-noun">最小權限</span>和<span class="chinese-proper-noun">僅知</span>原則</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">最小權限原則</span> (<span class="english-fullname">Principle of Least Privilege</span>, <span class="english-abbr">POLP</span>)：使用者或系統應只被授予<span class="highlight">完成其工作所需的最少權限</span>。這能限制一旦帳號被入侵所造成的損害。理解<span class="chinese-proper-noun">僅知原則</span> (<span class="english-fullname">Need-to-Know Principle</span>)：對資訊的存取應基於執行特定職責的<span class="highlight">實際需求</span>，即使已具備權限也不應存取無關資訊。這兩者是<span class="chinese-proper-noun">縱深防禦</span>和<span class="chinese-proper-noun">零信任架構</span>的<span class="highlight">核心原則</span> (Q11 I21)。
+                         對應能力：資訊安全管理概論 K13, K14, 資訊安全規劃實務 K05, K10
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-05</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">身分驗證方法：密碼</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">密碼</span>是最常見的<span class="chinese-proper-noun">身分驗證</span>方法，但也存在<span class="highlight">弱點</span>（如易被猜測、字典攻擊、<span class="chinese-proper-noun">憑證填充</span> - Q1 I21）。掌握<span class="highlight">強密碼政策</span>的要求（長度、複雜度、避免個人資訊/常用詞 - Q1 I21, Q23 I21），以及<span class="highlight">安全儲存密碼</span>的重要性（應使用<span class="highlight">雜湊</span>和<span class="highlight">鹽</span>）。
+                          對應能力：資訊安全管理概論 K05, K13, 資訊安全規劃實務 K05
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-06</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">身分驗證方法：<span class="chinese-proper-noun">多因子驗證</span> (<span class="english-abbr">MFA</span>/<span class="english-abbr">2FA</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         掌握<span class="chinese-proper-noun">多因子驗證</span> (<span class="english-fullname">Multi-Factor Authentication</span>, <span class="english-abbr">MFA</span>) 要求使用者提供<span class="highlight">來自兩個或多個不同類型</span>的驗證因素來證明身份。三個主要類型是：<span class="highlight">你知道的</strong> (如密碼)、<span class="highlight">你擁有的</strong> (如手機收到的 <span class="english-abbr">OTP</span>, 硬體令牌) 和<span class="highlight">你本身具備的</strong> (如指紋、人臉辨識)。理解<span class="english-abbr">MFA</span> 能顯著<span class="highlight">提升帳號安全</span>，對抗<span class="chinese-proper-noun">憑證填充</span>等攻擊 (Q1 I21, Q23 I21, Q39 I22)。
+                         對應能力：資訊安全管理概論 K05, K13, K14, 資訊安全規劃實務 K05, K13
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-07</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">使用者<span class="chinese-proper-noun">存取管理生命週期</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">使用者帳號和權限管理</span>是一個<span class="highlight">持續的生命週期</span>，包括<span class="highlight">帳號創建</span> (Provisioning)、<span class="highlight">權限分配</span>、<span class="highlight">定期權限審查</span>、<span class="highlight">帳號變更</span> (如調職時更新權限) 和<span class="highlight">帳號停用/刪除</span> (Deprovisioning，當員工離職時 - Q16 I21 關於 ZTA 提到的身份治理)。確保流程<span class="highlight">及時、安全</span>是避免非授權存取的關鍵。
+                          對應能力：資訊安全管理概論 K13, K14, 資訊安全規劃實務 K05
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-08</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">遠端存取控制</span>與安全通道</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解允許<span class="highlight">從外部網路存取組織內部資源</span>所帶來的<span class="highlight">高風險</span>。掌握<span class="highlight">遠端存取的安全措施</span>，包括使用<span class="chinese-proper-noun">虛擬私人網路</span> (<span class="english-fullname">Virtual Private Network</span>, <span class="english-abbr">VPN</span> - Q18 I21) 或其他<span class="highlight">加密通道</span>（如 <span class="english-abbr">SSH</span>, <span class="english-fullname">TLS</span>）來保護傳輸過程的<span class="chinese-proper-noun">機密性</span>和<span class="chinese-proper-noun">完整性</span>。結合<span class="chinese-proper-noun">強身分驗證</span>（如<span class="chinese-proper-noun">多因子驗證</span>）和<span class="chinese-proper-noun">最小權限原則</span>。
+                         對應能力：資訊安全管理概論 K14, K18, 資訊安全規劃實務 K05
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="1" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-09</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">特權存取管理</span> (<span class="english-abbr">PAM</span>)</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">特權帳號</span>（如管理員、<span class="english-fullname">root</span>）擁有<span class="highlight">對系統的廣泛控制權</span>，因此是<span class="highlight">高風險目標</span>。掌握<span class="chinese-proper-noun">特權存取管理</span> (<span class="english-fullname">Privileged Access Management</span>, <span class="english-abbr">PAM</span>) 的目的：<span class="highlight">集中管理、控制、監控和記錄特權帳號的使用</span>。措施包括<span class="highlight">特權帳號保險箱</span>、<span class="highlight">即時權限授予</span> (<span class="english-fullname">Just-In-Time Access</span>) 和<span class="highlight">會話錄影</span>。
+                        對應能力：資訊安全管理概論 K13, K14, 資訊安全規劃實務 K05
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="1" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-10</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">資料存取控制</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解針對<span class="highlight">資料本身</span>實施<span class="chinese-proper-noun">存取控制</span>的<span class="highlight">重要性</span>。這與應用程式或系統層面的存取控制不同。措施包括<span class="highlight">資料分類</span>（根據敏感度），基於<span class="highlight">資料分類標籤</span>或<span class="highlight">使用者屬性</span>來限制存取權限，以及<span class="chinese-proper-noun">資料外洩防護</span> (<span class="english-fullname">Data Loss Prevention</span>, <span class="english-abbr">DLP</span> - Q12 I22) 阻止敏感資料未經授權傳輸。
+                         對應能力：資訊安全管理概論 K11, K13, 資訊安全防護實務 K06
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="1" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-11</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">存取控制<span class="chinese-proper-noun">日誌記錄與監控</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">記錄所有存取嘗試</span> (成功和失敗) 和<span class="highlight">權限變更</span>的<span class="highlight">重要性</span>。這些<span class="chinese-proper-noun">稽核日誌</span>是<span class="highlight">偵測異常活動</span> (<span class="chinese-proper-noun">事中控制</span> - Q4 I21)、<span class="highlight">支持安全事件調查和取證</span>的<span class="highlight">關鍵證據</span>。了解需要對這些日誌進行<span class="highlight">定期審查和監控</span>，通常使用<span class="chinese-proper-noun">SIEM</span>等工具。
+                          對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 2: 縱深防禦 (Defense in Depth) -->
+            <div class="focus-card" data-category="2" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-12</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span> (<span class="english-fullname">Defense in Depth</span>) 的定義與理念</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">縱深防禦</span>是一種<span class="highlight">多層次的資安策略</span>，其核心理念是<span class="highlight">沒有單一的防禦措施是完美無瑕的</span>。透過在系統、網路和<span class="highlight">組織層面</span>建置<span class="highlight">多個相互獨立的防禦層</span>，即使攻擊者突破一層防線，也還需要面對下一層的挑戰。
+                        對應能力：資訊安全管理概論 K14, 資訊安全規劃實務 K01, K05
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="2" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-13</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>的<span class="highlight">主要目標</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        <span class="chinese-proper-noun">縱深防禦</span>的目標不是讓攻擊變得不可能，而是<span class="highlight">增加攻擊者的難度、時間和成本</span>。透過多層防禦，可以<span class="highlight">減緩攻擊進程</span>，提供<span class="highlight">更多時間來偵測攻擊</span> (<span class="chinese-proper-noun">事中控制</span> - Q4 I21) 並<span class="highlight">啟動應變措施</span> (<span class="chinese-proper-noun">事後控制</span>)。
+                        對應能力：資訊安全管理概論 K08, K14, K15, 資訊安全規劃實務 K08, K16
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="2" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-14</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>的<span class="highlight">三種核心控制層</span>：物理、技術、管理</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">縱深防禦</span>涵蓋了組織的各個層面：<span class="highlight">物理安全</span> (保護實體資產和場所，如圍牆、鎖、監控 - Q20 I21)、<span class="highlight">技術安全</span> (透過硬體和軟體控制來保護系統和資料，如防火牆、加密、存取控制 - Q18 I21, Q23 I21) 和<span class="highlight">管理安全</span> (透過政策、程序和人員控制，如資安政策、教育訓練、職務區隔 - Q10 I21, Q26 I21)。這三個層面必須<span class="highlight">相互協調</span> (Q9 I21)。
+                         對應能力：資訊安全管理概論 K10, K12, K13, K14, K18, 資訊安全規劃實務 K01, K05, K10, K16
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="2" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-15</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>的<span class="highlight">技術層次</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          技術層面的<span class="chinese-proper-noun">縱深防禦</span>可以進一步細分，例如：<span class="highlight">周邊安全</span> (防火牆、IDS/IPS - Q4 I21)、<span class="highlight">網路安全</span> (VLANs, 微隔離 - Q11 I21, Q48 ISMS_建置)、<span class="highlight">主機安全</span> (OS patching, AV, HIPS - Q23 I22)、<span class="highlight">應用程式安全</span> (安全編碼, WAF - Q13 I22, Q26 I22)、<span class="highlight">資料安全</span> (加密, DLP - Q12 I22)。每個層次都有對應的<span class="chinese-proper-noun">控制措施</span>。
+                          對應能力：資訊安全管理概論 K14, K15, K16, 資訊安全規劃實務 K05, K06, K07, K08, K09
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="2" data-stars="4">
+                  <div class="focus-id">#ACDOSOD-16</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>與<span class="chinese-proper-noun">零信任架構</span> (<span class="english-abbr">ZTA</span>) 的關聯</div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      理解<span class="chinese-proper-noun">零信任架構</span>是<span class="chinese-proper-noun">縱深防禦</span>理念在當代網路環境下的<span class="highlight">演進和強化</span>。它強調<span class="highlight">不信任內部網路</span>，每次存取都需要<span class="highlight">嚴格驗證和授權</span>，並<span class="highlight">持續監控</span>。雖然側重點不同 (ZTA 強調身份和存取，縱深防禦強調層次)，但兩者都強調<span class="highlight">沒有單一防線</span>，需要<span class="highlight">多種控制措施協同工作</span> (Q11 I21, Q17 I21, Q29 I21, Q31 I21)。
+                      對應能力：資訊安全管理概論 K14, 資訊安全規劃實務 K01, K05
+                  </div>
+              </div>
+             <div class="focus-card" data-category="2" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-17</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>中的<span class="highlight">協同與可見性</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         有效的<span class="chinese-proper-noun">縱深防禦</span>不僅是疊加控制措施，更需要這些控制措施之間的<span class="highlight">協同工作</span>和<span class="highlight">提高可見性</span>。例如，防火牆的日誌可以送給 <span class="english-abbr">SIEM</span> 進行關聯分析，<span class="english-abbr">IDS</span> 的告警可以觸發<span class="chinese-proper-noun">應變流程</span>。這有助於<span class="highlight">更快地偵測和應對攻擊</span>。
+                         對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08, K16
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="2" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-18</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">縱深防禦</span>與<span class="chinese-proper-noun">風險管理</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          <span class="chinese-proper-noun">縱深防禦</span>策略是根據<span class="chinese-proper-noun">風險評估</span>結果來規劃和實施的。風險較高的資產或系統應獲得<span class="highlight">更多層</span>或<span class="highlight">更強大</span>的防禦。<span class="chinese-proper-noun">風險降低</span> (<span class="english-fullname">Risk Mitigation</span>) 通常是透過實施<span class="chinese-proper-noun">縱深防禦</span>中的各種控制措施來達成。
+                          對應能力：資訊安全管理概論 K04, K11, K14, 資訊安全規劃實務 K03, K11
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 3: 職務區隔 (Separation of Duties) -->
+            <div class="focus-card" data-category="3" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-19</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span> (<span class="english-fullname">Separation of Duties</span>, <span class="english-abbr">SoD</span>) 的定義與目的</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">職務區隔</span>是一種<span class="highlight">管理控制措施</span>，其<span class="highlight">核心目的</span>是<span class="highlight">防止單一人員濫用權限</strong>，透過將<span class="highlight">一項關鍵業務流程的不同步驟</span>分配給<span class="highlight">不同人員</span>來減少<span class="highlight">舞弊、欺詐或重大錯誤</span>的風險。
+                         對應能力：資訊安全管理概論 K10, 資訊安全規劃實務 K01, K10
+                     </div>
+                 </div>
+            </div>
+            <div class="focus-card" data-category="3" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-20</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span>需要分開的<span class="highlight">衝突任務</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        識別<span class="highlight">需要進行職務區隔</span>的<span class="highlight">衝突任務類型</span>。常見的衝突點包括：<span class="highlight">啟動</strong>某項活動、<span class="highlight">授權</strong>該活動、<span class="highlight">執行</strong>活動以及<span class="highlight">記錄</strong>或<span class="highlight">保管</strong>相關資產。例如，負責支付的人員不應同時負責記錄支付交易。
+                        對應能力：資訊安全管理概論 K10, 資訊安全規劃實務 K01
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-21</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span>的實施考量</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解實施<span class="chinese-proper-noun">職務區隔</span>需要識別關鍵業務流程，分析其中可能存在的<span class="highlight">舞弊或錯誤風險</span>，並將衝突的步驟分配給<span class="highlight">不同的人員或部門</span>。實施時需考慮組織規模、資源和流程特性。
+                         對應能力：資訊安全管理概論 K10, 資訊安全規劃實務 K01
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-22</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span>不足時的<span class="chinese-proper-noun">補償性控制</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          掌握在<span class="highlight">小型組織</span>或因其他限制導致<span class="chinese-proper-noun">職務區隔</span>難以完全實施時，需要實施<span class="highlight">補償性控制措施</span> (<span class="english-fullname">Compensating Controls</span>) 來<span class="highlight">降低風險</span> (Q10 I21)。常見的補償性控制包括<span class="highlight">加強的監督</span> (<span class="chinese-proper-noun">管理監督</span> - Q10 I21)、<span class="highlight">詳細的日誌記錄</span>和<span class="highlight">獨立的稽核軌跡審查</span> (<span class="chinese-proper-noun">稽核存底</span> - Q10 I21, Q54 ISMS_建置)、<span class="highlight">定期盤點</strong>等。
+                          對應能力：資訊安全管理概論 K10, K15, 資訊安全規劃實務 K01, K08
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-23</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span>與<span class="chinese-proper-noun">最小權限原則</span>的關聯</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">職務區隔</span>和<span class="chinese-proper-noun">最小權限原則</span>都是重要的<span class="chinese-proper-noun">存取控制</span>和<span class="chinese-proper-noun">管理控制</span>。它們<span class="highlight">相互補充</strong>：<span class="chinese-proper-noun">最小權限</strong>限制個人能對資源<span class="highlight">做什麼</span>；<span class="chinese-proper-noun">職務區隔</strong>限制個人能對<span class="highlight">一項業務流程做完整個流程</span>。兩者結合使用能更有效地降低風險。
+                          對應能力：資訊安全管理概論 K10, K13, K14, 資訊安全規劃實務 K01, K05
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="3" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-24</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">職務區隔</span>的稽核與監控</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解需要<span class="highlight">定期稽核和監控</span>是否<span class="highlight">有效實施了職務區隔</span>。這包括審查<span class="highlight">使用者權限分配</span>、<span class="highlight">審核敏感交易的日誌</span>、以及<span class="highlight">檢查是否存在權限衝突</span>或實際執行了被區隔任務的情況。這與<span class="chinese-proper-noun">補償性控制</span>中的<span class="chinese-proper-noun">稽核審查</span>緊密相關。
+                         對應能力：資訊安全管理概論 K10, K15, 資訊安全規劃實務 K01, K08
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Category 4: 相關管理控制與流程 -->
+            <div class="focus-card" data-category="4" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-25</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">資訊安全<span class="chinese-proper-noun">日誌記錄</span> (<span class="english-fullname">Logging</span>) 與<span class="chinese-proper-noun">監控</span> (<span class="english-fullname">Monitoring</span>)</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="highlight">日誌記錄和監控</span>是資安管理中<span class="highlight">不可或缺的環節</span>，用於<span class="highlight">偵測、分析和回應事件</span>。需要記錄<span class="highlight">關鍵系統和使用者活動</span>、<span class="chinese-proper-noun">存取嘗試</span>、<span class="chinese-proper-noun">系統錯誤</span>等。了解<span class="highlight">集中收集日誌</span>（如使用 <span class="english-abbr">SIEM</span>）、<span class="highlight">保護日誌完整性</span>和<span class="highlight">定期審查監控告警</span>的<span class="highlight">重要性</span> (Q4 I21, Q5 I22 情境, Q16 I21, Q22 I21, Q36 I21)。
+                        對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="4" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-26</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">資訊安全事件管理</span>流程</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          掌握<span class="chinese-proper-noun">資訊安全事件</span>發生後的<span class="highlight">應變流程</span>：<span class="highlight">準備</span>（建立應變計畫、團隊）、<span class="highlight">偵測與分析</span>（透過日誌、監控、告警）、<span class="highlight">圍堵</span>（隔離受影響系統）、<span class="highlight">根除</span>（移除威脅）、<span class="highlight">復原</span>（恢復業務運作）和<span class="highlight">事後活動</span>（總結經驗、改進計畫）。理解<span class="highlight">快速、有效應變</span>以<span class="highlight">降低損害</span>的重要性 (Q8 I21, Q19 I21)。
+                          對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08, K16
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-27</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">業務持續性</span>與<span class="chinese-proper-noun">災難復原</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">業務持續性管理</span> (<span class="english-fullname">BCM</span>) 確保在<span class="highlight">中斷事件</strong>後能維持<span class="highlight">關鍵業務功能</strong>，而<span class="chinese-proper-noun">災難復原</span> (<span class="english-abbr">DR</span>) 專注於<span class="highlight">技術系統的復原</span>。了解<span class="highlight">RTO</span> (<span class="english-fullname">Recovery Time Objective</span>) 和<span class="highlight">RPO</span> (<span class="english-fullname">Recovery Point Objective</span>) 等概念，以及<span class="highlight">定期測試和維護</span> <span class="english-abbr">BCM</span>/<span class="english-abbr">DRP</span> 計畫的<span class="highlight">重要性</span> (Q10 I21)。
+                         對應能力：資訊安全管理概論 K08, K12, 資訊安全規劃實務 K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-28</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">資訊安全意識和教育訓練</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          認識到<span class="highlight">人是資安防線中最薄弱的一環</span>，也是最重要的一環。理解<span class="highlight">定期且有系統地進行資安意識宣導和教育訓練</span>對於提高員工對<span class="highlight">政策、程序</span>的了解，<span class="highlight">識別和避免常見威脅</span>（如<span class="chinese-proper-noun">社交工程</span> - Q26 I21），以及培養<span class="highlight">良好資安行為</span>的<span class="highlight">重要性</span> (Q3 I21, Q8 I21)。
+                          對應能力：資訊安全管理概論 K10, K18, 資訊安全規劃實務 K01, K16
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-29</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">資訊安全<span class="chinese-proper-noun">內部稽核</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          掌握<span class="english-abbr">ISMS</span> <span class="chinese-proper-noun">內部稽核</span>是<span class="highlight">ISMS</span> 持續改進的<span class="highlight">重要機制</span>。理解<span class="highlight">稽核的目的</span>：<span class="highlight">評估 ISMS 是否符合 ISO 27001 要求、組織政策、程序以及法規要求</span>，並檢查<span class="highlight">控制措施是否有效實施</span>。了解<span class="highlight">稽核流程</span>（計畫、準備、執行、報告、追蹤矯正措施）。
+                          對應能力：資訊安全管理概論 K09, K10, K15, 資訊安全規劃實務 K01
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-30</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="english-abbr">ISMS</span> <span class="chinese-proper-noun">管理審查</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">管理審查</span>是由<span class="highlight">最高管理階層</span>定期進行的<span class="highlight">正式活動</span>，用於<span class="highlight">評估 ISMS 的持續適宜性、充分性和有效性</span>。審查內容包括內部稽核結果、事件分析、風險狀態、績效指標、外部變更等。輸出是<span class="highlight">改進的決策和行動項</span>。
+                         對應能力：資訊安全管理概論 K09, K10, K15, 資訊安全規劃實務 K01
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="3">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-31</div>
+                      <div class="focus-importance">★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">矯正措施與不符合項處理</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解在<span class="highlight">稽核、審查、事件處理</span>等過程中發現<span class="highlight">不符合 ISMS 要求</span>或<span class="highlight">存在問題</span>時，需要記錄為<span class="highlight">不符合項</span> (<span class="english-fullname">Non-conformity</span>)。應對其進行<span class="highlight">根本原因分析</span>，<span class="highlight">規劃和實施矯正措施</span> (<span class="english-fullname">Corrective Action</span>) 以消除原因並防止再發。對矯正措施的<span class="highlight">有效性需要驗證</span>。
+                          對應能力：資訊安全管理概論 K09, K10
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="4" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-32</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">績效評估與衡量</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="highlight">定義和衡量 ISMS 績效指標</span> (<span class="english-abbr">KPIs</span>) 對於評估<span class="english-abbr">ISMS</span> 運作<span class="highlight">是否有效</span>、控制措施是否達到預期目標的<span class="highlight">重要性</span>。指標可以包括事件數量、修補時間、訓練參與率、稽核發現數量等。績效數據是<span class="chinese-proper-noun">管理審查</span>的輸入。
+                          對應能力：資訊安全管理概論 K09, K15, 資訊安全規劃實務 K01
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 5: 資安治理與框架關聯 -->
+             <div class="focus-card" data-category="5" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-33</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">資訊安全治理</span> (<span class="english-fullname">Information Security Governance</span>) 的要素</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">資訊安全治理</span>涉及建立並維護一個<span class="highlight">框架</span>，以確保組織的<span class="highlight">資訊安全</span>策略與<span class="highlight">業務目標一致</span>，<span class="highlight">風險得到管理</span>，並滿足<span class="highlight">法規要求</span>。要素包括領導承諾、策略方向、角色職責、風險管理、資源管理和績效衡量。
+                         對應能力：資訊安全管理概論 K09, K10, 資訊安全規劃實務 K01
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-34</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="english-abbr">ISO</span>/<span class="english-abbr">IEC</span> 27001 在資安管理實務中的角色</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解 <span class="english-abbr">ISO</span>/<span class="english-abbr">IEC</span> 27001 提供了一個<span class="highlight">通用的、基於風險</span>的<span class="highlight">管理體系標準</span>，幫助組織<span class="highlight">系統化地</span>規劃、實施和改進資安管理。其<span class="english-fullname">Annex A</span> 的控制措施是許多資安實務領域（如<span class="chinese-proper-noun">存取控制</span>、物理安全、營運安全）的<span class="highlight">重要參考</span>。
+                         對應能力：資訊安全管理概論 K09, K10, 資訊安全規劃實務 K01
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="5" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-35</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">零信任架構</span> (<span class="english-abbr">ZTA</span>) 與傳統<span class="chinese-proper-noun">周邊安全模型</span>的差異</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解傳統安全模型基於<span class="highlight">網路邊界</span>，一旦進入內部就被<span class="highlight">隱式信任</span> (<span class="english-fullname">Implicit Trust Zone</span> - Q17 I21)。<span class="chinese-proper-noun">零信任</span>則<span class="highlight">消除信任邊界</span>，要求<span class="highlight">對所有存取請求</strong> (無論來自內部或外部) 進行<span class="highlight">驗證和授權</span>。這對<span class="chinese-proper-noun">存取控制</span>、<span class="chinese-proper-noun">微隔離</span> (<span class="english-fullname">Micro-Segmentation</span> - Q11 I21, Q48 ISMS_建置) 和<span class="highlight">持續監控</span>提出了更高要求。
+                          對應能力：資訊安全管理概論 K14, 資訊安全規劃實務 K01, K05
+                      </div>
+                  </div>
+             </div>
+            <div class="focus-card" data-category="5" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-36</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="english-abbr">NIST CSF</span> 網路安全框架</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解 <span class="english-abbr">NIST CSF</span> (<span class="english-fullname">Cybersecurity Framework</span>) 作為<span class="highlight">另一種廣泛使用的資安框架</span>，提供了一個<span class="highlight">靈活、基於風險</span>的方法來管理網路安全。理解其<span class="highlight">核心功能</span> (Identify, Protect, Detect, Respond, Recover) 以及 <span class="highlight">2.0 版新增的 Govern 功能</span> (<span class="chinese-proper-noun">治理</span> - Q14 I21, Q15 I21) 如何強調資安治理在框架中的重要性。
+                        對應能力：資訊安全規劃實務 K01, K02
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="5" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-37</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">零信任架構</span> (<span class="english-abbr">ZTA</span>) 的<span class="english-fullname">Enhanced Identity Governance</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="english-abbr">ZTA</span> 強調<span class="highlight">基於身份的控制</span>，並將<span class="highlight">身份管理與其他上下文信息結合</span>進行授權判斷。這包括考慮<span class="highlight">使用者、設備狀態</span>、<span class="highlight">資產內容</span>以及<span class="highlight">環境因素</span>等來決定存取是否允許 (Q15 I22)。這強化了<span class="chinese-proper-noun">存取控制</span>的精細度和動態性。
+                          對應能力：資訊安全規劃實務 K05, K13
+                      </div>
+                  </div>
+             </div>
+
+            <!-- Category 6: 實務應用與案例 -->
+            <div class="focus-card" data-category="6" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-38</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">憑證填充攻擊</span> (<span class="english-fullname">Credential Stuffing</span>) 與防範</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">憑證填充攻擊</span>是攻擊者利用在<span class="highlight">其他網站洩漏的使用者名稱和密碼組合</span>，<span class="highlight">自動化嘗試登入</strong>大量<span class="highlight">其他網站</span>。這類攻擊的防範措施包括<span class="chinese-proper-noun">多因子驗證</span> (<span class="english-abbr">MFA</span> - <span class="highlight">最有效</span>，Q1 I21)、<span class="highlight">監控異常登入行為</span>、使用<span class="highlight">驗證碼</span> (<span class="english-fullname">Captcha</span>) 等。提高<span class="chinese-proper-noun">密碼複雜度</span>效果<span class="highlight">較有限</span> (Q1 I21)。
+                         對應能力：資訊安全技術概論 K09, K13, 資訊安全規劃實務 K05, K13
+                     </div>
+                 </div>
+            </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-39</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic">勒索軟體攻擊應變中的<span class="chinese-proper-noun">事後控制</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解針對<span class="chinese-proper-noun">勒索軟體</span>感染 (<span class="english-fullname">Ransomware Attack</span> - Q26 I21 案例) 等事件，除了<span class="chinese-proper-noun">事中偵測</span>，<span class="chinese-proper-noun">事後復原</span>是關鍵的<span class="chinese-proper-noun">事後控制</span>。這主要依賴於<span class="highlight">有效且最新的備份</span>以及<span class="highlight">經過測試的復原流程</span> (Q26 I21 案例提到缺乏備份)。其他如員工訓練是<span class="chinese-proper-noun">事前控制</span>。
+                          對應能力：資訊安全管理概論 K08, K12, K15, K18, 資訊安全規劃實務 K08, K16
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="5">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-40</div>
+                      <div class="focus-importance">★★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">供應鏈攻擊</span>中的<span class="chinese-proper-noun">第三方風險管理</span></div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">供應鏈攻擊</span>是透過<span class="highlight">入侵外部合作夥伴</strong>（如<span class="chinese-proper-noun">委外廠商</span>、<span class="chinese-proper-noun">軟體供應商</span>）來攻擊組織。防範此類攻擊需要<span class="highlight">加強第三方風險管理</span>，包括<span class="highlight">供應商盡職調查</span> (Q5 I21)、<span class="highlight">合約中的資安要求</span> (Q6 I21, Q31)、<span class="highlight">監控第三方資安表現</span>，以及針對<span class="highlight">軟體供應鏈</span>的安全措施（<span class="chinese-proper-noun">SBOM</span>, <span class="chinese-proper-noun">弱點管理</span> - Q37-Q40 I22 題組）。
+                          對應能力：資訊安全管理概論 K10, K16, K17, 資訊安全規劃實務 K01, K05, K12, K13
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-41</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">Web</span> 應用程式常見<span class="chinese-proper-noun">弱點</span>與防護</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解針對 <span class="english-abbr">Web</span> 應用程式的<span class="highlight">常見攻擊手法</span>，例如<span class="english-fullname">SQL Injection</span> (Q16 I21, Q38 I22)、<span class="english-abbr">XSS</span>、<span class="english-fullname">Command Injection</span> (Q3 I22)、<span class="english-fullname">LFI</span> (Q5 I22, Q38 I22)、<span class="chinese-proper-noun">檔案上傳漏洞</span> (Q3 I22, Q35 I22)。掌握相應的<span class="highlight">技術控制措施</span>：<span class="chinese-proper-noun">輸入驗證與過濾</span> (<span class="english-fullname">Filter Input</span>, <span class="english-fullname">Prepared Statement</span> - Q3 I22)、<span class="chinese-proper-noun">輸出編碼</span> (<span class="english-fullname">Escape Output</span> - Q3 I22)、<span class="chinese-proper-noun">檔案類型和內容驗證</span> (Q3 I22, Q35 I22)、<span class="chinese-proper-noun">目錄權限設定</span> (Q3 I22, Q35 I22)、使用<span class="chinese-proper-noun">WAF</span> (Q13 I22)。
+                         對應能力：資訊安全技術概論 K07, K08, K09, S10, S15
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-42</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">系統<span class="chinese-proper-noun">配置錯誤</span> (<span class="english-fullname">Security Misconfiguration</span>) 的風險與應對</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">配置錯誤</span>是<span class="english-abbr">OWASP</span> <span class="english-abbr">Top</span> 10 中常見的<span class="chinese-proper-noun">弱點</span>類型之一 (Q32 I22 提到)。這可能發生在<span class="highlight">雲端服務</span> (Q3 I21 案例)、<span class="highlight">資料庫</span> (Q40 I22 案例提到 MySQL 未限 IP)、<span class="highlight">網路設備</span>或<span class="highlight">應用程式</span>中。防範措施包括<span class="highlight">安全基準設定</span>、<span class="chinese-proper-noun">自動化安全掃描</span>、<span class="chinese-proper-noun">定期配置審查</span>和<span class="chinese-proper-noun">變更管理</span> (Q21 I21)。
+                        對應能力：資訊安全技術概論 K06, K07, K08, 資訊安全規劃實務 K05, K11
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-43</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">針對<span class="chinese-proper-noun">AI 模型</span>的安全測試</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        了解針對<span class="chinese-proper-noun">AI 模型</span>本身或其<span class="highlight">API</span> 可能存在的<span class="chinese-proper-noun">弱點</span>進行安全測試的<span class="highlight">重要性</span>。這包括<span class="highlight">輸入驗證</span> (<span class="english-abbr">API</span> 測試 - Q31 I22)、<span class="highlight">對抗性攻擊</span> (<span class="english-fullname">Adversarial Attack</span>) 的韌性測試、以及<span class="highlight">模型的行為分析</span> (Q31 I22)。這屬於較新的<span class="chinese-proper-noun">應用安全</span>領域。
+                        對應能力：資訊安全技術概論 K08, S10, S15
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-44</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">風險評估與<span class="chinese-proper-noun">風險處理</span>的<span class="highlight">實務考量</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解在實際進行<span class="chinese-proper-noun">風險評估與處理</span>時，除了理論框架外，還需要考量<span class="highlight">組織的業務特性、可用資源</span>（人力、預算、時間 - Q1 I22）、<span class="highlight">技術環境</span>以及<span class="highlight">相關法規要求</span> (Q27 I21)。選擇<span class="chinese-proper-noun">風險處理</span>方式時，應權衡<span class="highlight">成本與效益</span> (Q27 I21, Q33 I21)。
+                         對應能力：資訊安全管理概論 K03, K04, K08, K11, K17, 資訊安全規劃實務 K03, K11, S04, S14
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-45</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span> (<span class="english-fullname">Penetration Testing</span>) 的目的與類型</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        掌握<span class="chinese-proper-noun">滲透測試</span>是一種<span class="highlight">主動式安全評估</span>方法，模擬攻擊者行為，以<span class="highlight">識別系統中實際可被利用的弱點</span>。了解不同類型（黑箱、灰箱、白箱）及其<span class="highlight">目的</span>。滲透測試是<span class="chinese-proper-noun">SSDLC</span> 中重要的<span class="chinese-proper-noun">安全測試</span>環節，也有助於評估<span class="chinese-proper-noun">縱深防禦</span>的效果 (Q20 I22, Q28 I22, Q38 I22 題組)。
+                        對應能力：資訊安全技術概論 K08, 資訊安全防護實務 K08, S10, S15
+                    </div>
+                </div>
+            </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-46</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">弱點掃描</span> (<span class="english-fullname">Vulnerability Scan</span>) 與<span class="chinese-proper-noun">弱點管理</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">弱點掃描</span>是使用<span class="highlight">自動化工具</strong>來<span class="highlight">識別系統中已知安全弱點</span>的過程 (Q4 I21)。了解<span class="chinese-proper-noun">弱點管理</span>是一個<span class="highlight">持續過程</span>，包括<span class="highlight">掃描、評估、修補</span> (<span class="chinese-proper-noun">Patching</span>) 和<span class="highlight">追蹤</span>。並非所有弱點都需要立即修補，需根據<span class="highlight">風險評估</span>決定<span class="highlight">優先級</span>和<span class="highlight">修補計畫</span> (Q1 I22)。
+                         對應能力：資訊安全技術概論 K08, 資訊安全防護實務 K08, S11
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="3">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-47</div>
+                    <div class="focus-importance">★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">資訊<span class="chinese-proper-noun">去識別化</span> (<span class="english-fullname">De-identification</span>)</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">去識別化</span>是將<span class="highlight">個人資料移除識別性資訊</span>的過程，使其無法直接或間接識別特定個人，是<span class="chinese-proper-noun">個資法</span>下的重要<span class="chinese-proper-noun">隱私保護</span>措施。常見技術包括<span class="highlight">遮蔽</span>、<span class="highlight">泛化</span>、<span class="highlight">加鹽雜湊</span>等。
+                        對應能力：資訊安全管理概論 K12, K13, K17
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-48</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">安全開發中的<span class="chinese-proper-noun">輸入驗證與過濾</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解在<span class="highlight">應用程式開發</span>中，對所有來自<span class="highlight">外部的輸入</span>（如使用者輸入、文件上傳、<span class="english-abbr">API</span> 參數）進行<span class="highlight">嚴格驗證和過濾</span>是防止多種攻擊（如<span class="english-fullname">SQL Injection</span>, <span class="english-abbr">XSS</span>, <span class="english-fullname">Command Injection</span>, <span class="english-fullname">LFI</span>）的<span class="highlight">最基礎且重要防線</span>。這比僅在前端過濾更為關鍵 (Q3 I22 提到前端過濾效果差)。
+                        對應能力：資訊安全技術概論 K07, K08, K09, S15
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-49</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic"><span class="chinese-proper-noun">稽核軌跡</span> (<span class="english-fullname">Audit Trail</span>) 在<span class="chinese-proper-noun">事件調查</span>中的作用</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解<span class="chinese-proper-noun">稽核軌跡</span> (<span class="chinese-proper-noun">稽核日誌</span>) 記錄了<span class="highlight">誰在什麼時間對什麼資源做了什麼操作</span>，是<span class="highlight">安全事件發生後進行原因分析、影響範圍評估和取證</span>的<span class="highlight">關鍵證據</span> (Q5 I22 情境)。確保日誌記錄的<span class="highlight">完整性、準確性</span>以及<span class="highlight">安全儲存</span>至關重要。
+                        對應能力：資訊安全管理概論 K08, K15, 資訊安全規劃實務 K08
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="5">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-50</div>
+                     <div class="focus-importance">★★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>中的<span class="chinese-proper-noun">權限提升</span> (<span class="english-fullname">Privilege Escalation</span>) 測試</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">權限提升</span>是攻擊者在攻破系統後，<span class="highlight">獲取比初始立足點更高權限</span>的行為 (Q38 I22 題組情境)。在<span class="chinese-proper-noun">滲透測試</span>中，測試者會模擬此行為，檢查系統是否存在<span class="highlight">配置錯誤</span>、<span class="highlight">弱點</span>或<span class="chinese-proper-noun">存取控制</span>缺陷，使得低權限帳號能執行高權限操作 (Q39 I22)。這與<span class="chinese-proper-noun">最小權限原則</span>和<span class="chinese-proper-noun">存取控制</span>實施的有效性緊密相關。
+                         對應能力：資訊安全技術概論 K07, K08, 資訊安全防護實務 K07, K08, S10, S15
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-header">
+                      <div class="focus-id">#ACDOSOD-51</div>
+                      <div class="focus-importance">★★★★</div>
+                  </div>
+                  <div class="focus-topic-container">
+                      <div class="focus-topic"><span class="chinese-proper-noun">滲透測試</span>中的<span class="chinese-proper-noun">持久化</span> (<span class="english-fullname">Persistence</span>) 技巧</div>
+                  </div>
+                  <div class="focus-details-container">
+                      <div class="details-header">核心概念</div>
+                      <div class="details-content">
+                          理解<span class="chinese-proper-noun">持久化</span>是攻擊者在獲得系統存取權後，<span class="highlight">建立並維持對系統的長期存取能力</span>的技巧 (Q36 I22 題組情境)。常見技巧包括在啟動項、排程任務 (<span class="english-fullname">Cron Jobs</span> - Q36 I22)、服務或使用者配置文件 (<span class="english-abbr">.~/.bashrc</span> - Q36 I22) 中植入後門或反向連接指令。在<span class="chinese-proper-noun">滲透測試</span>中測試這些技巧有助於發現可被攻擊者利用的<span class="chinese-proper-noun">配置錯誤</span>或<span class="chinese-proper-noun">弱點</span>。
+                          對應能力：資訊安全技術概論 K07, K08, 資訊安全防護實務 K07, K08, S10, S15
+                      </div>
+                  </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-id">#ACDOSOD-52</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic"><span class="chinese-proper-noun">誘餌系統</span> (<span class="english-fullname">Honeypot</span>) 與<span class="chinese-proper-noun">誘捕網路</span> (<span class="english-fullname">Honeynet</span>)</div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      理解<span class="chinese-proper-noun">誘餌系統</span>/<span class="chinese-proper-noun">誘捕網路</span>是<span class="chinese-proper-noun">縱深防禦</span>策略中的一種<span class="chinese-proper-noun">事中偵測</span>/<span class="chinese-proper-noun">欺騙</span>控制。它們是<span class="highlight">故意建立的、用於吸引攻擊者</span>的資源，其<span class="highlight">主要目的</strong>是<span class="highlight">監控和分析攻擊者行為</span>、<span class="highlight">了解攻擊手法</span>，並<span class="highlight">將攻擊者從實際生產系統中轉移</span> (Q23 I22)。了解不同類型（單一 <span class="chinese-proper-noun">Honeypot</span> vs <span class="chinese-proper-noun">Honeynet</span>）。
+                      對應能力：資訊安全管理概論 K15, 資訊安全規劃實務 K08
+                  </div>
+              </div>
+             <div class="focus-card" data-category="6" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-53</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">軟體開發安全中的<span class="chinese-proper-noun">原始碼檢測</span> (<span class="english-abbr">SAST</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="chinese-proper-noun">原始碼檢測</span> (<span class="english-fullname">Static Application Security Testing</span>, <span class="english-abbr">SAST</span>) 是一種在<span class="highlight">開發階段</strong>，透過<span class="highlight">分析原始碼</span>來<span class="highlight">識別潛在安全弱點</span> (<span class="chinese-proper-noun">漏洞</span>) 的技術 (Q20 I22)。它屬於<span class="chinese-proper-noun">SSDLC</span> 的一部分，可以在應用程式運行前發現問題。
+                         對應能力：資訊安全技術概論 K08, 資訊安全防護實務 K08, S15
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-54</div>
+                    <div class="focus-importance">★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">識別<span class="chinese-proper-noun">弱點</span>類型：軟體、硬體、零日、網路</div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        能區分不同類型的<span class="chinese-proper-noun">弱點</span>：<span class="highlight">軟體弱點</span> (程式碼缺陷 - Q2 I22, Q32 I22)、<span class="highlight">硬體弱點</span> (硬體或韌體缺陷 - Q2 I22)、<span class="highlight">零日弱點</span> (<span class="english-fullname">Zero-Day Vulnerability</span> - 廠商未知或未發布修補 - Q2 I22) 和<span class="highlight">網路弱點</span> (配置或設計缺陷 - Q2 I22)。理解不同<span class="chinese-proper-noun">弱點</span>需要不同的<span class="chinese-proper-noun">管理和修補</span>方法。
+                        對應能力：資訊安全技術概論 K07, K08, K09
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="5">
+                <div class="focus-header">
+                    <div class="focus-id">#ACDOSOD-55</div>
+                    <div class="focus-importance">★★★★★</div>
+                </div>
+                <div class="focus-topic-container">
+                    <div class="focus-topic">管理<span class="chinese-proper-noun">供應鏈</span>中的<span class="chinese-proper-noun">第三方元件弱點</span></div>
+                </div>
+                <div class="focus-details-container">
+                    <div class="details-header">核心概念</div>
+                    <div class="details-content">
+                        理解在現代軟體開發中，廣泛使用<span class="highlight">第三方元件</span> (<span class="english-fullname">Third-Party Components</span>) 帶來了<span class="highlight">潛在的弱點風險</span> (Q37-Q40 I22 題組)。管理這些風險的措施包括<span class="highlight">盤點使用的第三方元件</span> (Q37 I22)、<span class="highlight">清查其已知弱點</span> (Q37 I22)、<span class="highlight">持續監控新的弱點情資</span> (Q39 I22)、使用<span class="chinese-proper-noun">軟體物料清單</span> (<span class="english-fullname">SBOM</span> - Q40 I22) 以及<span class="highlight">建立應對和修補流程</span>。
+                        對應能力：資訊安全技術概論 K08, K09, 資訊安全防護實務 K08, S11, S13
+                    </div>
+                </div>
+            </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-56</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic"><span class="chinese-proper-noun">誘捕系統</span>/<span class="chinese-proper-noun">誘捕網路</span> (<span class="english-fullname">Honeypots</span>/<span class="english-fullname">Honeynets</span>) 的類型與風險</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解不同類型的<span class="chinese-proper-noun">誘餌系統</span>：<span class="highlight">獨立式</span> (<span class="english-fullname">Standalone</span> - 不連接生產網路，風險最低)、<span class="highlight">連接式</span> (<span class="english-fullname">Connected</span> - 連接到生產環境但有限制，有一定風險)、<span class="highlight">整合式</span> (<span class="english-fullname">Integrated</span> - 模擬生產系統服務，風險最高) (Q23 I22)。理解使用<span class="chinese-proper-noun">誘餌系統</span>的<span class="highlight">風險</span>，如攻擊者可能發現它是誘餌或利用它攻擊生產網路。
+                         對應能力：資訊安全管理概論 K15, 資訊安全規劃實務 K08
+                     </div>
+                 </div>
+             </div>
+             <div class="focus-card" data-category="6" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-57</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">威脅建模 (<span class="english-fullname">Threat Modeling</span>)</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         了解<span class="chinese-proper-noun">威脅建模</span>是一種結構化的過程，用於<span class="highlight">識別、評估和優先排序</strong>系統設計或應用程式中的<span class="highlight">潛在威脅和弱點</span>。常見的威脅建模方法包括 <span class="english-abbr">STRIDE</span> (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege - Q38 I22 提到模式) 和 <span class="english-abbr">DREAD</span> (Damage, Reproducibility, Exploitability, Affected Users, Discoverability - Q38 I22 提到模式)。它通常在<span class="chinese-proper-noun">SSDLC</span> 的早期階段進行。
+                         對應能力：資訊安全技術概論 K07, K08, S10, S11
+                     </div>
+                 </div>
+             </div>
+              <div class="focus-card" data-category="6" data-stars="4">
+                  <div class="focus-id">#ACDOSOD-58</div>
+                  <div class="focus-importance">★★★★</div>
+              </div>
+              <div class="focus-topic-container">
+                  <div class="focus-topic">安全<span class="chinese-proper-noun">配置管理</span>在實務中的應用</div>
+              </div>
+              <div class="focus-details-container">
+                  <div class="details-header">核心概念</div>
+                  <div class="details-content">
+                      理解<span class="chinese-proper-noun">安全配置管理</span>包括<span class="highlight">建立標準化的安全基準</span>，並<span class="highlight">確保所有系統</span> (伺服器、工作站、網路設備、應用程式) <span class="highlight">都依循這些基準進行配置</span>。這有助於<span class="highlight">消除預設弱點</span>、<span class="highlight">不必要服務</span>和<span class="chinese-proper-noun">配置錯誤</span> (Q21 I21, Q42 ACDOSOD)。實務中常使用<span class="highlight">自動化工具</span>進行配置審查和強化。
+                      對應能力：資訊安全管理概論 K14, 資訊安全防護實務 K06
+                  </div>
+              </div>
+             <div class="focus-card" data-category="6" data-stars="3">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-59</div>
+                     <div class="focus-importance">★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">應對<span class="chinese-proper-noun">供應鏈攻擊</span>中的軟體<span class="chinese-proper-noun">修補責任</span></div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解在軟體<span class="chinese-proper-noun">供應鏈</span>中，對於<span class="highlight">第三方元件</span>或<span class="highlight">委外開發軟體</span>中發現的<span class="chinese-proper-noun">安全漏洞</span>，應在<span class="highlight">合約</span>中<span class="highlight">明確供應商或委外廠商的修補責任</span> (Q39 I22)。這確保漏洞被及時修補，降低對組織的風險。
+                         對應能力：資訊安全管理概論 K16, K17, 資訊安全防護實務 K08, S11, S13
+                     </div>
+                 </div>
+             </div>
+            <div class="focus-card" data-category="6" data-stars="4">
+                 <div class="focus-header">
+                     <div class="focus-id">#ACDOSOD-60</div>
+                     <div class="focus-importance">★★★★</div>
+                 </div>
+                 <div class="focus-topic-container">
+                     <div class="focus-topic">雲端環境的<span class="chinese-proper-noun">配置錯誤</span>風險</div>
+                 </div>
+                 <div class="focus-details-container">
+                     <div class="details-header">核心概念</div>
+                     <div class="details-content">
+                         理解<span class="highlight">雲端環境</span>（如 <span class="english-fullname">AWS</span>, <span class="english-fullname">Azure</span>）的<span class="highlight">複雜性</span>容易導致<span class="highlight">配置錯誤</span>，這也是<span class="chinese-proper-noun">雲端安全</span>最常見的<span class="chinese-proper-noun">弱點</span>之一 (Q3 I21 案例提到雲端環境錯誤設定)。常見錯誤包括<span class="highlight">過度開放的儲存桶權限</span>、<span class="highlight">未正確配置的安全群組</span>、<span class="highlight">弱身分驗證</span>、<span class="highlight">未加密的資料</span>等。防範措施包括<span class="highlight">遵循雲端安全基準</span>、使用<span class="highlight">自動化配置審查工具</span>和<span class="chinese-proper-noun">嚴格的變更管理</span>。
+                         對應能力：資訊安全管理概論 K18, 資訊安全規劃實務 K05
+                     </div>
+                 </div>
+             </div>
+
+
+             <!-- Placeholder for No Results -->
+             <div id="noResultsMessage">沒有找到符合條件的重點。</div>
+
+        </div><!-- end focus-points-container -->
+
+        <div class="back-to-top" id="backToTop">↑</div>
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

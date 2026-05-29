@@ -1,0 +1,320 @@
+/* RWD設定，讓整體版面在不同裝置都有良好顯示 */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto; /* Added top/bottom margin */
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+/* Updated Header */
+.header-container {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Darker gradient */
+    color: white;
+    padding: 30px 20px; /* Increased padding */
+    margin: -25px -25px 25px -25px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+.header-container h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.2rem; /* Larger title */
+    font-weight: 600;
+    margin-bottom: 5px; /* Space below title */
+}
+.header-container div { /* Subtitle */
+     font-size: 1.2rem;
+     opacity: 0.9;
+     margin-top: 5px;
+     font-weight: 300; /* Lighter weight */
+}
+
+/* Topic Categories Section (Renamed from Directions) */
+.categories-container { /* Renamed */
+    background-color: #e8f0f5; /* Slightly different blue */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid #5dade2; /* Lighter blue border */
+    border-radius: 5px;
+}
+.categories-title { /* Renamed */
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+.categories-grid { /* Renamed */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+.category-item { /* Renamed */
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #d6e0ea; /* Border matching background */
+}
+.category-item:hover {
+    background-color: #5dade2; /* Lighter blue hover */
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #5dade2;
+}
+.category-number { /* Renamed */
+    width: 30px;
+    height: 30px;
+    background-color: #5dade2; /* Lighter blue number */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+.category-item:hover .category-number {
+    background-color: white;
+    color: #5dade2;
+}
+.category-text { /* Renamed */
+    font-size: 0.95rem;
+}
+
+/* Focus Point Card Styling (Replaces Question Card) */
+.focus-points-container { /* Renamed */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px; /* Increased gap */
+}
+.focus-card { /* Renamed */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0; /* Remove padding here, apply to inner elements */
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1); /* Slightly stronger shadow */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* Ensure inner elements respect border radius */
+}
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.15);
+}
+.focus-header { /* Renamed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px; /* Padding inside header */
+    background-color: #f8f9fa; /* Light header background */
+    border-bottom: 1px solid #e0e0e0;
+}
+.focus-id { /* Renamed */
+    font-weight: bold;
+    color: #5dade2; /* Lighter blue ID */
+    font-size: 1rem;
+    background-color: #e8f0f5; /* Background for ID */
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.focus-importance { /* Renamed */
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.focus-topic-container { /* New container for the main topic */
+     padding: 25px 25px 20px 25px; /* Padding around the topic */
+     border-bottom: 1px dashed #eee; /* Separator line */
+}
+
+.focus-topic { /* Replaces question-content */
+    font-size: 1.5rem; /* Larger font for the topic */
+    font-weight: 600; /* Bolder */
+    margin-bottom: 0; /* Remove margin, handled by container padding */
+    line-height: 1.4;
+    color: #2c3e50; /* Dark blue-grey for topic */
+}
+
+/* Styling for terminology within topic/details */
+/* Chinese proper nouns: Blue, Bold */
+.chinese-proper-noun {
+    color: #0000FF; /* Blue */
+    font-weight: bold;
+}
+/* English abbreviations: Purple, Bold */
+.english-abbr {
+    color: purple;
+    font-weight: bold;
+}
+/* English full names/concepts: Red, Bold */
+.english-fullname {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Details Section Styling (Replaces Explanation) */
+.focus-details-container { /* Renamed */
+    padding: 20px 25px 25px 25px; /* Padding for details */
+    /* background-color: #fdfefe; */ /* Optional subtle background, removing for cleaner look */
+}
+.details-header { /* Renamed */
+    font-weight: bold;
+    margin-bottom: 15px; /* Space below header */
+    color: #34495e;
+    font-size: 1.2rem; /* Slightly larger details header */
+    /* text-transform: uppercase; */ /* Optional styling */
+    letter-spacing: 0.5px; /* Optional spacing */
+    /* border-bottom: 2px solid #5dade2; */ /* Optional underline */
+    /* display: inline-block; */ /* If using underline */
+    /* padding-bottom: 5px; */ /* If using underline */
+}
+.details-content { /* Renamed */
+    line-height: 1.75; /* Increased line height for readability */
+    color: #444;
+    font-size: 1.05rem; /* Slightly larger detail text */
+}
+.details-content ul { /* Style lists if used in details */
+     padding-left: 25px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+ .details-content li {
+     margin-bottom: 8px; /* Space between list items */
+ }
+/* Keyword highlighting */
+.highlight {
+    background-color: #ffff0030; /* Light yellow background */
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+}
+
+/* Controls Section Styling (Adjusted for Focus Points) */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.filter-container, .search-container, .star-filter-container { /* Removed .toggle-explanations */
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 200px;
+}
+ .search-container { flex-grow: 2; }
+.filter-label, .search-label, .star-filter-label {
+    font-weight: 600;
+    margin-right: 10px;
+    white-space: nowrap;
+    color: #555;
+    font-size: 0.95rem;
+}
+select, input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    background-color: white;
+}
+ input[type="text"] { min-width: 180px; }
+button {
+    padding: 10px 18px;
+    background-color: #5dade2; /* Lighter blue buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+button:hover {
+    background-color: #3498db; /* Darker blue hover */
+}
+
+/* RWD Adjustments */
+@media (max-width: 992px) {
+     .controls { flex-direction: column; align-items: stretch; }
+    .filter-container, .search-container, .star-filter-container { width: 100%; flex-grow: 0; }
+     select, input[type="text"] { width: 100%; }
+     button { margin-left: 0; margin-top: 5px; }
+     .search-container button { margin-left: 8px; margin-top: 0; }
+     #searchInput { width: calc(100% - 90px); }
+}
+@media (max-width: 768px) {
+    .container { padding: 15px; }
+    .header-container { padding: 25px 15px; margin: -15px -15px 20px -15px; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .focus-card { padding: 0; } /* Ensure no padding on card itself */
+     .focus-header, .focus-topic-container, .focus-details-container { padding-left: 20px; padding-right: 20px; } /* Adjust inner padding */
+    h1 { font-size: 1.8rem; }
+    .header-container h1 { font-size: 2rem; }
+    .focus-topic { font-size: 1.3rem; }
+    .details-header { font-size: 1.1rem; }
+    .details-content { font-size: 1rem; }
+}
+
+/* Back to Top Button & Progress Bar (No changes needed) */
+.back-to-top {
+    position: fixed; bottom: 25px; right: 25px; background-color: #5dade2; color: white;
+    width: 45px; height: 45px; border-radius: 50%; display: none; justify-content: center;
+    align-items: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, opacity 0.3s, transform 0.3s; z-index: 1000;
+    opacity: 0.8; font-size: 1.2rem;
+}
+.back-to-top:hover { background-color: #3498db; opacity: 1; transform: scale(1.1); }
+.progress-container {
+    width: 100%; height: 5px; background-color: #e8f0f5; position: fixed;
+    top: 0; left: 0; z-index: 1001;
+}
+.progress-bar {
+    height: 5px; background: linear-gradient(90deg, #5dade2, #85c1e9); /* Adjusted gradient */
+    width: 0%; border-radius: 0 2px 2px 0; transition: width 0.1s linear;
+}
+ #noResultsMessage {
+     text-align: center; padding: 20px; color: #777; display: none; font-style: italic;
+ }
+ /* Make sure span formatting doesn't add extra lines */
+ .chinese-proper-noun, .english-abbr, .english-fullname, .highlight {
+     display: inline; /* Prevent block behavior */
+ }
+
+
+/* 10% side margins for desktop */
+@media (min-width: 769px) {
+    body {
+        margin-left: 10% !important;
+        margin-right: 10% !important;
+    }
+}
