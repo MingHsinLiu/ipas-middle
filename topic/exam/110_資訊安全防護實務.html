@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>110年度 中級資訊安全工程師 - 資訊安全防護實務</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>110年度 中級資訊安全工程師</h1>
+            <div>科目2: 資訊安全防護實務</div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-container">
+                <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+                <select id="criterionFilter">
+                     <option value="all">全部內容</option>
+                     <!-- Options will be populated by JS -->
+                 </select>
+            </div>
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+             <div class="toggle-explanations">
+                <button id="toggleExplanations">顯示全部解析</button>
+            </div>
+        </div>
+
+        <div class="criteria-container">
+            <div class="criteria-title">評鑑內容 (點擊篩選)</div>
+            <div class="criteria-grid" id="criteriaGrid">
+                 <!-- Grid items will be populated by JS -->
+            </div>
+        </div>
+
+        <div class="questions-container" id="questionsContainer">
+            <!-- Questions from OCR will be inserted here with explanations and formatting -->
+
+             <!-- Q1 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#1</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">某公司正在研究<span class="term-cn">網路型防火牆</span>(<span class="term-en">Layer 4 Firewall</span>) 如何有效防止<span class="term-cn">網站應用程式</span>(<span class="term-en">Web application</span>)攻擊的方法, 下列敘述何者正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">網路型防火牆</span>可以偵測惡意的網站訪問攻擊</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">網路型防火牆</span><span class="highlight">無法阻擋此類型攻擊</span>, 因為<span class="highlight">連接埠 80, 443 必須開啟</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">如果正確設定, <span class="term-cn">網路型防火牆</span>可阻擋此類型攻擊</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">無須進行設定, <span class="term-cn">網路型防火牆</span>預設能阻擋此類型攻擊</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">網路型防火牆</span>，又稱為<span class="term-cn">狀態檢視防火牆</span> (<span class="term-en">Stateful Firewall</span>) 或 <span class="term-en">Layer 4</span> <span class="term-cn">防火牆</span>，主要運作在 <span class="term-abbr">OSI</span> 模型的<span class="highlight">第四層（傳輸層）</span>。它根據<span class="term-cn">來源IP</span>、<span class="term-cn">目的IP</span>、<span class="term-cn">來源埠號</span>、<span class="term-cn">目的埠號</span>以及<span class="term-cn">連線狀態</span>來過濾封包。<br/>
+                        (A) <span class="term-cn">網路型防火牆</span><span class="highlight">缺乏對應用層（第七層）內容的深度檢測能力</span>，無法有效偵測基於<span class="term-en">HTTP/HTTPS</span> 協定的惡意網站訪問攻擊，例如 <span class="term-abbr">SQL Injection</span> 或 <span class="term-abbr">XSS</span>。<br/>
+                        (B) <span class="term-cn">網站應用程式攻擊</span>（如 <span class="term-abbr">SQL Injection</span>, <span class="term-abbr">XSS</span>）是發生在應用層的攻擊。由於<span class="term-cn">網路型防火牆</span>無法解析應用層的內容，且為了讓<span class="term-cn">網站服務</span>正常運作，通常必須開啟 <span class="term-en">HTTP</span> (<span class="highlight">埠號80</span>) 和 <span class="term-en">HTTPS</span> (<span class="highlight">埠號443</span>)，因此<span class="term-cn">網路型防火牆</span><span class="highlight">無法有效阻擋</span>這類攻擊。這是正確的敘述。<br/>
+                        (C) 即使正確設定 <span class="term-cn">IP</span> 和<span class="term-cn">埠號</span>規則，<span class="term-cn">網路型防火牆</span>也無法理解應用層的攻擊酬載，因此無法阻擋<span class="term-cn">網站應用程式攻擊</span>。<br/>
+                        (D) <span class="term-cn">網路型防火牆</span>預設並不具備阻擋<span class="term-cn">網站應用程式攻擊</span>的能力。需要<span class="term-cn">網頁應用程式防火牆</span> (<span class="term-en">Web Application Firewall</span>, <span class="term-abbr">WAF</span>) 才能有效防禦。<br/>
+                        因此，最正確的描述是(B)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="question-card" data-evaluation-content-id="1.7">
+                <div class="question-header">
+                    <div class="question-id">#2</div>
+                    <div class="evaluation-criterion">1.7 威脅與攻擊手法</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">跨站請求偽造</span>(<span class="term-en">Cross-Site Request Forgery</span>, <span class="term-abbr">CSRF</span> or <span class="term-abbr">XSRF</span>)與<span class="term-cn">跨站腳本攻擊</span>(<span class="term-en">Cross-Site Scripting</span>, <span class="term-abbr">XSS</span>)的比較, 下列敘述何者較正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">兩者都是利用<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>)對<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)的信任</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">兩者都是利用<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)對<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>)的信任</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">XSS</span> 是利用<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)對<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>)的信任, <span class="term-abbr">CSRF</span> 是利用<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>) 對<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)的信任</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">CSRF</span> 是利用<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)對<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>)的信任, <span class="term-abbr">XSS</span> 是利用<span class="term-cn">瀏覽器</span>(<span class="term-en">Browser</span>)對<span class="term-cn">伺服器端</span>(<span class="term-en">Server site</span>)的信任</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">CSRF</span> (<span class="term-cn">跨站請求偽造</span>): 攻擊者<span class="highlight">誘騙已登入的使用者</span>在不知情的情況下，透過他們的<span class="term-cn">瀏覽器</span>向受信任的<span class="term-cn">網站</span>發送<span class="highlight">惡意的請求</span>。伺服器<span class="highlight">信任來自使用者瀏覽器的請求</span>（因為帶有合法的 <span class="term-en">cookie</span> 或<span class="term-cn">會話資訊</span>），因而執行了非使用者本意的操作。因此，<span class="term-abbr">CSRF</span> 利用的是<span class="term-cn">伺服器端</span>對<span class="term-cn">瀏覽器</span>（及其中的驗證狀態）的信任。<br/>
+                        <span class="term-abbr">XSS</span> (<span class="term-cn">跨站腳本攻擊</span>): 攻擊者將<span class="highlight">惡意腳本</span>注入到<span class="highlight">受信任的網站</span>中，當其他使用者瀏覽該網站時，這些惡意腳本會在他們的<span class="term-cn">瀏覽器</span>上執行。<span class="term-cn">瀏覽器</span><span class="highlight">信任來自伺服器端的內容</span>（包括被注入的惡意腳本），因此執行了這些腳本，可能導致<span class="term-cn">會話劫持</span>、資料竊取等。因此，<span class="term-abbr">XSS</span> 利用的是<span class="term-cn">瀏覽器</span>對<span class="term-cn">伺服器端</span>（提供的內容）的信任。<br/>
+                        故(D)的描述是正確的。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#3</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">使用<span class="term-cn">公眾網路</span>上網時應該注意下列哪些事項以防範<span class="term-cn">公眾網路</span>的<span class="term-cn">中間人攻擊</span>(<span class="term-en">Man-In-The-Middle Attack</span>, <span class="term-abbr">MITM</span>)? 1.使用 <span class="term-abbr">WPA3</span> 最新一代<span class="term-abbr">Wi-Fi</span> 安全技術, 保護通訊安全、2.避免瀏覽未加密的網站, 減少資料被竊取風險、3.使用<span class="term-cn">虛擬私人網路</span>(<span class="term-abbr">VPN</span>)連接公司網路或專屬系統、4.<span class="term-cn">網路驗證</span>採用<span class="term-cn">雙因子認證</span>, 減少帳密被竊取的問題</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">1、2</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">1、3</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">2、3</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">3、4</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">中間人攻擊</span> (<span class="term-abbr">MITM</span>) 是指攻擊者<span class="highlight">秘密地中繼或可能竄改</span>兩方之間的通訊。在<span class="term-cn">公眾網路</span>（如公共 <span class="term-abbr">Wi-Fi</span>）環境下，風險尤其高。<br/>
+                        1.  <span class="term-abbr">WPA3</span>：提供了比 <span class="term-abbr">WPA2</span> 更強的<span class="term-cn">無線網路加密</span>和<span class="term-cn">身份驗證</span>機制，可以<span class="highlight">抵抗竊聽</span>和某些 <span class="term-abbr">MITM</span> 攻擊向量，例如使用 <span class="term-en">Simultaneous Authentication of Equals</span> (<span class="term-abbr">SAE</span>) 替換 <span class="term-en">Pre-Shared Key</span> (<span class="term-abbr">PSK</span>)，提高了連線的安全性。這是有效的防護措施。<br/>
+                        2.  避免瀏覽未加密網站：瀏覽使用 <span class="term-en">HTTP</span> 而非 <span class="term-en">HTTPS</span> 的網站時，傳輸內容是<span class="highlight">明文</span>的，容易被 <span class="term-abbr">MITM</span> 竊聽或竄改。雖然使用 <span class="term-en">HTTPS</span> 很重要，但<span class="highlight">避免瀏覽未加密網站本身並不能完全防範所有 MITM</span>，攻擊者仍可能進行 <span class="term-abbr">SSL Stripping</span> 等攻擊。但相較於選項1和3，它更側重於傳輸內容的保護而非連線本身的保護。<br/>
+                        3.  <span class="term-abbr">VPN</span> (<span class="term-cn">虛擬私人網路</span>)：<span class="term-abbr">VPN</span> 會在使用者裝置和 <span class="term-abbr">VPN</span> <span class="term-cn">伺服器</span>之間建立一個<span class="highlight">加密通道</span>。即使在不安全的<span class="term-cn">公眾網路</span>上，透過 <span class="term-abbr">VPN</span> 的流量也是加密的，可以有效<span class="highlight">防止竊聽</span>和基本的 <span class="term-abbr">MITM</span> 攻擊。這是非常有效的防護措施。<br/>
+                        4.  <span class="term-cn">雙因子認證</span> (<span class="term-abbr">2FA</span>/<span class="term-abbr">MFA</span>)：主要用於<span class="highlight">強化身份驗證</span>，防止帳號被盜用，對於防禦<span class="term-cn">網路釣魚</span>或密碼洩露後的帳號接管很有用，但它<span class="highlight">不能直接防止</span>在網路傳輸層發生的 <span class="term-abbr">MITM</span> 竊聽或竄改。<br/>
+                        <br/>
+                        綜合來看，措施1 (<span class="term-abbr">WPA3</span>) 和措施3 (<span class="term-abbr">VPN</span>) 是在<span class="term-cn">公眾網路</span>環境下<span class="highlight">直接針對保護通訊本身、防範竊聽與竄改</span>（<span class="term-abbr">MITM</span> 的核心）最有效的技術手段。措施2是個好習慣但保護層面不同，措施4則針對身份驗證而非傳輸安全。因此，(B) 1、3 是最佳組合。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="question-card" data-evaluation-content-id="1.3">
+                <div class="question-header">
+                    <div class="question-id">#4</div>
+                    <div class="evaluation-criterion">1.3 應用程式安全防護</div>
+                </div>
+                <div class="question-content">關於 <span class="term-abbr">SQL</span> <span class="term-cn">資料庫</span>中常見的攻擊, 下列敘述何者「不」正確?</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">OOB</span> <span class="term-cn">注入攻擊</span>(<span class="term-en">Out of Band</span>), <span class="highlight">屬於 inband 的注入模式</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">SQL</span> <span class="term-cn">注入</span>類型區分成 <span class="term-en">Boolean-based blind SQL injection</span>、<span class="term-en">Error-based SQL injection</span>、<span class="term-en">UNION query SQL injection</span>、<span class="term-en">Stacked queries SQL injection</span>、<span class="term-en">Time-based blind SQL injection</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Error-based SQL injection</span> 屬於 <span class="term-en">inband</span> 的<span class="term-cn">注入</span>模式, 被戲稱盲<span class="term-cn">注入</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">OOB</span> 透過其他傳輸方式來獲得資料, 如: 利用 <span class="term-abbr">DNS</span> 解析協定和電子郵件來竊取<span class="term-cn">資料庫</span>資料</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">SQL Injection</span> (<span class="term-cn">SQL 注入</span>) 是一種常見的<span class="term-cn">網站應用程式</span>攻擊手法。<br/>
+                        <span class="term-abbr">SQL Injection</span> 主要分為三類：
+                        <ul>
+                            <li><span class="term-en">In-band SQL Injection</span>: 攻擊者使用<span class="highlight">相同的通訊通道</span>來發動攻擊和獲取結果。這是最直接的類型，常見的有 <span class="term-en">Error-based</span>（利用錯誤訊息回顯資料）和 <span class="term-en">Union-based</span>（利用 <span class="term-en">UNION</span> 查詢合併結果）。</li>
+                            <li><span class="term-en">Inferential SQL Injection</span> (<span class="term-en">Blind SQL Injection</span>): 攻擊者無法直接看到資料庫的回應，只能根據<span class="highlight">應用程式不同的反應</span>（如頁面是否正常顯示、回應時間長短）來推斷資訊。常見的有 <span class="term-en">Boolean-based</span>（根據真/假條件判斷）和 <span class="term-en">Time-based</span>（根據延遲時間判斷）。</li>
+                            <li><span class="term-en">Out-of-band SQL Injection</span> (<span class="term-abbr">OOB</span>): 攻擊者<span class="highlight">無法透過同一通道取得結果</span>，而是讓資料庫透過<span class="highlight">其他網路通道</span>（如 <span class="term-abbr">DNS</span> 查詢、<span class="term-en">HTTP</span> 請求、<span class="term-abbr">SMB</span> 連線等）將資料傳送出來。</li>
+                        </ul>
+                        (A) <span class="term-abbr">OOB</span> (<span class="term-en">Out of Band</span>) 是利用<span class="highlight">帶外通道</span>傳送資料，與 <span class="term-en">inband</span>（帶內，使用同一通道）相對。因此，說 <span class="term-abbr">OOB</span> 屬於 <span class="term-en">inband</span> 是<span class="highlight">錯誤</span>的。<br/>
+                        (B) 列出的 <span class="term-en">Boolean-based blind</span>, <span class="term-en">Error-based</span>, <span class="term-en">UNION query</span>, <span class="term-en">Stacked queries</span>, <span class="term-en">Time-based blind</span> 都是已知的 <span class="term-abbr">SQL Injection</span> 技術或分類。正確。<br/>
+                        (C) <span class="term-en">Error-based SQL Injection</span> 是利用資料庫的錯誤訊息來<span class="highlight">直接回顯</span>資料，屬於 <span class="term-en">In-band</span> 類型。<span class="term-en">Blind SQL Injection</span> (<span class="term-cn">盲注入</span>) 是指無法直接看到結果，需要推斷，<span class="term-en">Error-based</span> 不是盲注入。此敘述混淆，且稱其為盲注入是錯誤的。（另外，OCR 疑似將 C 選項標註為不正確，但 A 選項的錯誤更明確）。<br/>
+                        (D) 描述了 <span class="term-abbr">OOB</span> 的攻擊原理，透過 <span class="term-abbr">DNS</span> 或其他協定將資料外傳。正確。<br/>
+                        <br/>
+                        因此，最明確不正確的敘述是(A)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="question-card" data-evaluation-content-id="1.5">
+                <div class="question-header">
+                    <div class="question-id">#5</div>
+                    <div class="evaluation-criterion">1.5 加密學應用</div>
+                </div>
+                <div class="question-content">在規劃建置<span class="term-cn">異地</span>的<span class="term-cn">連網系統</span>時, 為了達到大量資料傳輸與通訊的安全, 下列何者通訊安全之防護與應變實務規劃較佳?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">採用<span class="term-cn">數位簽章</span>提升<span class="term-cn">訊息交換安全</span>, 並使用<span class="term-cn">對稱式加密</span>進行<span class="term-cn">金鑰交換</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">採用<span class="term-cn">非對稱式加密</span>處理大量訊息, 並使用<span class="term-cn">對稱式加密</span>進行<span class="term-cn">金鑰交換</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">採用<span class="term-cn">對稱式加密</span>處理大量訊息, 並使用<span class="term-cn">數位簽章</span>進行<span class="term-cn">金鑰交換</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">採用<span class="term-cn">對稱式加密</span>處理大量訊息, 並使用<span class="term-cn">非對稱式加密</span>進行<span class="term-cn">金鑰交換</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        在進行大量資料傳輸時，通常會結合<span class="term-cn">對稱式加密</span>和<span class="term-cn">非對稱式加密</span>的優點，這種方式稱為<span class="term-cn">混合式加密</span> (<span class="term-en">Hybrid Cryptosystem</span>)。<br/>
+                        <ul>
+                            <li><span class="term-cn">對稱式加密</span> (如 <span class="term-abbr">AES</span>): <span class="highlight">加密解密速度快</span>，適合處理<span class="highlight">大量資料</span>。但其缺點是金鑰配送困難，通訊雙方需要事先共享同一把密鑰。</li>
+                            <li><span class="term-cn">非對稱式加密</span> (如 <span class="term-abbr">RSA</span>): 加密解密速度慢，不適合處理大量資料。但其優點是<span class="highlight">金鑰交換相對安全方便</span>，利用公鑰加密、私鑰解密（或私鑰簽章、公鑰驗證）。</li>
+                            <li><span class="term-cn">數位簽章</span>: 主要用於驗證訊息來源的<span class="term-cn">身份</span>和確保訊息的<span class="term-cn">完整性</span>、<span class="term-cn">不可否認性</span>，通常使用非對稱加密技術實作，但其主要目的不是金鑰交換。</li>
+                        </ul>
+                        最佳實務是：
+                        1.  使用<span class="term-cn">對稱式加密</span>演算法 (如 <span class="term-abbr">AES</span>) <span class="highlight">加密實際要傳輸的大量資料</span>，因為速度快。每次傳輸可以隨機生成一個<span class="term-cn">對稱密鑰</span>（也稱為<span class="term-cn">會話金鑰</span>, <span class="term-en">Session Key</span>）。
+                        2.  使用接收方的<span class="term-cn">公鑰</span>（屬於<span class="term-cn">非對稱式加密</span>）<span class="highlight">將這個對稱密鑰加密</span>。
+                        3.  將用對稱密鑰加密後的資料，以及用公鑰加密後的對稱密鑰，一起傳送給接收方。
+                        4.  接收方使用自己的<span class="term-cn">私鑰</span>解密，得到<span class="term-cn">對稱密鑰</span>，再用此對稱密鑰解密大量資料。
+                        <br/>
+                        這個過程就是利用<span class="term-cn">非對稱式加密</span>來安全地<span class="highlight">交換對稱式加密的金鑰</span>，然後利用<span class="term-cn">對稱式加密</span>來<span class="highlight">高效地加密大量資料</span>。<br/>
+                        因此，(D) 是最符合此實務的描述。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#6</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content"><span class="term-cn">入侵檢測系統</span>(<span class="term-en">Intrusion-Detection System</span>, <span class="term-abbr">IDS</span>)與<span class="term-cn">入侵預防系統</span>(<span class="term-en">Intrusion Prevention System</span>, <span class="term-abbr">IPS</span>)具監測及防禦的雙重功能, 可即時偵測到攻擊事件的發生, 並中止或阻絕入侵行為, 包括自動攔截棄置攻擊封包, 下列敘述何者較「不」正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">IDS</span> 防禦方式為<span class="term-cn">被動監聽</span>(<span class="term-en">Passive sniffer mode</span>)</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">IDS</span> 防禦動作可透過<span class="term-abbr">TCP reset</span> 來中斷連線</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">IPS</span> 防禦方式為<span class="term-cn">主動防禦</span>(<span class="term-en">Active in-line mode</span>)</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">IPS</span> 防禦動作為<span class="highlight">通知防火牆丟棄</span>惡意封包、中斷連線</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">IDS</span> (<span class="term-cn">入侵檢測系統</span>) 和 <span class="term-abbr">IPS</span> (<span class="term-cn">入侵預防系統</span>) 是網路安全的重要組件。<br/>
+                        (A) <span class="term-abbr">IDS</span> 通常部署在網路的<span class="highlight">旁路 (out-of-band)</span>，透過複製網路流量進行分析（類似<span class="term-cn">被動監聽</span>），主要功能是<span class="highlight">偵測</span>到異常或攻擊行為後<span class="highlight">發出警報</span>。此敘述基本正確，描述了其常見的監聽模式。<br/>
+                        (B) 某些 <span class="term-abbr">IDS</span> 系統除了發出警報外，也可以<span class="highlight">主動採取一些有限的回應措施</span>，例如向相關連線的兩端發送 <span class="term-abbr">TCP Reset</span> 封包，試圖中斷惡意連線。此敘述是可能的 <span class="term-abbr">IDS</span> 功能。<br/>
+                        (C) <span class="term-abbr">IPS</span> 通常部署在網路流量的<span class="highlight">路徑上 (in-line)</span>，像閘道器一樣檢查所有通過的流量。這是<span class="term-cn">主動防禦</span>模式，因為它可以<span class="highlight">即時阻擋</span>惡意流量。此敘述正確。<br/>
+                        (D) <span class="term-abbr">IPS</span> 因為是 <span class="term-en">in-line</span> 部署，它可以<span class="highlight">直接丟棄 (drop) 惡意封包</span>、<span class="highlight">阻斷 (block) 來源 IP</span> 或發送 <span class="term-abbr">TCP Reset</span> 來中斷連線。它<span class="highlight">不需要「通知」防火牆</span>來執行這些動作，而是<span class="highlight">自己直接執行</span>。說 <span class="term-abbr">IPS</span> 的動作是「通知防火牆」是不正確的。雖然 <span class="term-abbr">IPS</span> 可能會與防火牆聯動，但其核心的阻擋動作是自己完成的。<br/>
+                        因此，最不正確的敘述是(D)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q7 -->
+            <div class="question-card" data-evaluation-content-id="1.4">
+                <div class="question-header">
+                    <div class="question-id">#7</div>
+                    <div class="evaluation-criterion">1.4 資料安全防護</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">資料隱碼</span>攻擊, 可透過下列何種方式防範以避免類似事件再發生?</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">執行輸入檢查</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">使用 <span class="term-abbr">SSL</span> 加密</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">加入<span class="term-cn">圖形驗證</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">加裝<span class="term-cn">防毒軟體</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">資料隱碼攻擊</span> (<span class="term-en">Data Masking Attack</span>) 這個詞彙相對不常見，可能指的是輸入的資料被惡意利用，或者更可能指的是<span class="highlight">命令注入</span> (<span class="term-en">Command Injection</span>) 或 <span class="term-abbr">SQL Injection</span> 等利用<span class="highlight">未經驗證或清理的輸入資料</span>來執行惡意操作的攻擊。無論具體指哪一種注入型攻擊，其根本原因都是<span class="highlight">對使用者輸入的信任</span>，沒有進行充分的驗證和過濾。<br/>
+                        (A) <span class="term-cn">執行輸入檢查</span> (<span class="term-en">Input Validation</span>) 是防禦注入類攻擊的<span class="highlight">核心措施</span>。包括檢查輸入的<span class="term-cn">格式</span>、<span class="term-cn">長度</span>、<span class="term-cn">類型</span>，並<span class="highlight">過濾或轉義</span>特殊字元（如單引號、分號、<span class="term-en">HTML</span> 標籤等），防止惡意輸入被當作程式碼或指令執行。這是最直接有效的防範方式。<br/>
+                        (B) 使用 <span class="term-abbr">SSL</span>/TLS 加密主要保護<span class="highlight">傳輸過程</span>中的資料<span class="term-cn">機密性</span>和<span class="term-cn">完整性</span>，防止竊聽和竄改，但無法阻止伺服器端因處理惡意輸入而產生的注入攻擊。<br/>
+                        (C) <span class="term-cn">圖形驗證</span> (<span class="term-abbr">CAPTCHA</span>) 主要用於區分<span class="highlight">人類使用者和機器人</span>，防止自動化腳本濫用服務，與防禦注入攻擊關聯不大。<br/>
+                        (D) <span class="term-cn">防毒軟體</span>主要用於<span class="highlight">檢測和清除惡意軟體</span> (<span class="term-en">malware</span>)，對於防禦基於輸入驗證漏洞的<span class="term-cn">應用程式攻擊</span>效果有限。<br/>
+                        因此，最有效的防範方式是(A)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q8 -->
+            <div class="question-card" data-evaluation-content-id="1.1"> <!-- Could also be 1.6 -->
+                <div class="question-header">
+                    <div class="question-id">#8</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">零信任安全架構</span>(<span class="term-en">Zero Trust Architecture</span>), 下列敘述何者「不」正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">零信任</span>基礎認知, 也就是假設<span class="highlight">不信任任何人</span>為前提的安全架構</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">從<span class="term-cn">網路</span>到<span class="term-cn">裝置</span>都是<span class="term-cn">零信任</span>控制點。換言之, 不管是<span class="term-cn">連接裝置</span>、<span class="term-cn">應用程式</span>或是<span class="term-cn">組件</span>, 都視為<span class="term-cn">威脅向量</span>, 必須經過<span class="term-cn">認可</span>及<span class="term-cn">驗證</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">零信任</span>包含: <span class="term-cn">網路</span>、<span class="term-cn">設備</span>、<span class="term-cn">使用者</span>、<span class="term-cn">資料</span>, <span class="highlight">不包含 Workloads</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">零信任安全架構</span>四大支柱: <span class="term-cn">身分可信</span>、<span class="term-cn">架構可信</span>、<span class="term-cn">存取可信</span>、<span class="term-cn">服務可信</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">零信任</span> (<span class="term-en">Zero Trust</span>) 是一種安全模型，其核心理念是<span class="highlight">預設不信任任何內部或外部的用戶、設備或應用程式</span>，必須經過嚴格的<span class="term-cn">身份驗證</span>和<span class="term-cn">授權</span>才能存取資源。<br/>
+                        (A) 描述了<span class="term-cn">零信任</span>的基本假設「<span class="highlight">永不信任，一律驗證</span>」(<span class="term-en">Never Trust, Always Verify</span>)。正確。<br/>
+                        (B) 描述了<span class="term-cn">零信任</span>將所有元素（裝置、應用、組件）都視為潛在的<span class="term-cn">威脅向量</span>，需要進行驗證。正確。<br/>
+                        (C) <span class="term-cn">零信任</span>架構涵蓋了多個層面，包括<span class="term-cn">身份</span>(<span class="term-en">Identity</span>)、<span class="term-cn">裝置</span>(<span class="term-en">Device</span>)、<span class="term-cn">網路</span>(<span class="term-en">Network</span>)、<span class="term-cn">應用程式</span>(<span class="term-en">Application</span>)和<span class="term-cn">資料</span>(<span class="term-en">Data</span>)。<span class="term-en">Workloads</span> (工作負載，通常指運行在伺服器或雲端的應用程式和服務) <span class="highlight">是零信任保護的核心對象之一</span>。認為<span class="term-cn">零信任</span>不包含 <span class="term-en">Workloads</span> 是<span class="highlight">錯誤</span>的。<br/>
+                        (D) <span class="term-cn">零信任</span>的實現通常圍繞幾個關鍵支柱，雖然不同框架的表述略有差異，但<span class="term-cn">身分</span>、<span class="term-cn">裝置</span>（架構的一部分）、<span class="term-cn">存取控制</span>和<span class="term-cn">服務</span>（Workloads/應用）都是核心要素。"可信"在此處意指經過驗證和符合政策。此選項大致描述了零信任的要素，雖非標準四大支柱說法（常見為 Identity, Device, Network, Application/Workload, Data 五大支柱），但相較 C 選項明顯錯誤，此選項概念上較接近。<br/>
+                        因此，最不正確的敘述是(C)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q9 -->
+            <div class="question-card" data-evaluation-content-id="1.2"> <!-- Could also be 1.6 -->
+                <div class="question-header">
+                    <div class="question-id">#9</div>
+                    <div class="evaluation-criterion">1.2 端點/系統安全防護</div>
+                </div>
+                <div class="question-content"><span class="term-cn">容錯式磁碟陣列</span>(<span class="term-en">Redundant Array of Independent Disks</span>, <span class="term-abbr">RAID</span>) 建置時, <span class="term-abbr">RAID 0</span>, <span class="term-abbr">RAID 1</span>, <span class="term-abbr">RAID 5</span>, <span class="term-abbr">RAID 10</span> <span class="highlight">最小需要</span>的<span class="term-cn">實體硬碟數量</span>依序為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">1, 1, 2, 2</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">2, 2, 3, 3</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">2, 2, 3, 4</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">2, 2, 5, 10</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        不同 <span class="term-abbr">RAID</span> 級別的最小硬碟需求如下：<br/>
+                        <ul>
+                            <li><span class="term-abbr">RAID 0</span> (<span class="term-cn">等量</span>, <span class="term-en">Striping</span>): 將資料分散寫入多顆硬碟，提升效能但<span class="highlight">沒有容錯</span>。技術上<span class="highlight">最少需要 1 顆</span>硬碟（但無意義），通常<span class="highlight">至少需要 2 顆</span>才能體現效能優勢。然而題目問「最小需要」，在某些控制器或軟體實作下可能允許單碟RAID 0，但實務上無意義。若嚴格定義「陣列」，則需2顆。</li>
+                            <li><span class="term-abbr">RAID 1</span> (<span class="term-cn">鏡像</span>, <span class="term-en">Mirroring</span>): 將資料完全複製到另一顆硬碟，提供容錯。<span class="highlight">最少需要 2 顆</span>硬碟。</li>
+                            <li><span class="term-abbr">RAID 5</span> (<span class="term-cn">帶有分散式同位元檢查的等量</span>, <span class="term-en">Striping with Distributed Parity</span>): 資料分散寫入，並將<span class="term-cn">同位元檢查碼</span>(<span class="term-en">Parity</span>)也分散存放在所有硬碟。允許一顆硬碟損壞。<span class="highlight">最少需要 3 顆</span>硬碟。</li>
+                            <li><span class="term-abbr">RAID 10</span> (<span class="term-abbr">RAID 1+0</span>): 先做 <span class="term-abbr">RAID 1</span>（鏡像），再將多組 <span class="term-abbr">RAID 1</span> 做 <span class="term-abbr">RAID 0</span>（等量）。結合了效能和容錯。<span class="highlight">最少需要 4 顆</span>硬碟（兩組 <span class="term-abbr">RAID 1</span>，每組2顆）。</li>
+                        </ul>
+                        因此，依序是 2, 2, 3, 4 (假設 <span class="term-abbr">RAID 0</span> 指的是有意義的陣列)。選項 (C) 2, 2, 3, 4 符合此常見解釋。<br/>
+                        *註：OCR 顯示 C 為正確答案，與常見解釋 2, 2, 3, 4 一致。*
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q10 -->
+            <div class="question-card" data-evaluation-content-id="1.5">
+                <div class="question-header">
+                    <div class="question-id">#10</div>
+                    <div class="evaluation-criterion">1.5 加密學應用</div>
+                </div>
+                <div class="question-content">下列何者機制的目的是用來確保資料的<span class="term-cn">完整性</span>(<span class="term-en">Integrity</span>)?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">RC4</span> (<span class="term-en">Rivest Cipher 4</span>)</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">RSA</span> (<span class="term-en">Rivest, Shamir, Adleman</span>)</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Diffie-Hellman</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">MD5</span> (<span class="term-en">Message Digest Algorithm 5</span>)</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        資料<span class="term-cn">完整性</span>是指確保資料在傳輸或儲存過程中<span class="highlight">未被未經授權地修改或破壞</span>。<br/>
+                        (A) <span class="term-abbr">RC4</span> 是一種<span class="term-cn">串流加密演算法</span>（對稱加密），主要用於提供資料的<span class="term-cn">機密性</span> (<span class="term-en">Confidentiality</span>)。它本身不直接保證完整性，且已知存在安全弱點。<br/>
+                        (B) <span class="term-abbr">RSA</span> 是一種<span class="term-cn">非對稱加密演算法</span>，可用於加密（提供<span class="term-cn">機密性</span>）和<span class="term-cn">數位簽章</span>。數位簽章可以間接提供<span class="term-cn">完整性</span>和<span class="term-cn">身份驗證</span>，但 <span class="term-abbr">RSA</span> 演算法本身的主要應用之一是加密。<br/>
+                        (C) <span class="term-en">Diffie-Hellman</span> (<span class="term-abbr">DH</span>) 是一種<span class="term-cn">金鑰交換協定</span>，允許雙方在不安全的通道上<span class="highlight">安全地協商出共享密鑰</span>，主要用於建立安全通訊的基礎，本身不直接保證資料完整性。<br/>
+                        (D) <span class="term-abbr">MD5</span> 是一種<span class="term-cn">密碼雜湊函式</span> (<span class="term-en">Cryptographic Hash Function</span>)。雜湊函式可以將任意長度的輸入數據轉換成固定長度的<span class="term-cn">雜湊值</span>（或稱<span class="term-cn">訊息摘要</span>）。如果資料被竄改，其雜湊值也會改變。透過比較資料傳輸前後的雜湊值，可以<span class="highlight">驗證資料的完整性</span>。雖然 <span class="term-abbr">MD5</span> 現在被認為<span class="highlight">不夠安全</span>（容易產生碰撞），不應用於安全性要求高的場合，但其<span class="highlight">設計目的就是用於完整性檢查</span>。其他更安全的雜湊函式如 <span class="term-abbr">SHA-256</span> 也用於此目的。<br/>
+                        因此，最符合題目描述「目的為確保資料完整性」的機制是(D)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q11 -->
+            <div class="question-card" data-evaluation-content-id="1.6"> <!-- Could also be 1.4 -->
+                <div class="question-header">
+                    <div class="question-id">#11</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">某公司的<span class="term-cn">資料容錯</span>策略是使用<span class="term-cn">遠端日誌抄寫</span>(<span class="term-en">Remote Journaling</span>), 關於<span class="term-cn">遠端日誌抄寫</span>, 下列敘述何者正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">即時複製<span class="term-cn">資料庫</span>或<span class="term-cn">檔案</span>到<span class="term-cn">遠端存放</span>, 並進行即時同步</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">傳送<span class="term-cn">資料副本</span>至<span class="term-cn">備份磁帶</span>, 拿到<span class="term-cn">遠端存放</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">使用<span class="term-cn">備份軟體</span>備份資料至<span class="term-cn">遠端</span>, 有更新時透過<span class="term-cn">備份軟體</span>同步</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">傳送<span class="term-cn">交易紀錄</span>至<span class="term-cn">遠端</span>, 當原始資料遺失時, 在<span class="term-cn">遠端</span>透過<span class="term-cn">交易紀錄</span>重建</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">遠端日誌抄寫</span> (<span class="term-en">Remote Journaling</span>) 是一種<span class="term-cn">資料保護</span>和<span class="term-cn">災難復原</span>技術，常見於<span class="term-cn">資料庫</span>或<span class="term-cn">檔案系統</span>。<br/>
+                        其核心概念是將資料變更的<span class="highlight">日誌 (Journal) 或交易紀錄 (Transaction Log)</span>，<span class="highlight">即時或近即時地傳送到遠端的備援站點</span>。這些日誌記錄了對主資料庫或檔案系統所做的每一次修改操作。<br/>
+                        (A) 即時複製整個資料庫或檔案到遠端，更像是<span class="term-cn">遠端鏡像</span> (<span class="term-en">Remote Mirroring</span>) 或<span class="term-cn">同步複製</span> (<span class="term-en">Synchronous Replication</span>)，這通常對網路頻寬和延遲要求很高。<span class="term-cn">遠端日誌抄寫</span>只傳送變更紀錄，而非整個檔案。<br/>
+                        (B) 傳送資料副本到磁帶是傳統的<span class="term-cn">離線備份</span>方式，不是日誌抄寫。<br/>
+                        (C) 使用備份軟體進行備份通常是<span class="term-cn">週期性</span>的（例如每天一次），而非即時傳送交易紀錄。<br/>
+                        (D) 這準確描述了<span class="term-cn">遠端日誌抄寫</span>的工作方式。將<span class="term-cn">交易紀錄</span>傳送到遠端，當本地發生災難導致資料遺失時，可以在<span class="term-cn">遠端</span>利用這些紀錄將資料<span class="highlight">恢復（重建）到故障前的某個時間點</span>（取決於是同步還是非同步抄寫）。<br/>
+                        因此，正確的敘述是(D)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q12 -->
+            <div class="question-card" data-evaluation-content-id="1.3">
+                <div class="question-header">
+                    <div class="question-id">#12</div>
+                    <div class="evaluation-criterion">1.3 應用程式安全防護</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">網站應用程式</span>之<span class="term-cn">資料安全性</span>, 下列敘述何者正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">網站應用程式</span>所使用之<span class="term-cn">安全傳輸協定</span>(<span class="term-abbr">HTTPS</span>), 目前最新版<span class="term-cn">加密層協議</span>為透過<span class="term-abbr">SSL 3.0</span> 實作</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">HTTPS</span> 協議需透過<span class="term-cn">金鑰交換機制</span>(如: <span class="term-abbr">RSA</span> <span class="term-cn">非對稱加密演算法</span>)取得用於加密資料之<span class="term-cn">密鑰</span>(如: <span class="term-abbr">AES</span> <span class="term-cn">對稱加密演算法</span>)以確保傳輸效能</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">HTTPS</span> 協議僅可保護應用程式傳送之資料內容, 攻擊者仍可透過<span class="term-cn">竊聽攻擊</span>(<span class="term-en">Sniffing Attack</span>)獲取未加密之<span class="term-cn">表頭資訊</span>(<span class="term-en">HTTP Header</span>)</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">使用者<span class="term-cn">密碼</span>若透過 <span class="term-abbr">HTTPS</span> 協議傳送, 即可保護其不受攻擊者竊聽, 因此可<span class="highlight">明文儲存</span>於<span class="term-cn">網站應用程式資料庫</span>中</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">HTTPS</span> (<span class="term-en">Hypertext Transfer Protocol Secure</span>) 是 <span class="term-en">HTTP</span> 的安全版本，透過 <span class="term-abbr">SSL</span>/<span class="term-abbr">TLS</span> 協定進行加密。<br/>
+                        (A) <span class="term-abbr">SSL 3.0</span> 已經被認為是<span class="highlight">不安全</span>的協定（例如受到 <span class="term-en">POODLE</span> 攻擊），現代 <span class="term-abbr">HTTPS</span> 主要使用 <span class="term-abbr">TLS</span> (<span class="term-en">Transport Layer Security</span>) 協定，例如 <span class="term-abbr">TLS 1.2</span> 或 <span class="term-abbr">TLS 1.3</span>。此敘述錯誤。<br/>
+                        (B) 這描述了 <span class="term-abbr">HTTPS</span> 中常用的<span class="term-cn">混合式加密</span>機制。<span class="term-abbr">TLS</span> <span class="term-cn">握手</span> (<span class="term-en">handshake</span>) 過程通常使用<span class="term-cn">非對稱加密</span>（如 <span class="term-abbr">RSA</span> 或基於 <span class="term-en">Diffie-Hellman</span> 的演算法）來安全地<span class="highlight">協商</span>或<span class="highlight">交換</span>一個<span class="term-cn">對稱密鑰</span>（<span class="term-cn">會話金鑰</span>）。之後的實際資料傳輸則使用這個<span class="term-cn">對稱密鑰</span>和<span class="term-cn">對稱加密演算法</span>（如 <span class="term-abbr">AES</span>）進行加密，因為<span class="highlight">對稱加密速度更快</span>，適合大量資料傳輸。此敘述正確。<br/>
+                        (C) <span class="term-abbr">HTTPS</span> (<span class="term-abbr">TLS</span>) 的目標是加密整個 <span class="term-en">HTTP</span> <span class="term-cn">請求</span>和<span class="term-cn">回應</span>，<span class="highlight">包括大部分的 HTTP 表頭和內容</span>。雖然某些 <span class="term-abbr">TLS</span> <span class="term-cn">握手</span>資訊和<span class="term-cn">網路層/傳輸層</span>的表頭（如 <span class="term-abbr">IP</span> 地址、埠號）是未加密的，但重要的 <span class="term-en">HTTP</span> 表頭（如 <span class="term-en">Cookie</span>, <span class="term-en">Authorization</span>）和請求/回應主體都是加密的。說可以獲取未加密的 <span class="term-en">HTTP</span> 表頭資訊是不準確的。此敘述錯誤。<br/>
+                        (D) <span class="term-abbr">HTTPS</span> 保護的是<span class="highlight">傳輸過程</span>中的密碼不被竊聽。但是，密碼<span class="highlight">儲存</span>在<span class="term-cn">資料庫</span>中時，<span class="highlight">絕對不應該使用明文儲存</span>。應使用<span class="term-cn">加鹽雜湊</span> (<span class="term-en">Salted Hashing</span>) 等方式儲存密碼的<span class="term-cn">雜湊值</span>。此敘述錯誤。<br/>
+                        因此，正確的敘述是(B)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q13 -->
+            <div class="question-card" data-evaluation-content-id="1.3">
+                <div class="question-header">
+                    <div class="question-id">#13</div>
+                    <div class="evaluation-criterion">1.3 應用程式安全防護</div>
+                </div>
+                <div class="question-content">關於附圖程式碼, 下列敘述何者「不」正確?
+                    <pre><code>String firstname = req.getParameter("firstname");
+String lastname = req.getParameter("lastname");
+// FIXME: do your own validation to detect attacks
+String query = "SELECT id, firstname, lastname FROM authors WHERE forename = ? and surname = ?";
+PreparedStatement pstmt = connection.prepareStatement(query);
+pstmt.setString(1, firstname);
+pstmt.setString(2, lastname);
+try {
+  ResultSet results = pstmt.execute();
+}</code></pre>
+                </div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Hard-coded Password</span> 為 <span class="term-en">FIXME</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">此程式碼語言為 <span class="term-en">Java</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">prepareStatement</span> 為<span class="term-cn">預存式查詢</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">setString</span> 為<span class="term-cn">參數化查詢</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        分析程式碼片段：<br/>
+                        (A) <span class="term-en">FIXME</span> 是程式碼中的<span class="highlight">註解</span>，提示開發者此處<span class="highlight">需要修復或改進</span>（在此例中是缺少輸入驗證）。它<span class="highlight">不是硬編碼的密碼</span> (<span class="term-en">Hard-coded Password</span>)。硬編碼密碼是指將密碼直接寫在程式碼中，是一個嚴重的安全風險。此敘述錯誤。<br/>
+                        (B) 從語法來看，如類別 <span class="term-en">String</span>, <span class="term-en">PreparedStatement</span>, <span class="term-en">ResultSet</span> 以及方法調用方式 `req.getParameter()`, `connection.prepareStatement()`, `pstmt.setString()`, `pstmt.execute()`，這是典型的 <span class="term-en">Java</span> <span class="term-abbr">JDBC</span> (Java Database Connectivity) 程式碼。此敘述正確。<br/>
+                        (C) <span class="term-en">PreparedStatement</span> 是 <span class="term-en">Java</span> <span class="term-abbr">JDBC</span> 中用於執行<span class="highlight">預編譯</span> <span class="term-abbr">SQL</span> 查詢的介面。它允許資料庫預先編譯 <span class="term-abbr">SQL</span> 語句的結構，之後可以<span class="highlight">帶入不同的參數</span>執行。這種機制常被稱為<span class="term-cn">預備語句</span>或<span class="highlight">預處理語句</span>，與資料庫中的<span class="term-cn">預存程序</span> (<span class="term-en">Stored Procedure</span>) 不同，但其目的之一是提高效能和防止 <span class="term-abbr">SQL Injection</span>。稱其為<span class="term-cn">預存式查詢</span>可能有些不精確（預存程序是存在資料庫端的），但其預編譯特性與預存概念相關。更重要的是它用於參數化查詢。<br/>
+                        (D) `pstmt.setString(1, firstname)` 這行程式碼的作用是將變數 `firstname` 的值<span class="highlight">作為參數</span>，安全地綁定到 <span class="term-en">PreparedStatement</span> 中第一個問號 `?` 的位置。這就是<span class="term-cn">參數化查詢</span> (<span class="term-en">Parameterized Query</span>) 的實現方式，可以有效<span class="highlight">防止 SQL Injection 攻擊</span>，因為輸入的值不會被當作 <span class="term-abbr">SQL</span> 指令的一部分來解析。此敘述正確。<br/>
+                        <br/>
+                        題目問何者「不」正確，(A) 明顯錯誤。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q14 -->
+             <div class="question-card" data-evaluation-content-id="1.8"> <!-- Could also be 1.7 -->
+                <div class="question-header">
+                    <div class="question-id">#14</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">某 <span class="term-abbr">MIS</span> 人員欲對公司一重要<span class="term-cn">伺服器</span>(功能包含<span class="term-cn">檔案伺服器</span>、<span class="term-cn">資料庫</span>功能)使用 <span class="term-en">Nmap</span> 來執行進行<span class="term-cn">滲透測試</span>, 以便瞭解該<span class="term-cn">資訊設備</span>之<span class="term-cn">漏洞</span>是否全數修補完成, 請問該 <span class="term-abbr">MIS</span> 使用此工具最主要之目的為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">利用該<span class="term-cn">伺服器</span>已知<span class="highlight">對外開放之服務埠</span>進行<span class="term-cn">情蒐</span></div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">利用該<span class="term-cn">伺服器</span>已知之<span class="term-cn">漏洞</span>提升權限</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">利用該<span class="term-cn">伺服器</span>已知之<span class="term-cn">漏洞</span>竊取檔案</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">利用該<span class="term-cn">伺服器</span>已知之<span class="term-cn">漏洞</span>下載<span class="term-cn">資料庫</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-en">Nmap</span> (<span class="term-en">Network Mapper</span>) 是一款強大的<span class="term-cn">開源網路掃描</span>和<span class="term-cn">安全稽核工具</span>。其主要功能包括：
+                        <ul>
+                            <li><span class="term-cn">主機發現</span> (<span class="term-en">Host Discovery</span>): 找出網路上存活的主機。</li>
+                            <li><span class="term-cn">埠掃描</span> (<span class="term-en">Port Scanning</span>): <span class="highlight">偵測目標主機開放了哪些連接埠</span>。</li>
+                            <li><span class="term-cn">服務偵測</span> (<span class="term-en">Service Detection</span>): 識別開放埠上運行的<span class="highlight">網路服務及其版本</span>。</li>
+                            <li><span class="term-cn">作業系統偵測</span> (<span class="term-en">OS Detection</span>): 判斷目標主機的作業系統類型。</li>
+                            <li><span class="term-cn">腳本掃描</span> (<span class="term-en">Nmap Scripting Engine</span>, <span class="term-abbr">NSE</span>): 利用腳本進行更進階的檢測，包括<span class="term-cn">漏洞偵測</span>、<span class="term-cn">漏洞利用</span>等。</li>
+                        </ul>
+                        在<span class="term-cn">滲透測試</span>的初期階段，<span class="term-en">Nmap</span> 最常用於<span class="highlight">資訊收集（情蒐）</span>，特別是找出目標<span class="highlight">開放了哪些服務埠</span>，以及這些埠上運行的服務版本，以便後續尋找可利用的漏洞。<br/>
+                        (A) 描述了 <span class="term-en">Nmap</span> 的核心功能之一：掃描開放埠並進行情蒐。這是 <span class="term-en">Nmap</span> 最主要和最常見的用途。<br/>
+                        (B) 提升權限通常需要利用特定的漏洞和<span class="term-cn">漏洞利用</span> (<span class="term-en">Exploit</span>) 工具（如 <span class="term-en">Metasploit</span>）。雖然 <span class="term-abbr">NSE</span> 腳本可能包含一些漏洞利用功能，但 <span class="term-en">Nmap</span> 本身主要不是用於<span class="highlight">直接提升權限</span>的工具。<br/>
+                        (C) 竊取檔案同樣需要利用漏洞或取得存取權限後才能進行，非 <span class="term-en">Nmap</span> 主要目的。<br/>
+                        (D) 下載資料庫更是需要取得資料庫存取權限，與 <span class="term-en">Nmap</span> 的主要功能不符。<br/>
+                        <br/>
+                        題目問「最主要之目的」，對於 <span class="term-en">Nmap</span> 而言，進行<span class="term-cn">服務埠</span>掃描和<span class="term-cn">情蒐</span>是其核心價值。雖然 <span class="term-abbr">NSE</span> 能做漏洞偵測，但選項(A)描述的<span class="term-cn">情蒐</span>更為根本。然而，若考慮到題目提及「<span class="term-cn">滲透測試</span>」和「瞭解<span class="term-cn">漏洞</span>是否修補」，使用 <span class="term-abbr">NSE</span> 進行漏洞掃描也是重要目的。
+                        比較選項，(B)(C)(D)描述的是<span class="term-cn">漏洞利用</span>階段的行為，而<span class="term-en">Nmap</span> 主要在<span class="term-cn">偵察</span>和<span class="term-cn">掃描</span>階段。因此，利用已知漏洞進行提權、竊檔、下載資料庫，都不是 Nmap 的主要目的。<br/>
+                        *此題 OCR 答案標示為 (B)，但從工具功能分析，(A) 情蒐更符合 Nmap 主要用途。若題目意指用 Nmap 的 NSE 腳本 *偵測* 可用於提權的漏洞，那或許可解釋 B，但直接說「利用漏洞提升權限」作為 Nmap 主要目的並不準確。這裡暫依 OCR 標示的答案 B，但解釋其可能的考量點及爭議。*<br/>
+                        一種可能的解釋是，滲透測試的最終目標之一是取得控制權（提升權限），而 Nmap 找到的服務和漏洞資訊是達成此目標的<span class="highlight">關鍵輸入</span>。因此，從滲透測試的宏觀目標來看，Nmap 服務於「利用漏洞提升權限」這個目的。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q15 -->
+            <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#15</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">下列何種檢測方式較「不」能證明<span class="term-cn">網站防禦機制</span>跟企業認知的<span class="term-cn">資安防護</span>程度一樣好?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">網站弱點掃描</span></div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">主機弱點掃描</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">滲透測試</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">網頁源碼檢測</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        題目關注的是驗證「<span class="term-cn">網站防禦機制</span>」的有效性。<br/>
+                        (A) <span class="term-cn">網站弱點掃描</span> (<span class="term-en">Web Vulnerability Scanning</span>): 自動化工具檢查網站應用程式層面常見的漏洞（如 <span class="term-abbr">SQL Injection</span>, <span class="term-abbr">XSS</span>, <span class="term-cn">設定錯誤</span>等）。直接關聯網站防禦。<br/>
+                        (B) <span class="term-cn">主機弱點掃描</span> (<span class="term-en">Host Vulnerability Scanning</span>): 檢查<span class="highlight">伺服器作業系統、網路服務（非網站應用本身）的已知漏洞和設定問題</span>。雖然主機安全是網站安全的基礎，但它<span class="highlight">不直接測試網站應用程式本身的防禦邏輯或程式碼漏洞</span>。因此，相較於其他選項，它較「不」能直接證明「網站防禦機制」的完善程度。<br/>
+                        (C) <span class="term-cn">滲透測試</span> (<span class="term-en">Penetration Testing</span>): 由安全專家模擬駭客攻擊，嘗試利用各種手段（包括技術和非技術）突破網站的防禦。這是<span class="highlight">驗證整體網站安全防禦最有效</span>的方式之一。<br/>
+                        (D) <span class="term-cn">網頁源碼檢測</span> (<span class="term-en">Source Code Review</span> / <span class="term-abbr">SAST</span>): 分析網站應用程式的<span class="highlight">原始碼</span>，找出潛在的安全缺陷。直接檢查網站本身的安全性。<br/>
+                        <br/>
+                        因此，<span class="term-cn">主機弱點掃描</span>雖然重要，但其焦點在於底層基礎設施，而非網站應用程式的防禦邏輯本身，故較不能直接證明「網站防禦機制」的好壞。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q16 -->
+            <div class="question-card" data-evaluation-content-id="1.2"> <!-- Could be 1.5 -->
+                <div class="question-header">
+                    <div class="question-id">#16</div>
+                    <div class="evaluation-criterion">1.2 端點/系統安全防護</div>
+                </div>
+                <div class="question-content"><span class="term-cn">暴力破密</span>(<span class="term-en">Brute-Force</span>)攻擊是最需要大量<span class="term-cn">運算資源</span>的攻擊手法, 下列哪些作法能有效避免<span class="term-cn">暴力破密攻擊</span>? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">密鑰延伸</span>(<span class="term-en">Key stretching</span>)</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">密碼複雜度要求</span>(<span class="term-en">Password Complexity Requirements</span>)</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">雜湊演算</span>(<span class="term-en">Hashing</span>)</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">加鹽</span>(<span class="term-en">Salting</span>)</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">暴力破密攻擊</span>是指嘗試所有可能的密碼組合來破解密碼。<span class="highlight">防止密碼被暴力破解</span>（特別是離線破解，即攻擊者已取得密碼雜湊值）的方法包括：<br/>
+                        (A) <span class="term-cn">密鑰延伸</span> (<span class="term-en">Key Stretching</span>): 指<span class="highlight">故意增加計算密碼雜湊值的成本</span>（時間和運算資源），例如透過多次反覆執行雜湊函式（如 <span class="term-abbr">PBKDF2</span>, <span class="term-en">bcrypt</span>, <span class="term-en">scrypt</span>）。這使得攻擊者進行暴力破解時，每次嘗試都需要花費更多時間，大大降低破解效率。有效。<br/>
+                        (B) <span class="term-cn">密碼複雜度要求</span>: 要求密碼包含<span class="highlight">大小寫字母、數字、特殊符號</span>，並有<span class="highlight">足夠長度</span>。這會<span class="highlight">指數級增加</span>可能的密碼組合數量，使得暴力破解在實際時間内變得不可行。有效。<br/>
+                        (C) <span class="term-cn">雜湊演算</span> (<span class="term-en">Hashing</span>): 將密碼轉換成不可逆的<span class="term-cn">雜湊值</span>儲存是必要的基礎，但<span class="highlight">單純使用快速的雜湊函式</span>（如 <span class="term-abbr">MD5</span>, <span class="term-abbr">SHA-1</span>）<span class="highlight">無法有效防禦現代的離線暴力破解</span>，因為攻擊者可以使用<span class="term-cn">彩虹表</span> (<span class="term-en">Rainbow Table</span>) 或高速硬體（如 <span class="term-abbr">GPU</span>）快速計算大量雜湊值。雜湊是必要的，但本身不足以防禦暴力破解。<br/>
+                        (D) <span class="term-cn">加鹽</span> (<span class="term-en">Salting</span>): 在對密碼進行雜湊前，為每個密碼<span class="highlight">附加一個獨特的隨機值</span>（<span class="term-cn">鹽值</span>, <span class="term-en">Salt</span>）。這樣即使兩個使用者使用相同的密碼，其儲存的雜湊值也不同。這可以有效<span class="highlight">防禦彩虹表攻擊</span>，因為攻擊者需要為每個鹽值單獨建立彩虹表，成本極高。它強制攻擊者必須對每個密碼單獨進行暴力破解。有效。<br/>
+                        <br/>
+                        因此，能有效避免（或極大增加難度）暴力密碼攻擊的作法是 (A)、(B)、(D)。
+                    </div>
+                </div>
+            </div>
+            
+                                    <!-- Q17 (Ultra Simplified) -->
+            <div class="question-card" data-evaluation-content-id="1.3">
+                <div class="question-header">
+                    <div class="question-id">#17</div>
+                    <div class="evaluation-criterion">1.3 應用程式安全防護</div>
+                </div>
+                <div class="question-content">下列哪些 <span class="term-en">HTTP Header</span> 標頭之<span class="term-cn">安全性設定</span>, 「不」能讓網站與使用者<span class="term-cn">瀏覽器</span>之間有更多的安全防護功能? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">HTTP Strict Transport Security</span> (<span class="term-abbr">HSTS</span>)</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Access-Control-Max-Age</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Accept-Encoding</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">X-Frame-Options</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        (A) <span class="term-abbr">HSTS</span>: <span class="highlight">強制使用 HTTPS</span>，<span class="highlight">是</span>安全防護功能。<br/>
+                        (B) <span class="term-en">Access-Control-Max-Age</span>: 與 <span class="term-abbr">CORS</span> 快取相關，<span class="highlight">不是</span>直接的安全防護功能。<br/>
+                        (C) <span class="term-en">Accept-Encoding</span>: 瀏覽器告知伺服器支援的壓縮方式，<span class="highlight">不是</span>安全防護功能。<br/>
+                        (D) <span class="term-en">X-Frame-Options</span>: 防止頁面被惡意嵌入，<span class="highlight">是</span>安全防護功能。<br/>
+                        <br/>
+                        題目問哪些「不」能提供安全防護，因此答案是 (B) 和 (C)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q18 -->
+            <div class="question-card" data-evaluation-content-id="1.7">
+                <div class="question-header">
+                    <div class="question-id">#18</div>
+                    <div class="evaluation-criterion">1.7 威脅與攻擊手法</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">勒索病毒傳遞媒介</span>、與常用技術手法, 下列敘述哪些正確? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">勒索病毒</span>會透過<span class="highlight">郵件</span>、<span class="highlight">網頁的網址連結</span>、<span class="term-abbr">USB</span> 裝置來傳遞</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">勒索病毒</span>會利用 <span class="term-abbr">DLL Hijacking</span> 技術取得高權限</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">勒索病毒</span>會利用 <span class="term-abbr">OS</span> <span class="term-cn">黑名單程式</span>, 迴避<span class="term-cn">防毒系統</span>檢查</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">勒索病毒</span>會利用 <span class="term-en">Power Shell</span> <span class="term-cn">無檔案式</span>(<span class="term-en">File-less</span>), 取得高權限</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">勒索病毒</span> (<span class="term-en">Ransomware</span>) 的攻擊手法和技術不斷演進。<br/>
+                        (A) <span class="term-cn">惡意郵件附件</span>、<span class="term-cn">釣魚郵件</span>中的<span class="term-cn">惡意連結</span>、透過<span class="term-cn">漏洞</span>入侵網站掛馬、受感染的 <span class="term-abbr">USB</span> 隨身碟等都是<span class="highlight">常見的傳播途徑</span>。正確。<br/>
+                        (B) <span class="term-abbr">DLL Hijacking</span> (<span class="term-cn">DLL 劫持</span>) 是一種<span class="highlight">載入惡意 DLL 檔案</span>來執行程式碼的技術，可能被惡意軟體（包括勒索病毒）用於<span class="highlight">維持駐留</span> (<span class="term-en">Persistence</span>) 或<span class="highlight">提升權限</span> (<span class="term-en">Privilege Escalation</span>)。正確。<br/>
+                        (C) 「<span class="term-abbr">OS</span> <span class="term-cn">黑名單程式</span>」這個說法不標準。<span class="term-cn">防毒系統</span>通常使用<span class="term-cn">特徵碼</span>（黑名單）或<span class="term-cn">行為偵測</span>來識別惡意軟體。<span class="term-cn">勒索病毒</span>會使用各種技術<span class="highlight">迴避偵測</span>，例如<span class="term-cn">加殼</span> (<span class="term-en">Packing</span>)、<span class="term-cn">多態</span> (<span class="term-en">Polymorphism</span>)、<span class="term-cn">無檔案攻擊</span>等，但不是利用「<span class="term-abbr">OS</span> 黑名單程式」。此敘述錯誤。<br/>
+                        (D) <span class="term-cn">無檔案式攻擊</span> (<span class="term-en">File-less Attack</span>) 是一種常見的進階攻擊技術，利用<span class="highlight">系統內建的工具</span>（如 <span class="term-en">PowerShell</span>, <span class="term-en">WMI</span>）直接在<span class="term-cn">記憶體</span>中執行惡意指令，避免將惡意檔案寫入磁碟，以<span class="highlight">規避</span>傳統基於檔案掃描的<span class="term-cn">防毒軟體</span>。許多現代<span class="term-cn">勒索病毒</span>會利用此技術進行滲透、橫向移動或執行加密。利用 <span class="term-en">PowerShell</span> 執行指令也可能用於提升權限。正確。<br/>
+                        <br/>
+                        因此，正確的敘述是 (A)、(B)、(D)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q19 -->
+            <div class="question-card" data-evaluation-content-id="1.6"> <!-- Could be 1.1 or 1.2 -->
+                <div class="question-header">
+                    <div class="question-id">#19</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">公司在協助客戶建置<span class="term-cn">客制化應用軟體系統</span>時, 為方便進行<span class="term-cn">遠端維護</span>, 下列哪些措施可以增加「<span class="term-cn">系統維護</span>」的安全性? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">在公司政策允許下建立 <span class="term-abbr">VPN</span> 機制, 提供作業人員可以進行<span class="term-cn">遠端安全連線</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">建立<span class="term-cn">單一登入</span>(<span class="term-en">Single Sign-On</span>, <span class="term-abbr">SSO</span>)作業, <span class="highlight">統一連線帳密管理</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">設定<span class="term-cn">網路防火牆</span><span class="term-cn">遠端連線機制</span>及<span class="highlight">限制存取的主機位置</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">使用<span class="term-cn">雙因子認證</span>, 確保連線使用者</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        增加<span class="term-cn">遠端維護</span>安全性需要從<span class="term-cn">連線通道</span>、<span class="term-cn">存取控制</span>和<span class="term-cn">身份驗證</span>等多方面著手。<br/>
+                        (A) <span class="term-abbr">VPN</span> (<span class="term-cn">虛擬私人網路</span>) 可以建立<span class="highlight">加密的通訊通道</span>，保護<span class="term-cn">遠端連線</span>過程中的資料<span class="term-cn">機密性</span>和<span class="term-cn">完整性</span>，是<span class="term-cn">遠端安全連線</span>的常用基礎設施。正確。<br/>
+                        (B) <span class="term-abbr">SSO</span> (<span class="term-cn">單一登入</span>) 主要是為了<span class="highlight">方便使用者</span>，讓使用者只需登入一次即可存取多個授權的系統，減少記憶多組密碼的負擔。雖然好的 <span class="term-abbr">SSO</span> 方案會整合強認證，但 <span class="term-abbr">SSO</span> 本身的主要目的<span class="highlight">不是直接增加系統維護的安全性</span>，反而可能因為單點登入而產生風險集中效應（如果 <span class="term-abbr">SSO</span> 帳密外洩）。相較之下，其他選項對「安全性」的提升更直接。<br/>
+                        (C) 在<span class="term-cn">防火牆</span>上設定規則，<span class="highlight">僅允許來自特定、可信任的主機位置</span>（例如公司固定 <span class="term-abbr">IP</span>）進行<span class="term-cn">遠端連線</span>，可以有效<span class="highlight">限制潛在的攻擊來源</span>。正確。<br/>
+                        (D) <span class="term-cn">雙因子認證</span> (<span class="term-abbr">2FA</span>) 或<span class="term-cn">多因子認證</span> (<span class="term-abbr">MFA</span>) 要求使用者提供<span class="highlight">多種驗證因素</span>（如密碼 + <span class="term-abbr">OTP</span>），大大<span class="highlight">提高了身份驗證的強度</span>，防止僅因密碼洩露導致的未授權存取。對於<span class="term-cn">遠端維護</span>這種高權限操作尤其重要。正確。<br/>
+                        <br/>
+                        因此，能增加<span class="term-cn">遠端維護</span>安全性的措施是 (A)、(C)、(D)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q20 -->
+            <div class="question-card" data-evaluation-content-id="1.7"> <!-- Could be 1.8 -->
+                <div class="question-header">
+                    <div class="question-id">#20</div>
+                    <div class="evaluation-criterion">1.7 威脅與攻擊手法</div>
+                </div>
+                <div class="question-content"><span class="term-cn">搜尋引擎</span>的<span class="term-cn">進階搜尋指令</span>常被用來刺探<span class="term-cn">網站重要資訊</span>, 更被用在<span class="term-cn">滲透測試</span>上, 其中最知名就是 <span class="term-en">Google Hacking Database</span> (<span class="term-abbr">GHDB</span>), 關於<span class="term-cn">搜尋引擎進階指令</span>發展、應用與技術分析, 下列敘述哪些正確? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">駭客利用 <span class="term-en">google</span> <span class="term-cn">進階搜尋技巧</span>與運算, 搜索<span class="term-cn">網際網路</span>中定位特定的<span class="term-cn">文本字</span>, 作為滲透入侵易受攻擊的 <span class="term-en">Web</span> <span class="term-cn">應用程序</span></div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">site:tw</span> 此指令是限制搜尋標的為<span class="term-cn">台灣網站</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">intitle:index.of site:tw</span> 描述是列出該網站 <span class="term-en">index.of</span> <span class="term-cn">網站目錄清單</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">在另一個知名<span class="term-cn">搜尋引擎</span> <span class="term-en">Bing</span>, <span class="highlight">並沒有類似的應用</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-en">Google Hacking</span>（或稱 <span class="term-en">Google Dorking</span>）是指利用 <span class="term-en">Google</span> 等<span class="term-cn">搜尋引擎</span>的<span class="term-cn">進階搜尋語法</span>，來尋找網路上<span class="highlight">配置不當或敏感的資訊</span>。<br/>
+                        (A) 描述了 <span class="term-en">Google Hacking</span> 的基本概念和目的，駭客或<span class="term-cn">滲透測試</span>人員利用這些技巧尋找<span class="term-cn">網站漏洞</span>、<span class="term-cn">敏感檔案</span>（如設定檔、密碼檔）、<span class="term-cn">錯誤訊息</span>、<span class="term-cn">登入頁面</span>等，作為攻擊或評估的起點。正確。<br/>
+                        (B) `site:` 是 <span class="term-en">Google</span> 的<span class="term-cn">進階搜尋運算子</span>，用於<span class="highlight">將搜尋範圍限制在特定的網站或網域</span>。`site:tw` 會將搜尋結果限制在頂級網域為 `.tw` 的網站，即<span class="term-cn">台灣網站</span>。正確。<br/>
+                        (C) `intitle:` 運算子用於搜尋<span class="highlight">網頁標題</span>中包含特定關鍵字的頁面。`index of` 通常是<span class="term-cn">網頁伺服器</span>在<span class="highlight">目錄瀏覽功能開啟</span>時自動生成的頁面標題。因此，`intitle:index.of site:tw` 這個查詢會尋找台灣網站中，可能<span class="highlight">開啟了目錄瀏覽功能</span>的目錄頁面，這些頁面會列出該目錄下的檔案清單。正確。<br/>
+                        (D) 其他<span class="term-cn">搜尋引擎</span>，如 <span class="term-en">Bing</span>、<span class="term-en">DuckDuckGo</span> 等，<span class="highlight">也支援類似的進階搜尋語法</span>，同樣可以用於類似的資訊收集目的。說 <span class="term-en">Bing</span> 沒有類似應用是<span class="highlight">錯誤</span>的。<br/>
+                        <br/>
+                        因此，正確的敘述是 (A)、(B)、(C)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Remaining questions Q21-Q40 are part of題組. Will add notes. -->
+
+            <div class="question-note">題組1 (Q21-Q24) 背景: 身為公司網路管理人員的您, 正在為公司的網路架構進行調整, 將目前的網路架構進行區隔, 在R1所屬的區域建立多個 VLAN 以隔離廣播(Broadcast), 提升服務存取的效能。調整後之架構圖與路由表請參考試卷附圖。(附圖資訊已整合進題目和解析)</div>
+            <img src="image/110_防_21.png" class="responsive-img">
+            <!-- Q21 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#21 (題組1)</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。<span class="term-cn">Host</span> C (<span class="term-abbr">VLAN</span> 10, <span class="term-abbr">IP</span> 192.168.10.11) 反應無法存取 <span class="term-cn">Host</span> B (<span class="term-abbr">VLAN</span> 9, <span class="term-abbr">IP</span> 192.168.9.21) 分享的資源的原因為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">Host</span> C 與 <span class="term-cn">Host</span> B 在不同 <span class="term-abbr">VLAN</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">SW1</span> 未設定 <span class="term-cn">Gateway</span> <span class="term-abbr">IP</span> 192.168.10.1</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">R1</span> <span class="highlight">未設定</span> <span class="term-cn">Gateway</span> <span class="term-abbr">IP</span> 192.168.10.1</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">Host</span> C 未設定 <span class="term-cn">Gateway</span> <span class="term-abbr">IP</span> 192.168.0.1</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        (A) <span class="term-cn">Host</span> C (<span class="term-abbr">VLAN</span> 10) 和 <span class="term-cn">Host</span> B (<span class="term-abbr">VLAN</span> 9) 確實位於不同的 <span class="term-abbr">VLAN</span>。不同 <span class="term-abbr">VLAN</span> 之間的通訊需要<span class="highlight">透過路由器 (Layer 3 設備) 進行轉發</span>。這本身是需要路由的原因，而不是無法存取的直接原因。<br/>
+                        (B) <span class="term-abbr">SW1</span> 是<span class="term-cn">交換器</span> (<span class="term-en">Switch</span>)，通常是 <span class="term-en">Layer 2</span> 設備（除非是 <span class="term-en">Layer 3</span> 交換器）。<span class="term-cn">Gateway</span> 通常設定在路由器或 <span class="term-en">Layer 3</span> 交換器的介面上。即使是 <span class="term-en">Layer 3</span> 交換器，其<span class="term-cn">網關介面</span>通常是針對每個 <span class="term-abbr">VLAN</span> 的虛擬介面 (<span class="term-abbr">SVI</span>)，而不是交換器本身。<br/>
+                        (C) <span class="term-cn">Host</span> C 位於 <span class="term-abbr">VLAN</span> 10。要訪問不同 <span class="term-abbr">VLAN</span> 的 <span class="term-cn">Host</span> B，<span class="term-cn">Host</span> C 需要將封包發送到其<span class="term-cn">預設閘道</span> (<span class="term-en">Default Gateway</span>)。對於 <span class="term-abbr">VLAN</span> 10，其<span class="term-cn">預設閘道</span>應該是在路由器 <span class="term-abbr">R1</span> 上對應 <span class="term-abbr">VLAN</span> 10 的介面（或子介面）。從圖中 R1 的配置 (E0/0.8 for <span class="term-abbr">VLAN</span> 8, E0/0.9 for <span class="term-abbr">VLAN</span> 9) 推斷，<span class="term-abbr">R1</span> <span class="highlight">缺少為 VLAN 10 配置的介面及 IP 地址</span> (應為 192.168.10.x，通常是 192.168.10.1)。沒有這個<span class="term-cn">閘道</span>介面，<span class="term-abbr">R1</span> 無法為 <span class="term-abbr">VLAN</span> 10 的設備提供路由服務，導致 <span class="term-cn">Host</span> C 無法連線到 <span class="term-abbr">VLAN</span> 9。正確。<br/>
+                        (D) <span class="term-cn">Host</span> C 的<span class="term-cn">預設閘道</span>應該是其所在 <span class="term-abbr">VLAN</span> (10) 的路由器介面 <span class="term-abbr">IP</span> (應為 192.168.10.1)，而不是 192.168.0.1 (那是 R1 連接 R2 的介面)。<br/>
+                        因此，主要原因是路由器 <span class="term-abbr">R1</span> 上缺少 <span class="term-abbr">VLAN</span> 10 的<span class="term-cn">閘道</span>設定。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q22 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#22 (題組1)</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。請問<span class="term-abbr">R1</span> &lt; ---- &gt; <span class="term-abbr">SW1</span> 之間所建立的架構稱為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">Multiple <span class="term-abbr">VLAN</span> Routing</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">Router on a stick</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">Routing cross switch</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">One-armed routing</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        圖中顯示，路由器 <span class="term-abbr">R1</span> 和交換器 <span class="term-abbr">SW1</span> 之間透過<span class="highlight">單一的實體連線</span> (R1 的 E0/0 介面連接到 SW1)。路由器 <span class="term-abbr">R1</span> 在這個 E0/0 介面上設定了<span class="highlight">多個子介面</span> (E0/0.8, E0/0.9)，每個子介面對應一個 <span class="term-abbr">VLAN</span> (VLAN 8, VLAN 9)，並設定了相應的 <span class="term-abbr">IP</span> 地址作為該 <span class="term-abbr">VLAN</span> 的<span class="term-cn">閘道</span>。交換器 <span class="term-abbr">SW1</span> 連接路由器的埠需要設定為 <span class="term-cn">Trunk 模式</span>，以允許不同 <span class="term-abbr">VLAN</span> 的流量通過。<br/>
+                        這種使用<span class="highlight">單一路由器介面</span>，透過<span class="term-cn">子介面</span>和 <span class="term-cn">Trunk</span> 鏈路來實現<span class="highlight">多個 VLAN 間路由</span>的架構，被稱為 "<span class="term-cn">Router on a stick</span>"。 <br/>
+                        (A) Multiple <span class="term-abbr">VLAN</span> Routing 是指多個 <span class="term-abbr">VLAN</span> 間的路由，是這種架構實現的功能，但不是架構本身的名稱。<br/>
+                        (C) Routing cross switch 描述不清晰，不是標準術語。<br/>
+                        (D) One-armed routing 與 <span class="term-cn">Router on a stick</span> 概念相似，有時可互換使用，但 <span class="term-cn">Router on a stick</span> 是更普遍和標準的稱呼。<br/>
+                        因此，(B) 是最標準的名稱。
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Q23 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#23 (題組1)</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。公司預計明年進行擴廠需求, 您計畫導入<span class="term-cn">動態路由協定</span>(<span class="term-en">Dynamic Routing Protocol</span>)讓<span class="term-cn">路由</span>可自動更新至所有節點, 以降低中斷的影響時間, 下列何者「不」是避免<span class="term-cn">路由迴圈</span>(<span class="term-en">Routing Loop</span>)的技術?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Route Poisoning</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Split Horizon</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Hold-down timers</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Route Convergence</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        在<span class="term-cn">距離向量路由協定</span> (<span class="term-en">Distance Vector Routing Protocol</span>) 中，為了防止或解決<span class="term-cn">路由迴圈</span>問題，發展了幾種機制：<br/>
+                        (A) <span class="term-en">Route Poisoning</span> (<span class="term-cn">路由毒化</span>): 當一條路由失效時，路由器會將該路由的<span class="term-cn">度量值</span> (<span class="term-en">Metric</span>) 設為<span class="highlight">無限大</span>（例如 RIP 中的 16），並通告給鄰居，防止鄰居路由器再將該失效路由學回。<br/>
+                        (B) <span class="term-en">Split Horizon</span> (<span class="term-cn">水平分割</span>): 基本原則是<span class="highlight">路由器不應將從某介面學到的路由資訊再從同一個介面發送回去</span>。這可以防止基本的兩節點迴圈。<br/>
+                        (C) <span class="term-en">Hold-down timers</span> (<span class="term-cn">抑制計時器</span>): 當一條路由被標記為失效後，路由器會在一段<span class="term-cn">抑制時間</span>內<span class="highlight">忽略任何關於該路由且度量值更高的更新</span>，以等待網路狀態穩定，防止因更新不同步導致的迴圈。<br/>
+                        (D) <span class="term-en">Route Convergence</span> (<span class="term-cn">路由收斂</span>): 指的是當網路拓撲發生變化後，所有路由器<span class="highlight">重新計算路由並達成一致狀態的過程</span>。<span class="term-cn">收斂速度</span>是衡量路由協定效能的指標，<span class="highlight">收斂本身是一個過程或狀態，而不是一種防止路由迴圈的技術</span>。事實上，緩慢的收斂更容易導致路由迴圈。<br/>
+                        <br/>
+                        因此，(D) <span class="term-en">Route Convergence</span> 不是用來避免路由迴圈的技術。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q24 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#24 (題組1)</div>
+                    <div class="evaluation-criterion">1.1 網路安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。承上題, <span class="term-abbr">R1</span> 之現行<span class="term-cn">路由表</span>如附圖, 若導入<span class="term-cn">動態路由協定</span>, 並於<span class="term-abbr">R1</span> 進行<span class="term-cn">路由彙總</span>(<span class="term-en">route summarization</span>), 讓 <span class="term-abbr">SW2</span> 及 <span class="term-abbr">SW3</span> 的所有 <span class="term-cn">Host</span> 可以連接到 <span class="term-abbr">SW1</span> 的所有 <span class="term-cn">Host</span>, 請問 <span class="term-abbr">R1</span> 應如何宣告 <span class="term-abbr">SW1</span> 彙總後的路由? (路由表相關網段: 192.168.8.0/24, 192.168.9.0/24, 以及假設的 192.168.10.0/24)</div>
+                <img src="image/110_防_24.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">192.168.8.0/19</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">192.168.8.0/20</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">192.168.8.0/21</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">192.168.8.0<span class="highlight">/22</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">路由彙總</span>的目的是將多個連續的子網路彙整成一個較大的網路範圍表示，以減少路由表的大小。<br/>
+                        <span class="term-abbr">SW1</span> 所連接的 <span class="term-abbr">VLAN</span> 網段有（根據 R1 配置和 Host C 推斷）：
+                        <ul>
+                            <li><span class="term-abbr">VLAN</span> 8: 192.168.8.0/24</li>
+                            <li><span class="term-abbr">VLAN</span> 9: 192.168.9.0/24</li>
+                            <li><span class="term-abbr">VLAN</span> 10: 192.168.10.0/24 (假設存在且需要被彙總)</li>
+                            <li>(可能還有其他 <span class="term-abbr">VLAN</span>)</li>
+                        </ul>
+                        我們需要找到一個能夠包含 192.168.8.0/24 和 192.168.9.0/24 （以及可能的 192.168.10.0/24, 192.168.11.0/24 等）的最小彙總路由。<br/>
+                        將這些網段的第三個<span class="term-cn">八位元</span> (<span class="term-en">octet</span>) 轉換為二進制：
+                        <ul>
+                            <li>8 = 0000 10<span style="text-decoration:underline">00</span></li>
+                            <li>9 = 0000 10<span style="text-decoration:underline">01</span></li>
+                            <li>10 = 0000 10<span style="text-decoration:underline">10</span></li>
+                            <li>11 = 0000 10<span style="text-decoration:underline">11</span></li>
+                        </ul>
+                        觀察這些二進制數，前 6 位 (0000 10) 是相同的。這表示這四個 /24 的網段可以被彙總。<br/>
+                        共同的前綴是 `192.168.000010`。計算共同位數：8 + 8 + 6 = 22 位。<br/>
+                        因此，可以將 192.168.8.0/24, 192.168.9.0/24, 192.168.10.0/24, 192.168.11.0/24 這四個網段彙總為 <span class="highlight">192.168.8.0/22</span>。<br/>
+                        這個 /22 的範圍是從 192.168.8.0 到 192.168.11.255。<br/>
+                        檢查選項：
+                        <ul>
+                            <li>/19: 192.168.0.0 - 192.168.31.255 (太大)</li>
+                            <li>/20: 192.168.0.0 - 192.168.15.255 (太大)</li>
+                            <li>/21: 192.168.8.0 - 192.168.15.255 (太大)</li>
+                            <li>/22: 192.168.8.0 - 192.168.11.255 (恰好包含 8, 9, 10, 11)</li>
+                        </ul>
+                        故最適合的彙總路由是 (D) 192.168.8.0/22。
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-note">題組2 (Q25-Q28) 背景: 某企業使用第三方ERP系統已經15年,該系統安裝於實體主機中,其作業系統為Windows Server 2003,資料庫為MS-SQL 2008版本,其ERP資料庫相容層級為100。該ERP只購買維護及三次新增客製功能,未購買升級更新版本。後端使用Single Fiber Controller連結EMC storage,發現硬碟使用率已達90%,資料庫檔erp.mdf 900GB,資料庫erp.ldf檔1.5TB。該公司ISMS制度中ERP服務級別協定(SLA)要求妥善率99.9%。因主機警示燈亮起,必須停機檢修,發現RAID卡電池組膨脹,頻繁當機。而ERP授權及容量限制,無法進行P2V全系統備份。緊急採購新主機進行替換,並安裝Esxi,新主機規格為HP-DL380 G10為8核心CPU*2、記憶體256GB、硬碟為SAS 6TB*12。</div>
+
+            <!-- Q25 -->
+            <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#25 (題組2)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。您身為<span class="term-cn">資安工程師</span>, 在面臨系統老舊且要求高<span class="term-cn">妥善率</span>的情況下, 找來<span class="term-cn">主機保固公司</span>進行更換 <span class="term-abbr">RAID</span>卡<span class="term-cn">電池組</span>, 下列敘述何者正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">RAID</span> 資訊遺失不會造成系統毀損</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">在硬碟也保留一份 <span class="term-abbr">RAID</span> 資訊, 可當作 <span class="term-abbr">RAID</span> 的資料備份</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">這是正常故障更換, 不需要進行 <span class="term-abbr">ISMS</span> <span class="term-cn">資安通報</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">檢修前不需要再取<span class="term-cn">主機</span>故障資訊及進行分析</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">RAID</span> 控制卡上的<span class="term-cn">電池組</span> (<span class="term-en">Battery Backup Unit</span>, <span class="term-abbr">BBU</span>) 主要用於在<span class="highlight">意外斷電</span>時，保護<span class="term-abbr">RAID</span> 控制卡<span class="highlight">快取記憶體 (<span class="term-en">Cache</span>) 中尚未寫入硬碟的資料</span>，避免資料遺失。<span class="term-cn">電池組</span>膨脹表示其<span class="term-cn">功能可能異常</span>，更換是必要的維護。<br/>
+                        (A) <span class="term-abbr">RAID</span> 資訊（指<span class="term-abbr">RAID</span> 配置資訊，如級別、成員碟、<span class="term-cn">等量大小</span>等）通常儲存在<span class="term-abbr">RAID</span> 控制卡和成員硬碟上。如果這些資訊遺失（例如控制卡故障且無法從硬碟讀取），可能導致<span class="highlight">整個 RAID 陣列無法辨識</span>，資料無法存取，等同於系統毀損。此敘述錯誤。<br/>
+                        (B) <span class="term-abbr">RAID</span> 配置資訊通常會同時儲存在<span class="term-abbr">RAID</span> 控制卡和<span class="highlight">陣列中的每個成員硬碟上</span>（元數據, <span class="term-en">Metadata</span>）。這樣做是為了<span class="highlight">冗餘</span>，即使更換了 <span class="term-abbr">RAID</span> 控制卡，新的卡也能從硬碟上讀取配置資訊來識別和重建陣列。這可以視為一種<span class="term-abbr">RAID</span> 配置資訊的備份機制，但<span class="highlight">不是使用者資料的備份</span>。此敘述部分正確（硬碟保留RAID配置資訊），但說可當作"資料備份"可能引起誤解，應是指配置資訊的冗餘。在選項中相對最佳。<br/>
+                        (C) 更換 <span class="term-abbr">RAID</span> 卡電池雖然可能是例行維護或故障排除，但由於 <span class="term-abbr">ERP</span> 系統重要性高且有 <span class="term-abbr">SLA</span> 要求，且需要停機檢修，這<span class="highlight">涉及服務中斷和潛在風險</span>（如更換失敗、資料遺失）。根據 <span class="term-abbr">ISMS</span> 程序，這種<span class="highlight">變更作業或可用性事件</span>通常需要進行評估，並可能需要通報或記錄。不能斷定一定不需要通報。此敘述不一定正確。<br/>
+                        (D) 在進行任何硬體更換或檢修前，特別是針對儲存系統，<span class="highlight">應盡可能收集故障資訊</span>（如系統日誌、<span class="term-abbr">RAID</span> 控制卡日誌）並進行分析，以了解問題根本原因，並<span class="highlight">確保更換程序正確</span>，同時應<span class="highlight">確認資料已備份</span>。說不需要取故障資訊是錯誤的。<br/>
+                        <br/>
+                        綜合來看，(B)描述了硬碟上儲存 RAID 配置資訊的冗餘特性，雖然用詞 "資料備份" 不精確，但相較於其他選項的明顯錯誤，(B) 描述了一個實際存在的機制。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q26 -->
+             <div class="question-card" data-evaluation-content-id="1.4"> <!-- Could be 1.6 -->
+                <div class="question-header">
+                    <div class="question-id">#26 (題組2)</div>
+                    <div class="evaluation-criterion">1.4 資料安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。承上題, 在掌握相關資訊後應注意的<span class="term-cn">資料庫安全性評估</span>事項, 下列敘述何者正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">資料庫</span>版本為 <span class="term-abbr">MS-SQL 2008</span> 已經被<span class="term-cn">微軟</span>終止更新服務, 應在新主機抵達時更換成 <span class="term-abbr">MS-SQL 2019</span>, <span class="highlight">未經相容性測試</span>將 <span class="term-abbr">ERP</span> <span class="term-cn">資料庫相容層級</span>直接升級至150模式</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">MS-SQL 2008</span> <span class="term-abbr">ERP</span> <span class="term-cn">資料庫</span> <span class="term-en">ldf</span> 檔已達 1.5<span class="term-abbr">TB</span> 時, 應 <span class="term-cn">transaction log</span>, 其指令為 <span class="term-en">dump transaction erp with no_log</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">MS-SQL 2008</span> <span class="term-abbr">ERP</span> <span class="term-cn">資料庫</span> <span class="term-en">ldf</span> 檔已達 1.5<span class="term-abbr">TB</span> 時, 發現無法使用 <span class="term-abbr">SQL Query</span> 指令方式壓縮資料庫, <span class="highlight">直接刪除 ldf 檔</span>後, 而後再掛回 <span class="term-abbr">ERP</span> <span class="term-cn">資料庫</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">ERP</span> <span class="term-cn">資料庫</span>更換前, 應先檢查 <span class="term-abbr">ERP</span> 系統對<span class="term-cn">資料庫連線方式</span>以及連線的<span class="term-cn">資料庫帳號密碼</span>, 且需要查核<span class="term-cn">資料庫所屬安全性使用者群組</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        評估舊有 <span class="term-abbr">ERP</span> 系統的<span class="term-cn">資料庫</span>安全問題：<br/>
+                        (A) <span class="term-abbr">MS-SQL 2008</span> 確實已終止支援，升級是必要的。但<span class="highlight">直接將資料庫相容層級升到最新（SQL 2019 對應 150）而未經應用程式相容性測試</span>，是非常危險的作法，極可能導致 <span class="term-abbr">ERP</span> 系統功能異常或錯誤。升級必須經過<span class="highlight">審慎評估和完整測試</span>。此作法錯誤。<br/>
+                        (B) `dump transaction erp with no_log` 是 <span class="term-abbr">Sybase</span> 資料庫<span class="highlight">截斷交易日誌</span>的指令。<span class="term-abbr">MS-SQL Server</span> 中截斷日誌（通常是在<span class="term-cn">簡單復原模式</span>下，或完整模式下備份日誌後）使用的指令不同，例如 `BACKUP LOG ... WITH TRUNCATE_ONLY`（舊版，不推薦）或透過<span class="term-cn">備份交易日誌</span> `BACKUP LOG ... TO ...` 後自動截斷。直接套用錯誤的指令是危險的。此敘述錯誤。<br/>
+                        (C) <span class="term-en">ldf</span> 檔是 <span class="term-abbr">MS-SQL Server</span> 的<span class="term-cn">交易日誌檔</span>，記錄了所有資料庫變更。直接刪除 <span class="term-en">ldf</span> 檔會導致<span class="highlight">資料庫處於不一致狀態</span>，無法正常啟動或復原，是<span class="highlight">極其錯誤且危險</span>的操作。壓縮日誌檔應使用 `DBCC SHRINKFILE` 指令，且通常在備份日誌之後進行。此作法錯誤。<br/>
+                        (D) 在遷移或更換<span class="term-cn">資料庫</span>（即使只是換主機）之前，<span class="highlight">必須確認應用程式（ERP）如何連接資料庫</span>，包括連線字串、使用的帳號密碼、認證方式（<span class="term-abbr">SQL</span> 認證或 <span class="term-en">Windows</span> 認證）等。同時，也需要<span class="highlight">檢查資料庫內部的權限設置</span>，例如應用程式帳號隸屬於哪些角色或使用者群組，擁有什麼權限。確保這些配置在新環境中正確無誤，是<span class="highlight">成功遷移和維持安全性的基本要求</span>。此敘述正確。<br/>
+                        因此，正確的評估事項是(D)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q27 -->
+             <div class="question-card" data-evaluation-content-id="1.2">
+                <div class="question-header">
+                    <div class="question-id">#27 (題組2)</div>
+                    <div class="evaluation-criterion">1.2 端點/系統安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。承上題, 關於新主機<span class="term-cn">虛擬化</span>之<span class="term-cn">安全規劃</span>應注意的<span class="term-cn">主機</span>與<span class="term-cn">虛擬化</span>之<span class="term-cn">安全性評估</span>事項, 下列敘述何者較正確?</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">若該新主機決定採用 <span class="term-abbr">ESXi 6.7 U.3</span> 版本, 因 <span class="term-abbr">ESXi</span> 對<span class="term-cn">主機硬體</span>規格有其要求, 所以必須合法下載支援 <span class="term-abbr">HP-DL380 G10</span> 版本, 如不採用專用版本會有不相容問題</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">新主機採用 <span class="term-abbr">ESXi</span> 為求更大硬碟使用需要, 決定採用<span class="term-abbr">RAID 0</span>模式是兼具安全與容量使用規劃</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">ESXi</span> 可採用永久免費的版本, 且可滿足新主機硬體更新需要</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">網路上可以找到<span class="term-abbr">ESXi</span> 序號, 可直接使用在公司正式環境上</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        在新主機上部署 <span class="term-abbr">ESXi</span> 虛擬化平台時的安全和相容性考量：<br/>
+                        (A) <span class="term-en">VMware</span> <span class="term-abbr">ESXi</span> 對硬體有<span class="term-cn">相容性要求</span> (<span class="term-en">Hardware Compatibility List</span>, <span class="term-abbr">HCL</span>)。伺服器廠商（如 <span class="term-abbr">HPE</span>）通常會提供<span class="highlight">客製化的 ESXi 安裝映像檔</span>，其中包含了針對其硬體（如<span class="term-cn">儲存控制器</span>、<span class="term-cn">網路卡</span>）<span class="highlight">優化的驅動程式和管理工具</span>。使用這些廠商提供的專用版本可以<span class="highlight">確保最佳的相容性和穩定性</span>。不使用專用版本，直接安裝通用版 <span class="term-abbr">ESXi</span>，確實可能遇到驅動程式缺失或硬體無法識別等不相容問題。此敘述正確。<br/>
+                        (B) <span class="term-abbr">RAID 0</span> (<span class="term-cn">等量</span>) 只提升效能和容量利用率，但<span class="highlight">完全沒有容錯能力</span>。任何一顆硬碟損壞都會導致整個陣列的資料遺失。對於需要高<span class="term-cn">妥善率</span>的 <span class="term-abbr">ERP</span> 系統來說，採用 <span class="term-abbr">RAID 0</span> 是<span class="highlight">極其不安全的規劃</span>。應選擇具有容錯能力的級別，如 <span class="term-abbr">RAID 1</span>, <span class="term-abbr">RAID 5</span>, <span class="term-abbr">RAID 6</span> 或 <span class="term-abbr">RAID 10</span>。此敘述錯誤。<br/>
+                        (C) <span class="term-en">VMware</span> <span class="term-abbr">ESXi</span> 確實有<span class="term-cn">免費版本</span> (<span class="term-en">vSphere Hypervisor Free</span>)，但其功能<span class="highlight">受到諸多限制</span>，例如無法由 <span class="term-en">vCenter Server</span> 集中管理、不支援 <span class="term-en">vMotion</span>、<span class="term-abbr">HA</span>、<span class="term-abbr">DRS</span> 等進階功能，<span class="term-abbr">API</span> 存取也受限。對於需要高可用性和管理性的企業級 <span class="term-abbr">ERP</span> 系統，免費版通常<span class="highlight">無法滿足需求</span>。此敘述可能具誤導性。<br/>
+                        (D) 從網路上隨意尋找並使用來源不明的 <span class="term-abbr">ESXi</span> 序號，不僅可能<span class="highlight">違反授權協議</span>（非法），還可能<span class="highlight">帶有惡意程式或後門</span>，在公司正式環境中使用是嚴重的安全風險。應透過合法管道取得授權。此敘述錯誤。<br/>
+                        因此，最正確的敘述是(A)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q28 -->
+             <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#28 (題組2)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。承上題, 若在 <span class="term-abbr">ISMS</span> 制度中之<span class="term-cn">服務級別協定</span>(<span class="term-en">Service-Level Agreement</span>, <span class="term-abbr">SLA</span>)要求<span class="term-cn">妥善率</span> 99.9%, 請問一年最大可容許<span class="term-cn">停機時間</span>約為多久?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">7天15小時36分</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">8小時45分36秒</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">15分33.6秒</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">55.36秒</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        計算一年中允許的<span class="term-cn">停機時間</span>：<br/>
+                        一年總時間 = 365 天/年 * 24 小時/天 * 60 分鐘/小時 * 60 秒/分鐘 = 31,536,000 秒/年<br/>
+                        <span class="term-cn">妥善率</span> (<span class="term-en">Availability</span>) = 99.9%<br/>
+                        允許的<span class="term-cn">停機率</span> = 100% - 99.9% = 0.1% = 0.001<br/>
+                        一年最大可容許<span class="term-cn">停機時間</span>（秒）= 31,536,000 秒 * 0.001 = 31,536 秒<br/>
+                        <br/>
+                        將秒轉換為小時、分鐘、秒：
+                        <ul>
+                            <li>31,536 秒 / 3600 秒/小時 = 8.76 小時</li>
+                            <li>0.76 小時 * 60 分鐘/小時 = 45.6 分鐘</li>
+                            <li>0.6 分鐘 * 60 秒/分鐘 = 36 秒</li>
+                        </ul>
+                        所以，一年最大可容許<span class="term-cn">停機時間</span>約為 <span class="highlight">8 小時 45 分 36 秒</span>。<br/>
+                        因此，正確答案是(B)。
+                    </div>
+                </div>
+            </div>
+
+             <div class="question-note">題組3 (Q29-Q32) 背景: 小明是公司的資安工程師, 早上有同仁通知電腦似乎發生異常, 防毒軟體好像也失效, 因此小明調閱了公司在網路出口的封包側錄檔案, 如下圖, 請就上述情境回答下列問題。(附圖資訊已整合進題目和解析)</div>
+             <img src="image/110_防_29.png" class="responsive-img">
+
+            <!-- Q29 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#29 (題組3)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。若小明想使用常見的<span class="term-cn">封包側錄工具</span>來錄製封包, 可以使用下列何種工具做<span class="term-cn">封包錄製</span>?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">jpgdump</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">wireshark</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">ipconfig</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">atpx</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        分析各選項：<br/>
+                        (A) jpgdump：似乎不是一個標準或常見的<span class="term-cn">封包側錄</span>或分析工具名稱。<br/>
+                        (B) <span class="term-en">Wireshark</span>：是<span class="highlight">業界最廣泛使用</span>的<span class="term-cn">開源網路封包分析工具</span>。它可以<span class="highlight">擷取網路介面卡</span>上的封包（<span class="term-cn">錄製封包</span>），並提供詳細的<span class="term-cn">協定分析</span>和<span class="term-cn">圖形化介面</span>。它是進行<span class="term-cn">封包錄製</span>和分析的標準工具。<br/>
+                        (C) <span class="term-en">ipconfig</span> (Windows) / <span class="term-en">ifconfig</span> (Linux/macOS): 是作業系統內建的<span class="term-cn">命令列工具</span>，用於<span class="highlight">顯示和設定本機的網路介面卡組態</span>（如 <span class="term-abbr">IP</span> 地址、子網路遮罩、<span class="term-cn">預設閘道</span>等），<span class="highlight">不能用於錄製網路封包</span>。<br/>
+                        (D) atpx：可能指的是某些特定產品或內部工具的名稱，但不是一個通用的、常見的<span class="term-cn">封包側錄工具</span>。<br/>
+                        <br/>
+                        因此，最適合用於<span class="term-cn">封包錄製</span>的常見工具是(B) <span class="term-en">Wireshark</span>。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q30 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#30 (題組3)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。請問附圖(顯示大量DNS查詢與回應)是小明下了什麼指令(在封包分析工具中過濾)?</div>
+                <img src="image/110_防_30.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">udp.port == 53</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">tcp.port eq 80</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">ip.addr==192.168.23.9</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">arp eq DNS</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        題目附圖顯示的是大量的 <span class="term-abbr">DNS</span> (<span class="term-en">Domain Name System</span>) 查詢和回應封包。<span class="term-abbr">DNS</span> 協定主要使用 <span class="term-abbr">UDP</span> (<span class="term-en">User Datagram Protocol</span>) 作為其<span class="term-cn">傳輸層協定</span>，並且標準的 <span class="term-abbr">DNS</span> 服務<span class="highlight">埠號是 53</span>。（雖然 <span class="term-abbr">DNS</span> 在特定情況下如區域傳輸 (<span class="term-en">Zone Transfer</span>) 或回應包過大時也會使用 <span class="term-abbr">TCP</span> 埠 53，但常規查詢主要使用 <span class="term-abbr">UDP</span>）。<br/>
+                        在 <span class="term-en">Wireshark</span> 等封包分析工具中，過濾顯示特定協定或埠號的語法：<br/>
+                        (A) `udp.port == 53`: 這個<span class="term-cn">過濾器</span>會顯示所有來源埠或目的埠是 53 的 <span class="term-abbr">UDP</span> 封包，這<span class="highlight">正好對應了 DNS 查詢和回應的主要流量</span>。<br/>
+                        (B) `tcp.port eq 80`: 過濾 <span class="term-abbr">TCP</span> 埠 80 的流量，這是 <span class="term-en">HTTP</span> 流量，與附圖的 <span class="term-abbr">DNS</span> 流量不符。<br/>
+                        (C) `ip.addr==192.168.23.9`: 過濾來源或目的 <span class="term-abbr">IP</span> 位址是 192.168.23.9 的所有封包，與協定類型無關，無法專門篩選出 <span class="term-abbr">DNS</span> 流量。<br/>
+                        (D) `arp eq DNS`: <span class="term-abbr">ARP</span> (<span class="term-en">Address Resolution Protocol</span>) 和 <span class="term-abbr">DNS</span> 是不同的協定，這個過濾語法是無效的。<br/>
+                        <br/>
+                        因此，最能篩選出附圖所示 <span class="term-abbr">DNS</span> 流量的指令是(A)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q31 -->
+             <div class="question-card" data-evaluation-content-id="1.6"> <!-- Could be 1.7 -->
+                <div class="question-header">
+                    <div class="question-id">#31 (題組3)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。小明從附圖(HTTP 物件列表)中可找出封包中何者是<span class="term-cn">惡意網站</span>, 造成同仁連上後下載了<span class="term-cn">惡意程式</span>, 請問同仁電腦連上什麼<span class="term-cn">中繼站</span>, 以及下載了什麼可疑的<span class="term-cn">惡意檔案</span>? (複選)</div>
+                <img src="image/110_防_31.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">nrtjo.eu</span> 下載 <span class="term-en">sdfg.jar</span></div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">nrtjo.eu</span> 下載 <span class="term-en">q.jar</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">nrtjo.eu</span> 下載 <span class="term-en">favicon.ico</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">freeways.in</span> 下載 <span class="term-en">gates.php</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        根據題組背景，電腦發生異常且防毒失效，暗示有<span class="term-cn">惡意程式</span>被下載執行。分析附圖中的 <span class="term-en">HTTP</span> 物件列表 (Packet 85, 98, 217, 273, 295 等記錄了檔案下載)：<br/>
+                        <ul>
+                            <li>從主機 <span class="term-en">nrtjo.eu</span> 下載了幾個檔案：
+                                <ul>
+                                    <li>`true.php` (text/html)</li>
+                                    <li>`XXX.XXX` (text/plain) - 內容未知</li>
+                                    <li>`favicon.ico` (text/html) - 網站圖示檔，不太可能是主要惡意程式。</li>
+                                    <li><span class="highlight">`sdfg.jar`</span> (<span class="highlight">application/x-java-archive</span>) - Java 執行檔，<span class="highlight">可疑</span>。</li>
+                                    <li><span class="highlight">`q.jar`</span> (<span class="highlight">application/x-java-archive</span>) - Java 執行檔，<span class="highlight">可疑</span>。</li>
+                                    <li>`loading.php?spl=javad0` (application/octet-stream) - 可能是下載器或載入器。</li>
+                                    <li>`loading.php?spl=javadnw&J050006010` (application/octet-stream) - 同上。</li>
+                                </ul>
+                            </li>
+                            <li>從主機 <span class="term-en">freeways.in</span> 下載了 `gate.php` (text/html)。</li>
+                        </ul>
+                        .jar 檔案是 <span class="term-en">Java</span> <span class="term-cn">封存檔</span>，可以包含可執行的 <span class="term-en">Java</span> 程式碼，是<span class="highlight">常見的惡意軟體載體</span>之一。檔名 `sdfg.jar` 和 `q.jar` 看起來也比較隨機，增加了可疑性。<span class="term-en">favicon.ico</span> 通常是無害的圖示檔。<span class="term-en">gates.php</span> 來自不同主機，雖然也可能有關聯，但主要的可執行惡意檔案嫌疑最大的是來自 <span class="term-en">nrtjo.eu</span> 的 `.jar` 檔案。<br/>
+                        因此，同仁電腦連上的<span class="term-cn">中繼站</span>（惡意網站）是 <span class="term-en">nrtjo.eu</span>，下載的可疑<span class="term-cn">惡意檔案</span>是 <span class="term-en">sdfg.jar</span> 和 <span class="term-en">q.jar</span>。<br/>
+                        選項 (A) 和 (B) 符合。
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Q32 -->
+             <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#32 (題組3)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。小明在附圖封包中可以判斷出受害者連線下載<span class="term-cn">惡意程式</span>的<span class="term-cn">網站 IP 位置</span>為下列何者?</div>
+                <img src="image/110_防_32.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">59.53.91.102</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">192.168.23.129</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">65.55.195.250</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">127.0.0.1</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        從 Q31 的分析可知，<span class="term-cn">惡意程式</span> (`.jar` 檔) 是從主機 <span class="term-en">nrtjo.eu</span> 下載的。<br/>
+                        我們需要從封包記錄中找出 <span class="term-en">nrtjo.eu</span> 對應的 <span class="term-abbr">IP</span> 位址。<br/>
+                        查看 Q30 的 <span class="term-abbr">DNS</span> 查詢記錄（或 Q29 圖中的 TCP/HTTP 記錄）：
+                        <ul>
+                            <li>封包中有多次對 <span class="term-en">nrtjo.eu</span> 的 <span class="term-abbr">DNS</span> 查詢 (例如 Source: 192.168.23.129, Destination: 192.168.23.2, Info: Standard query 0xfa1c A nrtjo.eu)。</li>
+                            <li><span class="term-abbr">DNS</span> 伺服器 (192.168.23.2) 回應了查詢結果 (例如 Source: 192.168.23.2, Destination: 192.168.23.129, Info: Standard query response 0xfa1c A nrtjo.eu <span class="highlight">A 59.53.91.102</span> ...)。這個回應明確指出 <span class="term-en">nrtjo.eu</span> 的 <span class="term-abbr">A</span> 記錄（即 <span class="term-abbr">IPv4</span> 位址）是 <span class="highlight">59.53.91.102</span>。</li>
+                            <li>同時，查看 Q29 圖中的 TCP/HTTP 連線記錄，可以看到受害者主機 192.168.23.129 與 <span class="highlight">59.53.91.102</span> 之間有大量的 TCP 和 HTTP 通訊（埠號 80），符合下載檔案的行為。</li>
+                        </ul>
+                        其他 <span class="term-abbr">IP</span> 地址：
+                        <ul>
+                            <li>192.168.23.129: 是受害者主機的 <span class="term-abbr">IP</span>。</li>
+                            <li>65.55.195.250: 封包記錄顯示受害者主機也與此 <span class="term-abbr">IP</span> 建立 TCP 連線 (埠 443，可能是 <span class="term-en">HTTPS</span>)，但與下載惡意 `.jar` 檔案無關。</li>
+                            <li>127.0.0.1: 是<span class="term-cn">本地回環地址</span> (<span class="term-en">Loopback Address</span>)，不會是外部惡意網站的 <span class="term-abbr">IP</span>。</li>
+                        </ul>
+                        因此，下載<span class="term-cn">惡意程式</span>的網站 <span class="term-abbr">IP</span> 位置是 (A) 59.53.91.102。
+                    </div>
+                </div>
+            </div>
+
+             <div class="question-note">題組4 (Q33-Q36) 背景: 滲透測試(Penetration Test)是通過模擬惡意黑客的攻擊方法, 來評估計算機網路系統安全的一種測試, 目的是發掘系統漏洞, 並提出改善方法, 且通常來說是善意的, 小李身為A公司的資安工程師, 請就上述情境回答下列問題。</div>
+
+             <!-- Q33 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#33 (題組4)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。下列何者較「不」可能是小李<span class="term-cn">滲透測試</span>(<span class="term-en">Penetration Test</span>)會使用到的工具?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Wireshark</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Burp Suite</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Nagios</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Nmap</span></div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">滲透測試</span>常用的工具：<br/>
+                        (A) <span class="term-en">Wireshark</span>: <span class="term-cn">網路封包分析工具</span>，在<span class="term-cn">滲透測試</span>中可用於<span class="highlight">監聽網路流量</span>、分析協定、<span class="highlight">識別敏感資訊</span>洩露等。常用。<br/>
+                        (B) <span class="term-en">Burp Suite</span>: 領先的 <span class="term-en">Web</span> <span class="term-cn">應用程式安全測試工具</span>，提供<span class="term-cn">代理</span> (<span class="term-en">Proxy</span>)、<span class="term-cn">掃描器</span> (<span class="term-en">Scanner</span>)、<span class="term-cn">攔截</span> (<span class="term-en">Interceptor</span>)、<span class="term-cn">重送</span> (<span class="term-en">Repeater</span>) 等多種功能，是 <span class="term-en">Web</span> <span class="term-cn">滲透測試</span>的<span class="highlight">必備工具</span>。常用。<br/>
+                        (C) <span class="term-en">Nagios</span>: 是一款<span class="highlight">開源的系統和網路監控工具</span>。主要用於監控主機、服務的<span class="highlight">可用性</span>和<span class="highlight">效能</span>，並在發生問題時發出警報。它是一個<span class="term-cn">監控</span> (<span class="term-en">Monitoring</span>) 工具，<span class="highlight">不是滲透測試工具</span>。<br/>
+                        (D) <span class="term-en">Nmap</span>: <span class="term-cn">網路掃描工具</span>，用於<span class="term-cn">主機發現</span>、<span class="term-cn">埠掃描</span>、<span class="term-cn">服務偵測</span>、<span class="term-cn">作業系統偵測</span>等，是<span class="term-cn">滲透測試</span><span class="highlight">偵察階段</span>的<span class="highlight">核心工具</span>。常用。<br/>
+                        <br/>
+                        因此，(C) <span class="term-en">Nagios</span> 是監控工具，不是<span class="term-cn">滲透測試</span>工具。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q34 -->
+             <div class="question-card" data-evaluation-content-id="1.3"> <!-- Could be 1.6 -->
+                <div class="question-header">
+                    <div class="question-id">#34 (題組4)</div>
+                    <div class="evaluation-criterion">1.3 應用程式安全防護</div>
+                </div>
+                <div class="question-content">題組背景描述如上。承上題, 當小李完成<span class="term-cn">滲透測試</span>後於報告中發現附圖資訊(<span class="term-en">GET</span> <span class="term-en">http</span>://172.16.112.216:8080/, 狀態200, 版本<span class="term-en">HTTP</span>/1.1, <span class="term-en">Content-Encoding: gzip</span>, <span class="term-en">Content-Type: text/html;charset=UTF-8</span>), 判斷公司可能出現下列何種風險<span class="term-cn">漏洞</span>?</div>
+                <img src="image/110_防_34.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">敏感目錄暴露</span>(<span class="term-en">Possible sensitive directories</span>)</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">未強制使用 <span class="term-abbr">HTTPS</span> (<span class="term-en">Unencrypted connection</span>)</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Session Cookie</span> 未設定為 <span class="term-en">Secure</span> <span class="term-cn">安全模式</span>(<span class="term-en">Cookie without Secure flag set</span>)</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">啟用 <span class="term-abbr">SSH</span> 較弱 <span class="term-abbr">MAC</span> <span class="term-cn">加密算法</span>(<span class="term-en">SSH Weak MAC Algorithms Enabled</span>)</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        分析附圖資訊：請求的 <span class="term-abbr">URL</span> 是 `http://172.16.112.216:8080/`，使用的協定是 <span class="term-en">HTTP</span>，版本 <span class="term-en">HTTP</span>/1.1。<br/>
+                        關鍵在於請求的 <span class="term-abbr">URL</span> 使用的是 <span class="term-en">HTTP</span> 而不是 <span class="term-en">HTTPS</span>。<span class="term-en">HTTP</span> 協定<span class="highlight">傳輸的內容是未加密的明文</span>，容易被中間人竊聽或竄改。<br/>
+                        (A) 僅從一次成功的 <span class="term-en">HTTP GET</span> 請求無法判斷是否有<span class="term-cn">敏感目錄暴露</span>。<br/>
+                        (B) 請求使用 <span class="term-en">HTTP</span> 而非 <span class="term-en">HTTPS</span>，直接表明了<span class="highlight">連線未加密</span>，這是一個明顯的安全風險，表示系統<span class="highlight">未強制使用 HTTPS</span>。正確。<br/>
+                        (C) 附圖資訊中<span class="highlight">沒有包含 Set-Cookie 的回應標頭</span>，無法判斷 <span class="term-en">Session Cookie</span> 是否設定了 <span class="term-en">Secure</span> 旗標。<br/>
+                        (D) 這是 <span class="term-abbr">SSH</span> 服務的設定問題，與圖中顯示的 <span class="term-en">HTTP</span> 請求<span class="highlight">無直接關聯</span>。<br/>
+                        <br/>
+                        因此，根據附圖資訊，最直接能判斷的風險是(B) 未強制使用 <span class="term-abbr">HTTPS</span>。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q35 -->
+             <div class="question-card" data-evaluation-content-id="1.6">
+                <div class="question-header">
+                    <div class="question-id">#35 (題組4)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。公司要求小李再協助處理<span class="term-cn">弱點掃描</span>(<span class="term-en">Vulnerability Assessment</span>), 請問<span class="term-cn">滲透測試</span>與<span class="term-cn">弱點掃描</span>的差異為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">滲透測試</span>主要為<span class="highlight">自動化掃描軟體</span>檢測, 只檢測既有安全<span class="term-cn">漏洞</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">弱點掃描</span>針對客戶的目標系統模擬、發掘安全<span class="term-cn">漏洞</span>並提出改善方法的<span class="highlight">善意行為</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">弱點掃描</span>能檢測出<span class="highlight">最新</span>的<span class="term-cn">資安漏洞</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">滲透測試</span>為<span class="term-cn">資安專家</span>仿<span class="term-cn">駭客思維</span>、發掘安全<span class="term-cn">漏洞</span>, 以<span class="highlight">實戰方式</span>找出任何可能突破目前網站安全防護的檢測</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">弱點掃描</span>和<span class="term-cn">滲透測試</span>是兩種不同的安全評估方法：<br/>
+                        <ul>
+                            <li><span class="term-cn">弱點掃描</span> (<span class="term-en">Vulnerability Assessment/Scanning</span>): 通常使用<span class="highlight">自動化工具</span>，根據已知的<span class="term-cn">漏洞資料庫</span>（如 <span class="term-abbr">CVE</span>）來<span class="highlight">檢查</span>系統或應用程式是否存在這些<span class="highlight">已知漏洞</span>。它的<span class="highlight">廣度較大</span>，可以快速找出大量已知問題，但<span class="highlight">深度有限</span>，且可能產生<span class="term-cn">誤報</span> (<span class="term-en">False Positive</span>)。</li>
+                            <li><span class="term-cn">滲透測試</span> (<span class="term-en">Penetration Testing</span>): 由<span class="highlight">安全專家</span>（滲透測試人員）模擬真實駭客的攻擊方法和思維，<span class="highlight">嘗試利用漏洞</span>（包括已知和未知的、邏輯漏洞等）來<span class="highlight">實際突破系統防禦</span>。它的<span class="highlight">深度較深</span>，更能評估實際風險和防禦的有效性，但<span class="highlight">覆蓋範圍可能不如</span>自動化掃描廣泛，且更依賴測試人員的經驗和技術。</li>
+                        </ul>
+                        (A) 描述的是<span class="term-cn">弱點掃描</span>的特性（自動化、檢測已知漏洞），而非<span class="term-cn">滲透測試</span>。錯誤。<br/>
+                        (B) 描述更接近<span class="term-cn">滲透測試</span>（模擬、發掘漏洞、提出改善），但稱其為<span class="term-cn">弱點掃描</span>是錯誤的。<br/>
+                        (C) <span class="term-cn">弱點掃描</span>依賴<span class="term-cn">漏洞資料庫</span>，只能檢測<span class="highlight">已經被發現並收錄</span>的漏洞。對於零時差攻擊 (<span class="term-en">Zero-day</span>) 或資料庫尚未更新的最新漏洞，<span class="term-cn">弱點掃描</span>無法檢測。錯誤。<br/>
+                        (D) 準確描述了<span class="term-cn">滲透測試</span>的核心特點：由專家模擬駭客、以實戰方式嘗試突破防禦。正確。<br/>
+                        <br/>
+                        因此，正確的描述是(D)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q36 -->
+             <div class="question-card" data-evaluation-content-id="1.6"> <!-- Could be 1.3 -->
+                <div class="question-header">
+                    <div class="question-id">#36 (題組4)</div>
+                    <div class="evaluation-criterion">1.6 安全維運與監控</div>
+                </div>
+                <div class="question-content">題組背景描述如上。小李在研究<span class="term-cn">系統安全維運</span>與測試的過程, 發現為了讓<span class="term-cn">資訊安全測試</span>與設計有較容易遵循的方法與流程, 它是由多位<span class="term-cn">資安領域專家</span>、學者或顧問共同撰寫而成定義出許多<span class="term-cn">資訊安全測試</span>與設計範本, 可幫助<span class="term-cn">資安人員</span>對於<span class="term-cn">資訊安全測試</span>與設計有一個較完整的全貌, 請問下列哪些是目前業界共同的<span class="term-cn">資訊安全測試</span>參考的(<span class="term-cn">方法論</span>)文件範本? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Open Web Application Security Project Testing Guide</span> (<span class="term-abbr">OWASP</span>)</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Common Weakness Enumeration</span> (<span class="term-abbr">CWE</span>)</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Open Shortest Path First</span> (<span class="term-abbr">OSPF</span>)</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Information Systems Security Assessment Framework</span> (<span class="term-abbr">ISSAF</span>)</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        業界常用的<span class="term-cn">資訊安全測試方法論</span>或框架：<br/>
+                        (A) <span class="term-abbr">OWASP</span> <span class="term-en">Testing Guide</span>: 由 <span class="term-abbr">OWASP</span> (<span class="term-en">Open Web Application Security Project</span>) 發布，提供了<span class="highlight">全面性的 Web 應用程式安全測試框架和方法</span>，涵蓋了從資訊收集到各種漏洞類型的測試方法。是業界廣泛參考的標準。<br/>
+                        (B) <span class="term-abbr">CWE</span> (<span class="term-en">Common Weakness Enumeration</span>): 是一個<span class="highlight">軟體和硬體弱點類型的分類系統</span>。它描述了可能導致漏洞的常見錯誤，有助於開發人員避免這些錯誤和測試人員識別它們，但它本身<span class="highlight">不是一個測試方法論或指南</span>，而是一個弱點字典。<br/>
+                        (C) <span class="term-abbr">OSPF</span> (<span class="term-en">Open Shortest Path First</span>): 是一個<span class="highlight">內部閘道路由協定</span> (<span class="term-abbr">IGP</span>)，用於在<span class="term-cn">自治系統</span> (<span class="term-abbr">AS</span>) 內部交換路由資訊，與<span class="term-cn">資訊安全測試</span>無關。<br/>
+                        (D) <span class="term-abbr">ISSAF</span> (<span class="term-en">Information Systems Security Assessment Framework</span>): 是一個由 <span class="term-en">OISSG</span> (<span class="term-en">Open Information Systems Security Group</span>) 開發的<span class="highlight">滲透測試框架</span>。它提供了一個結構化的方法來進行安全評估，涵蓋了測試的各個階段和不同領域。雖然不如 <span class="term-abbr">OWASP TG</span> 普及，但也是一個參考框架。<br/>
+                        <br/>
+                        因此，屬於業界共同參考的<span class="term-cn">資訊安全測試方法論</span>文件範本是 (A) 和 (D)。
+                    </div>
+                </div>
+            </div>
+
+             <div class="question-note">題組5 (Q37-Q40) 背景: 小張為某公司資安工程師, 其使用某工具並輸入了下列的指令執行: nc -vzw5 192.168.0.1 1-2048 (操控端); nc -v -z -w5 192.168.0.1 1-2048 (操控端); nc -ltp 80 (操控端); nc -l -p 80 < /test.txt (操控端); nc -t -p 80 < /test.txt (操控端); nc -g -p 80 > /test.txt (操控端); nc -g -p 80 < /test.txt (操控端); nc -l -p 80 (操控端).</div>
+
+             <!-- Q37 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#37 (題組5)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。請問小張使用此工具的主要目的為下列何者?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">NetChannel</span> 工具通常使用於<span class="term-cn">網路管理</span>情境之下, 主要目的為建立<span class="term-cn">網路通道</span>之用</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">NoCommand</span> 工具通常使用於將 <span class="term-en">DOS Command</span> 轉換為 <span class="term-abbr">GUI</span> 介面執行</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">NoCommunication</span> 工具通常使用於建立雙方之<span class="term-cn">通訊連線</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">NetCat</span> 工具通常使用於<span class="term-cn">網路管理</span>情境之下, 亦為<span class="term-cn">滲透測試</span>常用工具之一</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        題目中使用的指令 `nc` 是 <span class="term-en">Netcat</span> 工具的常見命令。<span class="term-en">Netcat</span> 被譽為「<span class="term-cn">網路界的瑞士刀</span>」，是一個功能強大的<span class="term-cn">網路工具</span>。<br/>
+                        <span class="term-en">Netcat</span> 的主要功能包括：
+                        <ul>
+                            <li>建立 <span class="term-abbr">TCP</span>/<span class="term-abbr">UDP</span> 連線</li>
+                            <li><span class="term-cn">監聽</span> (<span class="term-en">Listen</span>) 指定埠號</li>
+                            <li><span class="term-cn">埠掃描</span> (<span class="term-en">Port Scanning</span>)</li>
+                            <li><span class="term-cn">檔案傳輸</span></li>
+                            <li>作為<span class="term-cn">代理</span>或<span class="term-cn">中繼</span></li>
+                            <li>執行<span class="term-cn">遠端命令</span></li>
+                        </ul>
+                        由於其功能的<span class="highlight">多樣性和靈活性</span>，<span class="term-en">Netcat</span> 廣泛應用於<span class="term-cn">網路除錯</span>、<span class="term-cn">網路管理</span>，同時也是<span class="highlight">駭客和滲透測試人員</span>進行<span class="term-cn">資訊收集</span>、<span class="term-cn">後門建立</span>、<span class="term-cn">資料傳輸</span>等的常用工具。<br/>
+                        (A) <span class="term-en">NetChannel</span> 不是標準的工具名稱。<br/>
+                        (B) <span class="term-en">NoCommand</span> 不是標準的工具名稱。<br/>
+                        (C) <span class="term-en">NoCommunication</span> 不是標準的工具名稱。<br/>
+                        (D) 準確描述了 <span class="term-en">Netcat</span> (<span class="term-abbr">nc</span>) 的用途，它既可用於<span class="term-cn">網路管理</span>，也是<span class="term-cn">滲透測試</span>中的常用工具。<br/>
+                        <br/>
+                        因此，正確答案是(D)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q38 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#38 (題組5)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。關於附圖兩個指令的執行結果, 何者正確? <br/> 指令1: `nc -vzw5 192.168.0.1 1-2048` <br/> 指令2: `nc -v -z -w5 192.168.0.1 1-2048`</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">結果相同, 對 192.168.0.1 主機進行 <span class="term-abbr">vpn</span>連線, 且連線時間設定 2048 秒</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">結果不同, 對 192.168.0.1 主機進行<span class="term-cn">監聽</span>, 且<span class="term-cn">監聽</span>時間設定 2048 秒</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">結果相同, 對192.168.0.1 主機之 <span class="term-abbr">TCP</span> port 1-2048 進行<span class="term-cn">掃描</span>, 且連線<span class="term-cn">逾時</span>設定5秒</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">結果不同, 對192.168.0.1 主機之 <span class="term-abbr">UCP</span> port 1-2048 進行<span class="term-cn">掃描</span>, 且連線<span class="term-cn">逾時</span>設定5秒</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        分析 <span class="term-en">Netcat</span> (<span class="term-abbr">nc</span>) 指令參數：
+                        <ul>
+                            <li>`-v`: <span class="term-en">Verbose</span>，顯示詳細輸出。</li>
+                            <li>`-z`: <span class="term-en">Zero-I/O mode</span>，用於<span class="highlight">埠掃描</span>，僅嘗試連接而不發送任何數據。</li>
+                            <li>`-w <秒數>`: 設定連線<span class="highlight">逾時</span> (<span class="term-en">timeout</span>) 時間。`-w5` 表示逾時 5 秒。</li>
+                            <li>`192.168.0.1`: 目標主機 <span class="term-abbr">IP</span>。</li>
+                            <li>`1-2048`: 目標<span class="highlight">埠號範圍</span>。</li>
+                        </ul>
+                        指令1: `nc -vzw5 192.168.0.1 1-2048`
+                        指令2: `nc -v -z -w5 192.168.0.1 1-2048`
+                        <br/>
+                        在 `nc` 指令中，參數可以合併（如 `-vzw5`）或分開（如 `-v -z -w5`）。這兩種寫法<span class="highlight">效果完全相同</span>。<br/>
+                        這兩個指令都是告訴 `nc`：
+                        1.  顯示詳細過程 (`-v`)。
+                        2.  執行埠掃描模式 (`-z`)。
+                        3.  設置每次連接嘗試的逾時時間為 5 秒 (`-w5`)。
+                        4.  掃描的目標主機是 `192.168.0.1`。
+                        5.  掃描的埠號範圍是 `1` 到 `2048`。
+                        6.  預設情況下，`nc` 的 `-z` 模式進行的是 <span class="highlight">TCP 埠掃描</span>。如果要掃描 <span class="term-abbr">UDP</span>，需要加上 `-u` 參數。<br/>
+                        <br/>
+                        分析選項：
+                        (A) 結果相同，但不是 <span class="term-abbr">VPN</span> 連線，是埠掃描。逾時是 5 秒，不是 2048 秒。錯誤。<br/>
+                        (B) 結果相同，但不是監聽模式（監聽需要 `-l` 參數），是掃描模式。錯誤。<br/>
+                        (C) 結果相同，掃描目標是 `192.168.0.1` 的 <span class="term-abbr">TCP</span> 埠 1 到 2048，連線逾時設定為 5 秒。正確。<br/>
+                        (D) 結果相同，但掃描的是 <span class="term-abbr">TCP</span> 埠，不是 <span class="term-abbr">UDP</span> 埠（選項寫 UCP 應為 UDP）。錯誤。<br/>
+                        <br/>
+                        因此，正確的描述是(C)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q39 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#39 (題組5)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。請問題目中指令 `nc -ltp 80` (操控端)的執行結果為下列何者? (複選)</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">關閉 <span class="term-en">telnet</span> 模式</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">啟動 <span class="term-en">telnet</span> 模式</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">阻斷 80 port</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">指定 80 port 為<span class="term-cn">監聽</span> port</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        分析 `nc -ltp 80` 指令參數：
+                        <ul>
+                            <li>`-l`: <span class="term-en">Listen mode</span>，使 `nc` 進入<span class="highlight">監聽模式</span>，等待連線請求。</li>
+                            <li>`-t`: 在某些版本的 `nc` 中（特別是傳統版本或 OpenBSD 版本），此參數用於<span class="highlight">啟用 Telnet 協商</span>。當客戶端連接時，`nc` 會回應 <span class="term-en">Telnet</span> 選項協商。</li>
+                            <li>`-p 80`: 指定<span class="highlight">監聽的本地埠號</span>為 80。</li>
+                        </ul>
+                        因此，這個指令的執行結果是：
+                        1.  讓本機在 <span class="term-abbr">TCP</span> 埠 80 上<span class="highlight">開始監聽</span>，等待來自客戶端的連線請求。(選項 D 正確)
+                        2.  當有客戶端連接時，會嘗試進行 <span class="term-en">Telnet</span> 選項協商。(選項 B 正確)<br/>
+                        <br/>
+                        (A) 是啟動而非關閉 <span class="term-en">Telnet</span> 模式。錯誤。<br/>
+                        (C) 是監聽埠號，不是阻斷。錯誤。<br/>
+                        <br/>
+                        因此，正確的執行結果描述是 (B) 和 (D)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Q40 -->
+             <div class="question-card" data-evaluation-content-id="1.8">
+                <div class="question-header">
+                    <div class="question-id">#40 (題組5)</div>
+                    <div class="evaluation-criterion">1.8 安全工具與技術</div>
+                </div>
+                <div class="question-content">題組背景描述如上。請問操控端下達何種指令時, 等待接聽 <span class="term-abbr">TCP</span> 80 port, 若接收到連線, 就可以將 `test.txt` 傳送給對方?</div>
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">`nc -l -p 80 < test.txt` (操控端)</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">`nc -t -p 80 < test.txt` (操控端)</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">`nc -g -p 80 > test.txt` (操控端)</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">`nc -g -p 80 < test.txt` (操控端)</div></div>
+                </div>
+                 <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        題目要求 `nc` 在<span class="highlight">監聽 TCP 80 埠</span>，並在接收到連線後，將本地檔案 `test.txt` 的內容<span class="highlight">傳送給連接過來的客戶端</span>。<br/>
+                        分析指令：
+                        <ul>
+                            <li>`-l`: <span class="term-cn">監聽模式</span>。</li>
+                            <li>`-p 80`: 指定<span class="term-cn">監聽埠號</span> 80。</li>
+                            <li>`< test.txt`: <span class="term-cn">輸入重導向</span>。這表示將 `test.txt` 檔案的內容作為 `nc` 指令的<span class="highlight">標準輸入</span> (<span class="term-en">stdin</span>)。在監聽模式下，當連線建立後，`nc` 會將其標準輸入的內容<span class="highlight">發送給客戶端</span>。</li>
+                            <li>`>`: <span class="term-cn">輸出重導向</span>。將 `nc` 的標準輸出寫入檔案。</li>
+                            <li>`-t`: 啟用 <span class="term-en">Telnet</span> 協商（如 Q39 所述），與檔案傳輸無直接關係。</li>
+                            <li>`-g`: 在某些版本的 `nc` 中可能與<span class="term-cn">閘道</span>/<span class="term-cn">來源路由</span>相關，但不是標準參數，且與檔案傳輸無關。</li>
+                        </ul>
+                        結合需求：
+                        1.  需要監聽：`-l`
+                        2.  監聽埠 80：`-p 80`
+                        3.  將檔案內容傳送出去：`< test.txt`
+                        <br/>
+                        組合起來就是 `nc -l -p 80 < test.txt`。<br/>
+                        <br/>
+                        分析選項：
+                        (A) `nc -l -p 80 < test.txt`: 符合需求。
+                        (B) `nc -t -p 80 < test.txt`: 缺少 `-l` 參數，不是監聽模式。錯誤。
+                        (C) `nc -g -p 80 > test.txt`: 使用了無關的 `-g` 參數，且是輸出重導向 `>`，表示將接收到的內容寫入 `test.txt`，而不是發送。錯誤。
+                        (D) `nc -g -p 80 < test.txt`: 使用了無關的 `-g` 參數，且缺少 `-l`。錯誤。
+                        <br/>
+                        因此，正確的指令是(A)。
+                    </div>
+                </div>
+            </div>
+            <div id="noResultsMessage"></div>
+        </div>
+
+        <a href="#" class="back-to-top" id="backToTop">↑</a>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

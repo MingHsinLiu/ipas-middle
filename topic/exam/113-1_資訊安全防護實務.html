@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>iPAS 資訊安全工程師 中級 (113-1) - 122 資訊安全防護實務</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>iPAS 資訊安全工程師 中級 (113年第1次)</h1>
+            <div>科目 122: 資訊安全防護實務</div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-container">
+                <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+                <select id="criterionFilter">
+                    <option value="all">全部內容</option>
+                    <option value="2.1">2.1 弱點、攻擊與攻擊實務 <span class="criterion-count">(9)</span></option>
+                    <option value="2.2">2.2 作業安全實務 <span class="criterion-count">(31)</span></option>
+                </select>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+
+            <div class="toggle-explanations">
+                <button id="toggleExplanations">顯示全部解析</button>
+            </div>
+        </div>
+
+        <div class="criteria-container">
+            <div class="criteria-title">評鑑內容 (點擊篩選)</div>
+            <div class="criteria-grid" id="criteriaGrid">
+                 <div class="criterion-item" onclick="filterByCriterion('2.1')">
+                     <div class="criterion-id">2.1</div>
+                     <div class="criterion-text">弱點、攻擊與攻擊實務</div>
+                     <div class="criterion-count">(9)</div>
+                 </div>
+                 <div class="criterion-item" onclick="filterByCriterion('2.2')">
+                     <div class="criterion-id">2.2</div>
+                     <div class="criterion-text">作業安全實務</div>
+                     <div class="criterion-count">(31)</div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="questions-container" id="questionsContainer">
+
+            <!-- Question 1 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                <div class="question-header">
+                    <div class="question-id">#1</div>
+                    <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                </div>
+                <div class="question-content">關於 <span class="term-abbr">MITRE ATT&CK</span> 中的<span class="term-cn">憑證存取</span> (<span class="term-en">Credential Access</span>) <span class="term-cn">戰術</span> (<span class="term-en">Tactic</span>), 下列何項<span class="highlight">錯誤</span>?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">中間人攻擊</span> (<span class="term-en">Adversary-in-the-Middle</span>) 屬於此類戰術</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">暴力破解攻擊</span> (<span class="term-en">Brute Force</span>) 屬於此類戰術</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">密碼政策探索</span> (<span class="term-en">Password Policy Discovery</span>) 屬於此類戰術</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">變造網站憑證</span> (<span class="term-en">Forge Web Credentials</span>) 屬於此類戰術</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-abbr">MITRE ATT&CK</span> 的<span class="term-cn">憑證存取</span> (<span class="term-en">Credential Access</span>, <span class="term-abbr">TA0006</span>) 戰術包含攻擊者<span class="highlight">竊取帳號名稱和密碼</span>的技術。<br/>
+                        (A) <span class="term-cn">中間人攻擊</span> (<span class="term-abbr">T1557</span>): 可以攔截網路流量，可能<span class="highlight">截獲未加密的憑證</span>，屬於<span class="term-cn">憑證存取</span>。<br/>
+                        (B) <span class="term-cn">暴力破解攻擊</span> (<span class="term-abbr">T1110</span>): 透過<span class="highlight">嘗試大量密碼組合</span>來獲取有效憑證，屬於<span class="term-cn">憑證存取</span>。<br/>
+                        (C) <span class="term-cn">密碼政策探索</span> (<span class="term-abbr">T1201</span>): 屬於<span class="highlight">探索</span> (<span class="term-en">Discovery</span>, <span class="term-abbr">TA0007</span>) 戰術，目的是<span class="highlight">了解目標系統的密碼規則</span>（如長度、複雜度、效期），以便更有效地進行密碼攻擊，但<span class="highlight">不是直接存取憑證</span>的行為。此敘述<span class="highlight">錯誤</span>。<br/>
+                        (D) <span class="term-cn">變造網站憑證</span> (<span class="term-abbr">T1606.001</span> - Forge Web Credentials: <span class="term-en">Cookies</span>, <span class="term-abbr">T1606.002</span> - Forge Web Credentials: <span class="term-en">Web Session Cookie</span>): 偽造<span class="term-cn">Cookie</span>或<span class="term-cn">Session Token</span>等<span class="term-cn">網站憑證</span>以<span class="highlight">冒充使用者身份</span>，屬於<span class="term-cn">憑證存取</span>。<br/>
+                        因此，錯誤的選項是 (C)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                <div class="question-header">
+                    <div class="question-id">#2</div>
+                    <div class="evaluation-criterion">2.2 作業安全實務</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">弱點掃描</span>, 下列敘述何者<span class="highlight">錯誤</span>?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">網路弱點掃描</span>用在尋找<span class="highlight">網路環境</span>中的<span class="term-cn">脆弱點</span>, 舉凡<span class="highlight">開放的通訊埠</span>及所代表之服務, 其服務是否透過<span class="highlight">未經加密</span>的進行傳輸, 或服務<span class="highlight">未更新漏洞</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">應用程式弱點掃描</span>主要針對<span class="highlight">特定應用程式</span>(尤其是<span class="term-cn">網頁伺服器</span>及其<span class="term-cn">資料庫</span>)的程式及應用環境(例如:<span class="term-en">Apache</span> 版本漏洞), 但主要是尋如 <span class="term-abbr">SQL</span> <span class="term-cn">注入</span>、<span class="term-cn">跨站腳本</span>、<span class="term-cn">敏感目錄外洩</span>…等可被攻擊之漏洞</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">主機弱點掃描</span>用在檢查<span class="highlight">個別主機</span>的<span class="term-cn">脆弱點</span>, 例如主機<span class="highlight">效能負載</span>對外服務能力, 或是識別主機<span class="highlight">防毒系統</span>是否更新</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">常見工具, 有 <span class="term-abbr">OWASP ZAP</span>, <span class="term-en">OpenVAS</span>, <span class="term-en">Nessus</span>…等</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        (A) 正確描述了<span class="term-cn">網路弱點掃描</span>的範圍和目的，包括<span class="highlight">識別開放埠</span>、<span class="highlight">服務</span>、<span class="highlight">加密狀態</span>和<span class="highlight">已知漏洞</span>。<br/>
+                        (B) 正確描述了<span class="term-cn">應用程式弱點掃描</span>（<span class="term-abbr">Web</span> 掃描）的重點，包括<span class="highlight">底層</span>（如<span class="term-en">Apache</span>漏洞）和<span class="highlight">應用層</span>（如<span class="term-abbr">SQLi</span>, <span class="term-abbr">XSS</span>）的漏洞。<br/>
+                        (C) <span class="term-cn">主機弱點掃描</span>檢查的是主機<span class="term-cn">作業系統</span>、已安裝<span class="term-cn">軟體</span>和<span class="term-cn">服務</span>的<span class="highlight">已知漏洞</span>和<span class="highlight">安全配置錯誤</span>。它<span class="highlight">不檢查</span>「<span class="highlight">效能負載</span>對外服務能力」（這是效能測試或壓力測試的範圍），通常也<span class="highlight">不直接識別防毒軟體</span>是否更新（雖然可能檢查防毒服務是否運行或存在已知漏洞）。此敘述<span class="highlight">錯誤</span>。<br/>
+                        (D) <span class="term-abbr">OWASP ZAP</span> 是<span class="term-cn">網頁應用程式</span>掃描工具。<span class="term-en">OpenVAS</span> 和 <span class="term-en">Nessus</span> 是<span class="highlight">通用</span>的<span class="term-cn">網路和主機弱點掃描</span>工具。這些都是常見的<span class="term-cn">弱點掃描</span>工具。<br/>
+                        因此，錯誤的敘述是 (C)。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Continue generating HTML for remaining questions -->
+            <!-- Question 3 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                <div class="question-header">
+                    <div class="question-id">#3</div>
+                    <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                </div>
+                <div class="question-content">關於在<span class="term-cn">資訊安全</span>中, <span class="term-cn">威脅</span>或<span class="term-cn">攻擊</span>具多種因素與手法的敘述, 下列哪些<span class="highlight">正確</span>? (<span class="highlight">複選</span>)</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">基於<span class="term-cn">地緣政治動機</span>的<span class="term-cn">威脅分類</span>: 如<span class="highlight">政治意識形態</span>; <span class="highlight">社會報復</span>等, 台灣近期有發生<span class="term-cn">製造業</span>遭<span class="term-cn">勒索加密</span>案例, 就屬於這類型態</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">內部威脅</span> (<span class="term-en">Insider threats</span>): 這種威脅來自<span class="highlight">組織內部的人員</span>, 可能<span class="highlight">無意或故意</span>地洩漏敏感資訊, 或損害系統及公司利益</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">零日攻擊</span> (<span class="term-en">Zero-day attacks</span>): 這類攻擊利用<span class="highlight">尚未正式公開漏洞</span>, 在<span class="highlight">廠商還沒修補漏洞前</span>, 就被利用發動攻擊</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">惡意軟體</span> (<span class="term-en">Malware</span>): 這包括了<span class="term-cn">病毒</span>、<span class="term-cn">蠕蟲</span>、<span class="term-cn">特洛伊木馬</span>、<span class="term-cn">勒索軟體</span>等, 他們可以<span class="highlight">破壞系統</span>, <span class="highlight">竊取數據</span>, 或<span class="highlight">無授權地使用系統資源</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        (A) <span class="term-cn">勒索加密</span>攻擊通常是<span class="highlight">為了金錢利益</span> (<span class="term-en">Financial Motivation</span>)，將其歸類為基於<span class="term-cn">地緣政治</span>或<span class="term-cn">社會報復</span>動機<span class="highlight">通常不準確</span>（除非有特定證據表明如此）。<br/>
+                        (B) 正確定義了<span class="term-cn">內部威脅</span>的來源和可能行為。<br/>
+                        (C) 正確定義了<span class="term-cn">零日攻擊</span>的特點：利用<span class="highlight">未公開、未修補</span>的漏洞。<br/>
+                        (D) 正確列舉了<span class="term-cn">惡意軟體</span>的常見類型及其可能造成的危害。<br/>
+                        因此，正確的敘述是 (B)、(C)、(D)。*根據使用者OCR標示，答案為B/C/D*。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#4</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組1】情境如附圖所示。Alex 知道 <span class="term-abbr">WSL2</span> 雖然為開發人員提供了極大的便利, 使他們能夠在 <span class="term-en">Windows</span> 上無縫地運行 <span class="term-en">Linux</span> 環境, 但同時也帶來了新的安全挑戰。為了保護公司免受潛在的安全威脅, Alex 開始著手制定一套綜合的安全管理措施。下列何項是針對 <span class="term-abbr">WSL</span> 所提出提升<span class="term-cn">資安</span>的<span class="highlight">最佳做法</span>?
+                 <div class="context-block">在 TechSecure Inc., 一家前沿的科技安全公司, 資安團隊面臨著一項前所未有的挑戰。隨著開發團隊需要更多的彈性和功能來進行軟體開發, 公司決定在其開發環境中採用 <span class="term-en">Windows Subsystem for Linux 2</span> (<span class="term-abbr">WSL2</span>)。<br/>這個決策立即吸引了公司的資安政策制定者 Alex 的注意, 身為公司資安政策訂定者, 在面對公司研發團隊必須使用 <span class="term-en">Windows Subsystem for Linux 2</span> (<span class="term-abbr">WSL2</span>), 必須對其資安攻防應建立那些安全管理措施。</div></div>
+                 <img src="image/113-1_防_04.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">經常使用 <code class="highlight">root</code> 帳戶進行日常操作</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">保持 <span class="term-en">Windows</span> 和 <span class="term-en">Linux</span> <span class="term-cn">子系統</span>的<span class="highlight">定期更新</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">在 <span class="term-abbr">WSL2</span> 中<span class="highlight">禁用防火牆</span>和<span class="term-cn">安全軟體</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">共用</span> <span class="term-en">Windows</span> 和 <span class="term-en">Linux</span> <span class="term-cn">子系統</span>的<span class="term-cn">系統管理者密碼</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         提升 <span class="term-abbr">WSL</span> 環境安全的最佳做法：<br/>
+                         (A) 使用 <code class="highlight">root</code> 帳戶進行日常操作<span class="highlight">違反了最小權限原則</span>，增加了系統被破壞的風險，是<span class="highlight">不安全</span>的做法。<br/>
+                         (B) <span class="term-abbr">WSL</span> 環境中的 <span class="term-en">Linux</span> 子系統也需要像獨立的 <span class="term-en">Linux</span> 系統一樣<span class="highlight">定期更新套件和安全補丁</span>，同時也要保持<span class="highlight">主機 Windows 系統的更新</span>。這是<span class="highlight">維持安全</span>的<span class="highlight">基本要求</span>。<span class="highlight">正確</span>。<br/>
+                         (C) <span class="term-abbr">WSL2</span> 運行在<span class="term-cn">虛擬化</span>環境中，但仍需適當的<span class="term-cn">安全防護</span>。禁用<span class="term-cn">防火牆</span>和<span class="term-cn">安全軟體</span>會使系統<span class="highlight">暴露於風險</span>中，是<span class="highlight">錯誤</span>的做法。<br/>
+                         (D) <span class="highlight">共用密碼</span>（尤其是<span class="term-cn">管理者密碼</span>）是<span class="highlight">極不安全</span>的行為，增加了<span class="highlight">憑證洩漏</span>的風險。<br/>
+                         因此，最佳做法是 (B)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- And so on for the rest of the questions -->
+            <!-- Remaining questions 5-40 follow the same structure as Q1-4 -->
+
+             <!-- Question 5 -->
+             <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#5</div>
+                     <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                 </div>
+                 <div class="question-content">【題組1】情境如附圖所示。駭客首先在 <span class="term-abbr">WSL</span> 環境中部署了一個專門編寫的<span class="term-cn">惡意 script</span>, 該 <span class="term-cn">script</span> 旨在利用 <span class="term-en">Windows</span> 與 <span class="term-abbr">WSL</span> 之間的<span class="term-cn">互操作性漏洞</span>。請問其目的, 最有可能是下列何項? (請選一個最合適的答案)
+                 <div class="context-block">與此同時, 一群駭客正在密切關注 TechSecure 的這一舉措。他們計劃利用 <span class="term-abbr">WSL</span> 一個未被廣泛認知的互操作性漏洞來部署惡意腳本, 從而進行內部網路入侵。<br/>這個腳本專門設計來利用 <span class="term-abbr">WSL2</span> 環境中的漏洞, 目標是獲取公司的敏感數據和內部系統的控制權駭客計劃利用 <span class="term-en">Windows Subsystem for Linux</span> (<span class="term-abbr">WSL</span>) 來進行網絡入侵。</div></div>
+                 <img src="image/113-1_防_05.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">在 <span class="term-en">Windows</span> 創立一個<span class="highlight">隱藏的管理員帳戶</span>, 以便未來存取</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">為了直接<span class="highlight">加密</span> <span class="term-en">Windows</span> <span class="term-cn">系統文件</span>, 進行<span class="term-cn">勒索軟體攻擊</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">通過 <span class="term-abbr">WSL</span> 環境檢索並傳送 <span class="term-en">Windows</span> <span class="term-cn">系統日誌</span>, 以分析可能的弱點</div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">利用 <span class="term-abbr">WSL</span> <span class="highlight">執行環境</span>的特性, <span class="highlight">隱藏網路流量</span>, 以<span class="highlight">掩蓋資料外洩</span>行為</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         情境描述駭客利用 <span class="term-abbr">WSL</span> 的<span class="term-cn">互操作性漏洞</span>部署<span class="term-cn">惡意腳本</span>，目標是<span class="highlight">獲取敏感數據</span>和<span class="highlight">內部系統控制權</span>，並進行<span class="highlight">內部網路入侵</span>。<br/>
+                         分析選項目的：<br/>
+                         (A) 建立<span class="term-cn">隱藏帳戶</span>是<span class="term-cn">維持存取</span> (<span class="term-en">Persistence</span>) 的一種手段。<br/>
+                         (B) <span class="term-cn">勒索軟體</span>是為了<span class="term-cn">勒索金錢</span> (<span class="term-en">Impact</span>)。<br/>
+                         (C) 檢索<span class="term-cn">系統日誌</span>是為了<span class="highlight">收集資訊</span>或<span class="highlight">尋找弱點</span> (<span class="term-en">Discovery</span>)。<br/>
+                         (D) <span class="term-abbr">WSL</span> 可以執行 <span class="term-en">Linux</span> 工具，可能被用來建立<span class="highlight">隱蔽的通訊隧道</span>或<span class="highlight">混淆網路流量</span>，以<span class="highlight">掩蓋其資料外洩</span> (<span class="term-en">Exfiltration</span>) 的行為。考慮到駭客目標包含「獲取敏感數據」，<span class="highlight">隱藏資料外洩</span>的流量是很可能的後續動作。<br/>
+                         結合情境「進行內部網路入侵」、「獲取敏感數據」和「利用互操作性漏洞」，選項 (D) 描述利用 <span class="term-abbr">WSL</span> 特性來<span class="highlight">隱藏</span>其惡意活動（特別是<span class="term-cn">資料外洩</span>），是一個符合邏輯且<span class="highlight">進階</span>的攻擊目的。其他選項雖然也可能是攻擊手法，但 (D) 更能體現利用 <span class="term-abbr">WSL</span> 進行<span class="highlight">隱匿</span>操作的意圖。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 6 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#6</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組1】情境如附圖所示。當使用帶有 <span class="term-en">GTFOBins</span> 的 <span class="term-en">Windows Linux</span> <span class="term-cn">子系統</span> (<span class="term-abbr">WSL</span>) 時, 下列何項措施對於增強安全性<span class="highlight">最重要</span>?
+                 <div class="context-block">在進一步的調查中, Alex 發現駭客計劃利用 <span class="term-en">GTFOBins</span> 來執行<span class="term-cn">權限提升</span>和<span class="term-cn">安全環境逃逸</span>。這個發現迫使他對 <span class="term-abbr">WSL2</span> 的安全措施進行了再次強化。<br/><span class="term-en">GTFOBins</span> 是一個關於 <span class="term-en">Unix</span> 二進制文件如何被用於<span class="term-cn">權限提升</span>、文件操作、能力提升以及其他<span class="term-cn">安全環境逃逸</span>的技術文件。</div></div>
+                 <img src="image/113-1_防_06.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">在 <span class="term-abbr">WSL</span> 中使用<span class="term-cn">防病毒軟體</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">在 <span class="term-abbr">WSL</span> 中安裝<span class="term-cn">弱點掃描工具</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">禁用 <span class="term-abbr">WSL</span> 的<span class="term-cn">網路功能</span></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">偵測與記錄用戶對敏感二進制文件的使用</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-en">GTFOBins</span> 列出了許多<span class="highlight">正常</span>的 <span class="term-en">Unix/Linux</span> <span class="term-cn">二進制文件</span>（系統工具）如何被<span class="highlight">濫用</span>於<span class="term-cn">權限提升</span>或<span class="term-cn">安全逃逸</span>。<這意味著攻擊者使用的工具本身<span class="highlight">不是惡意軟體</span>，傳統的<span class="term-cn">防毒軟體</span> (A) 可能<span class="highlight">無法偵測</span>。安裝<span class="term-cn">弱點掃描工具</span> (B) <span class="highlight">無助於</span>防止這些合法工具被濫用。禁用<span class="term-cn">網路功能</span> (C) 可能影響正常使用，且<span class="highlight">無法阻止本地</span>的權限提升。<br/>
+                         由於攻擊者是利用<span class="highlight">合法的系統工具</span>進行惡意活動，<span class="highlight">最重要</span>的防禦措施是<span class="highlight">監控這些工具的使用情況</span>。<br/>
+                         (D) <span class="highlight">偵測和記錄</span>用戶（尤其是非預期的用戶或在非預期情境下）對這些可能被濫用於<span class="term-cn">權限提升</span>等的<span class="highlight">敏感二進制文件</span>的<span class="highlight">存取和執行</span>，可以<span class="highlight">及早發現異常行為</span>，是應對 <span class="term-en">Living Off The Land Binaries</span> (<span class="term-abbr">LOLBins</span>) 類攻擊（<span class="term-en">GTFOBins</span> 列表中的工具常被歸類為此）的<span class="highlight">關鍵</span>。<br/>
+                         因此，(D) 是最重要的措施。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 7 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#7</div>
+                     <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                 </div>
+                 <div class="question-content">【題組1】情境如附圖所示。關於 <span class="term-en">Windows Linux</span> <span class="term-cn">子系統</span> (<span class="term-abbr">WSL</span>) <span class="term-cn">惡意軟體</span>的特點和防禦策略, 下列哪些陳述<span class="highlight">正確</span>? (<span class="highlight">複選</span>)
+                 <div class="context-block">通過 Alex 和他的團隊的不懈努力, TechSecure 成功地抵禦了駭客的進攻。他們的先進防禦策略不僅保護了公司的數據安全, 也為整個行業樹立了如何安全使用 <span class="term-abbr">WSL2</span> 的典範。從歷史軌跡追蹤 2023 年開始, 駭客利用 <span class="term-abbr">WSL</span> 環境日益增加, 其惡意軟體數量也快速的成長。</div></div>
+                 <img src="image/113-1_防_07.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">WSL</span> <span class="term-cn">惡意軟體</span>有時基於<span class="highlight">開源的程式碼</span>, 使得其<span class="highlight">較難被檢測</span>出來</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">這些<span class="term-cn">惡意軟體變種</span>包括能夠<span class="highlight">遠端存取</span>裝置、執行<span class="highlight">任意程式碼</span>的複雜功能</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="highlight">目前的防毒解決方案</span>皆能<span class="highlight">主動偵測</span>、有效識別和防禦這些基於 <span class="term-abbr">WSL</span> 的<span class="term-cn">惡意軟體</span></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">EDR</span> 監測系統活動和尋找可疑事件是防禦 <span class="term-abbr">WSL</span> 類型<span class="term-cn">惡意軟體</span>的手段之一</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         關於針對 <span class="term-abbr">WSL</span> 的<span class="term-cn">惡意軟體</span>：<br/>
+                         (A) 惡意軟體（不限於 <span class="term-abbr">WSL</span>）確實可能基於<span class="term-cn">開源程式碼</span>進行修改，或者利用開源工具，這可能使其<span class="highlight">特徵碼</span>不固定，增加<span class="highlight">基於特徵碼檢測</span>的難度。<span class="highlight">正確</span>。<br/>
+                         (B) 針對 <span class="term-abbr">WSL</span> 的<span class="term-cn">惡意軟體</span>可以像傳統 <span class="term-en">Linux</span> <span class="term-cn">惡意軟體</span>一樣，實現<span class="highlight">遠端存取</span> (<span class="term-en">RAT</span> 功能)、<span class="highlight">執行任意程式碼</span>等複雜功能。它們可以利用 <span class="term-abbr">WSL</span> 與 <span class="term-en">Windows</span> 的交互能力來影響主機系統。<span class="highlight">正確</span>。<br/>
+                         (C) 由於 <span class="term-abbr">WSL</span> 環境相對較新，且<span class="term-cn">惡意軟體</span>可能利用 <span class="term-en">Linux</span> 特性或與 <span class="term-en">Windows</span> 的交互漏洞，<span class="highlight">傳統的、主要針對 Windows 的防毒解決方案可能無法</span>完全有效地偵測或防禦所有基於 <span class="term-abbr">WSL</span> 的威脅。宣稱「皆能主動偵測」<span class="highlight">過於樂觀</span>。此敘述<span class="highlight">錯誤</span>。<br/>
+                         (D) <span class="term-abbr">EDR</span> (<span class="term-cn">端點偵測與回應</span>) 解決方案通常會<span class="highlight">監控更底層的系統活動</span>（包括 <span class="term-abbr">WSL</span> 內部的<span class="term-cn">行程</span>、<span class="term-cn">網路連線</span>、<span class="term-cn">檔案操作</span>等），並進行<span class="highlight">行為分析</span>。因此，<span class="term-abbr">EDR</span> 相較於傳統防毒，<span class="highlight">更有能力</span>偵測和回應<span class="highlight">未知</span>或<span class="highlight">利用合法工具</span>的 <span class="term-abbr">WSL</span> 相關威脅。<span class="highlight">正確</span>。<br/>
+                         因此，正確的陳述是 (A)、(B)、(D)。*根據使用者OCR標示，答案為A/B/D*。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 8-40 -->
+            <!-- Question 8 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                <div class="question-header">
+                    <div class="question-id">#8</div>
+                    <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                </div>
+                <div class="question-content">企業<span class="term-cn">資安事件</span>類型「<span class="highlight">不</span>」包含下列何項?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">機房漏水</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">備用發電機啟動故障</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">外部廠商</span>發生<span class="term-cn">資料外洩</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">私人手機遺失</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        <span class="term-cn">資安事件</span>通常指任何<span class="highlight">危及資訊系統或資料</span>的<span class="term-cn">機密性</span>、<span class="term-cn">完整性</span>或<span class="term-cn">可用性</span> (<span class="term-abbr">CIA</span>) 的事件。<br/>
+                        (A) <span class="term-cn">機房漏水</span>可能<span class="highlight">損壞</span>伺服器、儲存設備等<span class="term-cn">資訊資產</span>，影響<span class="term-cn">可用性</span>和<span class="term-cn">完整性</span>，屬於<span class="term-cn">環境安全事件</span>，可歸類為<span class="term-cn">廣義的資安事件</span>。<br/>
+                        (B) <span class="term-cn">備用發電機</span>故障可能導致<span class="term-cn">電力中斷</span>時系統<span class="highlight">無法持續運作</span>，影響<span class="term-cn">可用性</span>，屬於影響<span class="term-cn">營運持續</span>的事件，也可視為<span class="term-cn">廣義的資安事件</span>（影響<span class="term-cn">可用性</span>）。<br/>
+                        (C) <span class="term-cn">外部廠商</span>（<span class="term-cn">供應鏈</span>）的<span class="term-cn">資料外洩</span>如果涉及企業的<span class="highlight">敏感資料</span>或<span class="highlight">客戶資料</span>，則直接構成企業的<span class="term-cn">資安事件</span>（<span class="term-cn">機密性</span>受損）。<br/>
+                        (D) <span class="highlight">私人手機遺失</span>本身<span class="highlight">不直接構成企業的資安事件</span>，<span class="highlight">除非</span>該手機<span class="highlight">存有未受保護的企業敏感資料</span>或可用於<span class="highlight">存取企業系統</span>（例如未啟用 <span class="term-abbr">MFA</span> 的<span class="term-cn">郵件</span>或 <span class="term-abbr">VPN</span> 帳號）。單純遺失私人手機，與企業資產或<span class="term-abbr">CIA</span> 的直接關聯性最低。<br/>
+                        因此，(D) 最不可能直接被歸類為企業的<span class="term-cn">資安事件</span>。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#9</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">進行<span class="term-cn">資安事件處置</span>時, 下列做法何者<span class="highlight">錯誤</span>?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">將<span class="term-cn">漏洞修補</span>以防止再發生</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">原始稽核紀錄</span>可以刪除</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">確認<span class="term-cn">事件根因</span>是必要的</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">可以<span class="highlight">委託外部專業廠商</span>進行</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-cn">資安事件處置</span>的正確做法：<br/>
+                         (A) <span class="term-cn">事件處置</span>的<span class="highlight">根除</span> (<span class="term-en">Eradication</span>) 和<span class="highlight">復原</span> (<span class="term-en">Recovery</span>) 階段，以及<span class="highlight">事後活動</span> (<span class="term-en">Post-Incident Activity</span>)，都包含<span class="highlight">修補被利用的漏洞</span>，以防止事件<span class="highlight">重複發生</span>。<br/>
+                         (C) <span class="highlight">找出事件的根本原因</span> (<span class="term-en">Root Cause Analysis</span>) 是<span class="highlight">事後檢討</span>的關鍵，有助於制定<span class="highlight">更有效</span>的預防措施。<br/>
+                         (D) 許多組織會<span class="highlight">委託外部</span>的<span class="term-cn">資安</span>專家或<span class="term-cn">事件應變</span> (<span class="term-abbr">IR</span>) 廠商來協助處理複雜的<span class="term-cn">資安事件</span>，這是<span class="highlight">常見且合適</span>的做法。<br/>
+                         (B) <span class="highlight">原始稽核紀錄</span>（<span class="term-cn">Log</span>）是進行<span class="term-cn">事件調查</span>、<span class="term-cn">數位鑑識</span>和<span class="term-cn">責任追究</span>的<span class="highlight">重要證據</span>，<span class="highlight">絕對不可以隨意刪除</span>，尤其是在事件處置過程中。刪除紀錄會<span class="highlight">妨礙調查</span>，甚至可能<span class="highlight">違法</span>。此做法<span class="highlight">嚴重錯誤</span>。<br/>
+                         因此，錯誤的做法是 (B)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 10 -->
+             <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#10</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">針對<span class="term-cn">資安防護機制</span>配置, 下列何種說明較符合<span class="term-cn">縱深防禦</span> (<span class="term-en">Defense in Depth</span>) 的概念?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">購買<span class="highlight">符合公司規格流量</span>的<span class="term-cn">防火牆</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">定期更新防毒軟體</span>的<span class="term-cn">病毒碼</span></div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">針對<span class="highlight">內部系統、網路、軟體</span>進行<span class="highlight">多層次</span>的安全控制</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">全程使用<span class="highlight">加密</span>的資料傳輸</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-cn">縱深防禦</span>的核心概念是<span class="highlight">建立多層次、多樣化的安全控制措施</span>，以提供<span class="highlight">冗餘</span>的保護，避免<span class="highlight">單點失效</span>。<br/>
+                         (A) 購買<span class="highlight">單一</span><span class="term-cn">防火牆</span>（即使符合流量規格）只是<span class="highlight">一層網路邊界防護</span>。<br/>
+                         (B) 定期更新<span class="term-cn">防毒軟體</span>是<span class="highlight">單一端點防護</span>措施的一環。<br/>
+                         (D) 全程使用<span class="term-cn">加密</span>是重要的<span class="term-cn">機密性</span>保護措施，但也只是<span class="highlight">其中一種</span>控制。<br/>
+                         (C) 這個選項明確提到了針對<span class="highlight">系統、網路、軟體</span>進行「<span class="highlight">多層次</span>」的安全控制，最能體現<span class="term-cn">縱深防禦</span>的<span class="highlight">分層</span>和<span class="highlight">廣泛</span>涵蓋的<span class="highlight">核心精神</span>。<br/>
+                         因此，最符合<span class="term-cn">縱深防禦</span>概念的是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 11 -->
+             <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#11</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content"><span class="term-cn">勒索軟體</span>與<span class="term-cn">資料外洩攻擊</span>之準備、預防、緩解與應變之實務上, 可透過<span class="highlight">調校與強化主機系統</span>其<span class="term-cn">網路服務設定</span>來降低所<span class="highlight">曝露之弱點</span>。下列何種系統強化措施最「<span class="highlight">不</span>」合適?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">於<span class="highlight">面向網際網路</span>之主機執行<span class="term-cn">弱點掃描</span>以識別系統弱點並修復</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">於主機系統<span class="highlight">停用並關閉未使用</span> <span class="term-abbr">RDP</span> <span class="term-cn">遠端桌面協定</span> <span class="term-abbr">TCP/3389</span> 連接埠</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">於主機系統<span class="highlight">啟用</span> <span class="term-abbr">SMBv1</span>, <span class="term-abbr">SVBv2</span> <span class="term-cn">伺服器訊息區</span>協定以達傳輸加密</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">於<span class="term-cn">防火牆</span>設定<span class="highlight">阻擋</span> <span class="term-abbr">TCP/445</span> 連接埠對網際網路之內外連線規則</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         降低<span class="term-cn">勒索軟體</span>和<span class="term-cn">資料外洩</span>風險的<span class="term-cn">主機強化</span>措施：<br/>
+                         (A) 對<span class="highlight">暴露於外部</span>的主機進行<span class="term-cn">弱點掃描</span>並<span class="highlight">修補</span>，是<span class="highlight">減少入侵點</span>的基本要求。<br/>
+                         (B) <span class="term-abbr">RDP</span> 是<span class="term-cn">勒索軟體</span>常用的<span class="highlight">入侵管道</span>。如果<span class="highlight">不需要</span>使用，應<span class="highlight">停用並關閉</span>相關<span class="term-cn">連接埠</span> (3389)。<br/>
+                         (C) <span class="term-abbr">SMBv1</span> 是一個<span class="highlight">極不安全且已知存在嚴重漏洞</span>（如 WannaCry 利用的漏洞）的協定，<span class="highlight">絕對應該禁用</span>，而不是啟用。應使用<span class="highlight">較新且較安全</span>的 <span class="term-abbr">SMBv2</span> 或 <span class="term-abbr">SMBv3</span>，並<span class="highlight">啟用其加密和簽章</span>功能。此選項<span class="highlight">非常不合適</span>且<span class="highlight">危險</span>。<br/>
+                         (D) <span class="term-abbr">TCP</span> 埠 445 用於 <span class="term-abbr">SMB</span> 協議。在<span class="term-cn">邊界防火牆</span><span class="highlight">阻擋來自或去往網際網路</span>的 445 埠流量，可以<span class="highlight">有效阻止</span>外部利用 <span class="term-abbr">SMB</span> 漏洞的攻擊，是<span class="highlight">常見的安全建議</span>。<br/>
+                         因此，最不合適的強化措施是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining Q12-Q40 follow -->
+            <!-- Question 12 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#12</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content"><span class="term-cn">事故回應</span>(<span class="term-en">Incident Response</span>, <span class="term-abbr">IR</span>) 的處理流程中, 依據 <span class="term-abbr">NIST SP800-61 r2</span> 在<span class="highlight">隔離、清除和恢復</span>階段中, 下列何項是最佳處理方案?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">立即更新<span class="term-cn">安全政策</span></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">隔離受影響系統</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">開始<span class="term-cn">法律行動</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">立即針對員工進行<span class="term-cn">安全培訓</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         根據 <span class="term-abbr">NIST SP 800-61 Rev. 2</span> 的<span class="term-cn">事件回應</span>生命週期，<span class="highlight">事故發生後</span>的處理階段主要包括：<br/>
+                         1.  <span class="term-cn">偵測與分析</span> (<span class="term-en">Detection and Analysis</span>)<br/>
+                         2.  <span class="term-cn">圍堵、根除與復原</span> (<span class="term-en">Containment, Eradication, and Recovery</span>)<br/>
+                         3.  <span class="term-cn">事後活動</span> (<span class="term-en">Post-Incident Activity</span>)<br/>
+                         <br/>
+                         題目問的是「<span class="highlight">隔離、清除和恢復</span>」（對應<span class="term-cn">圍堵、根除與復原</span>）階段的最佳處理方案。<br/>
+                         (B) <span class="highlight">隔離受影響系統</span>是<span class="term-cn">圍堵</span> (<span class="term-en">Containment</span>) 階段的<span class="highlight">首要</span>且<span class="highlight">關鍵</span>步驟，目的是<span class="highlight">阻止</span>事件擴散、<span class="highlight">限制</span>損害範圍。<br/>
+                         (A) 更新<span class="term-cn">安全政策</span>通常是<span class="term-cn">事後活動</span>的一部分，根據事件學習經驗來改進政策。<br/>
+                         (C) <span class="term-cn">法律行動</span>可能涉及，但不一定是處理階段的立即或核心步驟。<br/>
+                         (D) <span class="term-cn">安全培訓</span>是<span class="term-cn">預防</span>措施或<span class="term-cn">事後</span>改進活動，非<span class="term-cn">圍堵/根除/復原</span>階段的直接動作。<br/>
+                         因此，在此階段中，(B) <span class="term-cn">隔離受影響系統</span>是最優先和最佳的處理方案之一。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 13 -->
+             <div class="question-card" data-evaluation-content-id="2.2">
+                  <div class="question-header">
+                      <div class="question-id">#13</div>
+                      <div class="evaluation-criterion">2.2 作業安全實務</div>
+                  </div>
+                  <div class="question-content">近年來 <span class="term-abbr">MFA</span> <span class="term-cn">身份驗證機制</span>遭攻擊者以<span class="term-cn">網路釣魚攻擊</span>破解之趨勢上升, 因此抵禦<span class="term-cn">網路釣魚</span><span class="term-cn">多因素驗證</span> (<span class="term-en">Phishing-resistant MFA</span>) 機制受到重視, 因其可有效降低前述之攻擊成功機率。下列哪些<span class="term-cn">身份驗證方式</span>符合抵抗<span class="term-cn">網路釣魚攻擊</span>之特性? (<span class="highlight">複選</span>)</div>
+                  <div class="options-container">
+                      <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">FIDO Auth</span></div></div>
+                      <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">MMS MFA</span></div></div>
+                      <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">PKI</span>-based <span class="term-abbr">MFA</span></div></div>
+                      <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">增加<span class="term-cn">密碼長度</span></div></div>
+                  </div>
+                  <div class="explanation-container">
+                      <div class="explanation-header">答案解析</div>
+                      <div class="explanation-content">
+                          <span class="term-cn">抗釣魚 MFA</span> 的關鍵在於<span class="highlight">驗證過程與特定來源（網站）綁定</span>，且<span class="highlight">無法輕易被中間人攔截或重放</span>。<br/>
+                          (A) <span class="term-abbr">FIDO</span>（特別是 <span class="term-abbr">FIDO2</span>/<span class="term-en">WebAuthn</span>）使用<span class="highlight">公鑰密碼學</span>和<span class="highlight">來源驗證</span>，使用者需透過<span class="highlight">硬體金鑰</span>或<span class="highlight">生物辨識</span>與特定網站進行驗證，可以有效抵抗<span class="term-cn">釣魚攻擊</span>。<span class="highlight">正確</span>。<br/>
+                          (B) <span class="term-abbr">MMS MFA</span>（透過<span class="term-cn">多媒體訊息</span>發送驗證碼）類似 <span class="term-abbr">SMS MFA</span>，容易被<span class="highlight">攔截</span>或<span class="highlight">誘騙</span>使用者輸入到<span class="term-cn">釣魚網站</span>，<span class="highlight">不具備</span>抗釣魚特性。<br/>
+                          (C) <span class="term-abbr">PKI</span>-based <span class="term-abbr">MFA</span>（例如使用<span class="highlight">智慧卡</span>或<span class="highlight">客戶端憑證</span>）基於<span class="term-cn">公鑰基礎建設</span>，驗證過程<span class="highlight">不易被攔截和偽造</span>，具有<span class="highlight">較強</span>的抗釣魚能力。<span class="highlight">正確</span>。<br/>
+                          (D) 增加<span class="term-cn">密碼長度</span>可以<span class="highlight">增加密碼本身的強度</span>，抵抗<span class="term-cn">暴力破解</span>，但<span class="highlight">無法抵抗釣魚攻擊</span>（使用者仍可能在<span class="term-cn">釣魚網站</span>輸入長密碼）。<br/>
+                          因此，符合抗釣魚特性的方式是 (A) 和 (C)。*根據使用者OCR標示，答案為A/C*。
+                      </div>
+                  </div>
+              </div>
+
+             <!-- Question 14 -->
+             <div class="question-card" data-evaluation-content-id="2.2">
+                  <div class="question-header">
+                      <div class="question-id">#14</div>
+                      <div class="evaluation-criterion">2.2 作業安全實務</div>
+                  </div>
+                  <div class="question-content">根據 <span class="term-abbr">NIST Cybersecurity Framework</span> 中的 <span class="term-en">Protect</span> 功能, 下列哪些項目是組織實施此功能時應考慮的關鍵要素? (<span class="highlight">複選</span>)</div>
+                  <div class="options-container">
+                      <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">實施<span class="highlight">身份管理及存取控制</span></div></div>
+                      <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">執行<span class="highlight">資料加密和保護</span></div></div>
+                      <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">建立<span class="term-cn">災難復原程序</span></div></div>
+                      <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">定期執行<span class="term-cn">弱點掃描</span></div></div>
+                  </div>
+                  <div class="explanation-container">
+                      <div class="explanation-header">答案解析</div>
+                      <div class="explanation-content">
+                          <span class="term-abbr">NIST CSF</span> 的 <span class="term-en">Protect</span> (<span class="term-cn">保護</span>) 功能旨在制定和實施<span class="highlight">適當的防護措施</span>，以確保<span class="term-cn">關鍵基礎設施服務</span>的交付。其下的<span class="term-cn">類別</span> (<span class="term-en">Categories</span>) 包括：<br/>
+                          - <span class="term-cn">身分管理、驗證與存取控制</span> (<span class="term-en">Identity Management, Authentication and Access Control</span> - PR.AC) (對應 A)<br/>
+                          - <span class="term-cn">意識與培訓</span> (<span class="term-en">Awareness and Training</span> - PR.AT)<br/>
+                          - <span class="term-cn">資料安全</span> (<span class="term-en">Data Security</span> - PR.DS) (對應 B，包括加密)<br/>
+                          - <span class="term-cn">資訊保護程序與程序</span> (<span class="term-en">Information Protection Processes and Procedures</span> - PR.IP)<br/>
+                          - <span class="term-cn">維護</span> (<span class="term-en">Maintenance</span> - PR.MA)<br/>
+                          - <span class="term-cn">保護技術</span> (<span class="term-en">Protective Technology</span> - PR.PT)<br/>
+                          <br/>
+                          (C) <span class="term-cn">災難復原程序</span>屬於 <span class="term-en">Recover</span> (<span class="term-cn">復原</span>) 功能。<br/>
+                          (D) 定期執行<span class="term-cn">弱點掃描</span>通常是為了<span class="highlight">識別</span>弱點 (屬於 <span class="term-en">Identify</span> 功能)，或是作為<span class="highlight">偵測</span>異常的手段 (屬於 <span class="term-en">Detect</span> 功能)，或是為了後續修補以<span class="highlight">保護</span>系統，但其本身作為一個活動，歸類於 <span class="term-en">Protect</span> 的直接性不如 A 和 B。<br/>
+                          因此，(A) 和 (B) 是 <span class="term-en">Protect</span> 功能的核心關鍵要素。*根據使用者OCR標示，答案為A/B*。
+                      </div>
+                  </div>
+              </div>
+
+            <!-- Question 15 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#15</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組2】情境如附圖所示。由於已建置的<span class="term-cn">簡易型無線網路系統</span><span class="term-cn">資安防護能力不足</span>, 駭客能夠隨意的從各超市發起攻擊行為, 參閱<span class="term-cn">國際工業自動化協會</span> (<span class="term-en">International Society of Automation</span>, <span class="term-abbr">ISA</span>) 的 <span class="term-abbr">ANSI/ISA-95</span> <span class="term-cn">普渡模型</span> (<span class="term-en">Purdue Model</span>) 架構, 請問在 <span class="term-en">Level 0</span> <span class="term-cn">終點裝置層</span>和 <span class="term-en">Level 1</span> <span class="term-cn">工業控制層</span>之中如何快速提升<span class="term-cn">物聯設施</span>的<span class="term-cn">通訊安全</span>, 下列何項是最適合的解決方案?
+                 <div class="context-block"><i>(附圖為超市 IoT 冷藏櫃示意圖, 包含溫濕度/重量感測器、顯示標籤、平板 App 等, 連接後台伺服器)</i><br/>S服務商...規劃將所有的服務超市更換為獨特的冷藏櫃檯設施, 內含多重物聯網裝置...每家商店使用的物聯網裝置也即時連接服務商後台系統...已將其管理的所有超市更換為新的物聯網設施和營運系統...發現此物聯網設施和營運系統完全未有資安防護設計與建置...</div></div>
+                 <img src="image/113-1_防_15.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">各超市更換新一代 <span class="term-abbr">NB-IoT</span> 或 <span class="term-abbr">LoRa</span> <span class="highlight">無線傳輸設備</span>, 直接提升<span class="term-cn">無線網路通訊安全</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">在<span class="term-cn">物聯網裝置</span>上增加<span class="highlight">身分認證機制</span>, 確認僅有經過認證的設備才能進行內部通訊</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">將<span class="term-cn">物聯網裝置</span>更換為<span class="highlight">有線通訊方式</span>, 避免駭客由<span class="term-cn">無線網路</span>造成系統危害</div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">更換<span class="highlight">工業用 AP Controller 設備</span>, <span class="highlight">管制連線裝置</span>和<span class="highlight">區分設備與人員連線網段</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         問題是在<span class="highlight">現有無線網路</span>架構下，快速提升 <span class="term-en">Level 0/1</span> 的<span class="term-cn">通訊安全</span>。<br/>
+                         (A) 更換為 <span class="term-abbr">NB-IoT</span> 或 <span class="term-abbr">LoRa</span> 是<span class="highlight">改變底層通訊技術</span>，成本高且未必直接解決安全問題，其安全性取決於整體實施。<br/>
+                         (B) 在<span class="term-cn">物聯網裝置</span>上增加<span class="term-cn">認證機制</span>是<span class="highlight">強化裝置本身安全</span>的好方法，但可能需要<span class="highlight">大量修改現有設備</span>，未必「快速」。<br/>
+                         (C) 更換為<span class="highlight">有線通訊</span>可以<span class="highlight">消除無線的風險</span>，但成本高昂且可能不適用於所有場景，不符合「快速」的要求。<br/>
+                         (D) 更換或升級核心的<span class="highlight">無線網路控制器</span> (<span class="term-en">AP Controller</span>)，利用其<span class="highlight">管理功能</span>來<span class="highlight">管制</span>哪些裝置可以連線（例如基於 <span class="term-abbr">MAC</span> 位址或 <span class="term-abbr">802.1X</span> 認證），並透過 <span class="term-abbr">VLAN</span> 等技術<span class="highlight">區分不同類型設備</span>（如<span class="term-cn">感測器</span>、<span class="term-cn">平板</span>、<span class="term-cn">管理人員</span>）的<span class="term-cn">網段</span>，實施<span class="term-cn">網路隔離</span>。這是<span class="highlight">相對快速且有效</span>地提升現有<span class="term-cn">無線網路</span><span class="term-cn">通訊安全</span>和<span class="term-cn">存取控制</span>的方法。<br/>
+                         因此，(D) 是最適合的快速解決方案。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Questions 16-40 -->
+             <!-- Remaining questions generated based on the provided PDF pages -->
+
+             <!-- Question 16 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#16</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組2】情境如附圖所示。承上題, 請問在<span class="term-cn">零信任</span>的原則, 於 <span class="term-abbr">ANSI/ISA-95</span> <span class="term-cn">普渡模型</span>架構之下, 建立 <span class="term-en">Level 2</span> <span class="term-cn">監控層</span>、<span class="term-en">Level 3</span> <span class="term-cn">營運作業</span>及 <span class="term-en">Level 4</span> <span class="term-cn">管理層</span>之中 <span class="term-abbr">OT</span> <span class="term-cn">工控設施</span>與 <span class="term-abbr">IT</span> <span class="term-cn">資訊系統</span>的<span class="term-cn">安全防護能力</span>, 下列何者「<span class="highlight">不</span>」是適當的解決方案?
+                 <div class="context-block"><i>(情境同上題)</i></div></div>
+                 <img src="image/113-1_防_15.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">系統 <span class="term-en">App</span> 需經<span class="highlight">認證</span>後才能部署使用</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">任何裝置應安裝防毒軟體</span>才能進行連網通訊</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">任何人員需經<span class="highlight">認證</span>後才能操作營運系統</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">在超市<span class="term-cn">防火牆</span>依<span class="highlight">連線位置部署</span>不同的<span class="term-cn">資安管理政策</span> (<span class="term-en">Security Policy</span>)</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         在 <span class="term-abbr">OT/ICS</span> 環境中應用<span class="term-cn">零信任</span>原則，並考慮 <span class="term-cn">普渡模型</span>的分層：<br/>
+                         (A) 要求<span class="term-cn">應用程式</span> (<span class="term-en">App</span>) 需經<span class="highlight">認證</span>（例如<span class="term-cn">程式碼簽章</span>、<span class="term-cn">白名單</span>）才能部署和使用，符合<span class="term-cn">零信任</span>中對<span class="highlight">應用程式</span>的驗證要求。<br/>
+                         (C) 要求<span class="term-cn">人員</span>需經<span class="highlight">認證</span>（<span class="term-cn">身份驗證</span>）才能操作系統，符合<span class="term-cn">零信任</span>的<span class="highlight">身分鑑別</span>要求。<br/>
+                         (D) 根據<span class="highlight">連線來源</span>（如不同網段、不同樓層）部署<span class="highlight">不同的安全政策</span>，體現了<span class="term-cn">基於上下文</span>的<span class="highlight">動態存取控制</span>，符合<span class="term-cn">零信任</span>精神。<br/>
+                         (B) 要求「<span class="highlight">任何裝置</span>」都應安裝<span class="term-cn">防毒軟體</span>才能連網，這在 <span class="term-abbr">OT/ICS</span> 環境中是<span class="highlight">不切實際且可能有害</span>的。<許多 <span class="term-abbr">OT</span> 設備（如 <span class="term-abbr">PLC</span>、<span class="term-cn">感測器</span>）<span class="highlight">無法安裝</span>防毒軟體，且安裝防毒可能<span class="highlight">影響其效能或穩定性</span>。應採用其他適合 <span class="term-abbr">OT</span> 環境的防護措施（如<span class="term-cn">網路隔離</span>、<span class="term-cn">入侵偵測</span>、<span class="term-cn">應用程式白名單</span>）。此解決方案<span class="highlight">不適當</span>。<br/>
+                         因此，(B) 不是適當的解決方案。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 17 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                <div class="question-header">
+                    <div class="question-id">#17</div>
+                    <div class="evaluation-criterion">2.2 作業安全實務</div>
+                </div>
+                <div class="question-content">【題組2】情境如附圖所示。承上題, 本系統在經過<span class="term-cn">弱點掃描</span>後將進行相關<span class="term-cn">安全補正措施</span>, 請問下列何者「<span class="highlight">不</span>」符合最小<span class="term-cn">管理成本</span>的立即解決方案?
+                <div class="context-block"><i>(情境同上題)</i></div></div>
+                <img src="image/113-1_防_15.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">將各超市<span class="highlight">無法進行修補</span>的 <span class="term-en">XP OT</span> <span class="term-cn">工控主機升版</span>為 <span class="term-en">Win 10</span> 主機</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">關閉各超市資訊主機非必要</span>的<span class="term-cn">通訊埠</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">更新<span class="highlight">總部營運系統</span>的<span class="term-cn">資安 Patch</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">檢視所有營運系統使用者</span>的操作權限, 將<span class="highlight">需求權限最小化</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        尋找「<span class="highlight">不</span>」符合<span class="highlight">最小管理成本</span>的<span class="highlight">立即</span>解決方案：<br/>
+                        (B) 關閉<span class="highlight">非必要的通訊埠</span>是一種<span class="highlight">基本的安全強化</span>措施，通常<span class="highlight">成本較低</span>且可<span class="highlight">立即執行</span>。<br/>
+                        (C) 更新<span class="term-cn">安全補丁</span> (<span class="term-en">Patch</span>) 是<span class="highlight">標準維護</span>作業，雖然需要規劃和測試，但屬於<span class="highlight">必要</span>且<span class="highlight">成本相對可控</span>的措施。<br/>
+                        (D) 檢視並<span class="highlight">落實最小權限原則</span>是重要的<span class="term-cn">管理控制</span>，雖然需要投入時間分析，但通常<span class="highlight">不涉及大量硬體或軟體採購</span>。<br/>
+                        (A) 將<span class="highlight">老舊</span>（無法修補）的 <span class="term-en">Windows XP</span> <span class="term-abbr">OT</span> 主機<span class="highlight">升級</span>到 <span class="term-en">Windows 10</span>，這是一個<span class="highlight">重大的系統更換</span>作業，可能涉及<span class="highlight">硬體更換</span>、<span class="highlight">軟體相容性測試</span>、<span class="highlight">重新設定</span>等，需要<span class="highlight">較高的成本</span>（時間、人力、金錢）且<span class="highlight">無法立即完成</span>。<br/>
+                        因此，(A) 是最不符合<span class="highlight">最小管理成本</span>和<span class="highlight">立即解決</span>條件的方案。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Remaining questions 18-40 -->
+
+            <!-- ... (HTML for Questions 18-40 would follow here) ... -->
+            <!-- Question 18 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                <div class="question-header">
+                    <div class="question-id">#18</div>
+                    <div class="evaluation-criterion">2.2 作業安全實務</div>
+                </div>
+                <div class="question-content">【題組2】情境如附圖所示。承上題, S 公司當年委外開發本營運系統時並未有任何<span class="term-cn">軟體安全</span>之要求, 當前參閱考 <span class="term-abbr">OWASP top10</span> 和 <span class="term-abbr">OWASP Mobile Security</span> 評估現階的<span class="term-cn">軟體安全防護</span>規劃, 請問下列哪些措施較為適合迅速補強<span class="term-cn">軟體弱點</span>? (<span class="highlight">複選</span>)
+                <div class="context-block"><i>(情境同上題)</i></div></div>
+                <img src="image/113-1_防_15.png" class="responsive-img">
+                <div class="options-container">
+                    <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">駭客的攻擊手法一直不停的在更新、進步、改變, 增設<span class="highlight">網站傳輸監控設備</span>或機制, 經由監控傳輸流量, 對比<span class="term-cn">病毒</span>、<span class="term-cn">惡意程式資料庫</span>來過濾出可疑的流量, 管理系統交易流量、<span class="highlight">加強防護機制</span>, 以提升系統防護能力</div></div>
+                    <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">定期安排網站弱點掃描</span>, 針對本營運系統潛的在弱點進行 <span class="term-en">Patch</span> 更新, 以及增修<span class="term-cn">網路安全政策</span> (<span class="term-en">Security Policies</span>), 降低<span class="term-cn">加密失效</span> (<span class="term-en">Cryptographic Failures</span>) 和<span class="term-cn">權限控制</span> (<span class="term-en">Broken Access Control</span>) 的風險, 提升系統與連線的安全性</div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="highlight">重新編寫軟體</span>以符合新世代的<span class="term-cn">軟體安全</span>要求, 徹底解決<span class="term-cn">不安全設計</span> (<span class="term-en">Insecure Design</span>)、<span class="term-cn">安全設定</span> (<span class="term-en">Security Misconfiguration</span>) 與使用<span class="term-cn">過時或危機元件</span> (<span class="term-en">Vulnerable and Outdated Components</span>) 的根本問題</div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">在總部增設<span class="term-cn">網站應用程式防火牆</span> (<span class="term-en">Website Application Firewall</span>), 增加<span class="term-cn">注入式攻擊</span> (<span class="term-en">Injection</span>) 的防禦能力, 保護 <span class="term-en">Web</span> <span class="term-cn">應用程式</span>和交易資訊安全</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">
+                        目標是「<span class="highlight">迅速補強</span>」現有系統的<span class="term-cn">軟體弱點</span>。<br/>
+                        (A) 增設<span class="highlight">監控設備/機制</span>（如 <span class="term-abbr">IDS/IPS</span>, <span class="term-abbr">NDR</span>）監控流量並<span class="highlight">比對惡意特徵</span>，可以<span class="highlight">偵測或阻擋</span>部分攻擊，是一種<span class="highlight">補強措施</span>。<br/>
+                        (B) <span class="highlight">定期弱點掃描</span>並進行 <span class="term-en">Patch</span> 更新，以及檢討修訂<span class="term-cn">安全政策</span>，是<span class="highlight">持續改進</span>軟體安全的<span class="highlight">基本方法</span>，也適用於現有系統。<br/>
+                        (C) <span class="highlight">重新編寫軟體</span>是<span class="highlight">最徹底</span>的解決方案，但<span class="highlight">成本最高、耗時最長</span>，<span class="highlight">不符合「迅速補強」</span>的要求。<br/>
+                        (D) 在系統前端部署 <span class="term-abbr">WAF</span> 是<span class="highlight">常見且相對快速</span>的<span class="highlight">補強措施</span>，可以<span class="highlight">過濾掉</span>許多常見的 Web 攻擊（如 <span class="term-abbr">Injection</span>, <span class="term-abbr">XSS</span>），<span class="highlight">保護後端應用程式</span>。<br/>
+                        因此，較適合迅速補強的措施是 (A)、(B)、(D)。 *根據使用者OCR標示，答案為A/B/D*。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Questions 19-40 ... -->
+            <!-- Question 19 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#19</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">某設備的<span class="term-cn">日誌記錄</span>功能依照 <span class="term-en">The Syslog Protocol</span> (<span class="term-abbr">RFC5424</span>) 標準設計, 若需要較為詳盡的<span class="term-cn">日誌訊息</span>, 以提供<span class="term-cn">除錯</span> (<span class="term-en">debug</span>) 使用, 而該系統只提供下列 4 種的記錄等級, 請問應該選擇下列何項設定最為合適?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Emergency</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Alert</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Warning</span></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Debug</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-abbr">Syslog</span> (<span class="term-abbr">RFC5424</span>) 定義了 8 個<span class="term-cn">嚴重性等級</span> (<span class="term-en">Severity Level</span>)，數值越小表示越嚴重：<br/>
+                         0: <span class="term-en">Emergency</span> (系統無法使用)<br/>
+                         1: <span class="term-en">Alert</span> (必須立即採取行動)<br/>
+                         2: <span class="term-en">Critical</span> (危急狀況)<br/>
+                         3: <span class="term-en">Error</span> (錯誤狀況)<br/>
+                         4: <span class="term-en">Warning</span> (警告狀況)<br/>
+                         5: <span class="term-en">Notice</span> (正常但重要的狀況)<br/>
+                         6: <span class="term-en">Informational</span> (資訊性訊息)<br/>
+                         7: <span class="term-en">Debug</span> (除錯等級訊息)<br/>
+                         <br/>
+                         題目要求選擇提供<span class="highlight">最詳盡</span>訊息以供<span class="term-cn">除錯</span>使用的等級。根據定義，<span class="term-en">Debug</span> 等級 (數值 7) 包含的<span class="highlight">資訊量最大、最詳細</span>，通常用於開發或<span class="term-cn">問題診斷</span>。<br/>
+                         因此，最合適的設定是 (D) <span class="term-en">Debug</span>。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 20 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#20</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">為提供<span class="term-cn">資通訊系統</span>可以安全進行<span class="term-cn">遠端維護</span>, 請問下列何項措施「<span class="highlight">不</span>」是必要的管理模式?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">設定<span class="term-cn">網路火牆管理遠端連線機制</span>及<span class="highlight">限制存取的主機位置</span></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">建立 <span class="term-abbr">SSO</span> (<span class="term-en">Single sign-on</span>) <span class="highlight">單一簽入</span>作業, 統一連線帳密管理</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">使用<span class="term-cn">多因子認證</span>, 確保連線使用者的身份</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">建立 <span class="term-abbr">VPN</span> 機制, <span class="highlight">僅限制維護作業人員</span>可以進行<span class="term-cn">遠端安全連線</span>作業</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         確保<span class="term-cn">遠端維護</span>安全的必要措施：<br/>
+                         (A) 透過<span class="term-cn">防火牆</span><span class="highlight">限制</span>允許<span class="term-cn">遠端連線</span>的<span class="highlight">來源 IP</span> 或網段，以及<span class="highlight">限制</span>可被存取的<span class="highlight">目標主機</span>，是重要的<span class="term-cn">網路層存取控制</span>。<br/>
+                         (C) 對<span class="term-cn">遠端維護</span>人員使用<span class="term-cn">多因子認證</span> (<span class="term-abbr">MFA</span>)，可以<span class="highlight">大幅提高身分驗證</span>的安全性。<br/>
+                         (D) 建立<span class="term-cn">安全的連線通道</span>（如 <span class="term-abbr">VPN</span>），並<span class="highlight">僅授權</span>給需要進行<span class="term-cn">遠端維護</span>的人員使用，是<span class="highlight">基本的安全要求</span>。<br/>
+                         (B) <span class="term-abbr">SSO</span> 的目的是讓使用者<span class="highlight">登入一次</span>即可存取<span class="highlight">多個</span>授權的系統，主要是為了<span class="highlight">提升便利性</span>和<span class="highlight">簡化管理</span>。雖然 <span class="term-abbr">SSO</span> 系統本身也需要安全防護，但它<span class="highlight">並非</span>確保<span class="term-cn">遠端維護</span>連線本身安全的「<span class="highlight">必要</span>」管理模式。事實上，對於<span class="highlight">高權限</span>的<span class="term-cn">遠端維護</span>操作，有時反而會<span class="highlight">要求獨立、更嚴格</span>的驗證，而非納入一般 <span class="term-abbr">SSO</span>。<br/>
+                         因此，(B) 不是必要的管理模式。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Questions 21-40 -->
+            <!-- ... (HTML for Questions 21-40 would follow here, mirroring the structure and formatting) ... -->
+
+
+             <!-- Question 21 -->
+             <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#21</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content"><span class="term-cn">廠商攜帶設備</span>至機關進行維護作業, 機關允許該設備連線至<span class="term-cn">機房網路</span>, 待設備接上網路並操作一段時間後, <span class="term-cn">監控中心</span>即發現符合特定<span class="term-cn">惡意程式</span>行為之連線。下列建議之防護措施何者最「<span class="highlight">不</span>」合適?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">機關收到<span class="term-cn">監控中心</span>異常通知後, <span class="highlight">即時</span>將<span class="term-cn">廠商設備斷網</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">攜帶之設備或工具</span>應確保<span class="highlight">安全無虞</span>, 方可連線至機關內部網路</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">廠商</span>應恪守機關<span class="term-cn">資通安全政策</span>及<span class="term-cn">委外廠商管理</span>相關規範要求</div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">須等<span class="highlight">相關工作結束後</span>, 再關閉<span class="term-cn">網路連線</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         處理<span class="term-cn">外部廠商設備</span>接入內部網路帶來的風險：<br/>
+                         (A) 一旦<span class="term-cn">監控中心</span>發現異常（<span class="term-cn">惡意程式</span>行為），<span class="highlight">立即將可疑設備斷網</span>是<span class="highlight">阻止</span>損害擴大的<span class="highlight">標準應變措施</span>。<br/>
+                         (B) 在允許<span class="term-cn">外部設備</span>連線前，應<span class="highlight">進行安全檢查</span>（如掃毒、確認補丁狀態），確保其<span class="highlight">安全無虞</span>，這是<span class="highlight">事前預防</span>措施。<br/>
+                         (C) 要求<span class="term-cn">廠商</span>遵守機關的<span class="term-cn">安全政策</span>和<span class="term-cn">管理規範</span>，是<span class="highlight">合約和管理</span>上的基本要求。<br/>
+                         (D) 發現<span class="term-cn">惡意行為</span>後，<span class="highlight">必須立即採取行動</span>（如斷網），<span class="highlight">不能</span>等到工作結束才處理。等待只會讓<span class="highlight">損害擴大</span>。此措施<span class="highlight">非常不合適</span>。<br/>
+                         因此，最不合適的措施是 (D)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 22 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#22</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">當<span class="term-cn">資訊室主管</span>收到<span class="term-cn">作業系統標準組態</span>的<span class="highlight">例外請求</span>時, 第一步應該處理下列何項?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">報告董事會</span>, 並尋求董事會的指導</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">確定<span class="highlight">產業的執行慣例</span>, 擬定應變作業計劃</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">確認<span class="highlight">風險</span>並確定<span class="highlight">補償控制措施</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">依據<span class="term-cn">資安管理系統程序</span>, <span class="highlight">一律禁止</span>例外請求作業</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         處理<span class="term-cn">標準組態</span>的<span class="highlight">例外請求</span>，需要遵循<span class="term-cn">風險管理</span>的原則：<br/>
+                         (A) 這類操作性請求通常<span class="highlight">不需要</span>直接上報到董事會層級。<br/>
+                         (B) <span class="highlight">產業慣例</span>可供參考，但<span class="highlight">首要</span>應評估對自身組織的影響。<br/>
+                         (D) <span class="highlight">一律禁止</span>例外可能<span class="highlight">缺乏彈性</span>，影響正常業務需求。應建立<span class="highlight">評估和審核</span>機制。<br/>
+                         (C) <span class="highlight">標準組態</span>通常是基於<span class="term-cn">安全考量</span>設定的。任何<span class="highlight">偏離</span>標準的請求（例外）都可能<span class="highlight">引入新的風險</span>。因此，第一步應該是<span class="highlight">評估</span>這個例外請求會帶來什麼<span class="highlight">風險</span>，以及是否有<span class="highlight">必要</span>接受此例外。如果例外是必要的，則必須<span class="highlight">評估並確定</span>適當的<span class="term-cn">補償控制措施</span> (<span class="term-en">Compensating Controls</span>) 來<span class="highlight">降低</span>因此例外而增加的<span class="highlight">風險</span>。這是<span class="highlight">標準的例外管理程序</span>。<br/>
+                         因此，第一步應處理的是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 23 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#23</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">在<span class="term-cn">勒索軟體</span>事件中, 下列哪些<span class="term-cn">日誌</span>的來源可能找到<span class="highlight">入侵的紀錄</span>或<span class="highlight">警訊</span>? (<span class="highlight">複選</span>)</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">網路面資安防護設備</span></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">重要主機</span>之<span class="term-cn">作業系統事件</span></div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">防毒軟體告警</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">門禁進出紀錄</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         調查<span class="term-cn">勒索軟體</span>事件時，需要分析多種來源的日誌：<br/>
+                         (A) <span class="term-cn">網路資安設備</span>（如 <span class="term-cn">防火牆</span>, <span class="term-abbr">IDS/IPS</span>, <span class="term-abbr">VPN</span> Log）可能記錄了<span class="highlight">初始入侵</span>的流量、<span class="highlight">橫向移動</span>的連線、或<span class="highlight">與 C&C 伺服器</span>的通訊。<br/>
+                         (B) <span class="highlight">受駭主機</span>的<span class="term-cn">作業系統事件日誌</span>（如 <span class="term-en">Windows Event Log</span>, <span class="term-en">Linux syslog</span>）可能包含<span class="highlight">異常登入</span>、<span class="highlight">權限提升</span>、<span class="highlight">惡意程序執行</span>、<span class="highlight">檔案存取</span>等關鍵紀錄。<br/>
+                         (C) <span class="term-cn">防毒軟體</span>或 <span class="term-abbr">EDR</span> 的<span class="highlight">告警</span>可能直接<span class="highlight">標示</span>出<span class="term-cn">勒索軟體</span>的執行或相關惡意活動。<br/>
+                         (D) <span class="term-cn">門禁紀錄</span>屬於<span class="highlight">實體安全</span>的範圍，除非懷疑攻擊涉及<span class="highlight">物理入侵</span>或<span class="highlight">內部人員</span>的<span class="highlight">實體操作</span>，否則與<span class="term-cn">勒索軟體</span>這種<span class="highlight">網路/系統層級</span>的攻擊<span class="highlight">關聯性較低</span>。<br/>
+                         因此，可能找到入侵紀錄或警訊的日誌來源是 (A)、(B)、(C)。 *根據使用者OCR標示，答案為A/B/C*。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 24 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#24</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組3】情境如附圖所示, <span class="term-cn">廠商</span> A 配合業務需求, 開發新的 <span class="term-en">Web</span> <span class="term-cn">訂票系統</span>, 請問如要進行<span class="term-cn">弱點掃描</span>, 下列何項最為適合進行<span class="term-cn">弱點掃描</span>?
+                 <div class="context-block">有一個在我國立案的公司, 以下簡稱<span class="term-cn">廠商</span> A, 其為「<span class="term-cn">資通安全事件通報及應變辦法</span>」所稱之<span class="term-cn">特定非公務機關</span>, 主要業務為屬於<span class="term-cn">關鍵基礎設施</span>的交通服務。</div></div>
+                 <img src="image/113-1_防_24.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Checkmarx</span></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">OpenVAS</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Hydra</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Google</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         題目要求選擇適合對 <span class="term-en">Web</span> <span class="term-cn">訂票系統</span>進行<span class="term-cn">弱點掃描</span>的工具。<span class="term-cn">弱點掃描</span>通常指<span class="highlight">自動化</span>地檢測系統或應用程式是否存在<span class="highlight">已知漏洞</span>或<span class="highlight">常見配置錯誤</span>。<br/>
+                         (A) <span class="term-en">Checkmarx</span> 是一款<span class="term-cn">靜態應用程式安全測試</span> (<span class="term-abbr">SAST</span>) 工具，用於<span class="highlight">掃描原始碼</span>。<br/>
+                         (B) <span class="term-en">OpenVAS</span> (現名 <span class="term-en">Greenbone Vulnerability Management</span>) 是一款<span class="highlight">開源</span>的<span class="term-cn">弱點掃描與管理</span>工具，可以掃描<span class="highlight">作業系統</span>、<span class="highlight">網路服務</span>以及部分 <span class="term-en">Web</span> <span class="term-cn">應用程式</span>的<span class="highlight">已知漏洞</span>。它是通用的<span class="term-cn">弱點掃描器</span>。<br/>
+                         (C) <span class="term-en">Hydra</span> 是一款<span class="highlight">網路登入密碼破解</span>工具，用於進行<span class="term-cn">暴力破解</span>或<span class="term-cn">字典攻擊</span>。<br/>
+                         (D) <span class="term-en">Google</span> 是<span class="term-cn">搜尋引擎</span>，雖然 <span class="term-en">Google Hacking</span> 可以用於<span class="highlight">發現</span>一些<span class="highlight">暴露的資訊</span>，但它不是一個<span class="term-cn">弱點掃描工具</span>。<br/>
+                         <br/>
+                         在選項中，<span class="term-en">OpenVAS</span> 是最符合「<span class="term-cn">弱點掃描</span>」定義的工具，可以對 <span class="term-en">Web</span> 伺服器及其相關服務進行掃描。雖然有更專門的 <span class="term-en">Web</span> 應用掃描器（如 <span class="term-abbr">OWASP ZAP</span>, <span class="term-en">Burp Suite</span>, <span class="term-en">Acunetix</span>），但在給定選項中，(B) 是最合適的。*根據使用者OCR標示，答案為B或A，選B*。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining Questions 25-40 -->
+            <!-- ... (HTML for Questions 25-40 would follow here, mirroring the structure and formatting) ... -->
+
+            <!-- Question 25 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#25</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組3】情境如附圖所示, <span class="term-cn">廠商</span> A 主要的資訊環境為 <span class="term-en">Windows</span> 平台, 若想檢視其如<span class="term-cn">帳號登出</span>、<span class="term-cn">登入</span>等事件, 請問最合適的內建系統或工具為下列何項?
+                 <div class="context-block">有一個在我國立案的公司, 以下簡稱<span class="term-cn">廠商</span> A, 其為「<span class="term-cn">資通安全事件通報及應變辦法</span>」所稱之<span class="term-cn">特定非公務機關</span>, 主要業務為屬於<span class="term-cn">關鍵基礎設施</span>的交通服務。</div></div>
+                 <img src="image/113-1_防_24.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Event Viewer</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Logger</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">QRadar</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Syslog-NG</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         題目問的是檢視 <span class="term-en">Windows</span> 平台<span class="highlight">內建</span>的<span class="term-cn">登入/登出事件</span>記錄。<br/>
+                         (A) <span class="term-en">Event Viewer</span> (<span class="term-cn">事件檢視器</span>) 是 <span class="term-en">Windows</span> <span class="highlight">內建</span>的工具，用於查看各種<span class="term-cn">系統日誌</span>，包括<span class="highlight">安全性</span> (<span class="term-en">Security</span>) <span class="term-cn">日誌</span>，其中就記錄了<span class="highlight">帳號登入</span> (成功/失敗) 和<span class="highlight">登出</span>等事件。<br/>
+                         (B) <span class="term-en">Logger</span> 是一個<span class="highlight">通用</span>的詞，可能指代各種記錄程式或工具，不是 <span class="term-en">Windows</span> 特定的內建工具。<br/>
+                         (C) <span class="term-en">QRadar</span> 是 <span class="term-abbr">IBM</span> 的<span class="term-cn">安全性資訊與事件管理</span> (<span class="term-abbr">SIEM</span>) 產品，是<span class="highlight">外部</span>的<span class="highlight">集中式日誌分析</span>平台，不是內建工具。<br/>
+                         (D) <span class="term-en">Syslog-NG</span> 是一款開源的<span class="highlight">日誌管理</span>工具，常用於 <span class="term-en">Linux/Unix</span> 環境，或用於將<span class="highlight">不同來源的日誌</span>（包括 <span class="term-en">Windows</span>）<span class="highlight">轉發</span>到<span class="term-cn">中央日誌伺服器</span>，不是 <span class="term-en">Windows</span> 檢視本機事件的內建工具。<br/>
+                         因此，最合適的內建系統或工具是 (A) <span class="term-en">Event Viewer</span>。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Continue with Q26-Q40 -->
+             <!-- Question 26 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#26</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組3】情境如附圖所示, 因部分服務主機環境為 <span class="term-en">Linux</span>, 故<span class="term-cn">廠商</span> A 有一套依照 <span class="term-en">The Syslog Protocol</span> (<span class="term-abbr">RFC5424</span>) 標準建置的<span class="term-cn">日誌記錄系統</span>, 請問某事件為 <span class="term-abbr">NTP</span> 子系統相關的記錄, 其<span class="term-cn">優先值</span> (<span class="term-en">Priority</span>) 為 96, 試問該事件的<span class="term-cn">重要性</span> (<span class="term-en">Severity</span>) 為下列何項?
+                 <div class="context-block">有一個在我國立案的公司, 以下簡稱<span class="term-cn">廠商</span> A...</div></div>
+                 <img src="image/113-1_防_24.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Emergency</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Error</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Warning</span></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Informational</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         根據 <span class="term-abbr">RFC5424</span>，<span class="term-cn">優先值</span> (<span class="term-en">Priority</span>) 是由<span class="term-cn">設施值</span> (<span class="term-en">Facility</span>) 和<span class="term-cn">嚴重性值</span> (<span class="term-en">Severity</span>) 計算得出的，公式為：<br/>
+                         <span class="term-en">Priority</span> = <span class="term-en">Facility</span> * 8 + <span class="term-en">Severity</span><br/>
+                         <br/>
+                         題目給定 <span class="term-en">Priority</span> = 96。
+                         <span class="term-abbr">NTP</span> 子系統通常被歸類為 <span class="term-cn">系統時鐘</span> (<span class="term-en">clock daemon</span>)，其<span class="term-en">Facility</span> 值為 15。<br/>
+                         <br/>
+                         將 <span class="term-en">Facility</span> = 15 代入公式：<br/>
+                         96 = 15 * 8 + <span class="term-en">Severity</span><br/>
+                         96 = 120 + <span class="term-en">Severity</span><br/>
+                         這個結果不合理，因為 Severity 不可能為負數。
+                         <br/><br/>
+                         **讓我們重新檢查 Facility 值。** 另一種可能是 NTP 被歸類為 "system daemon" (Facility=3) 或其他值。但如果我們嘗試從 Severity 反推，Syslog Severity 等級為 0-7。
+                         - If Severity = 0 (Emergency): Priority = Facility * 8 + 0
+                         - If Severity = 1 (Alert): Priority = Facility * 8 + 1
+                         - If Severity = 2 (Critical): Priority = Facility * 8 + 2
+                         - If Severity = 3 (Error): Priority = Facility * 8 + 3
+                         - If Severity = 4 (Warning): Priority = Facility * 8 + 4
+                         - If Severity = 5 (Notice): Priority = Facility * 8 + 5
+                         - If Severity = 6 (Informational): Priority = Facility * 8 + 6
+                         - If Severity = 7 (Debug): Priority = Facility * 8 + 7
+                         <br/>
+                         我們需要找到一個 Facility (0-23) 和 Severity (0-7) 的組合使得 Facility * 8 + Severity = 96。
+                         Let's test Facility values:
+                         - If Facility = 11 (FTP): 11 * 8 = 88. 96 - 88 = 8 (Severity > 7, impossible)
+                         - If Facility = 12 (NTP): 12 * 8 = 96. 96 - 96 = 0. So, Facility=12, Severity=0 (<span class="term-en">Emergency</span>).
+                         <br/><br/>
+                         根據標準，<span class="term-abbr">NTP</span> 子系統 (<span class="term-en">ntp subsystem</span>) 的 Facility code 是 12。
+                         因此，Priority = 12 * 8 + Severity = 96 + Severity。<br/>
+                         等等，這個計算方式不對。 Priority = Facility * 8 + Severity.
+                         Given Priority = 96.
+                         Facility for NTP = 12.
+                         96 = 12 * 8 + Severity
+                         96 = 96 + Severity
+                         Severity = 0.<br/>
+                         Severity 0 對應的是 <span class="term-en">Emergency</span>。<br/><br/>
+                         **再次檢查題目與選項。** 題目給的答案是 D (<span class="term-en">Informational</span>, Severity=6)。這意味著 Facility * 8 + 6 = 96。
+                         Facility * 8 = 90. Facility = 90 / 8 = 11.25 (不是整數，不可能)。
+                         <br/>
+                         **是否存在對標準的誤解或題目錯誤？** 讓我們檢查 Facility=NTP 是否固定為 12。是的，通常是。
+                         **會不會是 Priority 值記錯了？** 假設 Severity 是 6 (Informational)，Facility 是 12 (NTP)，那麼 Priority 應該是 12 * 8 + 6 = 96 + 6 = 102。
+                         **會不會是 Facility 值不是 12？** 如果 Severity 是 6 (Informational)，Priority 是 96，那麼 Facility * 8 = 90，Facility = 11.25，不可能。
+                         **如果 Severity 是 0 (Emergency)，Facility=12，Priority=96。** 這在計算上是吻合的。但選項沒有 Emergency。
+                         **如果 Facility = 1 (kernel messages)，Severity=0，Priority=8**
+                         **如果 Facility = 3 (system daemons)，Severity=0，Priority=24**
+                         **如果 Facility = 4 (auth), Severity=0, Priority=32**
+                         **如果 Facility = 16 (local0), Severity=0, Priority=128**
+                         <br/>
+                         **考慮到題目可能存在錯誤，或者使用了非標準的 Facility 映射。** 但是，如果必須從選項中選擇，並且假設 Priority=96 是確定的，那麼唯一在數學上可能的組合是 Facility=12, Severity=0。但選項沒有 Emergency。
+                         **如果我們假設答案 D (Informational, Severity=6) 是正確的**，那必然是 Priority 或 Facility 其中一個值在題目中給錯了，或者 NTP 在該系統中被映射到了一個奇怪的 Facility 值 (11.25，不可能)。
+                         **最可能的解釋是題目或選項有誤。** 但如果必須強行解釋為何答案是 D，只能假設 Priority 值並非 96，或者 NTP 被映射到 Facility 11 (FTP) 且 Severity 是 8 (超出範圍)，或 Facility 是 local use 導致。
+                         **但是，如果我們嚴格按照 Facility=12 (NTP) 和 Priority=96，那麼 Severity=0 (Emergency)。**
+                         *在沒有正確選項的情況下，無法給出確定答案。但根據使用者OCR標示，答案為A，這意味著 Severity = 0 (Emergency)。*
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 27 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#27</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組3】情境如附圖所示, <span class="term-cn">廠商</span> A 擬依照 <span class="term-en">The Syslog Protocol</span> (<span class="term-abbr">RFC5424</span>) 標準建置的<span class="term-cn">日誌記錄系統</span>, 某告警 (<span class="term-en">warning</span>) 事件為<span class="term-cn">使用者等級訊息</span> (<span class="term-en">user-level messages</span>), 請問下列描述哪些<span class="highlight">正確</span>? (<span class="highlight">複選</span>)
+                 <div class="context-block">有一個在我國立案的公司, 以下簡稱<span class="term-cn">廠商</span> A...</div></div>
+                 <img src="image/113-1_防_24.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">該事件的<span class="term-cn">重要性</span> (<span class="term-en">Severity</span>) 應為 0</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">該事件的<span class="term-cn">重要性</span> (<span class="term-en">Severity</span>) 應為 4</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">該事件的<span class="term-cn">優先值</span> (<span class="term-en">Priority</span>) 應為 12</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">該事件的 <span class="term-en">Facility</span> 值 (<span class="term-en">Priority</span>) 應為 2</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         根據 <span class="term-abbr">RFC5424</span>：<br/>
+                         - <span class="term-cn">重要性</span> (<span class="term-en">Severity</span>) 等級中，<span class="term-en">Warning</span> 對應的數值是 4。<br/>
+                         - <span class="term-cn">設施</span> (<span class="term-en">Facility</span>) 值中，<span class="term-cn">使用者等級訊息</span> (<span class="term-en">user-level messages</span>) 對應的數值是 1。<br/>
+                         <br/>
+                         計算<span class="term-cn">優先值</span> (<span class="term-en">Priority</span>)：<br/>
+                         <span class="term-en">Priority</span> = <span class="term-en">Facility</span> * 8 + <span class="term-en">Severity</span><br/>
+                         <span class="term-en">Priority</span> = 1 * 8 + 4<br/>
+                         <span class="term-en">Priority</span> = 8 + 4<br/>
+                         <span class="term-en">Priority</span> = 12<br/>
+                         <br/>
+                         分析選項：<br/>
+                         (A) Severity 應為 4，不是 0。<br/>
+                         (B) Severity 應為 4。<span class="highlight">正確</span>。<br/>
+                         (C) Priority 應為 12。<span class="highlight">正確</span>。<br/>
+                         (D) Facility 值應為 1，不是 2 (也不是 Priority)。<br/>
+                         因此，正確的描述是 (B) 和 (C)。 *根據使用者OCR標示，答案為B/C*。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 28 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#28</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">因應威脅的複雜度與頻繁, 企業設置<span class="term-cn">資訊安全監控中心</span> (<span class="term-abbr">SOC</span>, <span class="term-en">Security Operations Center</span>) 監看<span class="term-cn">資安事件</span>的服務也日漸普遍。<span class="term-abbr">SOC</span> 服務主要分成 3 個階段: 事前預防、事中監看、事後處理。下列敘述何者<span class="highlight">錯誤</span>?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">蒐集<span class="term-cn">資安情資</span>屬於<span class="highlight">事前預防</span>階段</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">控管網路進出流量的設備</span>屬於<span class="highlight">事前預防</span>階段</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">SOC</span> 平台的<span class="highlight">自動過濾功能回報</span><span class="term-cn">資安事件</span>讓<span class="term-cn">資安人員</span>便於分析與判斷是屬於<span class="highlight">事中監看</span>階段</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">識別威脅種類與來源</span>以防止災害的擴大, 並防止再度發生類似事故是屬於<span class="highlight">事後處理</span>階段</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-abbr">SOC</span> 的階段劃分與活動：<br/>
+                         (A) 蒐集<span class="term-cn">資安情資</span> (<span class="term-abbr">CTI</span>) 有助於<span class="highlight">了解潛在威脅</span>，以便<span class="highlight">提前準備</span>或<span class="highlight">調整防禦</span>，屬於<span class="term-cn">事前預防</span>。<br/>
+                         (C) <span class="term-abbr">SOC</span> 平台的核心功能之一是<span class="highlight">即時監控</span>、<span class="highlight">自動分析</span>和<span class="highlight">告警</span>，讓<span class="term-cn">資安人員</span>能夠<span class="highlight">即時發現</span>和<span class="highlight">初步判斷</span>事件，屬於<span class="term-cn">事中監看</span>。<br/>
+                         (D) 在事件發生後，進行<span class="highlight">應變處理</span>、<span class="highlight">根因分析</span>、<span class="highlight">損害控制</span>以及<span class="highlight">經驗學習</span>以防止再發，屬於<span class="term-cn">事後處理</span>。<br/>
+                         (B) <span class="highlight">控管網路流量的設備</span>（如<span class="term-cn">防火牆</span>）本身是<span class="highlight">安全基礎設施</span>的一部分，其<span class="highlight">設置和配置</span>屬於<span class="term-cn">事前預防</span>。但<span class="term-abbr">SOC</span> 的主要工作是「<span class="highlight">監控</span>」這些設備產生的<span class="highlight">日誌</span>或<span class="highlight">告警</span>（事中監看），而非設備本身。將「設備」歸類為 <span class="term-abbr">SOC</span> 的「事前預防階段」<span class="highlight">並不完全貼切</span>。<span class="term-abbr">SOC</span> 更關注情資、監控規則、分析平台等。相較之下，(A)、(C)、(D) 描述的活動與階段對應更清晰。因此，(B) 的說法相對<span class="highlight">不準確或錯誤</span>。<br/>*此題無使用者OCR標示答案*
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining Questions 29-40 -->
+            <!-- ... (HTML for Questions 29-40 would follow here, mirroring the structure and formatting) ... -->
+
+            <!-- Question 29 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#29</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">關於<span class="term-cn">滲透測試</span>的敘述, 下列何者<span class="highlight">錯誤</span>?</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">模擬駭客手法, <span class="highlight">在不需要系統管理者或公司同意下</span>, 進行漏洞驗證</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">模擬駭客手法或<span class="term-cn">惡意使用者</span>的行為, 試圖找出和利用系統的弱點</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">滲透測試</span>要確保不會影響正常的業務運作和資料的完整性</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">滲透測試</span> (<span class="term-en">Penetration Testing</span>, 簡稱 <span class="term-en">Pen Testing</span>) 是一種<span class="term-cn">安全測試</span>方法</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         (A) <span class="term-cn">滲透測試</span><span class="highlight">必須</span>在獲得<span class="highlight">明確的授權和同意</span>下進行。未經同意的測試等同於<span class="highlight">非法入侵</span>。此敘述<span class="highlight">錯誤</span>。<br/>
+                         (B) 正確描述了<span class="term-cn">滲透測試</span>的目的：模擬攻擊者找出並嘗試利用弱點。<br/>
+                         (C) 專業的<span class="term-cn">滲透測試</span>應在<span class="highlight">控制範圍</span>內進行，盡力<span class="highlight">避免影響</span>正常營運和<span class="highlight">破壞</span>資料完整性，並需事先與客戶溝通風險與應對方案。<br/>
+                         (D) <span class="term-cn">滲透測試</span>確實是一種<span class="highlight">主動</span>的安全測試方法。<br/>
+                         因此，錯誤的敘述是 (A)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 30 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#30</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">在進行<span class="term-cn">資安健診</span>時, 檢測作業最關鍵的活動是下列何項?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">更新所有<span class="term-cn">辦公軟體</span>至最新版本</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">監控<span class="term-cn">社交媒體</span>上員工的活動</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="highlight">評估和識別系統中的潛在安全漏洞</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">部署最新的<span class="term-cn">防毒軟體</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-cn">資安健診</span>（或<span class="term-cn">安全評估</span>、<span class="term-cn">弱點評估</span>）的核心目的是<span class="highlight">找出系統中存在的安全風險</span>。<br/>
+                         (A) 更新軟體是<span class="highlight">後續的修補</span>活動，不是健診本身。<br/>
+                         (B) 監控<span class="term-cn">社交媒體</span>通常<span class="highlight">不是</span>標準<span class="term-cn">資安健診</span>的範圍。<br/>
+                         (D) 部署<span class="term-cn">防毒軟體</span>是<span class="highlight">防禦措施</span>，不是健診活動。<br/>
+                         (C) <span class="highlight">評估和識別</span>系統中潛在的<span class="term-cn">安全漏洞</span>、<span class="term-cn">配置錯誤</span>或<span class="term-cn">風險</span>，正是<span class="term-cn">資安健診</span>的<span class="highlight">最關鍵活動</span>。<br/>
+                         因此，最關鍵的活動是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 31 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#31</div>
+                     <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                 </div>
+                 <div class="question-content">關於<span class="term-cn">源碼檢測</span>, 下列哪些正確描述了 <span class="term-abbr">DLL Side Loading</span>? (<span class="highlight">複選</span>)</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">DLL Side Loading</span> 涉及到<span class="highlight">替換</span>正常的 <span class="term-abbr">DLL</span> 文件</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">通常被用來<span class="highlight">繞過安全措施</span>並執行惡意程式碼</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">此技術概念<span class="highlight">僅可以</span>在 <span class="term-en">Linux</span> 系統上實現</div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">DLL Side Loading</span> 可以利用<span class="highlight">合法軟體的加載</span>行為來隱藏惡意活動</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-abbr">DLL Side-Loading</span> 是一種攻擊技術，利用<span class="term-cn">應用程式載入 DLL 的方式</span>來執行惡意程式碼。<br/>
+                         (A) 攻擊者通常會將<span class="highlight">惡意的 DLL 檔案</span>放置在<span class="highlight">合法應用程式預期載入正常 DLL 的路徑</span>中（例如應用程式的同目錄），並使用與<span class="highlight">正常 DLL 相同的名稱</span>，使得合法應用程式<span class="highlight">錯誤地載入</span>惡意 DLL。這可以被視為一種「替換」或更準確地說是「<span class="highlight">劫持</span>」。<span class="highlight">正確</span>。<br/>
+                         (B) 由於惡意程式碼是透過<span class="highlight">受信任的合法應用程式</span>載入和執行的，這種方式可能<span class="highlight">繞過</span>一些基於<span class="highlight">應用程式白名單</span>或<span class="highlight">行為偵測</span>的安全措施。<span class="highlight">正確</span>。<br/>
+                         (C) <span class="term-abbr">DLL</span> (<span class="term-en">Dynamic Link Library</span>) 是 <span class="term-en">Windows</span> 系統的概念。雖然 <span class="term-en">Linux</span> 有類似的<span class="term-cn">共享對象</span> (<span class="term-en">Shared Objects</span>, .so) 和類似的載入劫持技術，但 <span class="term-abbr">DLL Side-Loading</span> 這個術語<span class="highlight">特指 Windows 環境</span>。此敘述<span class="highlight">錯誤</span>。<br/>
+                         (D) 攻擊的核心就是利用<span class="highlight">合法、受信任的軟體</span>的<span class="highlight">正常 DLL 載入行為</span>作為掩護，來執行惡意程式碼，從而<span class="highlight">隱藏</span>其惡意活動。<span class="highlight">正確</span>。<br/>
+                         因此，正確的描述是 (A)、(B)、(D)。 *根據使用者OCR標示，答案為A/B/D*。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 32 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#32</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">關於<span class="term-cn">資安測試工具</span>用途的敘述, 下列哪些<span class="highlight">正確</span>? (<span class="highlight">複選</span>)</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-en">Acunetix</span> 為 <span class="term-en">Web</span> <span class="term-cn">漏洞掃描程式</span></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-en">Wireshark</span> 提供<span class="term-cn">網路協定</span>、<span class="term-cn">封包</span>等資訊</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-en">Sqlmap</span> 用於檢測和利用應用程式 <span class="term-abbr">SQL</span> <span class="term-cn">注入</span>及對<span class="term-cn">資料庫</span>的攻擊</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-en">Canvas</span> <span class="term-cn">社交攻擊</span>用工具</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         (A) <span class="term-en">Acunetix</span> 是<span class="highlight">知名</span>的<span class="term-cn">網站應用程式弱點掃描</span>工具 (<span class="term-abbr">DAST</span>)。<span class="highlight">正確</span>。<br/>
+                         (B) <span class="term-en">Wireshark</span> 是<span class="highlight">最廣泛使用</span>的<span class="term-cn">網路封包分析</span>工具，可以擷取和顯示詳細的<span class="term-cn">網路協定</span>和<span class="term-cn">封包</span>內容。<span class="highlight">正確</span>。<br/>
+                         (C) <span class="term-en">Sqlmap</span> 是一款<span class="highlight">自動化</span>的 <span class="term-abbr">SQL</span> <span class="term-cn">注入</span>檢測和<span class="highlight">利用</span>工具，可以攻擊後端<span class="term-cn">資料庫</span>。<span class="highlight">正確</span>。<br/>
+                         (D) <span class="term-en">Canvas</span> 是由 <span class="term-en">Immunity</span> 公司開發的<span class="highlight">商業滲透測試</span>和<span class="highlight">漏洞利用框架</span>，類似於 <span class="term-en">Metasploit</span>，主要用於<span class="highlight">漏洞利用</span>，而非專門的<span class="term-cn">社交工程</span>工具（雖然可能包含相關模組）。描述其為「<span class="term-cn">社交攻擊</span>用工具」<span class="highlight">不完全準確</span>。<br/>
+                         因此，正確的敘述是 (A)、(B)、(C)。*此題複選但使用者OCR標示為 B/C，可能遺漏A或有誤。依工具實際功能，A, B, C 皆為正確描述。*
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Questions 33-40 ... -->
+
+            <!-- Question 33 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#33</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組4】情境如附圖所示, 有關<span class="term-cn">紅隊</span>、<span class="term-cn">藍隊</span>與<span class="term-cn">紫隊</span>的敘述, 下列何者<span class="highlight">錯誤</span>?
+                 <div class="context-block">某企業集團希望徵求<span class="term-cn">紅隊演練</span>測試, 來驗證公司內部 IT <span class="term-cn">資安防護能力</span>, 可是又擔心執行過程中讓公司內部 IT 或<span class="term-cn">資安</span>部門無法獲得溝通學習成長, 身為該公司重要外部<span class="term-cn">資安顧問</span>專家。</div></div>
+                 <img src="image/113-1_防_33.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">紅隊演練</span> (<span class="term-en">Red Team Assessment</span>) 在不影響企業營運下, 進行<span class="highlight">模擬入侵攻擊</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">藍隊演練</span> (<span class="term-en">Blue Team Assessment</span>), 指的是企業內部的工程部門或<span class="term-cn">資安人員</span>, 當<span class="term-cn">紅隊</span>發動攻擊時, <span class="term-cn">藍隊</span>要在第一時間反應, <span class="highlight">快速防堵漏洞</span>, 將傷害降至最低</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">紫隊演練</span> (<span class="term-en">Purple Team Assessment</span>) 為<span class="highlight">書面演練形式</span>, 無法進行技術攻防, 目的就是讓負責演練的<span class="term-cn">紅隊</span>和<span class="term-cn">藍隊</span>能站在同一陣線</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">紅隊演練</span> (<span class="term-en">Red Team Assessment</span>) 在有限的時間內從各種進入點執行攻擊, 嘗試達成企業指定的測試任務</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         (A) 正確描述了<span class="term-cn">紅隊演練</span>的目的：模擬真實攻擊，評估防禦。<br/>
+                         (B) 正確描述了<span class="term-cn">藍隊</span>（防守方）的角色：偵測、回應和防禦<span class="term-cn">紅隊</span>的攻擊。<br/>
+                         (D) 正確描述了<span class="term-cn">紅隊演練</span>的特點：目標導向、時間限制、多種攻擊途徑。<br/>
+                         (C) <span class="term-cn">紫隊演練</span> (<span class="term-en">Purple Teaming</span>) 強調<span class="highlight">紅隊和藍隊之間的協作和溝通</span>。它<span class="highlight">不是書面演練</span>，而是<span class="highlight">實際的攻防互動</span>，但重點在於<span class="highlight">即時分享攻擊手法和防禦反饋</span>，共同<span class="highlight">提升</span>檢測和回應能力。目標是<span class="highlight">協同合作</span>，而非僅僅「站在同一陣線」。宣稱其為書面演練且無法技術攻防是<span class="highlight">錯誤</span>的。<br/>
+                         因此，錯誤的敘述是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 34 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#34</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組4】情境如附圖所示, <span class="term-cn">紅隊</span>進行內部<span class="term-cn">滲透測試</span>攻擊, 關於針對<span class="term-cn">滲透</span>的方法, 下列何者<span class="highlight">錯誤</span>?
+                 <div class="context-block"><i>(情境同上題)</i></div></div>
+                 <img src="image/113-1_防_33.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">找出 <span class="term-abbr">DC</span> <span class="term-abbr">IP</span> 位址: <code>nmcli dev show</code></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">DNS</span> <span class="term-cn">區域轉送</span>: <code>dig axfr</code></div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">列舉 <span class="term-cn">ldap</span>: <code>nmap -Sp -p&lt;ip&gt;</code></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">找出使用者: <code>net user</code></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         分析選項中的指令和用途：<br/>
+                         (A) <code>nmcli dev show</code> 是 <span class="term-en">Linux</span> 指令，用於<span class="highlight">顯示網路裝置的詳細資訊</span>，包括當前分配的 <span class="term-abbr">IP</span> 位址、<span class="term-cn">閘道</span>、<span class="term-abbr">DNS</span> 伺服器等。透過查看 <span class="term-abbr">DNS</span> 伺服器設定，可能間接找出<span class="term-cn">網域控制站</span> (<span class="term-abbr">DC</span>) 的 <span class="term-abbr">IP</span>。<br/>
+                         (B) <code>dig axfr @&lt;dns-server&gt; &lt;domain&gt;</code> 用於嘗試進行 <span class="term-abbr">DNS</span> <span class="term-cn">區域轉送</span> (<span class="term-en">Zone Transfer</span>)，如果<span class="term-abbr">DNS</span> 伺服器配置不當允許此操作，可以獲取<span class="term-cn">域內</span>所有主機的紀錄。<br/>
+                         (D) <code>net user</code> 是 <span class="term-en">Windows</span> 指令，用於<span class="highlight">列出本機</span>或（在<span class="term-cn">域環境</span>中，配合 <code>/domain</code> 參數）<span class="highlight">域內的使用者帳號</span>。<br/>
+                         (C) <code>nmap -Sp -p&lt;ip&gt;</code> 這個指令<span class="highlight">語法有誤</span>。<code>-Sp</code> (或更新版本的 <code>-sn</code>) 是進行 <span class="term-cn">Ping 掃描</span>，用於<span class="highlight">發現存活主機</span>，<span class="highlight">不掃描埠</span>。<code>-p</code> 用於指定掃描的埠。如果要掃描 <span class="term-cn">LDAP</span> 服務（通常在 <span class="term-abbr">TCP</span> 389 或 636），應使用類似 <code>nmap -p 389 --script ldap-search &lt;ip&gt;</code> 的指令，利用 <span class="term-abbr">Nmap</span> 腳本引擎 (<span class="term-abbr">NSE</span>) 來<span class="highlight">列舉 LDAP 信息</span>。選項中的指令<span class="highlight">無法</span>用於列舉 <span class="term-cn">LDAP</span>。此敘述<span class="highlight">錯誤</span>。<br/>
+                         因此，錯誤的選項是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 35 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#35</div>
+                     <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                 </div>
+                 <div class="question-content">【題組4】情境如附圖所示, <span class="term-cn">紅隊</span>進行內部<span class="term-cn">滲透測試</span>攻擊, 下列哪一項「<span class="highlight">不</span>」是針對 <span class="term-en">Password spray</span> 會使用的手法?
+                 <div class="context-block"><i>(情境同上題)</i></div></div>
+                 <img src="image/113-1_防_33.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><code>cme smb &lt;dc-ip&gt; -u user.txt -p password.txt --no-bruteforce</code></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><code>Cme&lt;IP&gt; -U 'user' -p 'password' --pass-pol</code></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><code>Get-ADDefaultDomainPasswordPolicy</code></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><code>Smbmap -u '' -p '' -P 445 -H&lt;dc-ip&gt;</code></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-en">Password Spraying</span> (<span class="term-cn">密碼噴灑</span>) 是用<span class="highlight">少量密碼</span>嘗試登入<span class="highlight">大量帳號</span>。<br/>
+                         (A) <code>cme smb ... -u user.txt -p password.txt --no-bruteforce</code>: 使用 <span class="term-en">CrackMapExec</span> (<span class="term-abbr">CME</span>) 對<span class="term-cn">用戶列表</span> (<code>user.txt</code>) 中的每個用戶嘗試<span class="term-cn">密碼列表</span> (<code>password.txt</code>) 中的密碼，<code>--no-bruteforce</code> 可能意味著對每個用戶只嘗試少量密碼，符合<span class="term-cn">噴灑</span>概念。<br/>
+                         (B) <code>Cme&lt;IP&gt; -U 'user' -p 'password' --pass-pol</code>: 這個指令語法<span class="highlight">看起來不標準</span>（<code>Cme</code> 拼寫，<code>-U</code> 通常是大寫），但意圖可能是用單一用戶/密碼並結合<span class="term-cn">密碼策略</span>進行嘗試，不直接是噴灑。<br/>
+                         (C) <code>Get-ADDefaultDomainPasswordPolicy</code> 是 <span class="term-en">PowerShell</span> 指令，用於<span class="highlight">查詢 Active Directory 的預設密碼策略</span>。這是<span class="term-cn">探索</span> (<span class="term-en">Discovery</span>) 階段的行為，用於<span class="highlight">了解密碼規則</span>，<span class="highlight">輔助</span>後續的密碼攻擊（包括噴灑），但<span class="highlight">不是噴灑本身</span>。<br/>
+                         (D) <code>smbmap -u '' -p '' -P 445 -H &lt;dc-ip&gt;</code>: 使用 <span class="term-en">smbmap</span> 工具，<code>-u '' -p ''</code> 通常用於<span class="highlight">匿名</span>或<span class="highlight">空會話</span>連接，目的是<span class="highlight">列舉共享資源或用戶</span>，<span class="highlight">不是進行密碼噴灑</span>。<br/>
+                         <br/>
+                         比較起來，(A) 最符合<span class="term-cn">密碼噴灑</span>的工具使用情境。(C) 是<span class="term-cn">探索</span>。(D) 是<span class="term-cn">列舉</span>。(B) 語法可疑，且意圖不明。題目問哪個「<span class="highlight">不</span>」是噴灑手法。<span class="highlight">C 和 D 都不是直接的噴灑手法</span>。*根據使用者OCR標示，答案為D*。我們選擇 D 作為與噴灑關係最遠的選項（列舉共享 vs 嘗試登入）。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 36 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#36</div>
+                     <div class="evaluation-criterion">2.1 弱點、攻擊與攻擊實務</div>
+                 </div>
+                 <div class="question-content">【題組4】情境如附圖所示, <span class="term-cn">網域控制站</span> (<span class="term-abbr">DC</span>) 是<span class="term-cn">滲透測試</span>重要的目標, 而 <code>ntds.dit</code> 是 <span class="term-abbr">AD</span> 主要的資料, 可以透過下列哪些方式進行提取? (<span class="highlight">複選</span>)
+                 <div class="context-block"><i>(情境同上題)</i></div></div>
+                 <img src="image/113-1_防_33.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><code>Ntdsutil.exe</code> 提取 <code>ntds.dit</code></div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">使用 <code>vssadmin</code> 提取 <code>ntds.dit</code></div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">利用 <code>diskshadow</code> 匯出 <code>ntds.dit</code></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">利用 <code>certutil.exe</code> 提取 <code>ntds.dit</code></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <code>ntds.dit</code> 檔案包含了 <span class="term-abbr">Active Directory</span> 的<span class="term-cn">資料庫</span>（包括<span class="term-cn">使用者帳號</span>和<span class="term-cn">密碼雜湊</span>）。由於它在系統運行時通常被鎖定，提取它需要特殊方法，常見的包括：<br/>
+                         (A) <code>ntdsutil.exe</code> 是 <span class="term-en">Windows</span> 內建的 <span class="term-abbr">AD</span> 資料庫管理工具，可以使用其 <code>snapshot</code> 或 <code>ifm</code> (Install From Media) 功能來創建包含 <code>ntds.dit</code> 的副本。<br/>
+                         (B) <code>vssadmin.exe</code> 是<span class="term-cn">磁碟區陰影複製服務</span> (<span class="term-en">Volume Shadow Copy Service</span>, <span class="term-abbr">VSS</span>) 的命令列工具。可以先創建一個<span class="term-cn">系統磁碟</span>的<span class="term-cn">陰影複製</span>，然後從<span class="term-cn">陰影複製</span>中<span class="highlight">複製出未被鎖定</span>的 <code>ntds.dit</code> 文件。<br/>
+                         (C) <code>diskshadow.exe</code> 是另一個用於管理 <span class="term-abbr">VSS</span> 的工具，功能與 <code>vssadmin</code> 類似，同樣可以用來創建<span class="term-cn">陰影複製</span>並從中提取 <code>ntds.dit</code>。<br/>
+                         (D) <code>certutil.exe</code> 是用於管理<span class="term-cn">憑證</span>和<span class="term-cn">憑證服務</span>的工具，雖然它有時被<span class="term-cn">惡意</span>利用於下載檔案或編解碼，但它<span class="highlight">本身不能</span>直接用於提取 <code>ntds.dit</code> 文件或創建<span class="term-cn">陰影複製</span>。<br/>
+                         因此，可以用來提取 <code>ntds.dit</code> 的方式是 (A)、(B)、(C)。*根據使用者OCR標示，答案為A/B/C*。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 37 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#37</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組5】情境如附圖所示。依據本案<span class="term-cn">資安檢查</span>報告及公司背景條件, 請問 XYZ 公司在<span class="term-cn">工廠端</span>的<span class="term-cn">資安維護</span>作業, 下列何項較「<span class="highlight">不</span>」合適?
+                 <div class="context-block"><i>(附圖包含網路拓樸、弱點掃描結果等)</i><br/>XYZ 公司是一家二十餘人的傳統製造業...既有已過保固的ERP...與 PLC 工控系統已無維護服務...PLC廠商特別說明只能在原作業系統下才能正常運行...新增 OEE 系統...導入 Android 平板裝置...</div>
+                 <div class="context-block"><i>(掃描結果顯示 XP 主機 (192.168.1.3) 開放 Telnet(23), NetBIOS(139), SMB(445) 等埠)</i></div></div>
+                 <img src="image/113-1_防_371.png" class="responsive-img">
+                 <br>
+                 <img src="image/113-1_防_372.png" class="responsive-img">
+                 <br>
+                 <img src="image/113-1_防_373.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">修補<span class="term-cn">弱點掃描</span>和<span class="term-cn">滲透測試</span>的<span class="highlight">高風險項目</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">修補新交付的 <span class="term-abbr">OEE</span> 系統<span class="term-cn">源碼掃描</span>的<span class="highlight">高風險項目</span></div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">更新既有 <span class="term-abbr">PLC</span> <span class="term-cn">工控系統</span>的 <span class="term-en">Windows</span> <span class="highlight">定期發佈的更新檔案</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">定期更新新交付<span class="term-cn">報工平板</span>的 <span class="term-en">Android</span> 發佈的更新檔案</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         <span class="term-cn">工廠端</span> (<span class="term-abbr">OT</span> 環境) 的<span class="term-cn">資安維護</span>需要特別考量<span class="highlight">穩定性</span>和<span class="highlight">可用性</span>。<br/>
+                         (A) 修補<span class="term-cn">弱點掃描</span>發現的<span class="highlight">高風險項目</span>是<span class="highlight">標準</span>的安全措施。<br/>
+                         (B) 修補新系統<span class="term-cn">源碼掃描</span>發現的<span class="highlight">高風險項目</span>是<span class="highlight">確保軟體安全</span>的必要步驟。<br/>
+                         (D) 定期更新 <span class="term-en">Android</span> <span class="term-cn">平板</span>的系統更新，以修補已知漏洞，是<span class="highlight">維持行動裝置安全</span>的做法。<br/>
+                         (C) 情境提到 <span class="term-abbr">PLC</span> 工控系統運行在<span class="highlight">舊的作業系統</span>上（可能是 <span class="term-en">Windows XP</span>，因為附圖顯示 192.168.1.3 是 XP 且開放了相關端口），且 <span class="term-abbr">PLC</span> 廠商<span class="highlight">已無維護服務</span>並<span class="highlight">強調只能在原系統運行</span>。在這種情況下，<span class="highlight">直接套用 Windows 的定期更新檔案可能導致 PLC 系統不穩定或無法運作</span>，這在 <span class="term-abbr">OT</span> 環境是<span class="highlight">不可接受</span>的。對於這種<span class="highlight">老舊且無法直接更新</span>的系統，應採取<span class="term-cn">補償控制措施</span>（如<span class="term-cn">網路隔離</span>、<span class="term-cn">虛擬補丁</span>、<span class="term-cn">加強監控</span>），而非直接更新。因此，此選項<span class="highlight">不合適</span>。<br/>
+                         因此，最不合適的維護作業是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Questions 38-40 ... -->
+             <!-- Question 38 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#38</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組5】情境如附圖所示。承上題, 依據本案<span class="term-cn">資安檢查</span>報告及公司背景條件; 由於既有<span class="term-cn">工廠</span>內的<span class="term-cn">工控系統</span> (<span class="term-en">Industrial Control System</span>, <span class="term-abbr">ICS</span>) <span class="term-cn">資安防護不足</span>, 考量增強<span class="term-cn">維護廠商</span>的<span class="term-cn">遠端作業</span>及<span class="term-cn">工廠工控系統</span>的<span class="term-cn">防護能力</span>, 將著手規劃提升相關<span class="term-cn">資安防禦措施</span>, 請問下列何項計劃或執行作業<span class="highlight">有誤</span>?
+                 <div class="context-block"><i>(情境與附圖同上題)</i></div></div>
+                 <img src="image/113-1_防_371.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">XYZ 公司的<span class="term-cn">工控系統</span>並非<span class="highlight">完全實體隔離</span>, 因此在<span class="term-cn">資安防護</span>設計必須<span class="highlight">依序考量</span>: <span class="highlight">機密性、完整性和可用性</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">規劃<span class="term-cn">虛擬修補</span> (<span class="term-en">Virtual Patching</span>) 機制, 保護<span class="term-cn">實體防護</span>不足與<span class="highlight">無法更新修補</span>的設備與<span class="term-cn">工控系統</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">強化<span class="term-cn">網路通訊安全</span>降低網路連線風險, 包含: <span class="term-en">Internet</span>, <span class="term-en">Intranet</span>, <span class="term-abbr">WLAN</span> & <span class="term-cn">廠商維護通訊路徑</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">遠端連線</span>必須使用 <span class="term-abbr">VPN</span>, 並且管理所有<span class="term-cn">工業控制系統</span>的操作<span class="term-cn">存取權限</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         規劃 <span class="term-abbr">ICS</span>/<span class="term-abbr">OT</span> <span class="term-cn">資安防護</span>：<br/>
+                         (A) <span class="term-abbr">ICS</span>/<span class="term-abbr">OT</span> 環境的<span class="term-cn">安全考量</span>通常<span class="highlight">優先順序</span>與 <span class="term-abbr">IT</span> 不同。<span class="highlight">可用性</span> (<span class="term-en">Availability</span>) 和<span class="highlight">完整性</span> (<span class="term-en">Integrity</span>)（確保控制指令正確、系統穩定運行）往往<span class="highlight">優先於機密性</span> (<span class="term-en">Confidentiality</span>)。選項中的考量順序「<span class="highlight">機密性、完整性、可用性</span>」是 <span class="term-abbr">IT</span> 的典型 <span class="term-abbr">CIA</span> 順序，<span class="highlight">不完全適用</span>於 <span class="term-abbr">OT</span> 環境的優先級。此計畫<span class="highlight">有誤</span>。<br/>
+                         (B) 對於<span class="highlight">無法直接修補</span>的老舊系統，<span class="term-cn">虛擬修補</span>（通常透過 <span class="term-abbr">IPS</span> 或專用安全設備在網路層攔截針對已知漏洞的攻擊流量）是一種<span class="highlight">有效的補償控制</span>。<br/>
+                         (C) 加強所有<span class="term-cn">通訊路徑</span>（對外、對內、無線、遠端維護）的<span class="term-cn">安全</span>是必要的。<br/>
+                         (D) 要求<span class="term-cn">遠端維護</span>使用 <span class="term-abbr">VPN</span> 建立<span class="term-cn">安全通道</span>，並嚴格<span class="highlight">管理存取權限</span>，是基本的<span class="term-cn">遠端存取安全</span>要求。<br/>
+                         因此，計畫或執行作業有誤的是 (A)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Question 39 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#39</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組5】情境如附圖所示。承上題, 依據本案<span class="term-cn">資安檢查</span>報告及公司背景條件, XYZ 公司討論規劃可能的<span class="term-cn">資安防護事項</span>如<span class="highlight">附圖一</span>所示。請問 XYZ 公司<span class="term-cn">辦公室區域</span>在<span class="highlight">不更換及增購設備</span>的情況下, 下列何項的<span class="term-cn">資安防護措施</span>較為合適與即時可行?
+                 <div class="context-block"><i>(附圖一列出可能的防護事項: 甲.增設防火牆與VPN連線 乙.教育訓練提升員工資安意識 丙.更新修補ERP主機作業系統 丁.更新修補所有PC作業系統 戊.更新修補SVR3-NAS主機 己.修補ERP源碼掃描的高風險項目 庚.設置DMZ區管理主機 辛.關閉SVR3-NAS共享目錄 壬.PC安裝防毒軟體 癸.關閉PC共享目錄 子.共享目錄設定存取權限 丑.關閉非必要的通訊埠 寅.提高WLAN連線安全設定 卯.提升使用系統的密碼強度)</i><br/><i>(辦公室區域設備: PCs, Printer, SVR3-NAS, ERP)</i></div></div>
+                 <img src="image/113-1_防_391.png" class="responsive-img">
+                 <br>
+                 <img src="image/113-1_防_392.png" class="responsive-img">
+                 <br>
+                 <img src="image/113-1_防_393.png" class="responsive-img">
+
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">甲丙戊庚辛壬癸子卯</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">乙丁戊辛壬癸子丑寅卯</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">甲乙丙丁己辛壬丑寅</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">戊子寅甲</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         目標是找出在「<span class="highlight">辦公室區域</span>」、「<span class="highlight">不更換及增購設備</span>」前提下，「<span class="highlight">合適且即時可行</span>」的措施。<br/>
+                         分析附圖一的選項：<br/>
+                         - 甲 (增設防火牆VPN): 需要<span class="highlight">增購設備</span>，不符。<br/>
+                         - 乙 (教育訓練): <span class="highlight">可行</span>，不需增購。<br/>
+                         - 丙 (更新ERP OS): ERP 在辦公室區，更新 OS <span class="highlight">可行</span>。<br/>
+                         - 丁 (更新PC OS): PC 在辦公室區，更新 OS <span class="highlight">可行</span>。<br/>
+                         - 戊 (更新NAS主機): NAS 在辦公室區，更新<span class="highlight">可行</span>。<br/>
+                         - 己 (修補ERP源碼): <span class="highlight">可行</span>，但可能需委外，未必「即時」。<br/>
+                         - 庚 (設置DMZ): 需要<span class="highlight">調整網路架構</span>，可能需設備，未必即時。<br/>
+                         - 辛 (關閉NAS共享): NAS 在辦公室區，關閉共享<span class="highlight">可行</span>。<br/>
+                         - 壬 (PC安裝防毒): PC 在辦公室區，安裝/更新防毒<span class="highlight">可行</span>。<br/>
+                         - 癸 (關閉PC共享): PC 在辦公室區，關閉共享<span class="highlight">可行</span>。<br/>
+                         - 子 (共享目錄權限設定): NAS/PC 在辦公室區，設定權限<span class="highlight">可行</span>。<br/>
+                         - 丑 (關閉非必要通訊埠): 對辦公室設備操作，<span class="highlight">可行</span>。<br/>
+                         - 寅 (提高WLAN安全設定): 辦公室 AP 設定，<span class="highlight">可行</span>。<br/>
+                         - 卯 (提升密碼強度): 系統/帳號設定，<span class="highlight">可行</span>。<br/>
+                         <br/>
+                         排除需要增購/更換設備 (甲) 和可能不即時/需委外 (己, 庚) 的選項，以及假設丙丁戊的更新是可行的。
+                         選項 B 包含: 乙, 丁, 戊, 辛, 壬, 癸, 子, 丑, 寅, 卯。這些大部分都是<span class="highlight">軟體設定</span>、<span class="highlight">政策</span>或<span class="highlight">標準維護</span>操作，符合「不增購/更換」、「合適且即時可行」的條件。<br/>
+                         選項 A 含 甲, 庚 (不符)。<br/>
+                         選項 C 含 甲, 己, 庚 (不符/未必即時)。<br/>
+                         選項 D 項目太少。<br/>
+                         因此，最合適的組合是 (B)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 40 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#40</div>
+                     <div class="evaluation-criterion">2.2 作業安全實務</div>
+                 </div>
+                 <div class="question-content">【題組5】情境如附圖所示。承上題參如本系統情境架構, XYZ 公司為提升安全防護計劃建置<span class="term-cn">防火牆</span>, 並且將網路分割為不同網段以管理網路通訊, 同時提供<span class="term-cn">維護廠商</span>得以用 <span class="term-abbr">VPN</span> 進行連線作業, 參考附圖中的網路區塊規劃, 請問依以下路由管理項目, <span class="term-cn">防火牆</span>應建立的基本<span class="term-cn">資安政策</span>組合有下列哪些項目?
+                 <div class="context-block"><i>(附圖顯示網路拓樸: Internet - Firewall - [LAN(辦公室)/DMZ(ERP,OEE,NAS)/OT(HMI,PLC,平板)/WLAN], VPN連入Firewall, 可通往OT/DMZ)</i><br/><i>(路由管理項目: 甲.Deny All 乙.Allow All 丙.Allow LAN to WAN 丁.Deny WAN to LAN 戊.Allow VPN to OT 己.Deny OT to VPN 庚.Allow LAN to OT 辛.Deny LAN to OT 壬.Allow OT to LAN 癸.Deny OT to LAN 子.Allow DMZ to OT 丑.Deny DMZ to OT 寅.Allow VPN to DMZ 卯.Deny DMZ to VPN)</i></div></div>
+                 <img src="image/113-1_防_40.png" class="responsive-img">
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">丙庚壬</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">丁己辛</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">癸丑卯乙</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">戊子寅甲</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">
+                         根據<span class="highlight">網路安全最佳實務</span>和<span class="term-cn">普渡模型</span>的分區概念，分析<span class="term-cn">防火牆</span>應建立的基本策略：<br/>
+                         - **基本原則**：通常以「<span class="highlight">預設拒絕</span>」(<span class="term-en">Default Deny</span>) 為基礎（對應 甲），再根據需求<span class="highlight">明確允許</span>必要的流量。<br/>
+                         - **LAN (辦公室) 到 Internet**：通常需要允許內部使用者訪問外部網路 (丙: Allow LAN to WAN)。<br/>
+                         - **Internet 到 LAN**：應嚴格限制或拒絕來自外部未經請求的連線 (丁: Deny WAN to LAN)。<br/>
+                         - **VPN (維護廠商)**：
+                           - 允許 VPN 存取目標維護區域 OT (戊: Allow VPN to OT)。
+                           - 允許 VPN 存取目標維護區域 DMZ (寅: Allow VPN to DMZ)。
+                         - **不同內部區域間**：
+                           - <span class="term-abbr">LAN</span> 到 <span class="term-abbr">OT</span>：通常應<span class="highlight">限制或拒絕</span>，避免 IT 網路的風險擴散到 OT (辛: Deny LAN to OT)。但題目選項 (A) 包含庚 (Allow LAN to OT)，選項 (B) 包含辛。
+                           - <span class="term-abbr">OT</span> 到 <span class="term-abbr">LAN</span>：通常也應<span class="highlight">限制或拒絕</span>，避免 OT 網路的問題影響 IT (癸: Deny OT to LAN)。但題目選項 (A) 包含壬 (Allow OT to LAN)。
+                           - <span class="term-abbr">DMZ</span> 到 <span class="term-abbr">OT</span>：通常應<span class="highlight">拒絕</span>，DMZ 是暴露區 (丑: Deny DMZ to OT)。
+                           - <span class="term-abbr">OT</span> 到 <span class="term-abbr">DMZ</span>：可能需要允許 OT 設備將資料傳送給 DMZ 中的伺服器（如 OEE），需視應用而定。<br/>
+                           - <span class="term-abbr">LAN</span> 到 <span class="term-abbr">DMZ</span>：通常需要允許，以便管理 DMZ 伺服器。<br/>
+                           - <span class="term-abbr">DMZ</span> 到 <span class="term-abbr">LAN</span>：通常應<span class="highlight">拒絕</span>。<br/>
+                         <br/>
+                         檢視選項組合：<br/>
+                         (A) 丙 (Allow LAN to WAN), 庚 (Allow LAN to OT), 壬 (Allow OT to LAN): 允許 LAN/OT 互訪可能<span class="highlight">不符合嚴格分區</span>原則，但<span class="highlight">相對寬鬆</span>策略下可能存在。允許 LAN to WAN 是必要的。<br/>
+                         (B) 丁 (Deny WAN to LAN), 己 (Deny OT to VPN), 辛 (Deny LAN to OT): 都是常見的<span class="highlight">拒絕</span>策略。<br/>
+                         (C) 癸 (Deny OT to LAN), 丑 (Deny DMZ to OT), 卯 (Deny DMZ to VPN), 乙 (Allow All): 包含 Allow All <span class="highlight">極不安全</span>。<br/>
+                         (D) 戊 (Allow VPN to OT), 子 (Allow DMZ to OT), 寅 (Allow VPN to DMZ), 甲 (Deny All): 以 Deny All 為基礎，再開放必要連線是<span class="highlight">正確思路</span>，但允許 DMZ to OT (子) 通常<span class="highlight">不建議</span>。<br/>
+                         <br/>
+                         **重新考慮選項與常見策略:**
+                         - <span class="highlight">基礎</span>: 甲 (Deny All)
+                         - <span class="highlight">允許必要連出</span>: 丙 (Allow LAN to WAN)
+                         - <span class="highlight">允許 VPN 存取</span>: 戊 (Allow VPN to OT), 寅 (Allow VPN to DMZ)
+                         - <span class="highlight">區域間通常限制</span>: 丁 (Deny WAN to LAN), 辛 (Deny LAN to OT), 癸 (Deny OT to LAN), 丑 (Deny DMZ to OT) 等。
+                         <br/>
+                         選項 A (丙庚壬) 包含允許 LAN/OT 互通 (庚壬)，這在某些情境可能需要，但安全性較低。選項 D (戊子寅甲) 以 Deny All 為基礎，但允許了 DMZ to OT (子)，安全性存疑。
+                         *根據使用者 OCR 標示，答案為 A。這表示題目可能採用了一種相對寬鬆的策略，允許辦公室(LAN)與工廠(OT)之間的部分通訊，同時允許 LAN 訪問外網。* 接受 A (丙庚壬) 作為答案。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Message area for no results -->
+             <div id="noResultsMessage" style="display: none;"></div>
+
+        </div> <!-- End questions-container -->
+
+        <a href="#" class="back-to-top" id="backToTop" style="display: none;">↑</a>
+    </div> <!-- End container -->
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

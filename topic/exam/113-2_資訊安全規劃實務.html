@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+   <head>
+      <meta charset="UTF-8">
+      <title>iPAS 資訊安全工程師 中級 (113-2) - I21 資訊安全規劃實務</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+       <link rel="stylesheet" href="styles.css">
+</head>
+   <body>
+      <div class="progress-container">
+         <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="container">
+         <div class="header-container">
+            <h1>iPAS 資訊安全工程師 中級 (113年第2次)</h1>
+            <div>科目 I21: 資訊安全規劃實務</div>
+         </div>
+         <div class="controls">
+            <div class="filter-container">
+               <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+               <select id="criterionFilter">
+                  <option value="all">全部內容</option>
+                  <option value="1.1">1.1 ISMS建置實務與法規遵循 <span class="criterion-count">(8)</span></option>
+                  <option value="1.2">1.2 資安管理實務/架構規劃 <span class="criterion-count">(10)</span></option>
+                  <option value="2.1">2.1 風險分析與評估 <span class="criterion-count">(8)</span></option>
+                  <option value="2.2">2.2 風險處理實務 <span class="criterion-count">(14)</span></option>
+               </select>
+            </div>
+            <div class="search-container">
+               <label for="searchInput" class="search-label">搜尋：</label>
+               <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+               <button id="searchButton">搜尋</button>
+            </div>
+            <div class="toggle-explanations">
+               <button id="toggleExplanations">顯示全部解析</button>
+            </div>
+         </div>
+         <div class="criteria-container">
+            <div class="criteria-title">評鑑內容 (點擊篩選)</div>
+            <div class="criteria-grid" id="criteriaGrid">
+               <div class="criterion-item" onclick="filterByCriterion('1.1')">
+                  <div class="criterion-id">1.1</div>
+                  <div class="criterion-text">ISMS建置實務與法規遵循</div>
+                  <div class="criterion-count">(8)</div>
+               </div>
+               <div class="criterion-item" onclick="filterByCriterion('1.2')">
+                  <div class="criterion-id">1.2</div>
+                  <div class="criterion-text">資安管理實務/架構規劃</div>
+                  <div class="criterion-count">(10)</div>
+               </div>
+               <div class="criterion-item" onclick="filterByCriterion('2.1')">
+                  <div class="criterion-id">2.1</div>
+                  <div class="criterion-text">風險分析與評估</div>
+                  <div class="criterion-count">(8)</div>
+               </div>
+               <div class="criterion-item" onclick="filterByCriterion('2.2')">
+                  <div class="criterion-id">2.2</div>
+                  <div class="criterion-text">風險處理實務</div>
+                  <div class="criterion-count">(14)</div>
+               </div>
+            </div>
+         </div>
+         <div class="questions-container" id="questionsContainer">
+            <!-- Question 1 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#1</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">X 公司為在中華民國註冊登記之公司, 該公司將於在 2024 年導入<span class="term-cn">資安管理制度</span>。並預計於 2025 年第一季通過國際資安驗證, 請問下列何項制度<span class="highlight">最適合</span> X 公司做為導入<span class="term-cn">資訊安全管理制度</span>依循之參考?</div>
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text"><span class="term-abbr">ISO/IEC 27001 : 2013</span></div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text"><span class="term-abbr">ISO/IEC 27004 : 2016</span></div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text"><span class="term-abbr">ISO/IEC 20000 : 2018</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text"><span class="term-abbr">ISO/IEC 27001 : 2022</span></div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">題目詢問導入<span class="term-cn">資訊安全管理制度</span> (<span class="term-en">Information Security Management System</span>, <span class="term-abbr">ISMS</span>) 最適合參考的國際標準。<br/>
+                     (A) <span class="term-abbr">ISO/IEC 27001:2013</span> 是<span class="highlight">舊版</span>的<span class="term-cn">資訊安全管理系統</span>要求標準。<br/>
+                     (B) <span class="term-abbr">ISO/IEC 27004</span> 提供<span class="term-cn">資訊安全管理</span>的<span class="highlight">量測</span>指引。<br/>
+                     (C) <span class="term-abbr">ISO/IEC 20000</span> 是<span class="term-cn">IT 服務管理</span> (<span class="term-en">IT Service Management</span>, <span class="term-abbr">ITSM</span>) 的國際標準。<br/>
+                     (D) <span class="term-abbr">ISO/IEC 27001:2022</span> 是<span class="highlight">最新版本</span>的<span class="term-cn">資訊安全管理系統</span>要求標準。X 公司計畫在 2024 年導入並在 2025 年驗證，<span class="highlight">理應採用最新版本的標準</span>進行導入與驗證。<br/>
+                     因此，最適合 X 公司依循的參考標準是 <span class="term-abbr">ISO/IEC 27001:2022</span>。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+               <div class="question-header">
+                  <div class="question-id">#2</div>
+                  <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+               </div>
+               <div class="question-content">下列何項「不」是<span class="term-cn">帳號管理</span> (<span class="term-en">Account Management</span>) 的安全政策?</div>
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text"><span class="highlight">定期檢視</span>超過一定期間未登入之使用者帳號</div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text"><span class="highlight">定期檢視管理者帳號</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">要求使用者密碼須為<span class="term-cn">複雜性密碼</span></div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">依申請期限, <span class="highlight">關閉臨時帳號</span></div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content"><span class="term-cn">帳號管理</span>的安全政策旨在確保帳號生命週期的安全，包括建立、使用、變更和刪除。<br/>
+                     (A) 定期檢視並<span class="highlight">處理閒置帳號</span>（例如停用或刪除）是防止這些帳號被濫用的重要措施。<br/>
+                     (B) <span class="highlight">管理者帳號擁有高權限</span>，更應定期檢視其必要性、權限範圍及活動記錄。<br/>
+                     (D) <span class="highlight">臨時帳號</span>應有明確的使用期限，到期後立即關閉或刪除，以防被持續濫用。<br/>
+                     (C) 要求使用<span class="term-cn">複雜性密碼</span>是屬於<span class="term-cn">密碼管理</span> (<span class="term-en">Password Management</span>) 或<span class="term-cn">身分驗證管理</span> (<span class="term-en">Authentication Management</span>) 的政策範疇，雖然與帳號安全相關，但<span class="highlight">更側重於密碼本身的強度</span>，而非帳號生命週期的管理。相較於 A, B, D 直接管理帳號狀態和權限，C 關注的是密碼強度，因此「不」是典型的<span class="term-cn">帳號管理</span>政策核心內容。<br/>
+                     *注意：雖然廣義上都與帳號安全相關，但題目區分了帳號管理與密碼管理政策。*
+                  </div>
+               </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+               <div class="question-header">
+                  <div class="question-id">#3</div>
+                  <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+               </div>
+               <div class="question-content">導入下列何者措施, 其主要目的「不」是提升<span class="term-cn">機密性</span> (<span class="term-en">Confidentiality</span>)?</div>
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">在內部重要網段增設<span class="term-cn">防火牆</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">導入<span class="term-cn">主機負載平衡</span>系統</div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">導入<span class="term-cn">資料加密</span>系統</div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">限制<span class="term-cn">機密資料</span>僅少數人員可以存取</div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content"><span class="term-cn">機密性</span>旨在<span class="highlight">防止未經授權的資訊揭露</span>。<br/>
+                     (A) <span class="term-cn">防火牆</span>用於<span class="highlight">控制網路存取</span>，限制未授權的連線訪問重要網段，有助於保護網段內資訊的<span class="term-cn">機密性</span>。<br/>
+                     (B) <span class="term-cn">主機負載平衡</span> (<span class="term-en">Load Balancing</span>) 的主要目的是<span class="highlight">分散流量</span>，提高系統的<span class="highlight">可用性 (Availability)</span> 和效能，<span class="highlight">與提升機密性無直接關聯</span>。<br/>
+                     (C) <span class="term-cn">資料加密</span> (<span class="term-en">Data Encryption</span>) 是保護資料內容不被未授權者讀取的<span class="highlight">核心技術</span>，直接提升<span class="term-cn">機密性</span>。<br/>
+                     (D) <span class="term-cn">存取控制</span> (<span class="term-en">Access Control</span>)，限制只有授權人員才能存取機密資料，是維護<span class="term-cn">機密性</span>的基本原則。<br/>
+                     因此，主要目的「不」是提升機密性的是 (B)。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#4</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">2024/05/13 韓國警察廳國家搜查本部發出聲明, 韓國法院近 <span class="term-abbr">1TB</span> 資料遭竊, 是該國司法單位首度遭到敵對駭客攻擊。攻擊者至少從 2021 年 1 月 7 日就入侵該國法院, 但因記錄過期遭到清除, 無法確認是否早已滲透, 亦無從得知事故原因。借鑒此案例, 若依據我國「<span class="term-cn">資通安全責任等級分級辦法</span>」與「<span class="term-cn">各機關資通安全事件通報及應變處理作業程序</span>」等所規定, <span class="term-cn">資安事件跡證保存</span>之規劃下列那些最正確? (複選)</div>
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text"><span class="term-cn">日誌</span>留存依機關等級而異, 等級「普」至少<span class="highlight">六個月</span>而等級「高」為<span class="highlight">兩年</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text"><span class="term-cn">日誌保存範圍</span>涵蓋各項<span class="term-cn">資通系統</span>, 與<span class="term-cn">資通及防護設備日誌紀錄</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text"><span class="term-cn">日誌宜保存項目</span>為<span class="term-cn">作業系統日誌</span>、<span class="term-cn">網站日誌</span>、<span class="term-cn">應用程式日誌</span>與<span class="term-cn">登入日誌</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text"><span class="term-cn">日誌內容</span>宜應含<span class="highlight">事件類型</span>、<span class="highlight">發生時間與位置</span>, 及<span class="highlight">事件相關之使用者身分識別</span>等資訊</div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">依據「<span class="term-cn">資通安全責任等級分級辦法</span>」附錄九「<span class="term-cn">資通系統防護基準</span>」及相關規定：<br/>
+                     (A) <span class="term-cn">日誌紀錄</span>應至少保存 <span class="highlight">180 天（約六個月）</span>。此要求適用於<span class="highlight">所有等級</span>的公務機關及特定非公務機關，並未區分普通級需六個月、高級需兩年。錯誤。<br/>
+                     (B) 保存範圍應涵蓋<span class="highlight">所有資通系統</span>（核心與非核心）及<span class="highlight">資通安全防護設備</span>（如防火牆、<span class="term-abbr">IPS</span>、<span class="term-abbr">WAF</span>）的相關日誌。正確。<br/>
+                     (C) <span class="highlight">應保存的日誌類型</span>通常包括作業系統事件日誌、伺服器事件日誌（如網站伺服器）、安全設備日誌、應用程式日誌以及使用者登入/登出與存取活動日誌等。正確。<br/>
+                     (D) 日誌內容應包含足夠資訊以利事件調查，至少應包含<span class="highlight">事件發生的時間、來源與目的 IP/使用者、事件類型描述</span>等。正確。<br/>
+                     因此，正確的敘述為 (B)、(C)、(D)。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#5</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">【題組1】情境如附圖所示(附圖為文字描述)。依據該公務機關之業務特性對於<span class="term-cn">法規遵循</span>事項所應遵循之法律規範, 試問下列何項敘述較為合適? (附圖摘要: 某A級公務機關，主辦全民健保業務，為符合資安法規，實施系列資安作為。)</div>
+               <img src="image/113-2_規_05.png" class="responsive-img">
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">應遵循<span class="term-cn">智慧財產權法</span>以及<span class="term-cn">資通安全管理法</span>之規定</div>
+                  </div>
+                  <div class="option-item correct" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">應遵循<span class="term-cn">個人資料保護法</span>以及<span class="term-cn">資通安全管理法</span>之規定</div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">應遵循<span class="term-cn">智慧財產權法</span>以及<span class="term-cn">個人資料保護法</span>之規定</div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">應遵循<span class="term-cn">著作權法</span>以及<span class="term-cn">個人資料保護法</span>之規定</div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">該機關為<span class="highlight">A級公務機關</span>，且主辦<span class="highlight">全民健保業務</span>，涉及大量<span class="highlight">個人敏感資料</span>。<br/>
+                     1.  身為 A 級公務機關，必須遵循<span class="term-cn">資通安全管理法</span>及其相關子法的規定。<br/>
+                     2.  處理全民健保業務涉及大量<span class="highlight">個人姓名、身分證號、就醫紀錄等個人資料</span>，必須遵循<span class="term-cn">個人資料保護法</span> (<span class="term-abbr">PDPA</span>) 的規定。<br/>
+                     智慧財產權法/著作權法雖然也可能相關（例如使用的軟體版權），但<span class="term-cn">資通安全管理法</span>和<span class="term-cn">個人資料保護法</span>是基於其機關等級和業務特性（處理大量個資）最直接且必須遵循的核心法規。<br/>
+                     因此，最合適的敘述是 (B)。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 6 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#6</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">【題組1】情境如附圖所示。試問該機關主責<span class="term-cn">資通安全</span>有關事項之承辦窗口所實施之一系列有關資訊安全作為, 試問下列何項敘述<span class="highlight">正確</span>?</div>
+               <img src="image/113-2_規_05.png" class="responsive-img">
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">每年辦理一次內部<span class="term-cn">資通安全稽核</span></div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">每二年辦理一次<span class="term-cn">資通安全健診</span>活動</div>
+                  </div>
+                  <div class="option-item correct" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text"><span class="term-cn">資通安全專職人員</span>配置<span class="highlight">四人</span></div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">非核心資通系統導入 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>標準</div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">依據「<span class="term-cn">資通安全責任等級分級辦法</span>」對 A 級公務機關的要求：<br/>
+                     (A) 應<span class="highlight">每年</span>辦理一次<span class="highlight">內部</span><span class="term-cn">資通安全稽核</span>。正確。<br/>
+                     (B) 應<span class="highlight">每二年</span>辦理一次<span class="highlight">外部</span><span class="term-cn">資通安全稽核</span>（包含<span class="term-cn">資安健診</span>性質的檢測）。選項說健診活動，但未提外部稽核，不完全。而內部稽核是每年。<br/>
+                     (C) A 級機關應置<span class="term-cn">資通安全長</span>一人，並應配置至少<span class="highlight">四名資通安全專職人員</span>。正確。<br/>
+                     (D) 應<span class="highlight">核心資通系統</span>導入 <span class="term-abbr">CNS 27001</span> 或 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>標準。對於非核心系統並無此強制要求。錯誤。<br/>
+                     題目問何者正確，(A) 和 (C) 均符合 A 級機關要求。然而，(A) 內部稽核是標準要求，(C) 人員配置也是。但實務上，資安健診活動通常包含在外部稽核內，且是兩年一次。若題目指的「資通安全健診活動」就是指外部稽核的要求，那(B)也是正確的（頻率正確）。選項間可能有模糊地帶或側重不同。但<span class="highlight">配置四名專職人員</span>是明確的 A 級要求。*若為單選，則需判斷哪個要求更具體或更符合題意。*
+                     *重看選項，(A) 內部稽核每年一次，正確。(C) 專職人員四人，正確。若為單選，兩者皆可。若為複選，則選 A 和 C。 假設題目為單選，且選項 C 是最直接的人力配置要求。*
+                     若題目為單選，選項 (C) 最為明確。
+                     *更新：根據提供答案 C 為正確。*
+                  </div>
+               </div>
+            </div>
+            <!-- Question 7 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#7</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">【題組1】情境如附圖所示。試問該機關主責<span class="term-cn">資通安全</span>有關事項之承辦窗口所規畫導入與該機關主要業務特性有關之 <span class="term-abbr">ISO</span> 國際標準, 下列較為<span class="highlight">適宜</span>?</div>
+               <img src="image/113-2_規_05.png" class="responsive-img">
+               <div class="options-container">
+                  <div class="option-item correct" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">導入 <span class="term-abbr">ISO 27001</span> 及 <span class="term-abbr">ISO 27701</span> 國際標準</div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">導入 <span class="term-abbr">ISO 27001</span> 及 <span class="term-abbr">ISO 45000</span> 國際標準</div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">導入 <span class="term-abbr">ISO 27001</span> 及 <span class="term-abbr">ISO 17025</span> 國際標準</div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">導入 <span class="term-abbr">ISO 27001</span> 及 <span class="term-abbr">ISO 50001</span> 國際標準</div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">該機關主辦全民健保業務，涉及大量<span class="term-cn">個人隱私資料</span>。<br/>
+                     *   <span class="term-abbr">ISO 27001</span>: <span class="term-cn">資訊安全管理系統</span> (<span class="term-abbr">ISMS</span>) 標準，是建立整體資安管理框架的基礎。<br/>
+                     *   <span class="term-abbr">ISO 27701</span>: 是 <span class="term-abbr">ISO 27001</span> 的<span class="highlight">延伸</span>，專門針對<span class="term-cn">隱私資訊管理系統</span> (<span class="term-en">Privacy Information Management System</span>, <span class="term-abbr">PIMS</span>) 提供要求和指引。對於處理大量個資的組織（如健保機關）非常適宜。<br/>
+                     *   <span class="term-abbr">ISO 45000</span> 系列: <span class="term-cn">職業健康安全管理系統</span>標準。<br/>
+                     *   <span class="term-abbr">ISO 17025</span>: <span class="term-cn">測試與校正實驗室能力</span>的通用要求標準。<br/>
+                     *   <span class="term-abbr">ISO 50001</span>: <span class="term-cn">能源管理系統</span>標準。<br/>
+                     鑑於該機關的業務特性（A級公務機關、處理大量健保個資），除了導入基礎的 <span class="term-abbr">ISO 27001</span> 外，導入專門處理<span class="term-cn">隱私保護</span>的 <span class="term-abbr">ISO 27701</span> 是最為適宜的選擇。<br/>
+                     因此，選項 (A) 最適宜。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 8 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+               <div class="question-header">
+                  <div class="question-id">#8</div>
+                  <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+               </div>
+               <div class="question-content">【題組1】情境如附圖所示。該機關決定於 3 個月後正式導入 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>, 因此, 主責<span class="term-cn">資通安全</span>有關事項之承辦窗口正評估 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>導入範圍, 依該機關主要業務特性, 試問下列哪些系統應納入 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>的「<span class="highlight">導入範圍</span>」? (複選)</div>
+               <img src="image/113-2_規_05.png" class="responsive-img">
+               <div class="options-container">
+                  <div class="option-item correct" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text"><span class="highlight">全民健保納保系統</span></div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">人員請假系統</div>
+                  </div>
+                  <div class="option-item correct" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text"><span class="highlight">全民健保退保系統</span></div>
+                  </div>
+                  <div class="option-item correct" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text"><span class="highlight">全民健保查詢系統</span></div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content"><span class="term-abbr">ISMS</span> 的導入範圍 (<span class="term-en">Scope</span>) 應涵蓋組織的<span class="highlight">核心業務</span>及其相關的資訊資產、流程和系統，特別是涉及敏感資訊或對業務運營至關重要的部分。<br/>
+                     該機關的主要業務是<span class="highlight">全民健保</span>。<br/>
+                     (A) 全民健保納保系統：處理民眾加入健保的申請與資料，是<span class="highlight">核心業務</span>系統，涉及大量個資，應納入範圍。<br/>
+                     (B) 人員請假系統：屬於<span class="highlight">內部行政支持系統</span>，與主要對外提供的健保業務核心功能相比，其重要性和風險等級較低，<span class="highlight">不一定需要優先納入</span> ISMS 首次導入的範圍（但長期來看可能也需納入管理）。<br/>
+                     (C) 全民健保退保系統：處理民眾退出健保的作業，同樣是<span class="highlight">核心業務</span>系統，涉及個資，應納入範圍。<br/>
+                     (D) 全民健保查詢系統：提供民眾或相關單位查詢健保資訊，是<span class="highlight">核心服務</span>之一，涉及個資存取，應納入範圍。<br/>
+                     因此，應納入導入範圍的是 (A)、(C)、(D)。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 9 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+               <div class="question-header">
+                  <div class="question-id">#9</div>
+                  <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+               </div>
+               <div class="question-content">關於<span class="term-cn">縱深防禦</span> (<span class="term-en">Defense in Depth</span>) 的敘述, 下列何者<span class="highlight">錯誤</span>?</div>
+               <div class="options-container">
+                  <div class="option-item" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">係透過應用<span class="highlight">多種的安全機制</span>來建立一系列的安全屏障</div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">可以<span class="highlight">防止、延遲或阻止</span>攻擊行為</div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">主要安全機制可以包含<span class="highlight">邊界防禦、身份驗證和授權、主機和端點保護、應用程式保護、資料保護、安全監控與事件回應</span>等機制</div>
+                  </div>
+                  <div class="option-item correct" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">可以<span class="highlight">完全取代</span><span class="term-cn">資安託管服務</span></div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content"><span class="term-cn">縱深防禦</span>是一種安全策略，透過<span class="highlight">多層次、多樣化</span>的控制措施來保護資訊資產。<br/>
+                     (A) 正確，<span class="term-cn">縱深防禦</span>的核心就是應用多種安全機制。<br/>
+                     (B) 正確，多層防禦的目的是增加攻擊難度，從而防止、延遲或阻止攻擊成功。<br/>
+                     (C) 正確，列出的項目都是<span class="term-cn">縱深防禦</span>中常見的安全控制層面。<br/>
+                     (D) <span class="term-cn">縱深防禦</span>是一種<span class="highlight">安全策略和架構</span>，而<span class="term-cn">資安託管服務</span> (<span class="term-abbr">MSSP</span>) 提供的是<span class="highlight">安全監控、管理和應變等服務</span>。即使企業內部實施了完善的縱深防禦，仍可能需要外部<span class="term-cn">託管服務</span>來協助進行 7x24 的監控、專業的事件分析和應變、或補充內部缺乏的專業技能。兩者是<span class="highlight">可以互補而非完全取代</span>的關係。錯誤。<br/>
+                     因此，錯誤的敘述是 (D)。
+                  </div>
+               </div>
+            </div>
+            <!-- Question 10 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+               <div class="question-header">
+                  <div class="question-id">#10</div>
+                  <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+               </div>
+               <div class="question-content">
+                  公司採用<span class="term-cn">聲紋辨識器</span>作為門禁控制措施, 因員工感冒, 導致其被<span class="highlight">拒絕進入</span>, 這種現象稱為下列何項?
+               </div>
+               <div class="options-container">
+                  <div class="option-item correct" data-option="A">
+                     <div class="option-label">A</div>
+                     <div class="option-text">
+                        <span class="term-en">False reject</span> (<span class="term-cn">錯誤拒絕</span>)
+                     </div>
+                  </div>
+                  <div class="option-item" data-option="B">
+                     <div class="option-label">B</div>
+                     <div class="option-text">
+                        <span class="term-en">False accept</span> (<span class="term-cn">錯誤接受</span>)
+                     </div>
+                  </div>
+                  <div class="option-item" data-option="C">
+                     <div class="option-label">C</div>
+                     <div class="option-text">
+                        <span class="term-en">Type-II error</span> (<span class="term-cn">型二錯誤</span>)
+                     </div>
+                  </div>
+                  <div class="option-item" data-option="D">
+                     <div class="option-label">D</div>
+                     <div class="option-text">
+                        <span class="term-abbr">CER</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="explanation-container">
+                  <div class="explanation-header">答案解析</div>
+                  <div class="explanation-content">
+                     在<span class="term-cn">生物辨識</span> (<span class="term-en">Biometrics</span>) 或<span class="term-cn">身份驗證</span>系統中，錯誤類型定義如下：
+                     <ul>
+                        <li>
+                           <span class="term-cn">錯誤拒絕</span> (<span class="term-en">False Rejection</span> / <span class="term-en">False Reject</span> / <span class="term-cn">Type I error</span> / <span class="term-abbr">FRR</span> - False Rejection Rate): 
+                           <span class="highlight">合法用戶被系統錯誤地拒絕</span>。本題中，感冒的員工是合法用戶，但因聲音變化被系統拒絕，屬於此類。
+                        </li>
+                        <li>
+                           <span class="term-cn">錯誤接受</span> (<span class="term-en">False Acceptance</span> / <span class="term-en">False Accept</span> / <span class="term-cn">Type II error</span> / <span class="term-abbr">FAR</span> - False Acceptance Rate): 
+                           <span class="highlight">非法用戶被系統錯誤地接受</span>。
+                        </li>
+                        <li>
+                           <span class="term-abbr">CER</span> (<span class="term-en">Crossover Error Rate</span> or <span class="term-en">Equal Error Rate</span>, <span class="term-abbr">EER</span>): 
+                           <span class="term-abbr">FRR</span> 和 <span class="term-abbr">FAR</span> 相等的點，用來評估生物辨識系統的整體準確性。
+                        </li>
+                     </ul>
+                     (A) 合法員工被拒絕，是 <span class="term-en">False reject</span>。正確。<br/>
+                     (B) <span class="term-en">False accept</span> 是指非法用戶被接受。錯誤。<br/>
+                     (C) <span class="term-en">Type-II error</span> 等同於 <span class="term-en">False accept</span>。錯誤。<br/>
+                     (D) <span class="term-abbr">CER</span> 是衡量系統性能的指標，不是描述單一錯誤事件的術語。錯誤。<br/>
+                     因此，這種現象稱為 (A) <span class="term-en">False reject</span>。
+                  </div>
+               </div>
+            </div>
+                     <!-- Question 11 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#11</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content"><span class="term-cn">職務區隔</span>及<span class="term-cn">責任範圍區隔</span>, 旨在分隔不同個人間相互衝突之職務, 以防止一個人獨自執行潛在衝突的職務。下列何者的應用情境較「不」適當?</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="highlight">啟動、核可及執行變更</span></div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">使用及列印<span class="term-cn">應用程式說明文件</span></div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">設計、實作及審視程式碼</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="highlight">請求、核可及實作存取權限</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-cn">職務區隔</span> (<span class="term-en">Separation of Duties</span>, <span class="term-abbr">SoD</span>) 的目的是<span class="highlight">避免權力過度集中</span>，將一項<span class="highlight">關鍵或敏感任務</span>的不同階段或不同方面分配給不同的人執行，以達到相互制衡、降低錯誤或舞弊風險的目的。<br/>
+                  (A) <span class="highlight">變更管理</span>：請求變更、核准變更、執行變更，應由不同角色負責，以確保變更的合理性與正確性。適用 <span class="term-abbr">SoD</span>。<br/>
+                  (C) <span class="highlight">軟體開發</span>：設計者、開發者、程式碼審核者應由不同人員擔任，以提高程式碼品質和安全性。適用 <span class="term-abbr">SoD</span>。<br/>
+                  (D) <span class="highlight">權限管理</span>：申請權限、核准權限、實施權限設定，應由不同角色負責，以防止未經授權的權限授予。適用 <span class="term-abbr">SoD</span>。<br/>
+                  (B) 使用和列印<span class="term-cn">應用程式說明文件</span>通常<span class="highlight">不涉及高風險或敏感操作</span>，一般使用者或開發人員都可能需要查閱。將「使用」和「列印」文件強行區隔，<span class="highlight">缺乏實質意義</span>，也不符合 <span class="term-abbr">SoD</span> 的應用目的。不適用 <span class="term-abbr">SoD</span>。<br/>
+                  因此，較不適當的應用情境是 (B)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 12 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#12</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">下列哪些措施的採用「有助於」<span class="term-cn">職務區隔</span> (<span class="term-en">Separation of Duties</span>, <span class="term-abbr">SoD</span>) 控制措施有效的施行? (複選)</div>
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">職務定期輪調</span></div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">多因素驗證</span> (<span class="term-abbr">MFA</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">以<span class="term-cn">角色為基礎的存取控制</span> (<span class="term-abbr">RBAC</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">定期實施<span class="term-cn">權限審查</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">有效的 <span class="term-abbr">SoD</span> 施行需要相關的管理和技術措施支持：<br/>
+                  (A) <span class="term-cn">職務輪調</span> (<span class="term-en">Job Rotation</span>)：可以<span class="highlight">防止單一人員長期把持某個關鍵職位</span>，增加舞弊或錯誤被發現的機會，有助於 <span class="term-abbr">SoD</span> 精神的落實。<br/>
+                  (B) <span class="term-abbr">MFA</span>：主要強化<span class="highlight">身份驗證</span>的安全性，防止帳號被盜用，與職務如何劃分<span class="highlight">無直接關聯</span>。<br/>
+                  (C) <span class="term-abbr">RBAC</span>：將權限與角色綁定，使用者根據其角色獲得權限。透過<span class="highlight">合理設計角色及其權限</span>，可以<span class="highlight">有效地實現和強制執行職務區隔</span>，是最直接相關的技術控制之一。<br/>
+                  (D) <span class="term-cn">權限審查</span> (<span class="term-en">Access Review</span>)：定期檢查使用者的權限是否仍然必要且適當，可以<span class="highlight">發現並糾正不符合 SoD 原則</span>的權限分配（例如，某人累積了過多衝突權限），確保 <span class="term-abbr">SoD</span> 持續有效。<br/>
+                  因此，有助於 <span class="term-abbr">SoD</span> 施行的措施是 (A)、(C)、(D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 13 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#13</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">
+               【題組2】情境如附圖所示(附圖為文字描述)。公司規畫於台南工廠設立
+               <span class="term-cn">備援機房</span>, 以便於新竹主機房失效時, 即時自動啟動備援, 
+               請問備援資料庫<span class="highlight">最長</span>可以設定多久與主要資料庫同步一次? 
+               (附圖摘要: K公司為汽車零組件製造商，股票上市。2023年初通過ISO 27001。
+               主要系統可用性目標：RTO 8小時；資料完整性目標：RPO 8小時。)
+            </div>
+            <img src="image/113-2_規_13.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">5 小時</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">7 小時</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">9 小時</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">11 小時</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">
+                  題目中提到了兩個關鍵目標：
+                  <ul>
+                     <li>
+                        <span class="term-cn">可用性目標 (Recovery Time Objective, RTO)</span>：
+                        可接受<span class="highlight">中斷時間</span>為 8 小時以內。
+                        這指的是從災難發生到系統恢復服務所需的時間。
+                     </li>
+                     <li>
+                        <span class="term-cn">資料完整性目標 (Recovery Point Objective, RPO)</span>：
+                        資料<span class="highlight">流失可接受時間</span>為 8 小時以內。
+                        這指的是災難發生時，最多可以容忍丟失多少時間內的資料。
+                     </li>
+                  </ul>
+                  資料庫同步的頻率<span class="highlight">直接決定了 RPO</span>。
+                  如果設定每 X 小時同步一次，那麼在最壞情況下（剛同步完就發生災難），
+                  可能會丟失將近 X 小時的資料。<br/>
+                  為了滿足 <span class="term-abbr">RPO</span> 為 8 小時的要求，
+                  資料庫同步的間隔時間<span class="highlight">必須小於或等於 8 小時</span>。<br/>
+                  選項中：<br/>
+                  (A) 5 小時 <= 8 小時<br/>
+                  (B) 7 小時 <= 8 小時<br/>
+                  (C) 9 小時 > 8 小時 (不符合 RPO)<br/>
+                  (D) 11 小時 > 8 小時 (不符合 RPO)<br/>
+                  題目問「最長」可以設定多久同步一次，在滿足 RPO <= 8 小時的前提下，
+                  最長的同步間隔是接近 8 小時。在選項中，(B) 7 小時是
+                  <span class="highlight">最接近 8 小時且小於 8 小時</span>的選項。<br/>
+                  <em>*嚴格來說，若要確保 RPO 在 8 小時內，同步間隔理論上應略小於 8 小時。
+                  選項 B 是最長的合規選項。*</em>
+               </div>
+            </div>
+         </div>
+         <!-- Question 14 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#14</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">【題組2】情境如附圖所示。K 公司終於承接到美國 T 公司的大訂單, 但是 T 公司要求可<span class="highlight">遠端連入</span> K 公司系統查詢訂單及庫存資訊, 請問下列做法何項<span class="highlight">最「不」適當</span>?</div>
+            <img src="image/113-2_規_13.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">要求 T 公司以 <span class="term-abbr">VPN</span> 方式進入公司</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">限制該帳號<span class="highlight">查詢權限</span></div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">要求定期更改密碼</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">業務單位於客戶不需使用時, 仍應維持<span class="highlight">半年可用</span>, 以避免影響業務運作</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">允許外部廠商（T 公司）遠端連線存取內部系統，需要建立嚴格的安全控制措施。<br/>
+                  (A) 使用 <span class="term-abbr">VPN</span> 建立<span class="highlight">加密通道</span>是常見的遠端連線方式，可以提供基本的網路層保護。<br/>
+                  (B) 遵循<span class="term-cn">最小權限原則</span>，應<span class="highlight">嚴格限制</span> T 公司帳號僅能查詢其所需的訂單和庫存資訊，不能存取其他無關資料或功能。<br/>
+                  (C) 要求定期更改密碼是<span class="highlight">基本的密碼管理</span>要求，有助於降低密碼洩漏風險。<br/>
+                  (D) 帳號管理的原則是<span class="highlight">不再需要時應立即停用或刪除</span>，以減少攻擊面。讓不再需要的帳號（即使是客戶帳號）<span class="highlight">維持半年可用狀態會帶來不必要的安全風險</span>（例如帳號被遺忘、管理疏忽、或被攻擊者利用）。業務單位應建立流程，在確認客戶不再需要存取權限時，及時通知 IT 部門停用帳號。因此，維持半年可用是不適當的做法。<br/>
+                  故最不適當的做法是 (D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 15 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#15</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">【題組2】情境如附圖所示。K 公司為保護客戶重要機密資料, 擬導入<span class="term-cn">加密管理系統</span>, 請問於選擇<span class="term-cn">加密管理系統</span>時, 下列何者為此階段「<span class="highlight">非</span>」必要評估項目?</div>
+            <img src="image/113-2_規_13.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">系統功能需求評估</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">導入方式評估</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">備份機制評估</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">安全要求評估</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">選擇和導入<span class="term-cn">加密管理系統</span>時，需要評估多個面向：<br/>
+                  (A) <span class="highlight">功能需求</span>：系統是否滿足所需的加密演算法、金鑰管理功能、支援的平台、效能要求等。<br/>
+                  (B) <span class="highlight">導入方式</span>：評估如何將系統整合到現有環境中，例如是代理程式模式、閘道器模式還是 API 整合，以及導入的複雜度和對現有流程的影響。<br/>
+                  (D) <span class="highlight">安全要求</span>：評估系統本身的安全性，如金鑰保護機制、稽核記錄功能、是否符合相關安全標準等。<br/>
+                  (C) <span class="highlight">備份機制</span>：雖然整體 IT 維運需要考慮備份，但<span class="highlight">加密系統本身的備份機制</span>（例如備份加密金鑰或系統設定）通常是<span class="highlight">實施階段或維運階段</span>才需要詳細規劃的內容，在<span class="highlight">「選擇」系統的初期評估階段</span>，相較於功能、導入方式和安全要求，其<span class="highlight">優先級較低</span>，不屬於「非評估不可」的核心項目。組織整體的備份策略是獨立於加密系統選擇的。<br/>
+                  因此，在此選擇階段，「非」必要評估項目相對而言是 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 16 -->
+         <div class="question-card" data-evaluation-content-id="1.1">
+            <div class="question-header">
+               <div class="question-id">#16</div>
+               <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+            </div>
+            <div class="question-content">【題組2】情境如附圖所示。K 公司於 2023 年底進行 <span class="term-abbr">ISO27001</span> <span class="term-cn">資訊安全管理系統</span>年度管理審查, 考量<span class="term-cn">法規遵循</span>時, 下列哪些為<span class="highlight">必要考量</span>項目? (複選)</div>
+            <img src="image/113-2_規_13.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">個人資料保護法</span></div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">資通安全管理法</span></div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">客戶合約之<span class="term-cn">資安要求</span></div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">上市上櫃公司資通安全管控指引</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-abbr">ISO 27001</span> 管理審查需要考量組織面臨的內外部議題，其中<span class="term-cn">法規遵循</span>是重要一環。對於 K 公司（上市公司、汽車零組件製造商、有上市交易、承接美國訂單）：<br/>
+                  (A) <span class="term-cn">個人資料保護法</span>：只要公司有蒐集、處理、利用客戶或員工個資，就必須遵循個資法。正確。<br/>
+                  (B) <span class="term-cn">資通安全管理法</span>：主要規範對象為<span class="highlight">公務機關</span>及<span class="highlight">特定非公務機關</span>（關鍵基礎設施提供者、公營事業、政府捐助達一定比例之財團法人）。K 公司是一般上市公司，除非被主管機關（如數發部或證交所）<span class="highlight">認定為特定非公務機關</span>（例如被認為是關鍵基礎設施供應鏈的一環），否則<span class="highlight">不直接適用</span>資通安全管理法。但其部分精神可能透過其他指引導入。此項是否「必要」考量有待商榷，取決於其是否被認定。<br/>
+                  (C) <span class="highlight">客戶合約要求</span>：合約中若有資安相關條款（如 T 公司的要求），則屬於必須遵守的<span class="highlight">契約義務</span>，是法規遵循的重要部分。正確。<br/>
+                  (D) <span class="term-cn">上市上櫃公司資通安全管控指引</span>：K 公司是<span class="highlight">上市公司</span>，<span class="highlight">必須</span>遵循證交所/櫃買中心發布的此項指引。正確。<br/>
+                  因此，必要的考量項目至少包括 (A)、(C)、(D)。選項 B 的必要性取決於主管機關的認定。
+                  *更新：根據提供答案 A, C, D 為正確。代表此情境下 B 不被視為必要考量。*
+               </div>
+            </div>
+         </div>
+         <!-- Question 17 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#17</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">某公司新增了一業務型態, 員工(20 員, 每員配置筆電乙部以及隨身硬碟乙顆) 必須至客戶端長期駐點處理有關受託業務, 並於客戶端透過網際網路連線回公司內部網路處理公司相關業務, 為了降低此一新增業務型態所衍伸出來的資安風險, 該公司正評估採取有效的控制措施來降低此風險, 請問下列控制措施何項<span class="highlight">較無法</span>降低此風險?</div>
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">網站應用<span class="term-cn">防火牆</span> (<span class="term-en">Web Application Firewall</span>, <span class="term-abbr">WAF</span>)</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">端點偵測及應變機制</span> (<span class="term-en">Endpoint Detection and Response</span>, <span class="term-abbr">EDR</span>)</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-cn">虛擬私有網路</span> (<span class="term-en">Virtual Private Network</span>, <span class="term-abbr">VPN</span>)</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">防毒軟體</span> (<span class="term-en">Antivirus Software</span>)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">此情境的主要風險來自<span class="highlight">員工在外部（客戶端）使用公司筆電和隨身硬碟</span>，並透過<span class="highlight">網際網路連回公司</span>。風險點包括：端點裝置（筆電、隨身碟）的安全、連線過程的安全、以及存取公司內部資源的控管。<br/>
+                  (B) <span class="term-abbr">EDR</span>：部署在<span class="highlight">端點（筆電）</span>上，可以偵測和回應惡意軟體、異常行為，提升端點防護能力，直接降低筆電在外使用的風險。<br/>
+                  (C) <span class="term-abbr">VPN</span>：用於建立從客戶端到公司內部的<span class="highlight">加密安全通道</span>，保護連線過程的資料機密性與完整性。<br/>
+                  (D) <span class="term-cn">防毒軟體</span>：安裝在筆電上，提供基本的<span class="highlight">惡意軟體防護</span>。<br/>
+                  (A) <span class="term-abbr">WAF</span>：主要部署在<span class="highlight">公司網站伺服器前端</span>，用於保護<span class="highlight">網站應用程式本身</span>免受網頁攻擊（如 SQL Injection, XSS）。對於保護從外部連回公司網路的「端點裝置」或「連線通道」安全，<span class="highlight">WAF 的作用非常有限</span>。員工是透過 VPN 連回內網處理「內部」業務，未必直接與需要 WAF 保護的對外網站互動。因此，WAF 相較於其他選項，較無法降低此特定情境的風險。<br/>
+                  故選 (A)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 18 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#18</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">關於<span class="term-cn">網路安全架構</span>中的基本要素, 下列何項敘述「<span class="highlight">有誤</span>」?</div>
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">包含<span class="term-cn">雲端儲存設備</span></div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">包含<span class="term-cn">防火牆設備</span></div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">包含<span class="term-cn">惡意軟體偵測設備</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">包含<span class="term-cn">虛擬私人網路</span>(<span class="term-abbr">VPN</span>) 設備</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-cn">網路安全架構</span>是由多種安全元件和技術組成的多層次防禦體系。其基本要素通常指構成<span class="highlight">防護、偵測、應變</span>能力的<span class="highlight">基礎設施或技術</span>。<br/>
+                  (B) <span class="term-cn">防火牆</span>：是基本的<span class="highlight">網路邊界防護</span>設備，用於控制網路流量。是基本要素。<br/>
+                  (C) <span class="term-cn">惡意軟體偵測設備</span>：例如防毒軟體、<span class="term-abbr">EDR</span>、<span class="term-abbr">IPS</span> 等，用於偵測和阻止惡意軟體。是基本要素。<br/>
+                  (D) <span class="term-abbr">VPN</span> 設備：用於建立<span class="highlight">安全的遠端存取或站點對站點</span>連線。在現代混合辦公和多雲環境下，也是常見的安全基礎設施要素。<br/>
+                  (A) <span class="term-cn">雲端儲存設備</span>：指的是資料<span class="highlight">儲存的位置或服務</span>（如 AWS S3, Google Cloud Storage）。雖然<span class="highlight">保護雲端儲存的安全</span>是網路安全架構需要考慮的一部分（例如設定存取權限、加密），但<span class="highlight">儲存設備本身並非構成「安全架構」的基本「安全防護元件」</span>。防火牆、VPN、惡意軟體偵測是主動的防護/偵測機制，而儲存是需要被保護的對象或場所。因此，將雲端儲存設備列為「基本要素」的敘述相對有誤。<br/>
+                  故選 (A)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 19 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#19</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">規劃<span class="term-cn">端點安全架構</span>時, 納入<span class="term-cn">端點偵測及應變機制</span> (<span class="term-en">Endpoint Detection and Response</span>, <span class="term-abbr">EDR</span>) 的最主要目的之敘述, 下列何者<span class="highlight">正確</span>?</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">防禦網路入侵行為</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="highlight">監控端點入侵行為</span></div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">管理端點網路流量</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">管理端點資料傳輸</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-abbr">EDR</span> 解決方案的主要目標是<span class="highlight">提升對端點設備（電腦、伺服器）上複雜威脅的可見性、偵測能力和應變速度</span>。<br/>
+                  (A) 防禦網路入侵行為主要是<span class="term-cn">網路防火牆</span>或 <span class="term-abbr">IPS</span> 的功能。<br/>
+                  (B) <span class="term-abbr">EDR</span> 的核心功能就是<span class="highlight">持續監控端點</span>上的活動（如進程執行、檔案操作、登錄檔修改、網路連接），<span class="highlight">偵測</span>可疑或惡意的<span class="highlight">入侵行為</span>（包括傳統防毒軟體可能遺漏的無檔案攻擊、進階持續性威脅等），並提供調查和應變（如隔離端點、終止進程）的能力。這是最主要的目的。<br/>
+                  (C) 管理端點網路流量通常由<span class="term-cn">個人防火牆</span>或網路層控制。<br/>
+                  (D) 管理端點資料傳輸可能涉及 <span class="term-abbr">DLP</span> 或其他控制措施。<br/>
+                  因此，最主要目的是 (B)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 20 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#20</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">關於<span class="term-cn">零信任架構</span> (<span class="term-abbr">ZTA</span>) 的敘述, 下列哪些<span class="highlight">正確</span>? (複選)</div>
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">對於資源的<span class="highlight">存取要求</span>, 以<span class="highlight">每次連線</span>為基礎去許可</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">對於存取的要求, 每次是以<span class="highlight">最小權限</span>為原則去執行</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">允許存取之前, 所有的資源的<span class="highlight">身分鑑別與授權機制</span>, 是依<span class="highlight">監控結果動態決定</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">是一種以<span class="highlight">邊界為基礎</span>的資安架構, 一旦連線通過了認證就值得信任</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">回顧 <span class="term-abbr">NIST SP 800-207</span> 的<span class="term-cn">零信任</span>原則：<br/>
+                  (A) 對企業資源的存取是基於<span class="highlight">單個會話</span> (<span class="term-en">Per-Session</span>) 授予的。每次連線或會話都需要重新評估和授權。正確。<br/>
+                  (B) 存取決策應遵循<span class="highlight">最小權限原則</span>，僅授予完成當前任務所必需的權限。正確。<br/>
+                  (C) 身份驗證和授權是<span class="highlight">動態的</span>，並在允許訪問之前嚴格執行。決策依據應包含<span class="highlight">監控</span>到的各種<span class="highlight">上下文信息</span>（身份、設備狀態、位置、行為等）。正確。<br/>
+                  (D) <span class="term-cn">零信任</span>的<span class="highlight">核心思想是打破</span>傳統的「信任邊界」概念（即內網可信、外網不可信）。它假設任何位置都可能存在威脅，<span class="highlight">沒有隱式信任</span>，即使通過了初步認證，後續操作仍需持續驗證。因此，它<span class="highlight">不是</span>以邊界為基礎的信任模型。錯誤。<br/>
+                  故正確的敘述為 (A)、(B)、(C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 21 -->
+         <div class="question-card" data-evaluation-content-id="1.2">
+            <div class="question-header">
+               <div class="question-id">#21</div>
+               <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+            </div>
+            <div class="question-content">【題組3】情境如附圖所示(附圖為文字描述)。假設公司認為研發部門的資料為其重要的<span class="term-cn">營業祕密</span>, 故不允許外部及其他部門存取研發部門的資料, R1 與 R2 部門間亦不允許互相存取。但因研發需求, 開放研發部門的員工可以上網, 不過所有的流量需要集中由據點 B 上網, 試問下列何種措施較「不」合適? (附圖摘要: 公司有A、B兩據點。A據點含業務S、研發R1；B據點含管理A、研發R2。管理A負責資訊事務。研發資料是機密。)</div>
+            <img src="image/113-2_規_21.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">各部門切割成<span class="highlight">獨立的網段</span></div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">兩據點間透過 <span class="term-en">Site to Site</span> 的 <span class="term-abbr">VPN</span> 連線</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">開放所有員工</span>透過 <span class="term-abbr">SSL VPN</span> 從外部連回公司讀取研發資料</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">將據點 A 的上網流量透過 <span class="term-abbr">VPN</span> 通道引導到據點 B</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">目標是保護研發部門資料機密性，同時滿足特定上網需求。<br/>
+                  (A) <span class="term-cn">網路分段</span>：將不同部門（特別是敏感的研發部門 R1, R2）劃分到獨立網段，並在網段間設定嚴格的<span class="term-cn">存取控制</span>規則（如防火牆），是限制非授權存取的基礎措施。合適。<br/>
+                  (B) <span class="term-cn">據點間 VPN</span>：若兩據點間需要安全地傳輸內部資料（非研發資料互訪），建立 <span class="term-en">Site-to-Site VPN</span> 是常見做法。合適。<br/>
+                  (C) <span class="highlight">開放所有員工</span>從外部透過 <span class="term-abbr">SSL VPN</span> <span class="highlight">讀取研發資料</span>：這<span class="highlight">完全違背</span>了「研發資料為營業祕密，不允許外部及其他部門存取」的要求。極不合適。<br/>
+                  (D) <span class="highlight">集中流量管理</span>：將據點 A 的上網流量（可能包括研發部門 R1 的上網需求）透過 VPN 送到據點 B 統一出口，有助於<span class="highlight">集中管理和監控</span>上網行為。合適。<br/>
+                  因此，最不合適的措施是 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 22 -->
+         <div class="question-card" data-evaluation-content-id="2.2"> <!-- Adjusted ID based on context, seems related to security operations/response -->
+            <div class="question-header">
+               <div class="question-id">#22</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div> <!-- Assuming this falls under risk treatment/practical implementation -->
+            </div>
+            <div class="question-content">【題組3】情境如附圖所示。業務部門員工因為工作需求, 常需於公司外存取員工個人在部門辦公室內桌上型電腦的資料, 為求慎重, 公司希望能留下相關的存取記錄, 並盡量強化安全, 試問下列何種措施最為合適?</div>
+            <img src="image/113-2_規_21.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">開放員工使用 <span class="term-abbr">RDP</span> 連回自己的桌上型電腦</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">開放員工使用 <span class="term-en">TeamViewer</span> 連回自己的桌上型電腦</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">建置 <span class="term-abbr">VPN Server</span>, 讓員工連回其在部門辦公室內桌上型電腦</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">建置 <span class="term-abbr">VPN Server</span>, 讓員工透過 <span class="term-abbr">VPN</span> 連回公司, 再於公司內<span class="highlight">隔離的 VPN 網段</span>中, 透過 <span class="term-abbr">RDP</span> 連回自己的桌上型電腦</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">目標是讓員工<span class="highlight">從外部安全地存取內部辦公電腦</span>，並留下<span class="highlight">存取記錄</span>。<br/>
+                  (A) 直接開放 <span class="term-abbr">RDP</span> (遠端桌面協定) 到網際網路是<span class="highlight">非常危險</span>的做法，容易遭受暴力破解或漏洞攻擊。<br/>
+                  (B) 使用 <span class="term-en">TeamViewer</span> 等第三方遠端桌面軟體，雖然方便，但<span class="highlight">流量會經過第三方伺服器</span>，可能不符合公司安全政策，且公司<span class="highlight">不易集中管理和稽核</span>存取記錄。<br/>
+                  (C) 建立 <span class="term-abbr">VPN</span> 讓員工連回辦公室電腦，這解決了通道加密問題，但員工連入後<span class="highlight">直接存取內部網路</span>，仍有安全風險。且如何從 VPN 網路直接連到特定電腦也需要額外設定（如 <span class="term-abbr">RDP</span>）。<br/>
+                  (D) 這是一個<span class="highlight">多層次</span>的安全設計：
+                  1.  員工先透過 <span class="term-abbr">VPN</span> 安全地連回公司網路。
+                  2.  連入後，員工被分配到一個<span class="highlight">隔離的 VPN 網段</span>，限制其在公司內網的活動範圍。
+                  3.  在該隔離網段內，再透過 <span class="term-abbr">RDP</span> 連接自己的辦公電腦。
+                  這種方式提供了<span class="highlight">通道加密</span> (<span class="term-abbr">VPN</span>)、<span class="highlight">網路隔離</span>、並可透過 <span class="term-abbr">VPN</span> 和 <span class="term-abbr">RDP</span> 的日誌進行<span class="highlight">存取記錄</span>。相較於其他選項，這是最安全且最符合要求的做法。<br/>
+                  因此，最合適的措施是 (D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 23 -->
+         <div class="question-card" data-evaluation-content-id="2.2"> <!-- Data Loss Prevention falls under Risk Treatment -->
+            <div class="question-header">
+               <div class="question-id">#23</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組3】情境如附圖所示。由於業務部門員工常需透過公司配發的筆記型電腦, 在公司外進行工作, 為避免因<span class="highlight">設備遺失導致資料外流</span>, 試問下列何種措施最為合適?</div>
+            <img src="image/113-2_規_21.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">於筆記型電腦的 <span class="term-abbr">BIOS</span> 設定並啟用開機密碼</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">於筆記型電腦設定並啟用 <span class="term-en">BitLocker</span> 與使用者密碼登入</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">於筆記型電腦的作業系統設定並啟用 <span class="term-abbr">PIN</span> 碼登入</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">於筆記型電腦的作業系統設定並啟用 <span class="term-en">Windows Hello</span> 登入</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">目標是防止<span class="highlight">筆電遺失時資料外洩</span>。<br/>
+                  (A) <span class="term-abbr">BIOS</span> 密碼可以<span class="highlight">阻止未授權者啟動電腦或修改硬體設定</span>，但<span class="highlight">無法保護硬碟中的資料</span>。如果將硬碟拆下裝到其他電腦，資料仍然可以被讀取。<br/>
+                  (B) <span class="term-en">BitLocker</span> 是 Windows 內建的<span class="highlight">全硬碟加密</span> (<span class="term-en">Full Disk Encryption</span>, <span class="term-abbr">FDE</span>) 功能。啟用 <span class="term-en">BitLocker</span> 後，即使硬碟被拆下，<span class="highlight">沒有解密金鑰也無法讀取資料</span>。結合使用者密碼登入（或更安全的 <span class="term-abbr">TPM</span>+<span class="term-abbr">PIN</span>），可以同時保護開機過程和靜態資料。這是<span class="highlight">最有效</span>防止因設備遺失導致資料外洩的措施。<br/>
+                  (C) <span class="term-abbr">PIN</span> 碼登入：是一種簡化的登入方式，<span class="highlight">本身不提供硬碟加密</span>。<br/>
+                  (D) <span class="term-en">Windows Hello</span>：提供生物辨識（臉部、指紋）或 <span class="term-abbr">PIN</span> 碼登入，方便身份驗證，但<span class="highlight">本身不提供硬碟加密</span>。<br/>
+                  因此，最合適的措施是 (B)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 24 -->
+         <div class="question-card" data-evaluation-content-id="1.1">
+            <div class="question-header">
+               <div class="question-id">#24</div>
+               <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+            </div>
+            <div class="question-content">【題組3】情境如附圖所示。由於目前公司仍缺乏<span class="term-cn">資訊安全管理相關</span>的驗證, 最高管理階層希望採取相關措施, 試問下列何種措施較為合適? (複選)</div>
+            <img src="image/113-2_規_21.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">由於資訊相關的事務由管理部門 A 負責, 故<span class="highlight">優先考慮</span>由其導入 <span class="term-abbr">ISO 27001:2022</span> 的驗證</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">考慮公司中相關人員對 <span class="term-abbr">ISO 27001:2013</span> 較為熟悉, <span class="highlight">先導入 2013 版</span>, 日後再進行改版驗證</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">由於公司也有<span class="term-cn">個資保護管理制度</span>驗證的需求, 故<span class="highlight">直接導入全公司 ISO 27701:2019</span> 的驗證</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">由於公司也有<span class="term-cn">個資保護管理制度</span>驗證的需求, 故<span class="highlight">直接導入全公司 ISO 27001:2022</span> 的驗證, <span class="highlight">再導入 ISO 27701:2019</span> 的驗證</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">公司希望導入資安管理相關驗證，並有<span class="term-cn">個資保護</span>需求。<br/>
+                  (A) 導入 <span class="term-abbr">ISMS</span> 通常建議從<span class="highlight">核心業務或高風險領域</span>開始，或由負責單位主導。管理部門 A 負責資訊事務，由其優先導入最新版的 <span class="term-abbr">ISO 27001:2022</span> 是合理的策略。<br/>
+                  (B) <span class="highlight">不建議導入已過時的舊版標準</span> (<span class="term-abbr">ISO 27001:2013</span>)。驗證機構通常會要求使用現行最新版本，且導入舊版再改版會增加成本和複雜性。<br/>
+                  (C) <span class="term-abbr">ISO 27701</span> (<span class="term-abbr">PIMS</span>) 是 <span class="term-abbr">ISO 27001</span> (<span class="term-abbr">ISMS</span>) 的<span class="highlight">延伸</span>，必須<span class="highlight">先建立符合 ISO 27001 的 ISMS</span> 才能導入 <span class="term-abbr">ISO 27701</span>。不能直接單獨導入 <span class="term-abbr">ISO 27701</span>。<br/>
+                  (D) 這是<span class="highlight">正確的導入順序</span>。先建立符合最新版 <span class="term-abbr">ISO 27001:2022</span> 的 <span class="term-abbr">ISMS</span>，再基於此基礎導入 <span class="term-abbr">ISO 27701</span> 來強化隱私保護。可以考慮同時導入，但基礎是 <span class="term-abbr">ISMS</span>。<br/>
+                  因此，較為合適的措施是 (A) 和 (D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 25 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#25</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">與<span class="term-cn">資訊安全風險分析</span>相關議題的敘述, 下列何者<span class="highlight">錯誤</span>?</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="highlight">主管機關公文</span>來函要求事項, 可納入<span class="term-cn">風險分析</span>的參考</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="highlight">法律法規適用</span>的要求事項, 可納入<span class="term-cn">風險分析</span>的參考</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">客戶合約</span>的要求, <span class="highlight">可以不用</span>納入<span class="term-cn">風險分析</span>的參考</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="highlight">組織本身內部與外部</span>的議題, 可納入<span class="term-cn">風險分析</span>的參考</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-cn">風險分析</span>需要<span class="highlight">識別和考量</span>所有可能影響組織資訊安全的內外部因素和要求。<br/>
+                  (A) <span class="highlight">主管機關的要求</span>（如監管規定、檢查意見）直接關係到組織的<span class="term-cn">合規風險</span>，必須納入分析。<br/>
+                  (B) 組織必須遵守的<span class="highlight">法律法規</span>（如個資法、資安法）是重要的<span class="term-cn">風險來源</span>（違規風險），必須納入分析。<br/>
+                  (C) <span class="highlight">客戶合約</span>中可能包含<span class="term-cn">資安條款</span>、<span class="term-cn">保密協議</span>、<span class="term-cn">服務水準協議</span> (<span class="term-abbr">SLA</span>) 等，這些都構成組織的<span class="highlight">契約義務</span>。違反合約可能導致<span class="term-cn">法律風險</span>、<span class="term-cn">商譽風險</span>和<span class="term-cn">財務損失</span>，因此客戶合約的要求<span class="highlight">必須納入風險分析</span>。宣稱可以不用納入是錯誤的。<br/>
+                  (D) 組織的<span class="highlight">內外部議題</span>（如 <span class="term-abbr">SWOT</span> 分析中的機會、威脅、優勢、劣勢，或 <span class="term-abbr">PESTEL</span> 分析中的政治、經濟、社會、技術、環境、法律因素）都會影響風險狀況，應納入考量。<br/>
+                  因此，錯誤的敘述是 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 26 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#26</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content"><span class="term-cn">風險分析</span>其中一個功能是利用<span class="term-cn">量化計算公式</span>估算並詮釋<span class="term-cn">風險程度</span>, 身為組織<span class="term-cn">資通安全</span>主管的您, 正進行組織官網系統的安全風險評估, 現在的情境為估算一個 <span class="highlight">20 年才會出現一次的地震</span>, 將可能造成之風險值為下列何項? (其中「<span class="highlight">曝露因子</span>」(<span class="term-abbr">E.F</span>)=25%、<span class="term-cn">資通系統價值</span>=50萬元。)</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">125000</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">6250</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">2500000</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">0 (無風險)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">
+                  常用的<span class="term-cn">量化風險分析公式</span>涉及以下幾個要素：
+                  <ul>
+                     <li><span class="term-cn">資產價值</span> (<span class="term-en">Asset Value</span>, <span class="term-abbr">AV</span>): 資通系統的價值，本題為 500,000 元。</li>
+                     <li><span class="term-cn">曝露因子</span> (<span class="term-en">Exposure Factor</span>, <span class="term-abbr">EF</span>): 特定威脅事件發生時，資產可能損失的百分比，本題為 25% 或 0.25。</li>
+                     <li><span class="term-cn">單次損失預期</span> (<span class="term-en">Single Loss Expectancy</span>, <span class="term-abbr">SLE</span>): 指單一威脅事件發生時預期的損失金額。 <span class="term-abbr">SLE</span> = <span class="term-abbr">AV</span> * <span class="term-abbr">EF</span>。</li>
+                     <li><span class="term-cn">年度發生率</span> (<span class="term-en">Annualized Rate of Occurrence</span>, <span class="term-abbr">ARO</span>): 指特定威脅事件在一年內預期發生的次數。本題中，地震是 20 年發生一次，所以 <span class="term-abbr">ARO</span> = 1/20 = 0.05 次/年。</li>
+                     <li><span class="term-cn">年度損失預期</span> (<span class="term-en">Annualized Loss Expectancy</span>, <span class="term-abbr">ALE</span>): 指一年內因特定威脅預期造成的總損失金額。<span class="term-abbr">ALE</span> = <span class="term-abbr">SLE</span> * <span class="term-abbr">ARO</span>。</li>
+                  </ul>
+                  計算步驟：
+                  1.  計算 <span class="term-abbr">SLE</span>: <span class="term-abbr">SLE</span> = 500,000 * 0.25 = 125,000 元。
+                  2.  計算 <span class="term-abbr">ALE</span>: <span class="term-abbr">ALE</span> = 125,000 * 0.05 = 6,250 元。<br/>
+                  題目問的是「可能造成之風險值」，在量化分析中，通常指 <span class="term-abbr">ALE</span>。因此，風險值為 6,250。<br/>
+                  故選 (B)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 27 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#27</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">如附圖所示的內容(文字描述), 比較類似下列何種的<span class="term-cn">風險分析類型</span>? (附圖摘要: 資安主管發現某些風險因子影響很大，衡量每個因子不確定性對整體結果的影響程度。)</div>
+            <img src="image/113-2_規_27.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">敏感度分析</span> (<span class="term-en">Sensitivity Analysis</span>)</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">故障樹分析</span> (<span class="term-en">Fault Tree Analysis</span>)</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-cn">因果分析</span> (<span class="term-en">Cause-Consequence Analysis</span>)</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">情境分析</span> (<span class="term-en">Scenario Analysis</span>)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">附圖描述的核心是「衡量<span class="highlight">每個因子</span>的<span class="highlight">不確定性</span>對所考量的<span class="highlight">對象（結果）影響之程度</span>」。這正是<span class="term-cn">敏感度分析</span>的定義。<br/>
+                  <span class="term-cn">敏感度分析</span>是一種<span class="highlight">量化風險分析技術</span>，用於評估模型輸出結果對其<span class="highlight">輸入參數（因子）變化</span>的<span class="highlight">敏感程度</span>。它幫助識別哪些輸入參數對結果的影響最大，從而了解哪些風險因子需要重點關注或控制。<br/>
+                  (B) <span class="term-cn">故障樹分析</span> (<span class="term-abbr">FTA</span>)：是一種自頂向下的演繹分析方法，用於分析系統失效的原因。<br/>
+                  (C) <span class="term-cn">因果分析</span>：用於識別事件發生的原因及其潛在後果。<br/>
+                  (D) <span class="term-cn">情境分析</span>：透過構建未來可能發生的不同情境來評估風險。<br/>
+                  因此，最符合描述的是 (A) <span class="term-cn">敏感度分析</span>。
+               </div>
+            </div>
+         </div>
+         <!-- Question 28 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#28</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">
+               一般常見<span class="term-cn">風險評鑑流程</span>包括: 
+               <span class="highlight">識別背景</span>、<span class="highlight">風險辨識</span>、
+               <span class="highlight">風險評估與分析</span>、<span class="highlight">風險回應</span>、
+               <span class="highlight">風險監督</span>; 
+               下列敘述哪些屬於「<span class="term-cn">風險評估與分析</span>」階段? (複選)
+            </div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">執行<span class="term-cn">風險評鑑</span>作業發現 68 個風險項目</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">已確認 55 個低風險項目, 屬風險可接受範圍, 決定維持現狀不做改變</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">將風險項目區分為 3 個<span class="highlight">高風險</span>項目、10 個<span class="highlight">中風險</span>項目、55 個<span class="highlight">低風險</span>項目</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">使用<span class="highlight">定量的方法</span>, 將風險進行<span class="highlight">排序</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">
+                  區分<span class="term-cn">風險評鑑流程</span>的各階段：
+                  <ul>
+                     <li><span class="term-cn">風險辨識</span>：找出可能影響目標達成的風險事件或來源。 (A 屬於此階段的結果)</li>
+                     <li><span class="term-cn">風險評估與分析</span>：評估已識別風險發生的可能性和衝擊，
+                        <span class="highlight">確定風險等級</span>，並進行<span class="highlight">排序</span>以決定優先次序。 
+                        (C 和 D 屬於此階段)
+                     </li>
+                     <li><span class="term-cn">風險回應/處理</span>：針對評估後的風險，選擇並實施處理措施（避免、緩解、轉移、接受）。 
+                        (B 屬於此階段的決策)
+                     </li>
+                     <li><span class="term-cn">風險監督</span>：持續監控風險狀況和處理措施的有效性。</li>
+                  </ul>
+                  (A) 發現風險項目屬於「風險辨識」的輸出。<br/>
+                  (B) 決定維持現狀（接受風險）屬於「風險回應/處理」。<br/>
+                  (C) 將風險項目<span class="highlight">分級</span>（高、中、低）是基於可能性和衝擊的評估結果，屬於「風險評估與分析」。<br/>
+                  (D) 使用定量方法對風險進行<span class="highlight">排序</span>，以便決定處理的優先級，是「風險評估與分析」的核心活動。<br/>
+                  因此，屬於「風險評估與分析」階段的是 (C) 和 (D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 29 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#29</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">【題組4】情境如附圖所示。該公司<span class="term-cn">風險管理作業程序</span>之流程包含: a.<span class="term-cn">風險分析</span>、b.<span class="term-cn">風險排序</span>、c.<span class="term-cn">風險識別</span>、d.<span class="highlight">識別背景資訊</span>、e.<span class="term-cn">風險處理</span>, 請問下列何項流程<span class="highlight">較為正確</span>?</div>
+            <img src="image/113-2_規_29.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">abcde</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">edcba</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">dcabe</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">cdbae</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">標準的<span class="term-cn">風險管理流程</span>通常遵循以下順序：
+                  1.  <span class="highlight">建立背景/脈絡 (Establish Context)</span>：了解組織的內外部環境、目標、範圍和風險準則。(對應 d. 識別背景資訊)
+                  2.  <span class="term-cn">風險識別 (Risk Identification)</span>：找出可能影響目標的風險來源和事件。(對應 c. 風險識別)
+                  3.  <span class="term-cn">風險分析 (Risk Analysis)</span>：分析風險的可能性和後果/衝擊。(對應 a. 風險分析)
+                  4.  <span class="term-cn">風險評估 (Risk Evaluation)</span>：將風險分析結果與風險準則比較，以決定風險等級和是否需要處理。(<span class="highlight">風險排序 b</span> 通常是風險分析或評估的一部分，用於決定優先級)
+                  5.  <span class="term-cn">風險處理 (Risk Treatment)</span>：選擇並實施風險處理措施。(對應 e. 風險處理)
+                  6.  <span class="term-cn">監控與審查 (Monitoring and Review)</span>：持續監控風險和處理措施。
+                  7.  <span class="term-cn">溝通與諮詢 (Communication and Consultation)</span>：貫穿整個過程。
+                  將題目給的步驟對應到標準流程：
+                  d. 識別背景資訊 (建立背景) -> c. 風險識別 -> a. 風險分析 (包含 b. 風險排序) -> e. 風險處理
+                  因此，較為正確的流程順序是 d -> c -> a -> b -> e (或將 b 視為 a 的一部分 d -> c -> a -> e)。
+                  對應選項：
+                  (A) abcde: 順序錯誤。
+                  (B) edcba: 順序錯誤。
+                  (C) dcabe: d(背景) -> c(識別) -> a(分析) -> b(排序) -> e(處理)。這個順序最符合標準流程。
+                  (D) cdbae: 順序錯誤。
+                  故選 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 30 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#30</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組4】情境如附圖所示。若 S 公司風險評估後, 發現在<span class="highlight">歐洲地區法令遵循風險過高</span>, 決定<span class="highlight">關閉該地區的銷售網站</span>, 請問此項做法屬於下列何項<span class="term-cn">風險措施</span>?</div>
+            <img src="image/113-2_規_29.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">風險保留</span> (<span class="term-en">Risk Retention</span>)</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">風險降低</span> (<span class="term-en">Risk Reduction</span>)</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-cn">風險轉移</span> (<span class="term-en">Risk Transfer</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">風險避免</span> (<span class="term-en">Risk Avoidance</span>)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">公司因為評估某項活動（在歐洲地區營運銷售網站）的風險（法令遵循風險）過高，而<span class="highlight">決定停止該項活動</span>（關閉網站），這正是<span class="term-cn">風險避免</span> (<span class="term-en">Risk Avoidance</span>) 的典型做法。<span class="term-cn">風險避免</span>是指透過<span class="highlight">不開始或中止</span>會引發風險的活動來消除風險。<br/>
+                  (A) 風險保留是接受風險。<br/>
+                  (B) 風險降低是採取措施減少可能性或衝擊。<br/>
+                  (C) 風險轉移是將風險轉嫁給第三方。<br/>
+                  因此，最符合的風險措施是 (D) <span class="term-cn">風險避免</span>。
+               </div>
+            </div>
+         </div>
+         <!-- Question 31 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#31</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組4】情境如附圖所示。若於 S 公司網購網站上架產品之重要客戶於 2024 年 2 月要求, 其網購網站服務<span class="highlight">中斷不得超過 8 小時</span>。若公司判斷此為<span class="term-cn">重大風險事件</span>, 請為下列何者作法<span class="highlight">較正確</span>?</div>
+            <img src="image/113-2_規_29.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">資訊單位自行決定, 直接調配資源改善網購網站之不可中斷時間至 8 小時以內</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="highlight">立即進行風險評估</span>, 依風險評估結果辦理相關事宜</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">直接告知客戶本公司網購網站最大可中斷時間為 12 小時, 請其接受</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">暫時擱置, 於年底風險評估後, 再依風險評估結果辦理相關事宜</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">
+                  客戶提出了新的、更嚴格的<span class="term-cn">服務水準要求</span>（中斷時間從 12 小時縮短到 8 小時），且公司判斷此為<span class="term-cn">重大風險事件</span>（若無法達成可能影響重要客戶關係或合約）。<br/>
+                  (A) 資訊單位<span class="highlight">不應自行決定</span>調配資源。資源調配需要經過<span class="highlight">評估、規劃和核准</span>，涉及成本效益和優先級考量。<br/>
+                  (C) 直接拒絕重要客戶的要求並要求對方接受現狀，可能<span class="highlight">損害客戶關係</span>，不是積極的處理方式。<br/>
+                  (D) 將<span class="term-cn">重大風險事件</span>擱置到年底才處理，<span class="highlight">反應過慢</span>，可能無法及時滿足客戶要求或緩解潛在衝擊。<br/>
+                  (B) 最正確的做法是<span class="highlight">立即啟動風險評估</span>。評估內容應包括：
+                  <ul>
+                     <li>達成 8 小時目標的<span class="highlight">可行性</span>（技術、資源）。</li>
+                     <li>達成目標所需的<span class="highlight">成本</span>。</li>
+                     <li>無法達成目標可能造成的<span class="highlight">衝擊</span>（如違約、客戶流失）。</li>
+                     <li>可行的<span class="highlight">風險處理選項</span>（如投入資源改善、與客戶協商、接受風險並準備應變等）。</li>
+                  </ul>
+                  根據評估結果，再制定和執行相應的處理計畫。這是<span class="highlight">基於風險管理原則</span>的標準做法。<br/>
+                  故選 (B)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 32 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#32</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組4】情境如附圖所示。若 S 公司進行風險評估時, 發現網購系統有<span class="highlight">重大資安漏洞</span>, 可能造成<span class="highlight">大量客戶及廠商資料外洩</span>, 請問下列哪些<span class="term-cn">風險處理措施</span>, 對該公司而言是<span class="highlight">較適合且可行</span>的作法? (複選)</div>
+            <img src="image/113-2_規_29.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">風險保留</span> (<span class="term-en">Risk Retention</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">風險降低</span> (<span class="term-en">Risk Reduction</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-cn">風險轉移</span> (<span class="term-en">Risk Transfer</span>)</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">風險避免</span> (<span class="term-en">Risk Avoidance</span>)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">面對可能導致大量客戶和廠商資料外洩的重大資安漏洞，需要採取積極的處理措施。<br/>
+                  (A) <span class="term-cn">風險保留/接受</span>：對於<span class="highlight">重大風險</span>，特別是涉及大量個資外洩的風險，<span class="highlight">通常是不可接受的</span>，除非處理成本極高且無法承擔，否則不應選擇保留。<br/>
+                  (B) <span class="term-cn">風險降低/緩解</span>：採取措施<span class="highlight">修補漏洞</span>、加強安全控制（如部署 <span class="term-abbr">WAF</span>、強化存取控制、加密資料等），以降低漏洞被利用的可能性或資料外洩的衝擊。這是<span class="highlight">最常見且必要</span>的處理方式。<br/>
+                  (C) <span class="term-cn">風險轉移/分擔</span>：例如，購買<span class="term-cn">網路安全保險</span> (<span class="term-en">Cyber Insurance</span>)，將部分<span class="highlight">財務損失風險</span>（如賠償、法律費用）轉移給保險公司。這<span class="highlight">不能消除漏洞本身</span>，但可以轉移部分後果。對於重大風險，這是一種<span class="highlight">可行</span>的輔助措施。<br/>
+                  (D) <span class="term-cn">風險避免</span>：完全停止該網購系統的運作。對於佔公司營收 90% 的核心業務，這<span class="highlight">顯然不是一個可行</span>的選項。<br/>
+                  因此，較適合且可行的作法是 (B) 和 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 33 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#33</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">公司規定於<span class="term-cn">風險回應</span>後 3 個月, 須對該項風險進行<span class="term-cn">風險再評估</span>。當風險再評估時發現該風險並未如預期降至<span class="term-cn">風險胃納</span> (<span class="term-en">Risk appetite</span>) 之內。如附圖所示的項目之中, 哪些是<span class="highlight">可能的原因</span>? (附圖列出: 1.風險回應規劃不當, 2.風險回應尚未執行完成, 3.風險回應未落實執行)</div>
+            <img src="image/113-2_規_33.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">1、2</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">2、3</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">1、3</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">1、2、3</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-cn">風險再評估</span>發現風險未降至可接受水準（<span class="term-cn">風險胃納</span>內），可能的原因包括：<br/>
+                  1.  <span class="highlight">風險回應規劃不當</span>：選擇的處理措施<span class="highlight">本身就無效</span>，或低估了風險的嚴重性、高估了處理措施的效果。<br/>
+                  2.  <span class="highlight">風險回應尚未執行完成</span>：處理措施需要時間實施，在再評估時點<span class="highlight">尚未完全部署或生效</span>。<br/>
+                  3.  <span class="highlight">風險回應未落實執行</span>：雖然規劃了措施，但實際執行過程中打了折扣，<span class="highlight">沒有確實執行</span>到位。<br/>
+                  4.  外部環境變化：出現了<span class="highlight">新的威脅或弱點</span>，導致原有風險升高或產生新風險。<br/>
+                  5.  風險胃納改變：組織<span class="highlight">可接受的風險水準降低</span>了。<br/>
+                  題目附圖列出的 1、2、3 都是導致風險未如預期降低的<span class="highlight">常見內部原因</span>。<br/>
+                  因此，可能的原因包括 1、2、3。故選 (D)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 34 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#34</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">關於 <span class="term-abbr">ISO 31000</span> <span class="term-cn">風險管理原理及指導綱要</span>之敘述, 下列何項<span class="highlight">錯誤</span>?</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">可做為任何組織尋求<span class="term-cn">風險管理</span>的<span class="highlight">明確指南</span></div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">提供<span class="term-cn">風險管理</span>的<span class="highlight">原則與通用的實施指導</span>準則</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">是<span class="term-cn">風險管理</span>的國際標準, 可提供企業組織進行<span class="highlight">驗證</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">可幫助企業組織進行<span class="term-cn">風險分析</span>和<span class="term-cn">風險評估</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-abbr">ISO 31000</span> 是<span class="term-cn">風險管理</span>的<span class="highlight">指導綱要</span> (<span class="term-en">Guideline</span>) 標準，它提供了風險管理的<span class="highlight">原則 (<span class="term-en">Principles</span>)、框架 (<span class="term-en">Framework</span>) 和流程 (<span class="term-en">Process</span>)</span>。<br/>
+                  (A) 它提供了<span class="highlight">通用的指南</span>，適用於任何類型和規模的組織。正確。<br/>
+                  (B) 它包含了<span class="highlight">風險管理的原則和通用的實施指導</span>。正確。<br/>
+                  (D) 它描述的風險管理流程包括<span class="term-cn">風險評鑑</span>（包含風險識別、分析、評估），可以<span class="highlight">幫助組織進行</span>這些活動。正確。<br/>
+                  (C) <span class="term-abbr">ISO 31000</span> <span class="highlight">是一個指導性標準，而非要求性標準</span> (<span class="term-en">Requirement Standard</span>)，因此<span class="highlight">不能用於符合性驗證 (Certification)</span>。組織可以聲明其風險管理活動參考或遵循了 ISO 31000 的指南，但無法像 ISO 27001 或 ISO 9001 那樣獲得「ISO 31000 驗證證書」。錯誤。<br/>
+                  因此，錯誤的敘述是 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 35 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#35</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">依據 <span class="term-abbr">CNS 31000:2021</span> 有關<span class="term-cn">風險處理</span>所涉及<span class="term-cn">迭代</span> (<span class="term-en">Iteration</span>) 過程之敘述, 下列何項「<span class="highlight">有誤</span>」?</div>
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">選擇<span class="term-cn">風險處理</span>之選項</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">規劃與實施<span class="term-cn">風險處理</span></div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">評鑑<span class="term-cn">風險處理</span>之<span class="highlight">大小</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">決定<span class="term-cn">殘餘風險</span>是否可接受</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content"><span class="term-abbr">CNS 31000:2021</span> 對應 <span class="term-abbr">ISO 31000:2018</span>。其<span class="term-cn">風險處理</span>流程是一個<span class="highlight">迭代過程</span>，涉及以下步驟：
+                  1.  <span class="highlight">選擇風險處理選項</span> (<span class="term-en">Selecting risk treatment options</span>)：例如避免、緩解、轉移、接受。(選項 A)
+                  2.  <span class="highlight">規劃與實施風險處理</span> (<span class="term-en">Planning and implementing risk treatment</span>)：制定詳細計畫並執行。(選項 B)
+                  3.  <span class="highlight">評鑑處理的有效性</span> (<span class="term-en">Assessing the effectiveness of that treatment</span>)：檢查處理措施是否達到預期效果。
+                  4.  <span class="highlight">決定殘餘風險是否可接受</span> (<span class="term-en">Deciding whether the residual risk is acceptable</span>)。(選項 D)
+                  5.  若不可接受，則進行<span class="highlight">進一步處理</span> (<span class="term-en">If not acceptable, taking further treatment</span>)，回到步驟 1 或 2，形成迭代。
+                  (C) 評鑑風險處理的「<span class="highlight">大小</span>」這個說法不精確。<span class="term-cn">風險處理</span>階段的評鑑重點在於<span class="highlight">處理措施的「有效性」</span>以及處理後<span class="highlight">「殘餘風險」的水準</span>，而非處理措施本身的「大小」。因此，這個敘述有誤。<br/>
+                  故選 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 36 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#36</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">行政院及所屬各機關<span class="term-cn">風險管理及危機處理作業原則</span>, 下列何項「不」是<span class="term-cn">風險管理步驟</span>之<span class="highlight">持續循環過程</span>? (複選)</div>
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">需建立<span class="highlight">財務背景資料</span>調查</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">需完成<span class="term-cn">評估風險</span></div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">每兩年</span>完成一次<span class="term-cn">監督及檢討</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">傳遞資訊、溝通及諮詢</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">根據行政院頒布的「<span class="term-cn">風險管理及危機處理作業原則</span>」，<span class="term-cn">風險管理</span>步驟應為一個<span class="highlight">持續循環</span>的過程，主要步驟類似 <span class="term-abbr">ISO 31000</span>，包括建立背景、風險評估（識別、分析、評量）、風險處理、溝通諮詢、監督及檢討。<br/>
+                  (B) <span class="term-cn">評估風險</span>是核心步驟之一。<br/>
+                  (D) <span class="term-cn">溝通與諮詢</span>是貫穿整個過程的必要活動。<br/>
+                  (C) <span class="term-cn">監督及檢討</span>是確保風險管理有效性的持續活動，但作業原則<span class="highlight">並未規定「每兩年」</span>完成一次。監督檢討的頻率應視風險性質、環境變化等因素決定，要求持續進行。<br/>
+                  (A) <span class="highlight">建立財務背景資料</span>調查並非風險管理步驟的通用要求。建立背景應是了解與風險議題相關的內外部環境，財務只是其中一個可能的面向，且「調查」並非標準步驟名稱。<br/>
+                  因此，「不」是持續循環過程的步驟描述是 (A) 和 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 37 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#37</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組5】情境如附圖所示(附圖為風險管理流程圖)。若公司規定<span class="highlight">超出風險胃納</span>才須進行<span class="term-cn">風險處理</span>, 請問依規定須進行處理之風險項目, <span class="highlight">不可能</span>出現下列何項<span class="term-cn">風險回應方式</span>? (圖示流程包含：建立背景、風險評核(評估風險)、風險辨識、風險分析、風險處理、監督與複核、溝通與協商)</div>
+            <img src="image/113-2_規_37.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">風險緩解</span> (<span class="term-en">Risk mitigation</span>)</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">風險規避</span> (<span class="term-en">Risk avoidance</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-cn">風險保留</span> (<span class="term-en">Risk retention</span>)</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-cn">風險分擔</span> (<span class="term-en">Risk sharing</span>)</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">題目規定「<span class="highlight">超出風險胃納</span> (<span class="term-en">Risk Appetite</span>) 才須進行風險處理」。<span class="term-cn">風險胃納</span>是指組織<span class="highlight">願意接受</span>的風險量。<br/>
+                  如果一個風險項目被評估為<span class="highlight">超出風險胃納</span>，意味著組織認為該風險水準是<span class="highlight">不可接受</span>的，必須採取行動將其降低到可接受範圍內。<br/>
+                  <span class="term-cn">風險回應/處理</span>的方式包括：<br/>
+                  *   (A) <span class="term-cn">緩解</span>：採取措施降低風險。<br/>
+                  *   (B) <span class="term-cn">規避</span>：停止引發風險的活動。<br/>
+                  *   (D) <span class="term-cn">分擔/轉移</span>：將風險轉給第三方。<br/>
+                  *   (C) <span class="term-cn">保留/接受</span>：<span class="highlight">接受</span>當前的風險水準，不採取額外行動。這種方式只適用於<span class="highlight">風險在風險胃納之內</span>的情況。<br/>
+                  既然規定是「超出風險胃納才須處理」，那麼對於這些需要處理的風險，「<span class="term-cn">風險保留</span>」這個選項（即接受不處理）就是<span class="highlight">不可能出現的回應方式</span>，因為它與需要處理的前提相矛盾。<br/>
+                  故選 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 38 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#38</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">【題組5】情境如附圖所示。承上題, 若 M 公司於今年 4 月底接獲政府標案, 預計於今年 8 月初正式將產品販售給政府一級機關, 公司認為此有<span class="highlight">重大業務影響</span>, 並提早於 5 月進行此項業務改變的<span class="term-cn">風險評鑑</span>。請問公司會發現需要臨時進行此項風險評鑑是基於哪項公司流程所產生的作用?</div>
+            <img src="image/113-2_規_37.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">建立背景</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">風險辨識</div>
+               </div>
+               <div class="option-item correct" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="highlight">監督與複核</span></div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">風險分析</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">公司有年度<span class="term-cn">風險評鑑</span>作業，但在年度評鑑之外，因為接獲政府標案這項「<span class="highlight">重大業務改變</span>」，而<span class="highlight">臨時觸發</span>了一次新的<span class="term-cn">風險評鑑</span>。這表示公司內部存在一個機制，能夠<span class="highlight">監控內外部環境的變化</span>，並在偵測到可能影響風險狀況的重大改變時，<span class="highlight">重新啟動或調整</span>風險管理活動。<br/>
+                  在<span class="term-cn">風險管理流程</span>圖中，「<span class="highlight">監督與複核</span> (<span class="term-en">Monitor and Review</span>)」這個環節負責<span class="highlight">持續監控風險環境的變化</span>、風險處理計畫的執行情況、以及整體風險管理框架的有效性。正是這個持續的監督複核過程，使得公司能夠<span class="highlight">識別到接獲政府標案</span>這一重大變化，並判斷其需要觸發一次非計畫性的<span class="term-cn">風險評鑑</span>。<br/>
+                  (A) 建立背景是流程的起點。<br/>
+                  (B) 風險辨識是在評鑑過程中找出具體風險。<br/>
+                  (D) 風險分析是在評鑑過程中評估風險等級。<br/>
+                  只有 (C) <span class="term-cn">監督與複核</span>體現了對環境變化的監控並觸發相應管理活動的作用。<br/>
+                  故選 (C)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 39 -->
+         <div class="question-card" data-evaluation-content-id="2.2">
+            <div class="question-header">
+               <div class="question-id">#39</div>
+               <div class="evaluation-criterion">2.2 風險處理實務</div>
+            </div>
+            <div class="question-content">【題組5】情境如附圖所示。承上題, M 公司與 A 公司簽訂之合約內容要求 M 公司必須符合<span class="term-cn">資通安全法</span>。同時並規定產品正式販售前 M 公司必須符合合約所有規範事項。公司進行所述之風險評鑑辨識出<span class="term-cn">法遵風險</span>, 並規劃相關<span class="term-cn">風險回應</span>, 請問<span class="highlight">應何時完成風險回應並確認有效</span>?</div>
+            <img src="image/113-2_規_39.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text">6 月執行風險回應, 7 月確認風險回應有效</div>
+               </div>
+               <div class="option-item" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text">6 月執行風險回應, 8 月確認風險回應有效</div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text">7 月執行風險回應, 9 月確認風險回應有效</div>
+               </div>
+               <div class="option-item" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text">8 月執行風險回應, 10 月確認風險回應有效</div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">
+                  根據題組資訊：
+                  <ul>
+                     <li>M 公司於 5 月進行了因應政府標案（<span class="term-cn">法遵風險</span>）的風險評鑑。</li>
+                     <li>合約要求在<span class="highlight">產品正式販售前</span>（預計 8 月初）必須符合所有規範事項（包括符合資通安全法）。</li>
+                     <li>公司內部規定：執行風險回應後<span class="highlight">最遲須於 2 個月內確認有效</span>。</li>
+                  </ul>
+                  風險回應的目標是在 8 月初產品販售前完成並確認有效。<br/>
+                  評估選項：<br/>
+                  (A) 6 月執行回應，7 月確認有效。這在 8 月初販售前完成，且確認時間（1 個月）在公司規定的 2 個月內。可行。<br/>
+                  (B) 6 月執行回應，8 月確認有效。可能趕在 8 月初販售前，確認時間（2 個月）也在規定內。可能可行，但較緊迫。<br/>
+                  (C) 7 月執行回應，9 月確認有效。確認時間已超過 8 月初的販售期限。不可行。<br/>
+                  (D) 8 月執行回應，10 月確認有效。執行和確認時間都已超過 8 月初的販售期限。不可行。<br/>
+                  比較 (A) 和 (B)，(A) 的時程更為穩妥，確保在 8 月初之前完成所有工作並確認有效性。<span class="highlight">考慮到需要預留緩衝時間</span>，(A) 是最合理的規劃。<br/>
+                  故選 (A)。
+               </div>
+            </div>
+         </div>
+         <!-- Question 40 -->
+         <div class="question-card" data-evaluation-content-id="2.1">
+            <div class="question-header">
+               <div class="question-id">#40</div>
+               <div class="evaluation-criterion">2.1 風險分析與評估</div>
+            </div>
+            <div class="question-content">【題組5】情境如附圖所示。承上題, 請問 M 公司於今年初進行年度風險評鑑時, 在建立背景流程, 識別背景資訊時, 下列哪些項目<span class="highlight">宜列入考量</span>? (複選)</div>
+            <img src="image/113-2_規_39.png" class="responsive-img">
+            <div class="options-container">
+               <div class="option-item correct" data-option="A">
+                  <div class="option-label">A</div>
+                  <div class="option-text"><span class="term-cn">上市上櫃公司資通安全管控指引</span></div>
+               </div>
+               <div class="option-item correct" data-option="B">
+                  <div class="option-label">B</div>
+                  <div class="option-text"><span class="term-cn">資通安全管理法</span></div>
+               </div>
+               <div class="option-item" data-option="C">
+                  <div class="option-label">C</div>
+                  <div class="option-text"><span class="term-abbr">GDPR</span> (<span class="term-en">General Data Protection Regulation</span>)</div>
+               </div>
+               <div class="option-item correct" data-option="D">
+                  <div class="option-label">D</div>
+                  <div class="option-text"><span class="term-abbr">ISO 27001:2013</span></div>
+               </div>
+            </div>
+            <div class="explanation-container">
+               <div class="explanation-header">答案解析</div>
+               <div class="explanation-content">M 公司是國內上市公司，從事資安軟硬體開發銷售，已通過 <span class="term-abbr">ISO 27001:2013</span> 驗證。<br/>
+                  在年初進行年度風險評鑑，建立背景時應考量相關的<span class="highlight">法規、標準及營運環境</span>。<br/>
+                  (A) <span class="term-cn">上市上櫃公司資通安全管控指引</span>：M 公司是<span class="highlight">上市公司</span>，此指引是<span class="highlight">強制要求</span>，必須納入考量。<br/>
+                  (B) <span class="term-cn">資通安全管理法</span>：雖然 M 公司本身可能不是法定的特定非公務機關，但其業務涉及<span class="highlight">資安軟硬體開發銷售</span>，且可能承接政府標案（如題 38），其<span class="highlight">客戶可能是受資安法規範的對象</span>。因此，了解資安法的要求（可能透過合約傳遞）是必要的，宜列入考量。<br/>
+                  (C) <span class="term-abbr">GDPR</span>：歐盟的<span class="term-cn">一般資料保護規範</span>。如果 M 公司的業務涉及處理歐盟居民的個人資料（例如在歐洲銷售產品或服務），則需考量 <span class="term-abbr">GDPR</span>。題目未明確說明是否有歐洲業務，但作為一個軟硬體開發商，考量國際法規是有必要的，<span class="highlight">可能</span>需列入考量。<br/>
+                  (D) <span class="term-abbr">ISO 27001:2013</span>：這是公司<span class="highlight">已通過驗證的舊版標準</span>。在年度評鑑時，更應考量<span class="highlight">現行的最新版標準 ISO 27001:2022</span> 的要求，以及從 2013 版轉換到 2022 版的差距。雖然了解 2013 版是基礎，但在「建立背景」識別「當前」要求時，參照舊版標準<span class="highlight">不是最優先或最應該</span>考量的（應考量最新版）。<br/>
+                  綜合來看，(A) 和 (B) 是基於公司身份和業務性質較為確定需要考量的項目。(C) 的必要性取決於是否有歐洲業務。(D) 應考量最新版而非舊版。<br/>
+                  *更新：根據提供答案 A, B, D 為正確。這表示題目認為雖然有新版，但公司目前持有的舊版證照(2013)及對應要求仍是建立背景時需要考量的一部分（可能涉及維持驗證或轉版計畫）。並且認為 GDPR 在此情境下非必要考量。*
+                  故選 (A)、(B)、(D)。
+               </div>
+            </div>
+         </div>
+         <!-- Q40 END -->
+         <!-- Message area for no results -->
+         <div id="noResultsMessage"></div>
+      </div>
+      <!-- End questions-container -->
+      <a href="#" class="back-to-top" id="backToTop">↑</a>
+      </div> <!-- End container -->
+      
+       <script src="script.js"></script>
+</body>
+</html>

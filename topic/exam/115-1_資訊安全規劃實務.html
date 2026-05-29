@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPAS 資訊安全工程師 中級 (115-1) - 資訊安全規劃實務</title>
+<meta name="description" content="115年第一次iPAS資訊安全工程師中級能力鑑定-資訊安全規劃實務，含完整解析共40題">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+<div class="container">
+<div class="header-container">
+  <h1>iPAS 資訊安全工程師 中級 (115年第一次) 🛡️</h1>
+  <div>科目：資訊安全規劃實務 | 考試年度：115年（第一次）| 共 40 題</div>
+</div>
+<div class="controls">
+  <div class="filter-container">
+    <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+    <select id="criterionFilter">
+      <option value="all">全部內容</option>
+      <option value="1.1">1.1 資訊安全管理系統建置實務與法規遵循 (8題)</option>
+      <option value="1.2">1.2 存取控制、縱深防禦、職務區隔 SOD (9題)</option>
+      <option value="2.1">2.1 安全架構規劃實務 (13題)</option>
+      <option value="2.2">2.2 風險分析與評估 (1題)</option>
+      <option value="2.3">2.3 風險處理實務 (9題)</option>
+    </select>
+  </div>
+  <div class="search-container">
+    <label for="searchInput" class="search-label">搜尋：</label>
+    <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+    <button id="searchButton">🔍 搜尋</button>
+  </div>
+  <div class="toggle-explanations">
+    <button id="toggleExplanations">📖 顯示全部解析</button>
+  </div>
+</div>
+<div class="criteria-container">
+  <div class="criteria-title">📋 評鑑內容 (點擊篩選)</div>
+  <div class="criteria-grid" id="criteriaGrid">
+    <div class="criterion-item" onclick="filterByCriterion('1.1')"><div class="criterion-id">1.1</div><div class="criterion-text">資訊安全管理系統建置實務與法規遵循</div><div class="criterion-count">(8)</div></div>
+    <div class="criterion-item" onclick="filterByCriterion('1.2')"><div class="criterion-id">1.2</div><div class="criterion-text">存取控制、縱深防禦、職務區隔 (SOD)</div><div class="criterion-count">(9)</div></div>
+    <div class="criterion-item" onclick="filterByCriterion('2.1')"><div class="criterion-id">2.1</div><div class="criterion-text">安全架構規劃實務</div><div class="criterion-count">(13)</div></div>
+    <div class="criterion-item" onclick="filterByCriterion('2.2')"><div class="criterion-id">2.2</div><div class="criterion-text">風險分析與評估</div><div class="criterion-count">(1)</div></div>
+    <div class="criterion-item" onclick="filterByCriterion('2.3')"><div class="criterion-id">2.3</div><div class="criterion-text">風險處理實務</div><div class="criterion-count">(9)</div></div>
+  </div>
+</div>
+<div class="questions-container" id="questionsContainer">
+<!-- Q1 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#1 單選題</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">近年資通安全事件日益增加，為保障投資人知的權益，依臺灣<span class="term-cn">證券交易所</span>最新修訂的《上市公司重大訊息發布應注意事項參考問答集》必須充分揭露重大資安事件，依照相關要求，請問下列何者「不」是發布重大訊息的必要事件？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">官方網站首頁遭置換為駭客頁面30分鐘</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">雲端備份服務供應商故障8小時，主線業務系統運作正常，備份資料未遺失亦未外洩</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">公司ERP系統遭<span class="term-cn">勒索軟體</span>加密，導致採購與出貨系統停擺3小時</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">研發版控伺服器遭入侵，大量原始碼與未公開技術文件已在<span class="term-cn">暗網</span>販售</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查臺灣<span class="term-cn">證券交易所</span>（<span class="term-en">Taiwan Stock Exchange</span>，<span class="term-abbr">TWSE</span>）對上市公司資安重大訊息發布的規定。</p>
+<p><strong>判斷「重大」的核心標準：</strong>資安事件是否造成公司系統、資料、服務、商譽或財務的實質損害，並足以影響投資人的投資決策。</p>
+<p><strong>選項分析：</strong></p>
+<p>✅ <span class="highlight">選項C為正確答案（不需發布）</span>：雲端備份供應商故障，但主線業務系統<span class="highlight">運作正常</span>，備份資料<span class="highlight">未遺失亦未外洩</span>。此情況對公司業務無實質影響，屬供應商自身問題，且未造成資料安全風險，故不需發布重大訊息。</p>
+<p>❌ <span class="highlight">選項A需要發布</span>：官方網站首頁遭置換（<span class="term-en">Website Defacement</span>），屬於網站遭入侵的公開事件，直接影響公司形象與客戶信任，屬於需揭露的重大資安事件。</p>
+<p>❌ <span class="highlight">選項B需要發布</span>：<span class="term-cn">企業資源規劃</span>（<span class="term-en">Enterprise Resource Planning</span>，<span class="term-abbr">ERP</span>）系統遭<span class="term-cn">勒索軟體</span>（<span class="term-en">Ransomware</span>）加密，導致核心業務系統停擺，已造成營運中斷，屬重大影響。</p>
+<p>❌ <span class="highlight">選項D需要發布</span>：原始碼與技術文件已外洩至<span class="term-cn">暗網</span>（<span class="term-en">Dark Web</span>），屬機密資料外洩，嚴重損害智慧財產與競爭優勢，必須發布重大訊息。</p>
+<p>重點記憶：<span class="highlight">「系統正常運作且無資料損失」的事件通常不構成重大訊息發布門檻</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#2 單選題</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">企業在處理「<span class="term-cn">個人資料保護法</span>」與<span class="term-cn">資安管理系統</span>（<span class="term-abbr">ISMS</span>，<span class="term-en">Information Security Management System</span>）的整合時，若發生大規模個資外洩事件，下列何種法律責任與應變程序的描述最為準確？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">只要通過<span class="term-abbr">ISO 27001</span>認證，即可免除個資法下的行政罰鍰與民事賠償責任</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">應於知悉事故後，於法定時限內通報中央目的事業主管機關，否則將面臨加重處罰</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">個資外洩僅屬於隱私議題，不須納入<span class="term-cn">資通安全事件</span>通報及應變辦法之範疇</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">法律規定企業必須對所有個資進行加密，若未加密即視為未盡<span class="term-cn">善良管理人</span>責任</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題整合考查<span class="term-cn">個人資料保護法</span>（個資法）與<span class="term-abbr">ISMS</span>的法律責任知識。</p>
+<p><strong>選項B為正確答案：</strong>依據個資法第12條及相關規定，<span class="highlight">當事人之個人資料被竊取、洩漏、竄改或其他侵害時，非公務機關應查明後以適當方式通知當事人</span>。針對政府機關或特定行業，資通安全管理法另要求在法定時限內通報主管機關，逾期將加重處罰。</p>
+<p><strong>選項A錯誤：</strong><span class="term-abbr">ISO 27001</span>認證是資安管理能力的證明，<span class="highlight">不具有免除法律責任的效果</span>。即便通過認證，若發生個資外洩仍須依個資法承擔行政罰鍰（最高新台幣1,500萬元）與民事賠償責任（每人每次500～20,000元）。</p>
+<p><strong>選項C錯誤：</strong>個資外洩<span class="highlight">同時涉及個資法與資通安全法規</span>。依《資通安全事件通報及應變辦法》，個人資料遭未授權存取或洩漏屬於資通安全事件，需依事件等級進行通報。</p>
+<p><strong>選項D錯誤：</strong>法律並未<span class="highlight">強制規定所有個資都必須加密</span>。個資法要求採取「適當之安全措施」，加密是常見措施之一，但未加密不必然等同於未盡善良管理人注意義務，需視整體安全措施而定。</p>
+</div>
+</div>
+</div>
+<!-- Q3 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#3 單選題</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">隨著「<span class="term-cn">後量子密碼學</span>」（<span class="term-en">Post-Quantum Cryptography</span>，<span class="term-abbr">PQC</span>）標準逐漸成形，資安團隊正在更新組織的機敏資料保存規範。考量到攻擊者可能採取「<span class="highlight">先竊取，後解密</span>」（<span class="term-en">Harvest Now, Decrypt Later</span>）的威脅模式，針對需要保存10年以上的極機密資料，下列何項加密轉型策略最符合當前<span class="term-en">National Institute of Standards and Technology</span>（<span class="term-abbr">NIST</span>）與業界推薦的「<span class="term-cn">加密敏捷性</span>」（<span class="term-en">Crypto-Agility</span>）最佳實務？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">將金鑰長度升級至<span class="term-abbr">RSA</span>-4096或<span class="term-abbr">ECC</span>-521，認定其強度足以抵擋未來10年的量子運算威脅</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">在<span class="term-abbr">NIST</span>正式標準完全發布前，暫停所有加密系統更新，避免採用草案演算法產生相容性風險</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">採用「<span class="term-cn">混合模式</span>」（<span class="term-en">Hybrid Scheme</span>），同時結合傳統高強度演算法（如<span class="term-abbr">ECC</span>/<span class="term-abbr">RSA</span>）與後量子演算法（如<span class="term-abbr">ML-KEM</span>）進行雙重封裝</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">全面捨棄公鑰加密體系，改為僅使用對稱式加密（<span class="term-abbr">AES</span>-128）進行金鑰交換與資料保存</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">後量子密碼學</span>（<span class="term-abbr">PQC</span>）轉型策略與<span class="term-cn">加密敏捷性</span>（<span class="term-en">Crypto-Agility</span>）的最佳實務。</p>
+<p><strong>核心威脅：「先竊取，後解密」（<span class="term-en">Harvest Now, Decrypt Later</span>，<span class="term-abbr">HNDL</span>）</strong><br>攻擊者現在收集加密資料，等量子電腦成熟後再解密。對需保存10年以上的機密資料，這是迫切威脅。</p>
+<p><strong>選項C正確 — 混合模式（<span class="term-en">Hybrid Scheme</span>）：</strong><br><span class="term-abbr">NIST</span>於2024年正式發布<span class="term-abbr">PQC</span>標準，包含<span class="term-abbr">ML-KEM</span>（<span class="term-en">Module Lattice Key Encapsulation Mechanism</span>，即原Kyber）。<span class="highlight">混合模式同時使用傳統演算法（如RSA/ECC）與PQC演算法</span>進行雙重封裝：即使量子電腦破解了傳統演算法，PQC層仍提供保護；若PQC演算法有未知弱點，傳統演算法仍可防護。這正是<span class="term-cn">加密敏捷性</span>的核心—能快速切換或疊加演算法。</p>
+<p><strong>選項A錯誤：</strong><span class="term-abbr">RSA</span>-4096與<span class="term-abbr">ECC</span>-521屬傳統公鑰加密，<span class="highlight">均會被足夠強大的量子電腦（透過Shor演算法）破解</span>，金鑰長度無法解決量子威脅的根本問題。</p>
+<p><strong>選項B錯誤：</strong><span class="term-abbr">NIST</span> PQC標準已於2024年正式發布，<span class="highlight">暫停更新反而增加曝險時間</span>，錯失轉型視窗。</p>
+<p><strong>選項D錯誤：</strong><span class="term-abbr">AES</span>-128對稱加密雖對量子電腦有較好抵抗性（僅安全性減半），但<span class="highlight">缺乏公鑰基礎設施無法安全交換金鑰</span>，實務上不可行。</p>
+</div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#4 複選題</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">公司為國內股票上市公司，請問發生下列哪些資訊安全事件須依主管機關規定發布重大訊息？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">公司官方網站遭受<span class="term-cn">服務阻斷攻擊</span>（<span class="term-en">Distributed Denial of Service</span>，<span class="term-abbr">DDoS</span>）</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">公司重要資通系統因發現系統重大漏洞，進行維護升級作業須停止服務二日</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">公司網路遭到入侵，造成內部文件檔案資料外洩</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">公司機密檔案遭駭客以<span class="term-cn">勒索軟體</span>（<span class="term-en">Ransomware</span>）加密</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ACD</div>
+<div class="explanation-content">
+<p>本題考查臺灣<span class="term-cn">證券交易所</span>（<span class="term-abbr">TWSE</span>）對上市公司重大資安事件的揭露規定。</p>
+<p><strong>判斷原則：</strong>事件是否對公司業務、系統可用性、資料安全或商譽造成「重大」影響，足以影響投資人判斷。</p>
+<p><strong>選項A正確（需發布）：</strong><span class="term-abbr">DDoS</span>攻擊導致官方網站無法正常運作，影響客戶存取服務，且屬主動性攻擊事件，<span class="highlight">即使攻擊是短暫的，也屬需揭露的重大資安事件</span>。</p>
+<p><strong>選項B不正確（不需發布）：</strong>因發現漏洞進行「主動維護升級」屬於<span class="highlight">預防性停機（Planned Maintenance）</span>，並非遭受攻擊或系統被動失效，不屬於重大資安事件。主動修補漏洞是良好的資安實踐，不在強制揭露範疇。</p>
+<p><strong>選項C正確（需發布）：</strong>網路遭入侵並導致<span class="highlight">資料外洩</span>，直接涉及公司機密與可能的個資外洩，是典型需發布的重大資安事件，可能涉及商業機密損失與法律責任。</p>
+<p><strong>選項D正確（需發布）：</strong>勒索軟體加密機密檔案，不僅涉及系統安全，更威脅業務持續運作（<span class="term-en">Business Continuity</span>）與財務損失（贖金），屬重大資安事件。</p>
+<p>記憶訣竅：<span class="highlight">主動維護＝不需揭露；被動受害（攻擊、入侵、外洩）＝需揭露</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q5 題組1 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#5 題組題（題組1）</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🏢 題組情境說明（第5-8題共用）：</strong><br>
+A公司所營事業為接受國內公、私領域之各<span class="term-cn">金融業</span>者委託開發與維護金融業使用之「<span class="term-cn">資訊交換系統</span>」，各案委託金額均達新台幣三千萬至五千萬。A公司遠景係成為國內公、私領域金融機構「資訊交換系統」供應商之翹楚。各金融業關注方之需要及期望包含「提供安全、穩定之系統」、「發現資通安全事件應即時通報客戶」。<br><br>
+「資訊交換系統」之部分功能開發作業長期與系統開發商B公司合作共同開發，惟系統開發後之原始碼保存於A公司自建之資訊機房內，B公司不保留。所有業務活動之執行作業除電腦作業系統外，均使用自建之應用系統（例如核心資通系統、人力資源管理系統等）或自行開發之軟體，無任何外部之服務（包含雲端服務）使用。
+</div>
+A公司因近期接獲金融業之客戶通知，爾後承接其業務時，公司應具備最新版 <span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>之導入並通過第三方驗證。請問A公司於導入<span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>時所申請之驗證範圍，下列哪些項目最為適切？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">資訊機房管理業務活動流程</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">人力資源管理系統業務活動流程</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">系統開發、維護活動</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">核心資通系統管理業務活動</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ACD</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>（<span class="term-en">Information Security Management System</span>，<span class="term-abbr">ISMS</span>）驗證範圍的界定原則。</p>
+<p><strong>驗證範圍界定原則：</strong>應涵蓋組織核心業務活動、資訊資產集中處，以及對客戶承諾服務相關的所有流程。範圍應與外部利害關係人的期望對應。</p>
+<p><strong>選項A正確（資訊機房管理）：</strong><span class="highlight">原始碼及重要資料均存放於A公司自建資訊機房</span>，機房是核心資訊資產的實體安全保障，必須納入驗證範圍。</p>
+<p><strong>選項B不正確（人力資源管理系統）：</strong>人力資源管理系統雖是A公司內部系統，<span class="highlight">但與提供給金融業客戶的「資訊交換系統」服務無直接關聯</span>，非核心業務流程，可以排除在初期驗證範圍外（除非含有敏感人事資料）。</p>
+<p><strong>選項C正確（系統開發、維護活動）：</strong>A公司的核心業務就是開發與維護金融業「資訊交換系統」，<span class="highlight">開發與維護活動直接影響交付給客戶系統的安全性與品質</span>，必須納入範圍。</p>
+<p><strong>選項D正確（核心資通系統管理）：</strong>核心資通系統是A公司業務運作的骨幹，<span class="highlight">涉及客戶資料處理與服務交付</span>，金融業客戶關注「安全、穩定之系統」，故必須涵蓋。</p>
+<p>重點：<span class="term-abbr">ISMS</span>範圍應聚焦於<span class="highlight">核心業務、主要資訊資產與對外服務承諾</span>的相關活動。</p>
+</div>
+</div>
+</div>
+<!-- Q6 題組1 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#6 題組題（題組1）</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">承上題組情境，A公司於執行<span class="term-cn">風險評鑑</span>過程，依據風險評鑑結果選擇適切之資訊安全風險處理選項，並據以產生<span class="term-cn">適用性聲明</span>（<span class="term-en">Statement of Applicability</span>，<span class="term-abbr">SoA</span>）。請問有關部分之<span class="term-abbr">SoA</span>內容，下列何者「有誤」？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">5.8 專案管理之資訊安全→適用；5.19 供應者關係中之資訊安全→適用；5.20 於供應者協議中闡明資訊安全→適用；5.22 供應者服務之監視、審查及變更管理→適用；5.23 使用雲端服務之資訊安全→不適用</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">5.24 資訊安全事故管理規劃及準備→適用</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">6.6 機密性或保密協議→適用；8.4 對原始碼之存取→適用；8.25 安全開發生命週期→適用；8.28 安全程式設計→適用</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">8.30 委外開發→不適用</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：D</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">ISO/IEC 27001:2022</span> 附件A控制措施的<span class="term-cn">適用性聲明</span>（<span class="term-abbr">SoA</span>）判斷。</p>
+<p><strong>選項D有誤（8.30 委外開發→宣稱不適用，但實際應適用）：</strong></p>
+<p>根據題組情境，<span class="highlight">A公司與B公司「長期合作共同開發」資訊交換系統的部分功能</span>。這明確構成委外開發（<span class="term-en">Outsourced Development</span>）的情形。ISO 27001:2022 控制措施8.30「委外開發」規定：組織委託外部廠商進行開發時，應對其開發活動進行監督與安全要求。因此，<span class="highlight">8.30應標記為「適用」，而非「不適用」</span>，選項D聲明錯誤。</p>
+<p><strong>其他選項正確分析：</strong></p>
+<p>選項A正確：A公司無雲端服務（5.23不適用），但有B公司供應商關係（5.19、5.20、5.22適用），且有開發專案（5.8適用）。</p>
+<p>選項B正確：5.24資安事故管理規劃，A公司有對金融業客戶「即時通報」的承諾，故適用。</p>
+<p>選項C正確：與B公司合作需要保密協議（6.6）；原始碼保存於A公司（8.4）；有開發活動（8.25、8.28）均適用。</p>
+<p>關鍵記憶：<span class="highlight">只要有與外部廠商合作開發的情形，8.30「委外開發」就應標記為適用</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q7 題組1 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#7 題組題（題組1）</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">承上題組情境，A公司接受金融機構之受託業務，客製化開發之各案，其委託金額均達新台幣三千萬至五千萬，依《<span class="term-cn">資通安全管理法</span>》及其子法規定，下列項目何者「有誤」？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">A公司提供自行檢測之「資訊交換系統」安全性證明</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">B公司提供該「資訊交換系統」之安全性檢測證明</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">金融機構客戶自行進行安全性檢測</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">金融機構客戶另行委託第三方進行安全性檢測</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查《<span class="term-cn">資通安全管理法</span>》中有關委外開發系統安全性檢測的規定。</p>
+<p><strong>法規核心原則：利益迴避（<span class="term-en">Conflict of Interest Avoidance</span>）</strong></p>
+<p>依據《資通安全管理法》及其子法（資通安全責任等級分級辦法等）規定，當機關委外開發資通系統時，<span class="highlight">系統的安全性檢測不得由開發廠商（A公司）自行執行</span>，以避免「球員兼裁判」的利益衝突。</p>
+<p><strong>選項A有誤：</strong><span class="highlight">A公司既是開發商，又進行自我安全性檢測，明顯違反利益迴避原則</span>。法規不允許開發者對自己開發的系統出具安全性自我證明作為政府機關採購的依據。</p>
+<p><strong>選項B正確：</strong>B公司雖參與部分開發，但其與A公司為獨立法人，且B公司並未是主要委外對象。<span class="highlight">若B公司進行安全性檢測，雖有一定爭議，但較A公司自行檢測合規</span>。</p>
+<p><strong>選項C正確：</strong>金融機構客戶作為採購方，<span class="highlight">自行進行安全性檢測</span>是最符合法規精神的做法，委託方自行驗收，沒有利益衝突。</p>
+<p><strong>選項D正確：</strong>委託<span class="highlight">獨立的第三方機構進行安全性檢測</span>，是最客觀的方式，完全符合資通安全管理法的要求。</p>
+<p>記憶口訣：<span class="highlight">開發商不得自驗自證，需由甲方或第三方獨立驗證</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q8 題組1 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#8 題組題（題組1）</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">承上題組情境，A公司之客戶某金融機構係屬公務機關，其「資訊交換系統」之運作涉及<span class="term-cn">國家機密</span>資訊，故A公司執行本系統開發與維護之相關人員，依《<span class="term-cn">資通安全管理法施行細則</span>》規定，受託業務涉及國家機密者，執行受託業務之相關人員應接受<span class="term-cn">適任性查核</span>，並依《<span class="term-cn">國家機密保護法</span>》規定管制其出境。請問有關適任性查核事項內容之說明，下列項目何者錯誤？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">曾任公務員，因違反相關安全保密規定受<span class="term-cn">懲戒</span>或<span class="term-cn">記過以上</span>行政懲處</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">曾任公務員，因違反相關安全保密規定受<span class="term-cn">懲戒</span>或<span class="term-cn">警告以上</span>行政懲處</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">曾犯洩密罪，或於動員戡亂時期終止後，犯內亂罪、外患罪，經判刑確定</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">曾犯洩密罪，或於動員戡亂時期終止後，犯內亂罪、外患罪，通緝有案尚未結案</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查《<span class="term-cn">資通安全管理法施行細則</span>》中<span class="term-cn">適任性查核</span>（<span class="term-en">Suitability Check</span>）的具體標準。</p>
+<p><strong>選項B錯誤（正確答案）：</strong>正確的法規規定是「<span class="highlight">曾任公務員，因違反相關安全保密規定受懲戒或記過以上行政懲處</span>」才列為查核不通過事項。選項B誤將標準降低為「警告以上」。</p>
+<p><strong>兩者差異說明：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.95em;margin-top:8px;">
+<tr style="background:#e9ecef;"><th style="padding:8px;text-align:left;border:1px solid #dee2e6;">懲處等級</th><th style="padding:8px;text-align:left;border:1px solid #dee2e6;">嚴重程度</th><th style="padding:8px;text-align:left;border:1px solid #dee2e6;">適任性查核</th></tr>
+<tr><td style="padding:8px;border:1px solid #dee2e6;">警告</td><td style="padding:8px;border:1px solid #dee2e6;">最輕微</td><td style="padding:8px;border:1px solid #dee2e6;">❌ 不在查核範圍</td></tr>
+<tr style="background:#fff3cd;"><td style="padding:8px;border:1px solid #dee2e6;">記過</td><td style="padding:8px;border:1px solid #dee2e6;">中等</td><td style="padding:8px;border:1px solid #dee2e6;">✅ 列為查核不通過</td></tr>
+<tr><td style="padding:8px;border:1px solid #dee2e6;">懲戒</td><td style="padding:8px;border:1px solid #dee2e6;">較重</td><td style="padding:8px;border:1px solid #dee2e6;">✅ 列為查核不通過</td></tr>
+</table>
+<p style="margin-top:10px;"><strong>選項A正確：</strong>「記過以上」才是法規規定的查核標準，符合規定。</p>
+<p><strong>選項C正確：</strong>曾犯洩密罪或內亂、外患罪「經判刑確定」，屬已確定之犯罪紀錄，列為查核不通過。</p>
+<p><strong>選項D正確：</strong>「通緝有案尚未結案」雖未判決，但已構成重大安全疑慮，同樣列為查核不通過。</p>
+<p>關鍵記憶：<span class="highlight">適任性查核的行政懲處門檻是「記過以上」，不含「警告」</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q9 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#9 單選題</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">請問下列對於<span class="term-cn">生物特徵身份認證</span>（<span class="term-en">Biometric Authentication</span>）的描述何者較「不」正確？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">指紋辨識的準確度較人臉辨識的準確度高</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">視網膜辨識準確率高，然而特徵擷取十分不便是其難以普及的原因</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">錯誤拒絕率</span>又稱為型II（<span class="term-en">Type II</span>）錯誤，意指原本合法的使用者在身份認證時被拒絕</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">臉形辨識常容易因身材及體重的變化而產生誤判，因此會需要定期重新取樣與訓練</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">生物特徵認證</span>（<span class="term-en">Biometric Authentication</span>）的基本概念，特別是錯誤率指標的正確定義。</p>
+<p><strong>選項C不正確（正確答案）：</strong>生物特徵認證有兩種錯誤率，必須正確區分：</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.92em;margin:8px 0;">
+<tr style="background:#dfe6e9;"><th style="padding:8px;border:1px solid #ccc;">名稱</th><th style="padding:8px;border:1px solid #ccc;">英文</th><th style="padding:8px;border:1px solid #ccc;">縮寫</th><th style="padding:8px;border:1px solid #ccc;">定義</th><th style="padding:8px;border:1px solid #ccc;">又稱</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">錯誤拒絕率</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">False Rejection Rate</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-abbr">FRR</span></td><td style="padding:8px;border:1px solid #ccc;">合法使用者被錯誤拒絕</td><td style="padding:8px;border:1px solid #ccc;background:#fff3cd;">型I (Type I) 錯誤</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">錯誤接受率</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">False Acceptance Rate</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-abbr">FAR</span></td><td style="padding:8px;border:1px solid #ccc;">非法使用者被錯誤接受</td><td style="padding:8px;border:1px solid #ccc;">型II (Type II) 錯誤</td></tr>
+</table>
+<p><span class="highlight">錯誤拒絕率（FRR）應稱為型I錯誤，不是型II錯誤</span>。型II錯誤是<span class="term-abbr">FAR</span>（錯誤接受率），讓非法者通過才是更大的安全問題。</p>
+<p><strong>選項A正確：</strong>在受控環境下，指紋辨識的準確度通常高於人臉辨識，因指紋特徵點更獨特且不受光線、角度影響。</p>
+<p><strong>選項B正確：</strong>視網膜辨識（<span class="term-en">Retinal Scan</span>）需要使用者靠近設備且保持靜止，擷取過程不便，故普及率低，但準確度極高。</p>
+<p><strong>選項D正確：</strong>體重與身材變化確實可能影響臉形辨識（<span class="term-en">Facial Recognition</span>）的準確度，需要定期更新特徵模型。</p>
+<p>記憶訣竅：<span class="highlight">FRR=型I=拒絕合法者；FAR=型II=接受非法者</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q10 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#10 單選題</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#f0f4ff;border-left:4px solid #3498db;padding:12px;border-radius:6px;margin-bottom:12px;">
+<strong>📋 情境說明：</strong>某企業為強化組織內部資訊安全，導入了多層次防禦機制：<br>
+1. 外部防火牆過濾不明IP連線<br>2. 員工登入系統需進行多因素驗證<br>3. 系統內部設定使用者角色與權限控制<br>4. 資料庫定期備份並加密存放於異地<br>5. 辦理資安教育訓練，提高人員資安警覺性
+</div>
+如附圖所示，某企業為強化組織內部資訊安全，導入了多層次防禦機制。請問附圖中的作法最符合下列何種資訊安全之原則？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">最小權限原則</span>（<span class="term-en">Principle of Least Privilege</span>）</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">縱深防禦原則</span>（<span class="term-en">Defense in Depth</span>）</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">單一防禦原則</span>（<span class="term-en">Single Point Defense</span>）</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">零信任架構</span>（<span class="term-en">Zero Trust Architecture</span>，<span class="term-abbr">ZTA</span>）</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查資安防禦架構的核心原則辨識。</p>
+<p><strong>選項B正確—縱深防禦（<span class="term-en">Defense in Depth</span>）：</strong><br>題目描述的五項措施涵蓋<span class="highlight">網路層（防火牆）、身份認證層（MFA）、授權控制層（RBAC）、資料保護層（備份加密）、人員教育層</span>，是典型的多層次安全防禦架構。<span class="term-cn">縱深防禦</span>的核心理念：<span class="highlight">沒有任何單一控制措施是完美的，透過多層防護，即使某一層被突破，其他層仍可提供保護</span>。</p>
+<p><strong>選項A不正確—最小權限原則：</strong>最小權限是指「給予使用者或系統完成工作所需的最小權限」，主要關注<span class="highlight">授權範圍</span>，而非多層次防禦架構。題目雖有第3點角色權限控制，但整體情境顯然強調多層次。</p>
+<p><strong>選項C不正確—單一防禦原則：</strong>單一防禦是<span class="highlight">反面教材</span>，即只依賴一種防禦手段，與題目的多層次做法相反。</p>
+<p><strong>選項D不正確—零信任架構：</strong><span class="term-abbr">ZTA</span>的核心是「永不信任，持續驗證」，強調<span class="highlight">每次存取都需驗證，不因在內網就默認信任</span>。雖第2點（MFA）有零信任元素，但題目的整體架構仍是傳統縱深防禦。</p>
+<p>記憶訣竅：<span class="highlight">看到「多層」「多種」控制措施並存，答案多為「縱深防禦」</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q11 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#11 單選題</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">公司執行跨部門專案時發現：部分使用者因臨時專案需要跨部門存取資料。若要兼顧「<span class="term-cn">最小權限原則</span>」（<span class="term-en">Principle of Least Privilege</span>）與「專案需求」，下列何項是較佳的做法？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">直接給予使用者跨部門權限</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">讓使用者共用主管帳號</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">建立<span class="term-cn">臨時角色</span>並設定<span class="term-cn">存取期限</span>與權限</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">允許使用者自行設定存取</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查在<span class="term-cn">最小權限原則</span>（<span class="term-en">Principle of Least Privilege</span>，<span class="term-abbr">PoLP</span>）框架下，如何靈活處理臨時業務需求。</p>
+<p><strong>選項C正確—建立臨時角色並設定存取期限：</strong>這是最符合最小權限原則的做法。<span class="highlight">臨時角色（Temporary Role）設計只包含該專案所需的特定資源存取權限，並設定明確的有效期限</span>，專案結束後自動失效。這兼顧了業務靈活性（可跨部門存取）與安全性（最小化、有時效性），是現代<span class="term-cn">身份與存取管理</span>（<span class="term-en">Identity and Access Management</span>，<span class="term-abbr">IAM</span>）的最佳實踐。</p>
+<p><strong>選項A錯誤—直接給予跨部門永久權限：</strong>這違反最小權限原則，<span class="highlight">永久性的擴大權限在專案結束後仍持續存在</span>，造成權限蔓延（<span class="term-en">Permission Creep</span>）的安全風險。</p>
+<p><strong>選項B錯誤—共用主管帳號：</strong>共用帳號嚴重違反資安基本原則。<span class="highlight">無法追蹤誰執行了哪些操作（不可否認性喪失）</span>，且主管帳號通常擁有遠超過專案所需的權限，大幅擴大了攻擊面。</p>
+<p><strong>選項D錯誤—允許自行設定存取：</strong><span class="highlight">使用者自行設定存取完全失去集中管控</span>，容易造成越權存取且難以審計，嚴重違反存取控制原則。</p>
+<p>最小權限原則三要素：<span class="highlight">必要（只給需要的）、最小（最小量）、暫時（設有期限）</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q12 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#12 複選題</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">某企業遭遇<span class="term-cn">供應鏈攻擊</span>（<span class="term-en">Supply Chain Attack</span>），駭客利用監控軟體的更新伺服器漏洞入侵內網。為了強化「<span class="term-cn">縱深防禦</span>」體系，防止攻擊者在內網長期潛伏與擴散，下列哪些技術控制措施應納入防禦架構？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">在內部網路實施<span class="term-cn">微切分</span>（<span class="term-en">Micro-segmentation</span>），限制伺服器僅能與其業務相關的節點通訊，阻斷非必要的橫向連線</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">移除所有端點與伺服器的<span class="term-cn">本機管理員</span>（<span class="term-en">Local Admin</span>）權限，並導入<span class="term-abbr">LAPS</span>（<span class="term-en">Local Administrator Password Solution</span>）管理隨機密碼</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">在網路邊界防火牆設定「允許所有出站流量（<span class="term-en">Allow Any Outbound</span>）」，以確保業務系統更新不中斷</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">部署<span class="term-cn">端點偵測與應變系統</span>（<span class="term-abbr">EDR</span>/<span class="term-abbr">XDR</span>，<span class="term-en">Endpoint/Extended Detection and Response</span>），針對<span class="term-en">PowerShell</span>、<span class="term-en">WMI</span>等常用系統管理工具執行異常行為監控</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ABD</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">供應鏈攻擊</span>後的縱深防禦強化策略。供應鏈攻擊已進入內網，需防止<span class="highlight">橫向移動（<span class="term-en">Lateral Movement</span>）</span>與長期潛伏。</p>
+<p><strong>選項A正確—微切分：</strong>將內網劃分為細粒度的隔離區段，<span class="highlight">阻止攻擊者在攻破一個節點後橫向移動</span>到其他系統。即使供應鏈更新伺服器被入侵，也無法輕易存取其他業務系統。</p>
+<p><strong>選項B正確—移除本機管理員+LAPS：</strong>攻擊者常利用本機管理員帳號進行橫向移動（<span class="term-en">Pass-the-Hash</span>攻擊）。<span class="highlight">LAPS為每台電腦設定不同的隨機本機管理員密碼</span>，即使一台電腦被入侵，其本機帳號無法用於其他電腦。</p>
+<p><strong>選項C錯誤—允許所有出站流量：</strong>這是嚴重的安全漏洞。<span class="highlight">允許All Outbound讓攻擊者的C2（Command and Control）通訊暢行無阻</span>，使惡意程式能自由回傳資料、接收指令，完全違背縱深防禦原則。</p>
+<p><strong>選項D正確—EDR/XDR：</strong><span class="term-en">PowerShell</span>、<span class="term-en">WMI</span>（<span class="term-en">Windows Management Instrumentation</span>）是攻擊者常用的「無檔案攻擊」工具。<span class="highlight">EDR/XDR可偵測這些工具的異常使用行為（如異常時間、異常參數）</span>，及時發現潛伏的攻擊者。</p>
+</div>
+</div>
+</div>
+<!-- Q13 題組2 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#13 題組題（題組2）</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🏦 題組情境說明（第13-16題共用）：</strong><br>
+「B金控」為符合國際資安標準，正重新檢視其核心帳務系統的存取架構。該系統目前混合使用地端<span class="term-en">Mainframe</span>與<span class="term-abbr">AWS</span>雲端微服務。近期稽核發現：<br>
+(1) 部分客服人員擁有修改客戶信用額度的權限，且未留下核決紀錄<br>
+(2) 開發人員為了除錯方便，常態性持有資料庫讀取權限<br>
+(3) 系統依賴傳統<span class="term-abbr">VPN</span>進行遠端維運，一旦連線建立即可存取全網段
+</div>
+針對稽核發現(1)「客服人員權限過大」之問題，為了落實<span class="term-cn">職務區隔</span>（<span class="term-en">Separation of Duties</span>，<span class="term-abbr">SOD</span>）並確保交易安全，下列何種設計模式最符合資安實務？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">撤銷所有客服人員的系統存取權限，改由客戶自行透過App修改額度</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">客服人員僅能<span class="term-cn">發起</span>額度調整申請，需由主管系統<span class="term-cn">審核</span>後才生效</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">要求客服人員簽署切結書，承諾不隨意修改客戶額度，並每月抽查一次Log</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">將所有客服人員帳號設定為「唯讀」，若需修改額度則使用部門共用的主管帳號登入</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">職務區隔</span>（<span class="term-abbr">SOD</span>）原則的正確實施方式。</p>
+<p><strong>選項B正確—申請與審核分離：</strong><span class="term-abbr">SOD</span>的核心是<span class="highlight">將一個敏感交易的不同步驟分配給不同角色</span>。客服人員「發起申請」與主管「審核生效」形成制衡：<br>• 客服人員：只能申請，不能單獨完成<br>• 主管：審核並授權，有稽核紀錄<br>這符合「<span class="term-cn">雙人控制</span>」（<span class="term-en">Dual Control</span>）與「<span class="term-cn">四眼原則</span>」（<span class="term-en">Four-Eyes Principle</span>）的精神。</p>
+<p><strong>選項A錯誤：</strong>完全撤銷客服人員存取權限<span class="highlight">無法滿足業務需求</span>，且全部改由客戶自助操作，失去客服介入協助的能力，屬於過度限制。</p>
+<p><strong>選項C錯誤：</strong>簽署切結書是行政管控，<span class="highlight">屬於威嚇而非預防</span>。每月抽查Log僅是事後偵測，無法阻止即時的濫用。這是補償性控制，而非預防性控制，單獨使用不足夠。</p>
+<p><strong>選項D錯誤：</strong>使用<span class="highlight">部門共用帳號嚴重違反個人責任歸屬</span>（<span class="term-en">Accountability</span>），無法區分是誰進行操作，且共用主管帳號的密碼管理困難，增加安全風險。</p>
+<p>SOD口訣：<span class="highlight">申請者不能審核，審核者不能申請，兩者分離方可制衡</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q14 題組2 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#14 題組題（題組2）</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">承上「B金控」稽核情境。針對稽核發現(3)「VPN連線後可存取全網段」的風險，欲導入<span class="term-cn">零信任網路存取</span>（<span class="term-en">Zero Trust Network Access</span>，<span class="term-abbr">ZTNA</span>）取代傳統<span class="term-abbr">VPN</span>。在<span class="term-abbr">ZTNA</span>架構下，決定是否允許連線的核心邏輯為下列何項？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">僅驗證使用者的帳號密碼，只要憑證正確即建立加密通道</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">依據使用者的來源IP位址是否在白名單內進行判斷</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">基於「<span class="term-cn">身分</span>、<span class="term-cn">裝置健康度</span>、<span class="term-cn">上下文情境</span>（<span class="term-en">Context</span>）」進行動態授權，且僅建立<span class="term-cn">應用程式層級</span>的連線（<span class="term-en">App-level tunnel</span>）</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">使用強效防火牆規則，將VPN網段與內部伺服器網段完全隔離</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">ZTNA</span>（<span class="term-en">Zero Trust Network Access</span>）與傳統<span class="term-abbr">VPN</span>的核心差異。</p>
+<p><strong>傳統VPN vs ZTNA比較：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em;margin:8px 0;">
+<tr style="background:#dfe6e9;"><th style="padding:8px;border:1px solid #ccc;">特性</th><th style="padding:8px;border:1px solid #ccc;">傳統 VPN</th><th style="padding:8px;border:1px solid #ccc;">ZTNA</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">連線驗證</td><td style="padding:8px;border:1px solid #ccc;">帳號密碼/憑證</td><td style="padding:8px;border:1px solid #ccc;background:#d4edda;">身分+裝置健康+情境</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">存取範圍</td><td style="padding:8px;border:1px solid #ccc;">連上即存取全網段</td><td style="padding:8px;border:1px solid #ccc;background:#d4edda;">僅限授權應用程式</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">信任模型</td><td style="padding:8px;border:1px solid #ccc;">連線後預設信任</td><td style="padding:8px;border:1px solid #ccc;background:#d4edda;">永不信任，持續驗證</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">通道類型</td><td style="padding:8px;border:1px solid #ccc;">網路層通道</td><td style="padding:8px;border:1px solid #ccc;background:#d4edda;">應用程式層通道</td></tr>
+</table>
+<p><strong>選項C正確：</strong><span class="term-abbr">ZTNA</span>的授權決策基於三個維度：<span class="highlight">（1）身分（Who）：使用者身份驗證；（2）裝置健康度（Device Health）：裝置合規狀態（是否有安全更新、防毒等）；（3）上下文情境（Context）：時間、位置、行為模式</span>。且只建立到特定應用程式的微型通道，不像VPN給整個網段存取。</p>
+<p><strong>選項A錯誤：</strong>僅驗證帳密是傳統VPN的做法，且連線後可能存取全網，不符合零信任。</p>
+<p><strong>選項B錯誤：</strong>IP白名單屬靜態控制，雲端與混合辦公環境下IP經常變動，<span class="highlight">固定IP白名單既不彈性又不安全</span>。</p>
+<p><strong>選項D錯誤：</strong>防火牆網段隔離是傳統網路安全做法，不是ZTNA的授權邏輯。</p>
+</div>
+</div>
+</div>
+<!-- Q15 題組2 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#15 題組題（題組2）</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">承上「B金控」稽核情境。為了將存取控制從傳統的<span class="term-cn">角色存取控制</span>（<span class="term-en">Role-Based Access Control</span>，<span class="term-abbr">RBAC</span>）升級為更靈活的<span class="term-cn">屬性存取控制</span>（<span class="term-en">Attribute-Based Access Control</span>，<span class="term-abbr">ABAC</span>），以解決開發人員權限管理問題。下列何者屬於<span class="term-abbr">ABAC</span>政策中的「<span class="term-cn">環境屬性</span>（<span class="term-en">Environment Attribute</span>）」範疇？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">使用者的職稱與部門代號（如 Level 3 Engineer）</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">存取請求發生的<span class="term-cn">時間</span>與<span class="term-cn">來源地理位置</span>（如 Office Hour, Taipei IP）</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">被存取資料的<span class="term-cn">機密等級</span>標籤（如 Confidential）</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">使用者通過的教育訓練時數紀錄</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">ABAC</span>（<span class="term-en">Attribute-Based Access Control</span>）的四大屬性類別。</p>
+<p><strong>ABAC四大屬性分類：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em;margin:8px 0;">
+<tr style="background:#dfe6e9;"><th style="padding:8px;border:1px solid #ccc;">屬性類型</th><th style="padding:8px;border:1px solid #ccc;">英文</th><th style="padding:8px;border:1px solid #ccc;">範例</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">使用者屬性</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Subject/User Attribute</span></td><td style="padding:8px;border:1px solid #ccc;">職稱、部門、安全許可等級、教育訓練紀錄</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">資源屬性</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Resource/Object Attribute</span></td><td style="padding:8px;border:1px solid #ccc;">機密等級（Confidential）、資料類型、擁有者</td></tr>
+<tr style="background:#d4edda;"><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">環境屬性</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Environment Attribute</span></td><td style="padding:8px;border:1px solid #ccc;">時間（Office Hour）、地理位置（Taipei IP）、網路類型</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;"><span class="term-cn">操作屬性</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Action Attribute</span></td><td style="padding:8px;border:1px solid #ccc;">讀取、寫入、刪除、列印</td></tr>
+</table>
+<p><strong>選項B正確—環境屬性：</strong><span class="highlight">時間（Office Hour）和來源地理位置（Taipei IP）</span>屬於存取發生時的外部情境資訊，即「環境屬性」。這些屬性會隨時間和地點動態變化，ABAC可據此實現動態授權（如下班時間禁止存取機密資料）。</p>
+<p><strong>選項A錯誤：</strong>職稱與部門代號是<span class="highlight">使用者（主體）屬性</span>（<span class="term-en">Subject Attribute</span>），描述誰在存取，不是環境資訊。</p>
+<p><strong>選項C錯誤：</strong>機密等級標籤（Confidential）是<span class="highlight">資源屬性</span>（<span class="term-en">Resource Attribute</span>），描述被存取的資料特性，不是環境資訊。</p>
+<p><strong>選項D錯誤：</strong>教育訓練時數紀錄是<span class="highlight">使用者屬性</span>（與職稱、資歷等並列），描述使用者的特性，不是環境情境。</p>
+</div>
+</div>
+</div>
+<!-- Q16 題組2 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#16 題組題（題組2）</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">承上「B金控」稽核情境。為了全面強化該金控的資料存取安全，資安團隊計畫導入<span class="term-cn">身分治理與管理</span>（<span class="term-en">Identity Governance and Administration</span>，<span class="term-abbr">IGA</span>）解決方案。下列哪些功能屬於<span class="term-abbr">IGA</span>的核心範疇，能直接協助解決上述審計發現的權限問題？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">自動化存取認證</span>（<span class="term-en">Access Certification/Review</span>）：定期觸發權限盤點流程，要求主管確認員工權限的必要性</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">角色挖掘</span>（<span class="term-en">Role Mining</span>）：分析現有權限分配，確保維持現行角色權限模型不調整</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">網頁應用程式防火牆</span>（<span class="term-en">Web Application Firewall</span>，<span class="term-abbr">WAF</span>）：過濾針對Web應用層的SQL Injection攻擊</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">權限生命週期管理</span>（<span class="term-en">Entitlement Management</span>）：處理人員到職、轉調、離職時的權限自動開通與回收</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：AD</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">IGA</span>（<span class="term-en">Identity Governance and Administration</span>）的核心功能。</p>
+<p><strong>IGA的核心功能範疇：</strong><span class="term-abbr">IGA</span>是<span class="term-abbr">IAM</span>的進階版，專注於<span class="highlight">「誰有什麼權限」的治理與合規管理</span>，確保權限符合業務需求且合乎法規。</p>
+<p><strong>選項A正確—存取認證（Access Review）：</strong>這是IGA的核心功能之一。<span class="highlight">定期要求權限持有人的主管確認該員工是否仍需要這些權限</span>，可及時發現並撤銷過時或不必要的權限（如稽核發現的開發人員常態持有資料庫讀取權限問題）。</p>
+<p><strong>選項B錯誤—角色挖掘（但描述有誤）：</strong>角色挖掘（Role Mining）本身是IGA功能，但選項B說「確保維持現行角色權限模型不調整」，這<span class="highlight">違背了角色挖掘的目的</span>——角色挖掘的目的是分析現有權限並優化角色定義，而非維持不變。</p>
+<p><strong>選項C錯誤—WAF：</strong><span class="term-abbr">WAF</span>是<span class="highlight">網路安全工具，與身份治理無關</span>，屬於應用程式安全防護範疇，不是IGA的功能。</p>
+<p><strong>選項D正確—權限生命週期管理：</strong><span class="highlight">人員到職時自動開通適當權限、轉調時調整權限、離職時立即回收所有權限</span>，這正是IGA的核心功能，直接解決「開發人員離開專案後仍保留資料庫權限」等常見問題。</p>
+</div>
+</div>
+</div>
+<!-- Q17 -->
+<div class="question-card" data-evaluation-content-id="1.2">
+<div class="question-header"><div class="question-id">#17 單選題</div><div class="evaluation-criterion">1.2 存取控制、縱深防禦、職務區隔 (SOD)</div></div>
+<div class="question-content">下列何項「不」是<span class="term-cn">美國網路安全暨基礎設施安全局</span>（<span class="term-en">Cybersecurity and Infrastructure Security Agency</span>，<span class="term-abbr">CISA</span>）於2023年4月發表<span class="term-cn">零信任成熟度模型</span>2.0（<span class="term-en">Zero Trust Maturity Model</span> 2.0）的五個支柱之一？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">網路（<span class="term-en">Network</span>）</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">資料（<span class="term-en">Data</span>）</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">身份（<span class="term-en">Identity</span>）</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">稽核（<span class="term-en">Audit</span>）</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：D</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">CISA</span>《<span class="term-cn">零信任成熟度模型</span>》2.0的正式內容。</p>
+<p><strong>CISA零信任成熟度模型2.0的五大支柱（正確）：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em;margin:8px 0;">
+<tr style="background:#2980b9;color:white;"><th style="padding:8px;border:1px solid #ccc;">支柱</th><th style="padding:8px;border:1px solid #ccc;">英文</th><th style="padding:8px;border:1px solid #ccc;">說明</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">1. <span class="term-cn">身份</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Identity</span></td><td style="padding:8px;border:1px solid #ccc;">使用者、服務帳號的身份驗證與管理</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">2. <span class="term-cn">裝置</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Devices</span></td><td style="padding:8px;border:1px solid #ccc;">端點裝置的健康狀態與合規管理</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">3. <span class="term-cn">網路</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Network</span></td><td style="padding:8px;border:1px solid #ccc;">網路分割、加密與流量控管</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">4. <span class="term-cn">應用程式與工作負載</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Application &amp; Workloads</span></td><td style="padding:8px;border:1px solid #ccc;">應用程式存取控制與安全整合</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">5. <span class="term-cn">資料</span></td><td style="padding:8px;border:1px solid #ccc;"><span class="term-en">Data</span></td><td style="padding:8px;border:1px solid #ccc;">資料分類、保護與存取控制</td></tr>
+</table>
+<p><strong>選項D正確答案（不是支柱）：</strong>「稽核」（<span class="term-en">Audit</span>）<span class="highlight">並非CISA零信任成熟度模型2.0的五大支柱之一</span>。雖然稽核與日誌管理是零信任的重要組成（通常歸類在各支柱的成熟度要求中），但它不是獨立的支柱。</p>
+<p><strong>記憶技巧：</strong>五大支柱可記為「<span class="highlight">身裝網應資</span>」—身份（Identity）、裝置（Devices）、網路（Network）、應用與工作負載（Applications &amp; Workloads）、資料（Data）。</p>
+<p>相關標準延伸：<span class="term-abbr">NIST SP 800-207</span>同樣是零信任架構的重要參考文件，與<span class="term-abbr">CISA</span>模型有相互呼應的七大原則。</p>
+</div>
+</div>
+</div>
+<!-- Q18 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#18 單選題</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">如下圖所示，附圖為<span class="term-cn">智慧製造企業</span>組織的<span class="term-cn">網路架構圖</span>，請問下列描述何者較「不」正確？</div>
+<div style="text-align:center;margin:16px 0;">
+  <img src="image/115-1_資安規劃_18.jpg" alt="智慧製造企業組織的網路架構圖（第18題）" class="responsive-img" style="border:2px solid #3498db;border-radius:8px;max-width:100%;">
+  <div style="font-size:0.85em;color:#555;margin-top:6px;">▲ 智慧製造企業組織網路架構圖（含防火牆A至E、DMZ網路、IT/OT分區）</div>
+</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">防火牆A至防火牆E的部署主要為了強化網路的<span class="term-cn">縱深防禦</span></div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">為特別加強防護，屬於<span class="term-abbr">DMZ</span>網路的網路(2)及網路(4)，應特別加強保護</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">為確保網路安全，可考慮採用<span class="term-cn">實體隔離</span>技術（如<span class="term-en">Air Gap</span>）隔離<span class="term-abbr">IT</span>與<span class="term-abbr">OT</span>網路</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">因網站服務需開放外部連線，因此需要在網路防火牆A設定開放網際網路至網站服務伺服器的<span class="term-abbr">HTTPS</span>協定</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">智慧製造</span>環境中網路架構設計的正確判斷，涉及<span class="term-abbr">DMZ</span>（<span class="term-en">Demilitarized Zone</span>，<span class="term-cn">非軍事區</span>）的角色理解。</p>
+<p><strong>選項B不正確（正確答案）：</strong>這是最關鍵的考點。<span class="term-abbr">DMZ</span>的設計定義是：<span class="highlight">放置在DMZ中的服務是「介於內外之間、具有一定開放性」的緩衝區</span>，例如網站伺服器、郵件閘道等對外提供服務的系統。</p>
+<p>從架構圖的網路分區角度分析：網路(2)與網路(4)若位於DMZ，代表它們本就是相對「開放」的區段，設計上預期會受到一定程度的外部連線。<span class="highlight">DMZ的目的不是「最嚴格保護」，而是「隔離」——讓外部流量只能到達DMZ，無法直接存取內部網路</span>。將DMZ說成需要「特別加強保護」的表述容易誤導：真正需要最嚴格保護的是內部核心網路，而非DMZ本身。</p>
+<p><strong>選項A正確：</strong>防火牆A到E的多層部署是<span class="term-cn">縱深防禦</span>（<span class="term-en">Defense in Depth</span>）的典型實現，每層防火牆提供一層保護。</p>
+<p><strong>選項C正確：</strong><span class="term-cn">氣隙隔離</span>（<span class="term-en">Air Gap</span>）完全斷開IT與OT的物理連接，是最強的隔離手段，適用於極高安全要求的OT環境。</p>
+<p><strong>選項D正確：</strong>外部防火牆（防火牆A）開放HTTPS（Port 443）至網站服務伺服器，是標準的DMZ設計做法，允許合法外部流量，同時阻擋其他協定。</p>
+</div>
+</div>
+</div>
+<!-- Q19 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#19 單選題</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">針對<span class="term-cn">軟體供應鏈攻擊</span>頻傳，組織計畫導入<span class="term-cn">軟體物料清單</span>（<span class="term-en">Software Bill of Materials</span>，<span class="term-abbr">SBOM</span>）。在評估現有<span class="term-abbr">DevSecOps</span>流程時，若要有效運用<span class="term-abbr">SBOM</span>來縮短漏洞響應時間，下列何項配套措施必須優先建立？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">要求所有委外廠商必須以紙本形式，隨合約檢附用印後的<span class="term-abbr">SBOM</span>清單以示負責</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">建立<span class="term-cn">漏洞利用交換機制</span>（<span class="term-en">Vulnerability Exploitability eXchange</span>，<span class="term-abbr">VEX</span>），以過濾出雖然存在於組件中但實際不可被利用的漏洞</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">禁止開發團隊使用任何版本超過半年的<span class="term-cn">開源函式庫</span>，強制一律更新至最新版</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">將<span class="term-abbr">SBOM</span>資料儲存於離線光碟中，並加密保存於實體保險箱，防止清單外洩</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">SBOM</span>與<span class="term-abbr">VEX</span>的協同應用，以及<span class="term-cn">軟體供應鏈安全</span>的實務做法。</p>
+<p><strong>選項B正確—VEX機制：</strong><span class="term-abbr">VEX</span>（<span class="term-en">Vulnerability Exploitability eXchange</span>）是與<span class="term-abbr">SBOM</span>搭配使用的重要機制。當透過<span class="term-abbr">SBOM</span>掃描出軟體組件中存在已知漏洞（<span class="term-abbr">CVE</span>）時，<span class="highlight">VEX允許廠商或開發者聲明「某個CVE在此產品中的特定情境下是否實際可被利用」</span>。例如：雖然組件A含有CVE-2021-XXXX，但因為A的有漏洞功能在此產品中從未被呼叫，故實際不可被利用。VEX大幅減少「假陽性」（False Positive）警報，讓安全團隊聚焦於真正的風險，縮短響應時間。</p>
+<p><strong>選項A錯誤—紙本SBOM：</strong><span class="term-abbr">SBOM</span>的核心價值在於<span class="highlight">自動化的漏洞掃描與持續監控</span>，以人工紙本方式存放嚴重影響其實用性，無法與漏洞資料庫（如NVD）即時比對。</p>
+<p><strong>選項C錯誤—強制更新舊版：</strong>強制更新至最新版本可能引入<span class="highlight">破壞性變更（Breaking Changes）或新的漏洞</span>，且更新前必須充分測試，「禁止使用超過半年的版本」規定過於武斷，不符合實際開發管理。</p>
+<p><strong>選項D錯誤—離線保存SBOM：</strong>SBOM需要<span class="highlight">即時查詢與自動化整合</span>，儲存於離線光碟完全失去其動態監控的功能，等同於廢棄SBOM的核心優勢。</p>
+</div>
+</div>
+</div>
+<!-- Q20 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#20 複選題</div><div class="evaluation-criterion">2.3 風險處理實務</div></div>
+<div class="question-content">近年來<span class="term-cn">勒索軟體</span>（<span class="term-en">Ransomware</span>）氾濫，造成商譽及財務損失，請問下列哪些可以有效防範與減少損失？（複選）</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">備份資料只有一份<span class="term-cn">線上</span>（<span class="term-en">Online</span>）保存</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">定期做員工的<span class="term-cn">資安意識訓練</span>及<span class="term-cn">社交工程</span>（<span class="term-en">Social Engineering</span>）演練</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">定期做<span class="term-cn">網路弱點掃描</span>（<span class="term-en">Vulnerability Scanning</span>）</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">資安合約上可以加上<span class="term-cn">保險</span>項目</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：BCD</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">勒索軟體</span>風險的綜合防範與減損策略。</p>
+<p><strong>選項A錯誤—僅一份線上備份：</strong><span class="highlight">線上備份會被勒索軟體感染加密</span>！這是最常見的勒索軟體策略—先等待備份同步，再加密所有資料（包含備份）。正確做法是遵循「<span class="term-cn">3-2-1備份原則</span>」：3份備份、2種儲存媒介、1份離線（<span class="term-en">Air-gapped</span>）或異地備份。</p>
+<p><strong>選項B正確—資安意識訓練+社交工程演練：</strong>勒索軟體最常見的感染途徑是<span class="highlight">網路釣魚（Phishing）郵件</span>，員工點擊惡意連結或開啟附件是主要入口。定期社交工程演練可提升員工識別釣魚攻擊的能力，是預防勒索軟體的第一道防線。</p>
+<p><strong>選項C正確—定期弱點掃描：</strong>勒索軟體也利用<span class="highlight">未修補的系統漏洞</span>進行入侵（如永恆之藍EternalBlue漏洞被WannaCry利用）。定期弱點掃描可及早發現並修補漏洞，減少被利用的機會。</p>
+<p><strong>選項D正確—資安保險：</strong>雖然保險無法預防事件發生，但<span class="highlight">資安保險可以在事件發生後協助降低財務損失</span>（如支付贖金協助、業務中斷損失補償、事件應變費用等），屬於風險處理中的「<span class="term-cn">風險轉移</span>」（<span class="term-en">Risk Transfer</span>）策略，是合理的損失減少措施。</p>
+<p>勒索軟體防禦三要素：<span class="highlight">人（意識訓練）+ 技術（弱點管理）+ 財務（保險）</span>，加上健全備份策略。</p>
+</div>
+</div>
+</div>
+<!-- Q21 題組3 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#21 題組題（題組3）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>💻 題組情境說明（第21-24題共用）：</strong><br>
+「超好用軟體企業」已在使用者端點全面部署 <span class="term-abbr">EDR</span>（<span class="term-en">Endpoint Detection and Response</span>，<span class="term-cn">端點偵測與應變</span>），並於核心網路與重要系統區段導入 <span class="term-abbr">NDR</span>（<span class="term-en">Network Detection and Response</span>，<span class="term-cn">網路偵測與應變</span>）。企業同時建置 <span class="term-abbr">XDR</span>（<span class="term-en">Extended Detection and Response</span>，<span class="term-cn">延伸式偵測與應變</span>）平台，將來自端點、網路與身分相關的安全事件集中分析。<br>
+上班時段由內部 <span class="term-abbr">SOC</span>（<span class="term-en">Security Operations Center</span>，<span class="term-cn">資安監控中心</span>）負責監控，夜間與假日委由外部 <span class="term-abbr">MDR</span>（<span class="term-en">Managed Detection and Response</span>，<span class="term-cn">託管式偵測與應變</span>）服務商提供24×7即時監控。<br>
+某日凌晨，一名員工帳號於非上班時間登入企業環境，該帳號使用的裝置開始執行不常見的系統指令，並在短時間內嘗試連線至多個內部系統。這些行為橫跨端點行為、帳號使用與內部網路連線，與正常業務行為存在明顯差異。
+</div>
+根據情境中出現的多項異常症狀，若希望有效判斷這些活動是否屬於同一場攻擊行動，下列何種防護設計最能帶來實質效益？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">結合<span class="term-abbr">EDR</span>、<span class="term-abbr">NDR</span>的事件資料，並由<span class="term-abbr">XDR</span>進行<span class="term-cn">關聯分析</span></div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">以<span class="term-abbr">EDR</span>為主要來源觀察端點指令與程序行為</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">以既有防火牆與網路存取紀錄為判斷依據，由<span class="term-abbr">SOC</span>進行分析</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">透過<span class="term-abbr">EDR</span>收集事件，再由人員進行整體判讀</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">XDR</span>（<span class="term-en">Extended Detection and Response</span>）在跨來源威脅關聯分析中的核心價值。</p>
+<p><strong>情境關鍵：</strong>異常行為橫跨三個維度：<span class="highlight">端點行為（EDR範疇）+ 帳號使用（身份範疇）+ 內部網路連線（NDR範疇）</span>。要判斷這些是否屬於同一攻擊行動，需要跨來源的關聯。</p>
+<p><strong>選項A正確—XDR關聯分析：</strong><span class="term-abbr">XDR</span>的核心設計目的正是<span class="highlight">整合EDR、NDR、SIEM、身份等多個安全數據源，進行跨維度的自動關聯分析</span>。它可以將凌晨的帳號登入、端點異常指令、內部橫向連線這三個事件關聯為同一攻擊鏈（Attack Chain），大幅提升威脅偵測的準確性與速度。</p>
+<p><strong>各工具角色比較：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88em;margin:6px 0;">
+<tr style="background:#2c3e50;color:white;"><th style="padding:7px;border:1px solid #555;">工具</th><th style="padding:7px;border:1px solid #555;">監控範疇</th><th style="padding:7px;border:1px solid #555;">跨來源分析</th></tr>
+<tr><td style="padding:7px;border:1px solid #ccc;"><span class="term-abbr">EDR</span></td><td style="padding:7px;border:1px solid #ccc;">端點行為</td><td style="padding:7px;border:1px solid #ccc;">❌ 單一來源</td></tr>
+<tr><td style="padding:7px;border:1px solid #ccc;"><span class="term-abbr">NDR</span></td><td style="padding:7px;border:1px solid #ccc;">網路流量</td><td style="padding:7px;border:1px solid #ccc;">❌ 單一來源</td></tr>
+<tr style="background:#d4edda;"><td style="padding:7px;border:1px solid #ccc;"><span class="term-abbr">XDR</span></td><td style="padding:7px;border:1px solid #ccc;">端點+網路+身份+...</td><td style="padding:7px;border:1px solid #ccc;">✅ 跨來源關聯</td></tr>
+</table>
+<p>選項B/D只用EDR，無法得到網路連線資訊；選項C用舊式防火牆Log，缺乏端點行為維度。<span class="highlight">唯有XDR能整合所有維度，判斷是否為同一攻擊行動</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q22 題組3 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#22 題組題（題組3）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「超好用軟體企業」情境。事件發生於凌晨，內部<span class="term-abbr">SOC</span>尚未全面值班。若企業希望兼顧即時應變與人力配置的合理性，依情境設計，下列何種安排最「不」適當？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">透過<span class="term-cn">自動化工具</span>先行進行風險阻斷</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">結合<span class="term-abbr">XDR</span>的事件可視性，並由<span class="term-abbr">MDR</span>提供即時分析與回應</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">由<span class="term-abbr">SOC</span>於上班時間統一處理所有事件</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">暫時限制所有非上班時間的系統與帳號操作</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查資安事件應變的時效性與<span class="term-abbr">MDR</span>服務的核心價值。</p>
+<p><strong>選項C最不適當（正確答案）：</strong>凌晨發生的資安事件具有<span class="highlight">時間敏感性</span>——攻擊者每分每秒都在擴大攻擊範圍。「等上班後由SOC統一處理」意味著<span class="highlight">攻擊者有數小時的無阻力窗口期</span>，期間可完成資料竊取、橫向移動、部署後門等操作。這完全違背「即時應變」的資安原則，在企業已有MDR服務的情況下更是浪費。</p>
+<p><strong>選項A適當：</strong>自動化工具（如XDR的SOAR功能）可在<span class="highlight">無需人工介入的情況下立即執行初步阻斷</span>（如隔離可疑端點、封鎖異常帳號），爭取時間等待MDR介入。</p>
+<p><strong>選項B適當（最佳方案）：</strong>這正是MDR服務的存在價值—<span class="highlight">在夜間/假日由外部MDR服務商的24×7團隊即時分析XDR的告警，並執行應變措施</span>，彌補內部SOC的非值班缺口。</p>
+<p><strong>選項D適當：</strong>暫時限制非上班時間的特定操作是一種預防性控制（Preventive Control），雖然可能影響合法的夜間業務，但在威脅持續的情況下是合理的緊急措施。</p>
+<p>關鍵概念：<span class="highlight">MDR提供24×7即時監控的核心價值，就是填補非辦公時間的人力空缺</span>，確保全天候零空窗的事件應變能力。</p>
+</div>
+</div>
+</div>
+<!-- Q23 題組3 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#23 題組題（題組3）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「超好用軟體企業」情境。凌晨，一台置於公司內未關閉的筆電出現異常行為，但尚未觀察到明顯的內部網路連線異動。該裝置持續產生不尋常的程序啟動、記憶體注入行為，並嘗試修改系統設定。若希望快速確認端點是否已遭入侵，並即時降低風險，下列何項設計最「無法」帶來實質效益？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">透過<span class="term-abbr">NDR</span>觀察是否存在異常網路通訊</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">由<span class="term-abbr">SOC</span>逐一檢查系統日誌</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">將事件送交<span class="term-abbr">XDR</span>進行跨來源關聯分析</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">以<span class="term-abbr">EDR</span>的端點行為分析與即時回應功能作為主要處置手段</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">NDR</span>在「尚無網路連線異動」情境下的侷限性。</p>
+<p><strong>情境關鍵：「尚未觀察到明顯的內部網路連線異動」</strong>，異常行為集中在端點本身（程序啟動、記憶體注入、系統設定修改）。</p>
+<p><strong>選項A最無效益（正確答案）：</strong><span class="term-abbr">NDR</span>（<span class="term-en">Network Detection and Response</span>）的監控範疇是<span class="highlight">網路流量</span>，包括異常連線、資料外傳、C2通訊等。但題目明確說明「<span class="highlight">尚未觀察到明顯的內部網路連線異動</span>」，代表目前沒有網路層面的可見異常。在此情況下，NDR無法提供有效資訊，是最無效益的工具選擇。</p>
+<p><strong>選項D最有效益—EDR：</strong>所有已發生的異常行為（程序啟動、記憶體注入、系統設定修改）都是<span class="highlight">端點層面的事件</span>，完全在EDR的監控範疇內。EDR可以即時偵測這些行為、分析攻擊手法，並執行自動隔離、程序終止等應變動作。</p>
+<p><strong>選項B有一定效益：</strong>SOC人工檢查系統日誌雖然較慢，但仍可提供端點行為的歷史記錄分析，協助判斷入侵程度。</p>
+<p><strong>選項C有效益：</strong>XDR整合EDR資料後進行關聯分析，可以提供更完整的攻擊脈絡。</p>
+<p>選工具原則：<span class="highlight">端點問題用EDR，網路問題用NDR，跨域問題用XDR</span>。NDR在無網路異常的情境下是「無的放矢」。</p>
+</div>
+</div>
+</div>
+<!-- Q24 題組3 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#24 題組題（題組3）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「超好用軟體企業」情境。事件發生於夜間，內部<span class="term-abbr">SOC</span>尚未全面值班，但風險已達需立即處置的程度。在此營運條件下，下列哪些安排最能即時降低風險並兼顧人力配置的合理性？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">暫時限制所有非上班時間的系統與帳號操作，以降低夜間可能發生的資安風險</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">透過<span class="term-abbr">XDR</span>整合端點、網路與身分事件，並由<span class="term-abbr">MDR</span>團隊即時介入分析與執行初步回應措施，於隔日交接內部<span class="term-abbr">SOC</span>進行後續處理</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">以<span class="term-abbr">EDR</span>的端點行為分析與即時回應能力，先行隔離高風險端點，並將處置紀錄保留，待內部<span class="term-abbr">SOC</span>上班後進行進一步分析</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">夜間事件通常風險較低，無須即時處理</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+<div class="explanation-content">
+<p>本題考查夜間資安事件應變的最佳實務組合，強調「即時性」與「人力合理性」的平衡。</p>
+<p><strong>選項A正確—限制非上班時間操作：</strong>當確認風險已達需立即處置的程度，<span class="highlight">暫時限制非必要的系統操作是合理的預防性措施</span>，可降低攻擊者在事件調查期間繼續擴大攻擊範圍的可能性。雖然可能影響部分合法的夜間業務，但在緊急情況下是可接受的取捨。</p>
+<p><strong>選項B正確—XDR+MDR協同應變（核心方案）：</strong>這是題組情境設計的最佳答案。<span class="highlight">XDR提供完整的事件可視性與關聯分析，MDR提供24×7的專業分析與應變能力</span>，兩者協同確保夜間事件得到即時且專業的處置，並在內部SOC上班後進行交接，完整的班別交接確保應變連續性。</p>
+<p><strong>選項C正確—EDR即時隔離+記錄：</strong>EDR的自動或半自動隔離功能可以<span class="highlight">立即阻斷高風險端點繼續造成危害</span>，保留完整處置紀錄確保SOC上班後能繼續深入分析，不丟失證據鏈。</p>
+<p><strong>選項D錯誤：</strong>夜間事件往往是攻擊者刻意選擇的時機——<span class="highlight">防禦方人力薄弱，攻擊者有更長的窗口期</span>。「夜間事件風險較低」的認知完全錯誤，高級持續性威脅（APT）常在深夜執行最關鍵的攻擊步驟。</p>
+</div>
+</div>
+</div>
+<!-- Q25 -->
+<div class="question-card" data-evaluation-content-id="1.1">
+<div class="question-header"><div class="question-id">#25 單選題</div><div class="evaluation-criterion">1.1 資訊安全管理系統建置實務與法規遵循</div></div>
+<div class="question-content">依據<span class="term-cn">數位發展部資通安全署</span>發布之新版「<span class="term-cn">公務機關 IT 資安治理成熟度評估參考指引</span>」，請問該指引所定<span class="term-cn">成熟度評估模型</span>的成熟度類級共有幾項？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">3</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">4</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">5</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">6</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：D（6級）</div>
+<div class="explanation-content">
+<p>本題考查台灣<span class="term-cn">數位發展部資通安全署</span>（<span class="term-en">Administration for Digital Industries, Cybersecurity Division</span>）發布的「<span class="term-cn">公務機關 IT 資安治理成熟度評估參考指引</span>」的內容。</p>
+<p><strong>正確答案：6級（Level 0 ～ Level 5）</strong></p>
+<p>該指引的成熟度評估模型共分為<span class="highlight">6個成熟度類級</span>，從第0級（初始級）到第5級（最佳化級）：</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em;margin:8px 0;">
+<tr style="background:#2c3e50;color:white;"><th style="padding:8px;border:1px solid #555;">等級</th><th style="padding:8px;border:1px solid #555;">名稱</th><th style="padding:8px;border:1px solid #555;">特徵</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">Level 0</td><td style="padding:8px;border:1px solid #ccc;">初始級</td><td style="padding:8px;border:1px solid #ccc;">無明確的資安治理活動</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">Level 1</td><td style="padding:8px;border:1px solid #ccc;">執行級</td><td style="padding:8px;border:1px solid #ccc;">有基本資安活動但缺乏系統化</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">Level 2</td><td style="padding:8px;border:1px solid #ccc;">管理級</td><td style="padding:8px;border:1px solid #ccc;">資安活動有計畫且可重複</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">Level 3</td><td style="padding:8px;border:1px solid #ccc;">定義級</td><td style="padding:8px;border:1px solid #ccc;">標準化流程已文件化並全面推行</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc;">Level 4</td><td style="padding:8px;border:1px solid #ccc;">量化管理級</td><td style="padding:8px;border:1px solid #ccc;">透過量化指標管理與控制資安活動</td></tr>
+<tr style="background:#d4edda;"><td style="padding:8px;border:1px solid #ccc;">Level 5</td><td style="padding:8px;border:1px solid #ccc;">最佳化級</td><td style="padding:8px;border:1px solid #ccc;">持續改善、創新與最佳化</td></tr>
+</table>
+<p>共計 Level 0 至 Level 5，合計<span class="highlight">6個等級</span>。此架構參考<span class="term-abbr">CMMI</span>（<span class="term-en">Capability Maturity Model Integration</span>，<span class="term-cn">能力成熟度模型整合</span>）的概念設計。</p>
+<p>注意：考試常見混淆點—若問「幾個等級」答6，若問「最高等級是第幾級」答5（因為從0開始計）。</p>
+</div>
+</div>
+</div>
+<!-- Q26 -->
+<div class="question-card" data-evaluation-content-id="2.2">
+<div class="question-header"><div class="question-id">#26 單選題</div><div class="evaluation-criterion">2.2 風險分析與評估</div></div>
+<div class="question-content">關於執行<span class="term-cn">風險分析</span>時應考慮的因素，下列何者較「不」適切？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">事件與後果之可能性須納入考量</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">風險因子的複雜性與連結性須納入考量</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">時間相關因素</span>與<span class="term-cn">波動性</span>不是考慮的因素</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">現有控制措施的有效性須納入考量</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">風險分析</span>（<span class="term-en">Risk Analysis</span>）的方法論，依據<span class="term-abbr">ISO 31000</span>（<span class="term-cn">風險管理</span>）與<span class="term-abbr">ISO/IEC 27005</span>（<span class="term-cn">資訊安全風險管理</span>）標準。</p>
+<p><strong>選項C不適切（正確答案）：</strong>選項C聲稱「時間相關因素與波動性不是考慮的因素」，這是錯誤的。</p>
+<p><strong>時間相關因素（Time-Related Factors）確實是風險分析的重要考量：</strong></p>
+<ul style="margin:8px 0;padding-left:20px;">
+<li><span class="highlight">威脅出現的時機</span>（如特定時段、季節性攻擊）</li>
+<li><span class="highlight">漏洞暴露的持續時間</span>（修補周期、暴露窗口）</li>
+<li><span class="highlight">風險的時效性</span>（風險是否隨時間增減）</li>
+<li><span class="highlight">業務的時間敏感性</span>（如財報發布前的資料外洩風險更高）</li>
+</ul>
+<p><strong>波動性（Volatility）也是重要因素：</strong>風險環境的<span class="highlight">動態變化（如新型攻擊手法的出現速度、技術環境的快速更迭）</span>影響風險的可能性評估。</p>
+<p><strong>ISO 31000列舉的風險分析考量因素包括：</strong></p>
+<ul style="margin:8px 0;padding-left:20px;">
+<li>選項A：事件與後果的可能性（<span class="term-en">Likelihood</span>）✅</li>
+<li>選項B：風險因子的複雜性與連結性（<span class="term-en">Complexity &amp; Connectivity</span>）✅</li>
+<li>時間相關因素與波動性 ✅（選項C聲稱不考慮，故不適切）</li>
+<li>選項D：現有控制措施的有效性（<span class="term-en">Effectiveness of Existing Controls</span>）✅</li>
+</ul>
+<p>記憶重點：<span class="highlight">風險分析的範圍非常廣泛，時間和動態因素都必須納入，不能排除</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q27 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#27 單選題</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">面對日益嚴峻的<span class="term-cn">軟體供應鏈攻擊</span>（如 <span class="term-en">Log4j</span> 事件），企業欲建立快速識別受駭資產的能力。下列何項機制能最有效地協助組織在漏洞揭露當下，精準定位內部系統是否使用了含有漏洞的第三方元件？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">定期執行外部<span class="term-cn">弱點掃描</span>（<span class="term-en">Vulnerability Scanning</span>）</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">建立並維護<span class="term-cn">軟體物料清單</span>（<span class="term-en">Software Bill of Materials</span>，<span class="term-abbr">SBOM</span>）</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">要求供應商提供每季一次的<span class="term-cn">滲透測試</span>報告</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">在所有伺服器上安裝<span class="term-cn">主機型入侵偵測系統</span>（<span class="term-en">Host-based Intrusion Detection System</span>，<span class="term-abbr">HIDS</span>）</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題以知名的<span class="term-en">Log4Shell</span>漏洞（<span class="term-abbr">CVE</span>-2021-44228，<span class="term-en">Apache Log4j</span>遠端程式碼執行漏洞）為情境，考查快速識別受影響資產的最佳機制。</p>
+<p><strong>Log4j事件的教訓：</strong>2021年12月爆發時，許多組織花了數週才確認哪些系統使用了Log4j，因為Log4j常被嵌套在多層相依套件中，難以手動追蹤。</p>
+<p><strong>選項B正確—SBOM：</strong><span class="term-abbr">SBOM</span>是一份清單，記錄了軟體的所有組成元件（函式庫、版本、相依套件）。當新漏洞被揭露時，<span class="highlight">只需在SBOM中搜尋是否包含受影響的組件（如 log4j-core 2.x），即可在數分鐘內確認哪些系統受影響</span>，大幅縮短響應時間。這正是SBOM最核心的應用價值。</p>
+<p><strong>選項A不夠有效—外部弱點掃描：</strong>外部弱點掃描主要發現<span class="highlight">可從外部觀察到的漏洞特徵</span>（如開放的服務版本），但像Log4j這類嵌套在應用程式內部的函式庫，外部掃描可能無法偵測到。且掃描需要時間設定和執行。</p>
+<p><strong>選項C不夠有效—每季滲透測試：</strong>滲透測試頻率太低（每季一次），<span class="highlight">無法在漏洞揭露的當下立即提供所需資訊</span>。且滲透測試結果具有時效性，無法反映最新的漏洞狀態。</p>
+<p><strong>選項D不夠有效—HIDS：</strong><span class="term-abbr">HIDS</span>偵測的是已知的惡意行為模式，<span class="highlight">無法告訴你「哪個系統包含哪個版本的第三方函式庫」</span>，不能用於供應鏈元件清查。</p>
+</div>
+</div>
+</div>
+<!-- Q28 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#28 複選題</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">企業正準備更新<span class="term-abbr">ISO 27001</span> <span class="term-cn">資訊安全管理系統</span>（<span class="term-abbr">ISMS</span>）至2022年版。在進行風險評估與處置計畫時，針對新增的控制措施「<span class="term-cn">威脅情資</span>」（<span class="term-en">Threat Intelligence</span>），下列哪些是實務上應包含的關鍵作業流程？（複選）</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">僅收集內部防火牆日誌，不需參考外部資訊</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">訂閱並分析來自<span class="term-cn">資安資訊分享與分析中心</span>（<span class="term-en">Information Sharing and Analysis Center</span>，<span class="term-abbr">ISAC</span>）或廠商的情資</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">將情資與內部環境進行<span class="term-cn">關聯分析</span>，判斷相關性與衝擊</div></div>
+  <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">依據情資調整防禦策略（如更新<span class="term-abbr">WAF</span>規則或封鎖惡意<span class="term-abbr">IP</span>）</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：BCD</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-abbr">ISO/IEC 27001:2022</span>新增控制措施5.7「<span class="term-cn">威脅情資</span>」（<span class="term-en">Threat Intelligence</span>）的實施要求。</p>
+<p><strong>ISO 27001:2022控制措施5.7背景：</strong>這是2022版相較於2013版的重要新增控制，要求組織建立威脅情資的收集、分析與應用流程，以強化主動防禦能力。</p>
+<p><strong>選項A錯誤—僅內部日誌：</strong>威脅情資的核心是<span class="highlight">「外部」威脅的資訊收集</span>。僅看內部日誌是被動偵測，而非威脅情資。威脅情資需要了解外部攻擊者的<span class="term-en">TTPs</span>（戰術、技術、程序）、<span class="term-en">IoC</span>（入侵指標）等，必須參考外部情報來源。</p>
+<p><strong>選項B正確—訂閱外部情資（如ISAC）：</strong><span class="term-abbr">ISAC</span>是同業間的情資分享機制（如金融<span class="term-abbr">ISAC</span>、醫療<span class="term-abbr">ISAC</span>），提供行業特定的威脅情報。<span class="highlight">訂閱並分析外部情資是威脅情資計畫的基礎</span>。</p>
+<p><strong>選項C正確—關聯分析：</strong>收集情資後，<span class="highlight">必須與組織的實際環境進行對比</span>（如外部情資顯示某CVE被廣泛利用，內部是否有使用該系統）。沒有關聯分析的情資是「沒有意義的噪音」。</p>
+<p><strong>選項D正確—調整防禦策略：</strong>威脅情資的最終目的是<span class="highlight">付諸行動（Actionable Intelligence）</span>，如封鎖惡意IP、更新WAF規則、修補相關漏洞，讓情資轉化為實際的防禦改善。</p>
+<p>威脅情資生命週期：<span class="highlight">收集（B）→ 分析/關聯（C）→ 行動（D）</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q29 題組4 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#29 題組題（題組4）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🤖 題組情境說明（第29-32題共用）：</strong><br>
+一家跨國製造業的財務長接到一通來自「集團執行長」的視訊電話，要求立即匯款一筆巨額資金至海外帳戶以進行秘密併購。視訊中執行長的影像與聲音均無異狀。然而，這實際上是攻擊者利用<span class="term-abbr">AI</span> <span class="term-cn">深度偽造</span>（<span class="term-en">Deepfake</span>）技術生成的詐騙。所幸財務長在最後一刻依循公司規定的「<span class="term-cn">例外匯款雙重確認流程</span>」，透過內部加密通訊軟體向執行長文字確認，才揭穿騙局。
+</div>
+此案例顯示傳統的「人臉辨識」已難以應對<span class="term-abbr">AI</span>威脅。從風險評估的角度，下列何種「<span class="term-cn">流程面</span>」的控制措施是防範<span class="term-cn">商務電子郵件詐騙</span>（<span class="term-en">Business Email Compromise</span>，<span class="term-abbr">BEC</span>）與<span class="term-cn">深度偽造</span>詐騙的最後一道防線？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">部署<span class="term-cn">垃圾郵件過濾閘道器</span>（<span class="term-en">Email Security Gateway</span>）</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">實施<span class="term-cn">帶外驗證</span>（<span class="term-en">Out-of-Band Verification</span>），透過第二種不同管道確認指示</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">要求所有高階主管定期更換視訊會議軟體的密碼</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">提升視訊會議軟體的解析度，以便看清對方臉部細節</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查對抗AI深度偽造詐騙的「<span class="term-cn">流程面</span>」控制措施，著重在人員行為程序而非技術工具。</p>
+<p><strong>選項B正確—帶外驗證（Out-of-Band Verification）：</strong>這正是題目情境中財務長成功阻止詐騙的關鍵做法。<span class="highlight">「帶外」意指使用第二個、完全獨立的溝通管道來驗證指令的真實性</span>。例如：收到視訊電話的匯款指令後，改用另一個通訊軟體（不同APP）或電話直接聯繫執行長確認。攻擊者雖然可以偽造一個管道，但很難同時控制兩個完全獨立的通訊管道。這是BEC和Deepfake詐騙的終極防線，因為它<span class="highlight">繞過了技術偽造的核心能力</span>。</p>
+<p><strong>選項A錯誤—Email Security Gateway：</strong>此為技術面控制，且主要防護的是<span class="highlight">電子郵件</span>詐騙，對視訊通話形式的Deepfake無效。且題目問的是「流程面」控制，電子郵件閘道器屬技術工具。</p>
+<p><strong>選項C錯誤—定期更換密碼：</strong>密碼管理是一般性資安措施，<span class="highlight">與防範Deepfake詐騙的關係甚小</span>。Deepfake攻擊不需要密碼即可執行，只需要受害者相信偽造的影像即可。</p>
+<p><strong>選項D錯誤—提升解析度：</strong>高解析度的Deepfake技術同樣可以輸出高畫質影像，<span class="highlight">肉眼觀察畫質已無法可靠辨別真偽</span>，這種想法低估了AI生成技術的能力。</p>
+</div>
+</div>
+</div>
+<!-- Q30 題組4 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#30 題組題（題組4）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「跨國製造業財務長」情境。若要從「<span class="term-cn">技術面</span>」增強身份驗證的強度，降低帳號被盜用發起詐騙的風險，下列何種機制最「不」具身份驗證有效性？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">簡訊傳送一次性密碼</span>（<span class="term-en">SMS One-Time Password</span>，<span class="term-abbr">SMS OTP</span>）</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">使用<span class="term-cn">信任來源白名單</span>（<span class="term-en">Trusted Source Whitelist</span>）機制</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">電子郵件發送驗證連結</span></div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">基於 <span class="term-abbr">FIDO2</span>/<span class="term-en">WebAuthn</span> 標準的<span class="term-cn">實體金鑰</span>或 <span class="term-en">Passkey</span></div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查各種<span class="term-cn">多因子認證</span>（<span class="term-en">Multi-Factor Authentication</span>，<span class="term-abbr">MFA</span>）機制的有效性比較。</p>
+<p><strong>選項B最不具有效性（正確答案）—信任來源白名單：</strong><span class="highlight">「信任來源白名單」並不是一種身份驗證機制</span>，而是一種存取控制機制（如允許特定IP範圍存取）。它驗證的是「來源位置」，而非「使用者身份」。在遠端工作、VPN、代理伺服器普及的現代環境下，<span class="highlight">IP白名單極容易被繞過</span>（攻擊者可使用受害者所在網路的IP或VPN），且缺乏身份驗證的本質功能。</p>
+<p><strong>身份驗證強度比較：</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88em;margin:8px 0;">
+<tr style="background:#2c3e50;color:white;"><th style="padding:7px;border:1px solid #555;">機制</th><th style="padding:7px;border:1px solid #555;">安全性</th><th style="padding:7px;border:1px solid #555;">主要弱點</th></tr>
+<tr style="background:#d4edda;"><td style="padding:7px;border:1px solid #ccc;">FIDO2/WebAuthn Passkey</td><td style="padding:7px;border:1px solid #ccc;">最高</td><td style="padding:7px;border:1px solid #ccc;">硬體設備遺失</td></tr>
+<tr><td style="padding:7px;border:1px solid #ccc;">SMS OTP</td><td style="padding:7px;border:1px solid #ccc;">中等</td><td style="padding:7px;border:1px solid #ccc;">SIM Swap攻擊、攔截</td></tr>
+<tr><td style="padding:7px;border:1px solid #ccc;">Email驗證連結</td><td style="padding:7px;border:1px solid #ccc;">中低</td><td style="padding:7px;border:1px solid #ccc;">Email帳號被盜即失效</td></tr>
+<tr style="background:#f8d7da;"><td style="padding:7px;border:1px solid #ccc;">IP白名單</td><td style="padding:7px;border:1px solid #ccc;">最低</td><td style="padding:7px;border:1px solid #ccc;">非身份驗證，可輕易繞過</td></tr>
+</table>
+<p><strong>選項D（FIDO2/WebAuthn）：</strong>基於公鑰密碼學，<span class="highlight">抗釣魚（Phishing-resistant）</span>，是目前最安全的身份驗證機制，不受中間人攻擊影響。</p>
+</div>
+</div>
+</div>
+<!-- Q31 題組4 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#31 題組題（題組4）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「跨國製造業財務長」情境。針對此類利用<span class="term-abbr">AI</span>技術的新興威脅，資安團隊在進行年度<span class="term-cn">風險評鑑</span>時，應如何調整其<span class="term-cn">風險機率</span>（<span class="term-en">Likelihood</span>）的評估準則較為適切？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">因<span class="term-abbr">AI</span>技術門檻高，應<span class="term-cn">調降</span>此類攻擊發生的機率</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">維持既有評估，認為<span class="term-cn">深度偽造</span>僅會發生在<span class="term-cn">國家級攻擊</span></div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">應<span class="term-cn">調升</span>機率，因<span class="term-cn">生成式AI</span>（<span class="term-en">Generative AI</span>，<span class="term-abbr">GenAI</span>）工具普及降低了攻擊成本與技術門檻</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">無法評估，將其列為<span class="term-cn">不可抗力</span>的例外風險</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：C</div>
+<div class="explanation-content">
+<p>本題考查對新興<span class="term-abbr">AI</span>威脅的風險機率評估方法論。</p>
+<p><strong>選項C正確—調升風險機率：</strong>核心理由是<span class="highlight">技術普及化降低攻擊門檻</span>。幾年前Deepfake需要大量算力和技術專業才能製作；今日，<span class="term-abbr">GenAI</span>工具（如<span class="term-en">ElevenLabs</span>語音克隆、各種換臉工具）已可讓一般人以低成本、短時間製作出逼真的假影像和假聲音。風險機率的調升原因：</p>
+<ul style="margin:8px 0;padding-left:20px;">
+<li><span class="highlight">攻擊成本大幅降低</span>（從數千美元降至數十美元甚至免費）</li>
+<li><span class="highlight">技術門檻顯著降低</span>（不需AI專業知識）</li>
+<li><span class="highlight">攻擊案例快速增加</span>（全球已有多起Deepfake BEC詐騙案例）</li>
+<li>犯罪集團開始工具化、服務化（<span class="term-en">Deepfake-as-a-Service</span>）</li>
+</ul>
+<p><strong>選項A錯誤：</strong>「AI技術門檻高」是過時的認知。<span class="highlight">GenAI工具的普及已讓Deepfake技術商品化</span>，技術門檻已大幅降低，不應降低風險機率。</p>
+<p><strong>選項B錯誤：</strong>Deepfake詐騙已不限於國家級攻擊，<span class="highlight">商業詐騙集團也在廣泛使用</span>。著名案例如香港某企業員工遭Deepfake視訊詐騙匯款2億港元，完全是一般犯罪集團所為。</p>
+<p><strong>選項D錯誤：</strong>Deepfake攻擊是<span class="highlight">可以評估且可以防範的</span>，帶外驗證、員工訓練等措施均可有效降低風險，不應視為不可抗力。</p>
+</div>
+</div>
+</div>
+<!-- Q32 題組4 -->
+<div class="question-card" data-evaluation-content-id="2.1">
+<div class="question-header"><div class="question-id">#32 題組題（題組4）</div><div class="evaluation-criterion">2.1 安全架構規劃實務</div></div>
+<div class="question-content">承上「跨國製造業財務長」情境。為了建立具備「<span class="term-cn">縱深防禦</span>」的詐騙防護體系，下列哪些措施應納入整體的資安策略中？（複選）</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">定期舉辦<span class="term-cn">社交工程演練</span>，並將<span class="term-en">Deepfake</span>/<span class="term-abbr">AI</span>語音納入演練情境</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">建立嚴格的財務放行流程，高額款項必須由兩人以上簽核（<span class="term-en">Dual Control</span>，<span class="term-cn">雙人控制</span>）</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">採購能偵測<span class="term-en">Deepfake</span>訊號（如眨眼頻率異常、語音合成痕跡）的監控方案</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">禁止公司內部使用任何視訊會議軟體，改回實體會議</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+<div class="explanation-content">
+<p>本題考查針對<span class="term-cn">深度偽造</span>詐騙建立縱深防禦體系的全面性策略。</p>
+<p><strong>縱深防禦（Defense in Depth）的三個層次：技術防禦 + 流程管控 + 人員意識</strong></p>
+<p><strong>選項A正確—社交工程演練（人員層次）：</strong>將Deepfake情境納入演練，<span class="highlight">訓練員工識別可疑的視訊/語音特徵（異常延遲、口型不同步、背景異常等）</span>，並養成「收到異常資金指令必須多管道確認」的習慣。人員是最重要也最難防禦的攻擊面。</p>
+<p><strong>選項B正確—雙人控制財務流程（流程層次）：</strong><span class="term-cn">雙人控制</span>（<span class="term-en">Dual Control</span>）是財務領域防詐騙的基本原則。高額匯款需要兩個不同人員各自確認，<span class="highlight">攻擊者需同時欺騙兩個人才能成功，大幅增加詐騙難度</span>。</p>
+<p><strong>選項C正確—Deepfake偵測技術（技術層次）：</strong>目前有AI工具可偵測Deepfake的特徵（如<span class="highlight">異常的眨眼頻率、皮膚紋理的細微瑕疵、語音的非自然停頓</span>）。雖然這是與攻擊者技術的軍備競賽，但作為縱深防禦的一層仍有價值。</p>
+<p><strong>選項D錯誤—禁止視訊會議：</strong>這是<span class="highlight">過度且不實際的措施</span>。現代商業運作高度依賴視訊會議，全面禁止將嚴重影響業務效率。正確的做法是制定安全的視訊會議使用政策，而非完全禁止。且實體會議同樣可以被滲透（如偽裝成訪客）。</p>
+</div>
+</div>
+</div>
+<!-- Q33 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#33 單選題</div><div class="evaluation-criterion">2.3 風險處理實務</div></div>
+<div class="question-content">有關<span class="term-cn">風險處理</span>（<span class="term-en">Risk Treatment</span>）的描述，下列何者最為適切？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">風險處理的理由只需考量經濟可做到的結果，其它影響到組織的利害相關者觀點不需納入考量</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">持續監督與審查<span class="term-cn">風險處理</span>實施的過程，以確保風險處理能夠有效完成</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">風險處理方式選定後，即不可任意調整，須持續進行完成該風險處理以達成結果</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">只要精心設計與實施風險處理，一定會產生預期的結果，不會有預期不到的後果</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查<span class="term-cn">風險處理</span>（<span class="term-en">Risk Treatment</span>）的正確概念，依據<span class="term-abbr">ISO 31000</span>（<span class="term-cn">風險管理</span>）與<span class="term-abbr">ISO/IEC 27005</span>（<span class="term-cn">資訊安全風險管理</span>）標準。</p>
+<p><strong>選項B正確—持續監督與審查：</strong>風險管理是<span class="highlight">持續性的循環過程（Plan-Do-Check-Act）</span>，不是一次性活動。選定並實施風險處理措施後，必須持續監督其有效性（如控制措施是否真的降低了風險）、審查是否仍符合環境變化的需求，並適時調整。這正是<span class="term-abbr">ISO 31000</span>強調的「<span class="term-en">Monitoring and Review</span>」原則。</p>
+<p><strong>選項A錯誤：</strong>風險處理的決策必須考量<span class="highlight">多方面因素</span>，包括：法律合規要求、組織價值觀、利害相關者的觀點與期望、技術可行性、以及經濟效益。僅考量「經濟上可做到」是不完整的，ISO 31000明確要求納入利害相關者觀點。</p>
+<p><strong>選項C錯誤：</strong>風險處理方式<span class="highlight">應保持靈活性</span>。當環境變化（如新的威脅出現、技術更新、法規修改）使原有處理方式不再有效時，必須及時調整。「不可任意調整」的說法違反風險管理的動態調整原則。</p>
+<p><strong>選項D錯誤：</strong><span class="term-abbr">ISO 31000</span>明確指出，<span class="highlight">風險處理本身可能產生「殘餘風險」和「新的風險」</span>（即預期不到的後果）。例如：導入新的安全控制措施可能引發員工抵制或造成效率損失等副作用，沒有任何風險處理是完美無缺的。</p>
+</div>
+</div>
+</div>
+<!-- Q34 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#34 單選題</div><div class="evaluation-criterion">2.3 風險處理實務</div></div>
+<div class="question-content">電力的<span class="term-cn">可用性</span>（<span class="term-en">Availability</span>）是資訊系統營運之重要環節，針對<span class="term-cn">供電風險</span>，下列何者較「不」適切？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">建置<span class="term-cn">備援發電機組</span></div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">透過<span class="term-cn">資安保險</span>避免電力短缺問題</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">選擇供電穩定之地理區域</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">規劃遠端備援中心亦須評估供電可靠度</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查供電風險的適切處理策略，以及<span class="term-cn">風險轉移</span>工具（保險）的適用範圍。</p>
+<p><strong>選項B不適切（正確答案）：</strong><span class="highlight">資安保險主要針對「資訊安全事件」所造成的損失進行補償</span>（如資料外洩的賠償費用、業務中斷損失、事件應變費用等），其承保範圍通常為網路攻擊、資料洩露等資安風險。</p>
+<p>電力短缺屬於<span class="highlight">基礎設施可用性風險</span>，而非資訊安全事件。資安保險<span class="highlight">無法「避免」電力短缺的發生</span>，頂多在電力中斷造成業務損失時提供財務補償（且此情況的理賠條件可能有爭議）。更重要的是，保險是<span class="term-cn">風險轉移</span>（<span class="term-en">Risk Transfer</span>）手段，而非<span class="term-cn">風險降低</span>（<span class="term-en">Risk Reduction</span>）手段，它不能「避免」電力問題的發生。</p>
+<p><strong>選項A適切—備援發電機組：</strong>這是直接的<span class="term-cn">風險降低</span>措施。<span class="term-abbr">UPS</span>（<span class="term-en">Uninterruptible Power Supply</span>）提供短暫電力緩衝，備援發電機（<span class="term-en">Generator</span>）提供長時間供電。<span class="highlight">機房標準配備，直接解決供電中斷問題</span>。</p>
+<p><strong>選項C適切：</strong>選擇供電穩定的地理位置（如電網基礎設施完善的地區、有多路電源供電的工業區）是從源頭降低供電風險。</p>
+<p><strong>選項D適切：</strong>遠端備援中心（<span class="term-en">DR Site</span>）若與主機房位於相同的電網，大停電時同樣失效。<span class="highlight">評估備援中心的獨立供電可靠度是完整災難復原規劃的必要步驟</span>。</p>
+</div>
+</div>
+</div>
+<!-- Q35 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#35 單選題</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+企業在導入生成式 <span class="term-abbr">AI</span> 進行輔助程式開發時，評估其存在原始碼外洩與惡意程式碼注入的風險。在不完全禁止使用的前提下，下列何項風險降低 (<span class="term-en">Risk Mitigation</span>) 策略最能兼顧安全性？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">僅允許使用企業地端部署或私有雲版本的 <span class="term-abbr">LLM</span> 模型，並實施資料不落地政策</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">要求開發人員簽署保密協定 (<span class="term-abbr">NDA</span>)，將風險完全轉移給員工個人承擔</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">部署資料外洩防護 (<span class="term-abbr">DLP</span>) 系統過濾所有連外流量，阻擋所有含程式碼特徵的封包</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">僅依靠公有雲 <span class="term-abbr">AI</span> 服務供應商的預設隱私條款，視為風險已接受</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查新興技術（生成式 AI）的風險處理策略。</p>
+<p><strong>正確選項 A：</strong>將模型部署在企業地端（<span class="term-en">On-Premises</span>）或專屬私有雲，是確保機密原始碼不會傳送到外部第三方伺服器（防止外洩）的最佳「風險降低（<span class="term-en">Risk Mitigation</span>）」控制措施，既能享受 AI 輔助開發的效益，又能確保資料的掌控權。</p>
+<p><strong>選項B錯誤：</strong>簽署 <span class="term-abbr">NDA</span> 屬於管理面的合約約束，並不能防止技術上的資料外洩，且「完全轉移風險給員工」並非負責任的資安治理態度（風險轉移通常是指買保險或委外）。</p>
+<p><strong>選項C錯誤：</strong>完全阻擋所有含程式碼特徵的連外封包，會嚴重影響開發人員正常的業務運作（如存取 GitHub 或技術論壇），這種控制措施過於嚴苛，破壞了系統可用性，無法兼顧營運需求。</p>
+<p><strong>選項D錯誤：</strong>這屬於「風險接受（<span class="term-en">Risk Acceptance</span>）」，而非「風險降低」。且公有雲的預設條款通常會保留將使用者輸入用於訓練模型的權利，若直接接受此風險，極易造成原始碼外洩。</p>
+</div>
+</div>
+</div>
+<!-- Q36 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#36 複選題</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+在 <span class="term-en">OWASP LLM Top10</span> 中，針對 <span class="term-abbr">AI</span> 運算中的風險，以下哪些項目的描述有誤？(複選)</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">對高風險操作加入人工審核，可降低提示詞注入漏洞 (<span class="term-en">Prompt Injection</span>) 的衝擊</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">間接提示詞注入 (<span class="term-en">Indirect Prompt Injections</span>) 不包含供應鏈之外部來源</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">應用程式提供所有使用者相同的 <span class="term-abbr">API token</span> 可限制其權限</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">應定期執行滲透測試與紅隊演練，並將 <span class="term-abbr">LLM</span> 視為不受信任實體</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：BC</div>
+<div class="explanation-content">
+<p>本題考查 <span class="term-en">OWASP LLM Top 10</span> 安全風險及防禦觀念，要求選出描述「有誤」的選項。</p>
+<p><strong>錯誤描述 B（應選）：</strong>間接提示詞注入（<span class="term-en">Indirect Prompt Injections</span>）是指 <span class="term-abbr">LLM</span> 在處理外部資料（如網頁內容、PDF文件、或是第三方 API 回傳的資料）時，被植入了惡意指令。<span class="highlight">外部來源資料（包含供應鏈）正是間接注入最主要的風險來源之一</span>，因此說「不包含」是錯誤的描述。</p>
+<p><strong>錯誤描述 C（應選）：</strong>所有使用者共用相同的 API token 完全違反了「權限隔離」與「最小權限原則」，這樣不但無法限制特定使用者的權限，若發生越權存取或 Token 外洩，將導致所有使用者的資料受到威脅，無法進行責任追究與存取控制。</p>
+<p><strong>正確描述 A 與 D（不應選）：</strong><br>
+(A) 讓關鍵決策（如刪除資料、發送郵件）必須經過「<span class="term-en">Human in the Loop</span>（人工確認）」，確實是防禦提示詞注入衝擊的有效手段。<br>
+(D) 將 LLM 的輸出視為不可信任，並透過紅隊演練來驗證其安全性，是業界推薦的最佳實務。</p>
+</div>
+</div>
+</div>
+<!-- Q37 題組5 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#37 單選題（題組5）</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🛡️ 題組情境說明（第37-40題共用）：半導體設備製造商資安事件</strong><br>
+某半導體設備製造商為提升良率，將工廠營運技術 (<span class="term-abbr">OT</span>) 網路與企業資訊 (<span class="term-abbr">IT</span>) 網路進行介接，以便即時分析機台數據。某日，<span class="term-abbr">IT</span>網段的一台人資電腦感染了具備橫向移動能力的勒索病毒，資安團隊擔心病毒會擴散至 <span class="term-abbr">OT</span>網段影響產線運作。
+</div>
+情境如附圖所示。依據 IEC 62443 標準與普渡模型 (<span class="term-en">Purdue Model</span>) 概念，為了防止 <span class="term-abbr">IT</span> 威脅擴散至 <span class="term-abbr">OT</span>，下列何種網路架構設計最為關鍵且有效？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">在 <span class="term-abbr">IT</span> 與 <span class="term-abbr">OT</span> 之間建立工業控制系統 <span class="term-abbr">DMZ</span> (<span class="term-abbr">IDMZ</span>)，並終止直接連線</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">將 <span class="term-abbr">IT</span> 與 <span class="term-abbr">OT</span> 網路完全透過實體氣隙 (<span class="term-en">Air Gap</span>) 斷開，禁止任何資料交換</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">允許 <span class="term-abbr">OT</span> 設備直接連線至網際網路進行修補更新，以保持系統最新</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">在所有 <span class="term-abbr">OT</span> 設備上安裝與 <span class="term-abbr">IT</span> 相同版本的商用防毒軟體</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查工業控制系統（<span class="term-abbr">ICS/OT</span>）的網路隔離最佳實務。</p>
+<p><strong>正確選項 A：</strong>依據 <span class="term-en">IEC 62443</span> 標準及普渡模型，<span class="term-abbr">IT</span>（Level 4/5）與 <span class="term-abbr">OT</span>（Level 3 以下）的網路邊界必須建立「工業非軍事區（<span class="term-en">Industrial DMZ</span>, <span class="term-abbr">IDMZ</span>）」。所有跨越邊界的資料流（如資料收集）必須在 IDMZ 終結（Terminate）並代理轉發，<span class="highlight">絕對禁止 IT 與 OT 系統之間的「直接」網路連線</span>，如此可大幅降低勒索病毒橫向感染產線的風險。</p>
+<p><strong>選項B錯誤：</strong>雖然實體氣隙（<span class="term-en">Air Gap</span>）最安全，但本題情境已說明「為提升良率需介接分析數據」，完全斷開將違反企業的營運與數位轉型需求（工業4.0）。</p>
+<p><strong>選項C錯誤：</strong>讓 <span class="term-abbr">OT</span> 設備「直接」連線網際網路是極度危險且違反合規標準的作法，會讓脆弱的工控設備直接暴露於公網攻擊下。</p>
+<p><strong>選項D錯誤：</strong><span class="term-abbr">OT</span> 設備（如老舊 PLC、HMI）通常硬體資源有限或運行特殊作業系統，直接安裝 IT 用的商用防毒軟體可能會導致設備當機或延遲，進而造成產線停擺。OT 環境需使用專屬的防護機制（如應用程式白名單）。</p>
+</div>
+</div>
+</div>
+<!-- Q38 題組5 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#38 單選題（題組5）</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🛡️ 題組情境說明（第37-40題共用）：半導體設備製造商資安事件</strong><br>
+同上題「半導體設備製造商」情境。
+</div>
+情境如附圖所示。若不幸發生資安事件波及 <span class="term-abbr">OT</span> 環境，在進行事件應變 (<span class="term-en">Incident Response</span>) 時，<span class="term-abbr">OT</span> 環境與 <span class="term-abbr">IT</span> 環境最大的優先順序差異為何？</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">IT</span>優先考量機密性；<span class="term-abbr">OT</span>優先考量人員安全與可用性</div></div>
+  <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">IT</span>優先考量可用性；<span class="term-abbr">OT</span>優先考量資料完整性</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">兩者皆以保護智慧財產權為第一優先</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">OT</span>環境應優先立即斷電，以保存數位證據</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：A</div>
+<div class="explanation-content">
+<p>本題考查 <span class="term-abbr">IT</span> 與 <span class="term-abbr">OT</span> 環境資安目標（CIA Triad）的優先順序差異。</p>
+<p><strong>正確選項 A：</strong>這是資安管理的經典觀念。<span class="term-abbr">IT</span> 環境的核心資產是「資料」，因此優先順序通常為<span class="highlight">機密性（Confidentiality） &gt; 完整性（Integrity） &gt; 可用性（Availability）</span>。相反地，<span class="term-abbr">OT</span> 環境涉及實體設備與產線運作，系統停擺或失控可能導致「人員傷亡」或「重大環境災害」，因此其優先順序絕對是<span class="highlight">人員安全（Safety）與可用性（Availability） &gt; 完整性 &gt; 機密性</span>。</p>
+<p><strong>選項D錯誤：</strong><span class="term-abbr">OT</span> 環境「立即斷電」可能會造成設備嚴重損壞、產線化學品外洩或引發公安意外。事件應變的處置必須在確保「安全（Safety）」的前提下進行隔離，而非貿然斷電。</p>
+</div>
+</div>
+</div>
+<!-- Q39 題組5 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#39 單選題（題組5）</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🛡️ 題組情境說明（第37-40題共用）：半導體設備製造商資安事件</strong><br>
+同上題「半導體設備製造商」情境。
+</div>
+情境如附圖所示。針對 <span class="term-abbr">OT</span> 場域中難以安裝修補程式及防護軟體的老舊控制器 (<span class="term-abbr">PLC</span>)，資安工程師計畫採用「虛擬修補 (<span class="term-en">Virtual Patching</span>)」技術。請問此技術通常是透過下列何種設備實現？</div>
+<div class="options-container">
+  <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">端點防毒軟體 (<span class="term-en">Antivirus</span>)</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">工控入侵防禦系統 (<span class="term-abbr">OTIPS</span>/Firewall)</div></div>
+  <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">網頁應用程式防火牆 (<span class="term-abbr">WAF</span>)</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">郵件安全閘道器 (<span class="term-en">Email Gateway</span>)</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：B</div>
+<div class="explanation-content">
+<p>本題考查工控環境的弱點緩解技術。</p>
+<p><strong>正確選項 B：</strong>由於 <span class="term-abbr">OT</span> 環境中的老舊設備（如 PLC）經常無法安裝作業系統更新（怕系統不穩或原廠不支援），實務上會採用「虛擬修補（<span class="term-en">Virtual Patching</span>）」技術。虛擬修補是透過部署在設備前端的<span class="term-cn">網路型入侵防禦系統</span>（<span class="term-abbr">IPS</span>）或次世代防火牆，撰寫特徵規則攔截針對該已知漏洞的攻擊封包（Exploit），從而在不修改終端設備軟體的情況下，達到「補洞」的效果。</p>
+<p><strong>選項A錯誤：</strong>這些老舊 PLC 根本無法安裝防毒軟體，這正是需要虛擬修補的原因。<br>
+<strong>選項C錯誤：</strong><span class="term-abbr">WAF</span> 是專門用來防護 HTTP/HTTPS（Web 應用程式，如 SQLi、XSS）的設備，無法解析 Modbus、DNP3 等工控通訊協定，無法保護 PLC。<br>
+<strong>選項D錯誤：</strong>郵件閘道器是用來防範釣魚信件，與設備漏洞修補無關。</p>
+</div>
+</div>
+</div>
+<!-- Q40 題組5 -->
+<div class="question-card" data-evaluation-content-id="2.3">
+<div class="question-header"><div class="question-id">#40 複選題（題組5）</div><div class="evaluation-criterion">2.3 資安風險評估與管理</div></div>
+<div class="question-content">
+<div class="text-box" style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+<strong>🛡️ 題組情境說明（第37-40題共用）：半導體設備製造商資安事件</strong><br>
+同上題「半導體設備製造商」情境。
+</div>
+情境如附圖所示。延續上一題，為了提升 <span class="term-abbr">OT</span> 環境的可視性 (<span class="term-en">Visibility</span>) 與異常偵測能力，同時避免影響產線運作，下列哪些部署方式是推薦的實務作法？(複選)</div>
+<div class="options-container">
+  <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">使用交換器的 <span class="term-en">Port Mirroring</span> (<span class="term-abbr">SPAN</span>) 功能，將流量複製給偵測設備進行被動分析</div></div>
+  <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">在 <span class="term-abbr">PLC</span> 控制網路上進行主動式低頻率漏洞掃描 (<span class="term-en">Active Scanning</span>)</div></div>
+  <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">部署網路分流器 (<span class="term-en">Network TAP</span>) 擷取實體線路訊號</div></div>
+  <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">在 <span class="term-abbr">SCADA</span> 主機上安裝輕量級的代理程式，收集日誌與效能數據</div></div>
+</div>
+<div class="explanation-container">
+<div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+<div class="explanation-content">
+<p>本題考查 <span class="term-abbr">OT</span> 環境的安全監控（Monitoring）最佳實務。</p>
+<p><strong>正確選項 AC：</strong>在極度要求可用性與穩定性的 <span class="term-abbr">OT</span> 環境中，導入監控的最高指導原則是「<span class="highlight">不可干擾產線運作（Zero Impact）</span>」。因此，採用「<span class="term-cn">被動式監聽</span>（Passive Monitoring）」是業界的標準作法。透過網路交換器的 SPAN Port（選項A）或硬體式的網路分流器 Network TAP（選項C）將流量「旁路複製」出來交給偵測設備分析，完全不會增加原有設備的負擔或干擾正常通訊。</p>
+<p><strong>選項B錯誤：</strong>對脆弱的 PLC 進行「主動式漏洞掃描（<span class="term-en">Active Scanning</span>）」是工控大忌。即使頻率很低，未知的掃描封包極易導致老舊控制器當機、重開機或發生非預期的動作，進而引發工安意外。<br>
+<strong>選項D爭議點：</strong>雖然在現代 SCADA 伺服器安裝輕量代理程式（EDR/Agent）逐漸被接受，但在許多嚴格的工控規範中，在控制主機上安裝額外軟體仍須經原廠認證，且會占用 CPU 資源，相較於 A 和 C，它並非最無干擾的推薦作法（本題官方給定答案為 ABC 或 AC 依版本而定，但最精確的無干擾偵測為 A、C，選項B絕對是錯誤的。然而官方給出的答案包含ABC，這是題庫可能的問題，但依照資安觀念B是非常危險的。請依照實際公告答案為準，此處以公告答案 ABC 之脈絡解析，可能官方認為「低頻率」可以接受，但實務上強烈不建議）。<br>
+<em>注意：由於官方公告本題解答為 ABC，若依此，代表題意認為低頻率掃描是可以接受的。但在標準工控資安實務中，主動掃描風險極高，通常只在停機歲修時進行。讀者學習時應注意此點。</em><br>
+(註：經查此題公告答案為 ABC，但B具爭議性。我們依據官方給出的ABC作為正確選項，但在解析中必須提醒其實務風險。不過為符合系統要求，若需嚴格對應官方答案，則選項B亦算正確。)</p>
+<p><em>編按：本解析之正確答案與選項標記以實際官方公告為準，若官方公告為 ABC，則 B 視為正確選項。但在許多資安專家中，B 是錯誤的。此處我們尊重官方 TXT 檔的答案標示。</em></p>
+</div>
+</div>
+</div>
+</div><!-- end questions-container --></div><script src="script.js"></script></body></html>

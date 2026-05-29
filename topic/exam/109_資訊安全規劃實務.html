@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>iPAS 資訊安全工程師 中級 (109-1) - I21 資訊安全規劃實務</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>iPAS 資訊安全工程師 中級 (109年第1次)</h1>
+            <div>科目 I21: 資訊安全規劃實務</div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-container">
+                <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+                <select id="criterionFilter">
+                     <option value="all">全部內容</option>
+                     <option value="1.1">1.1 ISMS建置實務與法規遵循 <span class="criterion-count">(7)</span></option>
+                     <option value="1.2">1.2 資安管理實務/架構規劃 <span class="criterion-count">(15)</span></option>
+                     <option value="2.1">2.1 風險分析與評估 <span class="criterion-count">(8)</span></option>
+                     <option value="2.2">2.2 風險處理實務 <span class="criterion-count">(10)</span></option>
+                 </select>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="search-label">搜尋：</label>
+                <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+                <button id="searchButton">搜尋</button>
+            </div>
+
+            <div class="toggle-explanations">
+                <button id="toggleExplanations">顯示全部解析</button>
+            </div>
+        </div>
+
+        <div class="criteria-container">
+            <div class="criteria-title">評鑑內容 (點擊篩選)</div>
+            <div class="criteria-grid" id="criteriaGrid">
+                 <div class="criterion-item" onclick="filterByCriterion('1.1')">
+                     <div class="criterion-id">1.1</div>
+                     <div class="criterion-text">ISMS建置實務與法規遵循</div>
+                     <div class="criterion-count">(7)</div>
+                 </div>
+                 <div class="criterion-item" onclick="filterByCriterion('1.2')">
+                     <div class="criterion-id">1.2</div>
+                     <div class="criterion-text">資安管理實務/架構規劃</div>
+                     <div class="criterion-count">(15)</div>
+                 </div>
+                 <div class="criterion-item" onclick="filterByCriterion('2.1')">
+                     <div class="criterion-id">2.1</div>
+                     <div class="criterion-text">風險分析與評估</div>
+                     <div class="criterion-count">(8)</div>
+                 </div>
+                 <div class="criterion-item" onclick="filterByCriterion('2.2')">
+                     <div class="criterion-id">2.2</div>
+                     <div class="criterion-text">風險處理實務</div>
+                     <div class="criterion-count">(10)</div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="questions-container" id="questionsContainer">
+
+            <!-- Question 1 -->
+            <div class="question-card" data-evaluation-content-id="1.1">
+                <div class="question-header">
+                    <div class="question-id">#1</div>
+                    <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+                </div>
+                <div class="question-content">某<span class="term-cn">台灣</span>公司, 業務市場及銷售據點分布在<span class="term-cn">臺</span>、<span class="term-cn">美</span>兩地, 在建置<span class="term-cn">資安系統</span>時, 應優先考量附圖哪些法規事項? <br/>1. <span class="term-cn">歐盟支付服務指令第 2 版</span> (<span class="term-en">The Second Payment Services Directive</span>, <span class="term-abbr">PSD2</span>)<br/>2. <span class="term-cn">臺灣</span>-<span class="term-cn">資通安全管理法</span><br/>3. <span class="term-cn">美國</span>-<span class="term-abbr">CCPA</span> (<span class="term-en">California Consumer Privacy Act</span>)<br/>4. <span class="term-cn">臺灣</span>-<span class="term-cn">營業秘密法</span><br/>5. <span class="term-cn">香港</span>-<span class="term-abbr">CFI</span> (<span class="term-en">Cybersecurity Fortification Initiative</span>)</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">12345</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">1234</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="highlight">234</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">1235</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">公司營運地點在<span class="term-cn">台灣</span>和<span class="term-cn">美國</span>，應優先考量這兩地的相關法規。<br/>
+                        1. <span class="term-abbr">PSD2</span> 是<span class="highlight">歐盟</span>的法規，與此公司營運地點<span class="highlight">無直接關係</span>。<br/>
+                        2. <span class="term-cn">資通安全管理法</span>是<span class="term-cn">台灣</span>規範公務機關和特定非公務機關的法規。如果該公司屬於受規範對象（例如關鍵基礎設施提供者），則<span class="highlight">必須</span>考量。即使不直接適用，其<span class="highlight">管理精神</span>也可參考。<br/>
+                        3. <span class="term-abbr">CCPA</span> 是<span class="highlight">美國加州</span>的消費者隱私法案。如果公司在<span class="highlight">美國的業務</span>涉及加州居民，則<span class="highlight">必須</span>考量。<br/>
+                        4. <span class="term-cn">營業秘密法</span>是<span class="term-cn">台灣</span>保護商業機密的法規，任何在台營運的公司都應考量，尤其在建置資安系統以<span class="highlight">保護內部資訊</span>時。<br/>
+                        5. <span class="term-abbr">CFI</span> 是<span class="highlight">香港</span>金融管理局針對認可機構的<span class="highlight">網路設防</span>計畫，與此公司營運地點<span class="highlight">無直接關係</span>。<br/>
+                       因此，應優先考量的法規是與營運地點<span class="term-cn">台灣</span>和<span class="term-cn">美國</span>直接相關的 2、3、4。選項 (C) 234 符合。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+           <div class="question-card" data-evaluation-content-id="4.1"> <!-- Focus on Security Operations -->
+                 <div class="question-header">
+                     <div class="question-id">#2</div>
+                     <div class="evaluation-criterion">4.1 安全維運</div>
+                 </div>
+                 <div class="question-content">關於<span class="term-cn">資安工程師</span>定期需要執行的<span class="term-cn">資安維運</span>任務, 下列何者「不」正確?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">定期<span class="term-cn">備份</span>與<span class="term-cn">演練</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">每週<span class="term-cn">防毒報告</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">每半年<span class="term-cn">滲透測試</span></div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">定期向<span class="highlight">會計主任</span>報告</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content"><span class="term-cn">資安維運</span>的常見例行任務：<br/>
+                         (A) 定期執行<span class="term-cn">資料備份</span>，並<span class="highlight">定期演練</span>還原程序以確保備份有效性，是<span class="highlight">營運持續</span>和<span class="highlight">災難復原</span>的基礎工作。<br/>
+                         (B) 檢視<span class="term-cn">防毒系統</span>的<span class="highlight">報告</span>（可能是每日、每週或每月），了解偵測到的威脅、更新狀況等，是<span class="highlight">端點安全監控</span>的一部分。<br/>
+                         (C) 定期進行<span class="term-cn">滲透測試</span>或<span class="term-cn">弱點掃描</span>（頻率依風險等級而定，半年或一年是常見週期），以<span class="highlight">主動發現</span>系統弱點。<br/>
+                         (D) <span class="term-cn">資安維運</span>的<span class="highlight">報告對象</span>通常是<span class="highlight">直屬主管</span>、<span class="term-cn">資訊部門主管</span>、<span class="term-cn">資安長</span> (<span class="term-abbr">CISO</span>) 或<span class="highlight">相關管理階層</span>，<span class="highlight">不直接</span>向「會計主任」報告資安維運情況。會計可能關心與<span class="term-cn">財務相關</span>的<span class="term-cn">內控</span>或<span class="term-cn">舞弊風險</span>，但例行維運報告對象通常不是會計主任。<br/>
+                        因此，「不」正確的任務是 (D)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 3-40 follow the same structure -->
+             <!-- Question 3 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+                <div class="question-header">
+                    <div class="question-id">#3</div>
+                    <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                </div>
+                <div class="question-content">若要設定<span class="term-cn">防火牆內對外</span>的連線, <span class="highlight">僅開放對外</span>的服務及網頁瀏覽, 下列敘述何者<span class="highlight">正確</span>?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">Allow all</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">Allow <span class="term-abbr">http port 22</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">Allow <span class="highlight">https port 443</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">Allow <span class="term-abbr">smtp 25</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">設定<span class="term-cn">防火牆</span>規則以允許內部網路<span class="highlight">對外</span>進行網頁瀏覽和使用特定服務：<br/>
+                        <ul>
+                            <li>網頁瀏覽主要使用 <span class="term-abbr">HTTP</span>（端口 <span class="term-abbr">TCP 80</span>）和 <span class="term-abbr">HTTPS</span>（端口 <span class="term-abbr">TCP 443</span>）。</li>
+                            <li>對外服務則需根據具體服務開放相應端口（例如 <span class="term-abbr">DNS</span> 使用 <span class="term-abbr">UDP/TCP 53</span>，<span class="term-abbr">SMTP</span> 使用 <span class="term-abbr">TCP 25</span> 等）。</li>
+                            <li>防火牆規則應遵循<span class="highlight">最小開放</span>原則，僅允許必要的流量。</li>
+                        </ul>
+                       (A) `Allow all` <span class="highlight">允許所有</span>對外連線，過於寬鬆，<span class="highlight">不安全</span>。<br/>
+                       (B) 端口 <span class="term-abbr">22</span> 是 <span class="term-abbr">SSH</span> 服務的預設端口，<span class="highlight">不是 HTTP</span>。<br/>
+                       (C) 允許 <span class="term-abbr">HTTPS</span> (端口 <span class="term-abbr">443</span>) <span class="highlight">是允許安全網頁瀏覽</span>的<span class="highlight">必要</span>規則。<br/>
+                       (D) 端口 <span class="term-abbr">25</span> 是 <span class="term-abbr">SMTP</span>（郵件傳輸）服務的預設端口，<span class="highlight">與網頁瀏覽無關</span>。<br/>
+                      考慮到現代網頁瀏覽<span class="highlight">主要使用 HTTPS</span>，選項 (C) 是允許網頁瀏覽的<span class="highlight">基本且必要</span>的正確設定。雖然可能還需允許 HTTP (80) 和 DNS (53)，但在選項中 (C) 是最直接相關且正確的。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#4</div>
+                     <div class="evaluation-criterion">2.2 風險處理實務</div>
+                 </div>
+                 <div class="question-content">某公司在<span class="highlight">每週星期日凌晨 1 點</span>執行<span class="term-cn">完整備份</span> (<span class="term-en">Full Backup</span>), <span class="highlight">每日凌晨 1 點</span>執行<span class="term-cn">增量備份</span> (<span class="term-en">Incremental Backup</span>), 每日備份資料分存放於不同磁帶。若此系統在<span class="highlight">星期三的下午 2 點</span>發生嚴重損毀 (<span class="term-en">Crash</span>), 資訊人員執行資料回復, <span class="highlight">需使用多少個磁帶</span>的資料?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">1</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">2</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">3</div></div>
+                     <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">4</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">恢復流程分析：
+                         <ul>
+                             <li>事件發生時間：星期三下午 2 點。</li>
+                             <li>備份策略：
+                                 <ul>
+                                     <li>每週日凌晨 1 點：完整備份 (Full)。</li>
+                                     <li>每天（週一至週六）凌晨 1 點：增量備份 (Incremental)。</li>
+                                 </ul>
+                             </li>
+                         </ul>
+                        增量備份只備份自<span class="highlight">上一次任何類型備份</span>（完整或增量）以來<span class="highlight">有變動</span>的資料。<br/>
+                        要恢復到星期三下午 2 點前的狀態，需要：
+                         <ol>
+                             <li>恢復<span class="highlight">最近一次</span>的<span class="highlight">完整備份</span>：即上週日凌晨 1 點的完整備份磁帶。(需要 1 個磁帶)</li>
+                             <li><span class="highlight">依序</span>恢復自該次完整備份之後的<span class="highlight">所有增量備份</span>，直到事件發生前：
+                                 <ul>
+                                     <li>恢復週一凌晨 1 點的增量備份磁帶。(第 2 個磁帶)</li>
+                                     <li>恢復週二凌晨 1 點的增量備份磁帶。(第 3 個磁帶)</li>
+                                     <li>恢復週三凌晨 1 點的增量備份磁帶。(第 4 個磁帶)</li>
+                                 </ul>
+                             </li>
+                         </ol>
+                        總共需要使用 1 (Full) + 3 (Incremental) = <span class="highlight">4</span> 個磁帶。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Remaining questions 5-40 follow the same structure -->
+            <!-- Question 5 -->
+           <div class="question-card" data-evaluation-content-id="1.2">
+                <div class="question-header">
+                    <div class="question-id">#5</div>
+                    <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                </div>
+                <div class="question-content">某公司新網頁資訊系統上線, 內含客戶相關資料, 經<span class="term-cn">資安風險分析</span>, 有<span class="highlight">帳號暴力破解</span>風險, 再經後續的安全測試, 發現帳戶登錄機制可<span class="highlight">容許一直重複嘗試</span>登入, 關於上述狀況, 下列何者作法最「不」適當?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">設定帳戶在<span class="highlight">嘗試失敗多次</span>後<span class="highlight">鎖定</span>一段時間</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">設定<span class="highlight">密碼政策</span>, 設定的密碼至少需有 <span class="highlight">12 個字元</span></div></div>
+                    <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">設定帳戶在嘗試失敗時, 寄送 <span class="term-cn">eMail</span> 由<span class="highlight">郵件通知</span></div></div>
+                    <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">設定帳戶連線時, <span class="highlight">強制使用 Https</span> 安全連線</div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">針對帳號<span class="highlight">暴力破解</span>（重複嘗試密碼）風險的防護措施：<br/>
+                        (A) <span class="term-cn">帳戶鎖定</span>機制：在<span class="highlight">連續</span>嘗試登入失敗達到<span class="highlight">一定次數</span>後，將該帳戶<span class="highlight">暫時鎖定</span>一段時間（或需要管理員解鎖），可以有效<span class="highlight">延緩或阻止</span>暴力破解。<br/>
+                        (B) 複雜密碼政策：要求使用<span class="highlight">長度足夠</span>、<span class="highlight">組合複雜</span>的密碼，可以<span class="highlight">增加</span>暴力破解猜中密碼的<span class="highlight">難度</span>。<br/>
+                        (C) 登入失敗<span class="highlight">通知</span>：當帳戶登入失敗時，透過郵件或其他方式<span class="highlight">通知</span>帳戶擁有者，可以讓使用者<span class="highlight">及早意識</span>到其帳戶可能正遭受攻擊。<br/>
+                        (D) 強制使用 <span class="term-abbr">Https</span>：<span class="term-abbr">Https</span> 保護的是密碼在<span class="highlight">傳輸</span>過程中的<span class="term-cn">機密性</span>，<span class="highlight">防止被竊聽</span>。它<span class="highlight">無法</span>阻止攻擊者<span class="highlight">重複提交</span>登入請求來<span class="highlight">猜測</span>密碼。<br/>
+                       因此，對於防範「重複嘗試登入」這種暴力破解行為，強制使用 Https 是最「不」直接相關、效果最差的措施。
+                    </div>
+                </div>
+            </div>
+
+             <!-- Remaining questions 6-40 follow the same structure -->
+
+            <!-- Question 6 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#6</div>
+                     <div class="evaluation-criterion">2.2 風險處理實務</div>
+                 </div>
+                 <div class="question-content">某公司為網路電信商, 其多年前研發的即時通軟體非常受歡迎, 然而在面對<span class="term-cn">歐盟通用資料保護規則</span> (<span class="term-en">EU General Data Protection Regulation</span>, <span class="term-abbr">GDPR</span>) 時, 內部評估發現其現有系統架構<span class="highlight">無法符合 GDPR</span> 的規範, 且系統修改<span class="highlight">費用驚人</span>, 管理層最後決定<span class="highlight">停止歐洲的市場業務</span>, 關於上述狀況, 屬於下列何種<span class="term-cn">風險處理</span>?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">風險降低</span> (<span class="term-en">Risk Reduction</span>)</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">風險接受</span> (<span class="term-en">Risk Acceptance</span>)</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">風險規避</span> (<span class="term-en">Risk Avoidance</span>)</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">風險轉移</span> (<span class="term-en">Risk Transfer</span>)</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">該公司因為無法符合 <span class="term-abbr">GDPR</span> 規範且修改成本過高，決定<span class="highlight">停止在歐洲的業務</span>。<br/>
+                        <span class="term-cn">風險規避</span> (<span class="term-en">Risk Avoidance</span>) 指的是<span class="highlight">決定不進行或停止</span>會導致風險的活動，以<span class="highlight">完全避免</span>該風險。<br/>
+                        該公司的決策正是<span class="highlight">停止了會帶來 GDPR 合規風險</span>的歐洲業務活動，這完全符合<span class="term-cn">風險規避</span>的定義。<br/>
+                       (A) <span class="term-cn">風險降低</span>是採取措施減少風險。<br/>
+                       (B) <span class="term-cn">風險接受</span>是容忍風險存在。<br/>
+                       (D) <span class="term-cn">風險轉移</span>是將風險轉嫁給第三方。<br/>
+                       因此，該處理方式屬於 (C) <span class="term-cn">風險規避</span>。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 7-40 follow the same structure -->
+             <!-- Question 7 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+                <div class="question-header">
+                    <div class="question-id">#7</div>
+                    <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                </div>
+                <div class="question-content">進行<span class="term-cn">網路架構設計</span>時, 下列敘述何者「不」正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">如果有開發系統應該要區分一個<span class="highlight">測試區</span></div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">透過 <span class="term-en">Log Server</span> 記錄<span class="highlight">各種警訊</span></div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">採取 <span class="term-abbr">HA</span> (<span class="term-en">High Availability</span>) 機制需要<span class="highlight">多一台門禁系統</span></div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">需要規劃<span class="term-cn">備份機制</span>與<span class="term-cn">容量規劃</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content">網路架構設計與相關考量：<br/>
+                        (A) 為開發和測試環境<span class="highlight">建立獨立</span>的區域，與生產環境<span class="highlight">隔離</span>，是防止測試活動影響生產、保護生產資料和源碼的<span class="highlight">基本安全實踐</span>。<br/>
+                        (B) <span class="highlight">集中記錄</span>來自各種設備和系統的<span class="highlight">日誌</span> (<span class="term-en">Log</span>) 和<span class="highlight">警報</span> (<span class="term-en">Alert</span>) 到 <span class="term-en">Log Server</span> 或 <span class="term-abbr">SIEM</span>，是進行<span class="highlight">安全監控</span>和<span class="highlight">事件分析</span>的基礎。<br/>
+                        (C) <span class="term-abbr">HA</span> (<span class="term-cn">高可用性</span>) 機制是針對<span class="highlight">IT 系統</span>（如伺服器、網路設備、應用程式）的<span class="highlight">冗餘設計</span>，以確保在單點故障時服務能持續。<span class="term-cn">門禁系統</span>屬於<span class="highlight">實體安全</span>範疇。<兩者<span class="highlight">沒有直接關聯</span>。實現 <span class="term-abbr">HA</span> 不需要額外的門禁系統。<br/>
+                        (D) <span class="highlight">備份機制</span>是確保資料<span class="highlight">可恢復性</span>的關鍵。<而<span class="highlight">容量規劃</span>（包括儲存容量、網路頻寬、處理能力）對於確保系統<span class="highlight">效能</span>和<span class="highlight">可用性</span>至關重要。兩者都是架構設計時<span class="highlight">需要考慮</span>的因素。<br/>
+                       因此，「不」正確的敘述是 (C)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining questions 8-40 follow the same structure -->
+            <!-- Question 8 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+                <div class="question-header">
+                    <div class="question-id">#8</div>
+                    <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                </div>
+                <div class="question-content">關於<span class="term-cn">資訊安全模型</span> (<span class="term-en">Security Models</span>) 中的<span class="term-cn">強制存取控制</span> (<span class="term-en">Mandatory Access Control</span>, <span class="term-abbr">MAC</span>), 下列敘述何者「不」正確?</div>
+                <div class="options-container">
+                    <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">依據<span class="highlight">事前定義</span> (<span class="term-en">Pre-defined</span>) <span class="highlight">主體</span> (<span class="term-en">Subject</span>) 的<span class="highlight">安全等級</span>和被存取<span class="highlight">物件</span> (<span class="term-en">Object</span>) <span class="highlight">機敏等級</span>來決定是否可以存取</div></div>
+                    <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">安全強度較<span class="term-cn">自主存取控制</span> (<span class="term-en">Discretionary Access Control</span>, <span class="term-abbr">DAC</span>) 高</div></div>
+                    <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">傳統的 <span class="term-en">Unix</span> 系統<span class="highlight">使用者</span> (<span class="term-en">Users</span>)、<span class="highlight">群組</span> (<span class="term-en">Groups</span>) 和<span class="highlight">讀-寫-執行</span> (<span class="term-en">Read-Write-Execute</span>) 管控, 即為 <span class="term-abbr">MAC</span> 的一種實作</div></div>
+                    <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">安全政策</span> (<span class="term-en">Policy</span>) 由<span class="term-cn">安全政策員</span> (<span class="term-en">Security policy administrator</span>) <span class="highlight">集中管控</span></div></div>
+                </div>
+                <div class="explanation-container">
+                    <div class="explanation-header">答案解析</div>
+                    <div class="explanation-content"><span class="term-cn">強制存取控制</span> (<span class="term-abbr">MAC</span>) 的特性：<br/>
+                        (A) <span class="term-abbr">MAC</span> 的<span class="highlight">核心機制</span>就是基於系統管理員<span class="highlight">預先定義</span>的<span class="highlight">安全標籤</span>（等級或類別），比較<span class="highlight">主體</span>（如使用者、進程）和<span class="highlight">客體</span>（如檔案、資源）的標籤，根據<span class="highlight">系統強制</span>的規則（如<span class="highlight">讀下寫上</span> - <span class="term-en">BLP</span> 模型）來決定存取權限。正確。<br/>
+                        (B) 由於 <span class="term-abbr">MAC</span> 的<span class="highlight">強制性</span>和<span class="highlight">集中管理</span>特性，<span class="highlight">不易</span>被使用者<span class="highlight">意外或故意</span>地<span class="highlight">錯誤配置</span>，通常認為其安全強度<span class="highlight">高於</span>使用者可<span class="highlight">自主</span>設定權限的 <span class="term-abbr">DAC</span>。正確。<br/>
+                        (C) 傳統 <span class="term-en">Unix</span> 的 `rwx` 權限是<span class="highlight">典型</span>的 <span class="term-abbr">DAC</span> 模型，資源擁有者可以修改權限。這<span class="highlight">不是 MAC</span> 的實作。實現 <span class="term-abbr">MAC</span> 的系統有如 <span class="term-abbr">SELinux</span> 或 <span class="term-abbr">AppArmor</span>。錯誤。<br/>
+                        (D) <span class="term-abbr">MAC</span> 的安全策略（標籤分配、存取規則）是由<span class="highlight">系統管理員</span>或<span class="highlight">安全管理員</span><span class="highlight">集中設定和強制執行</span>的，普通使用者<span class="highlight">無法更改</span>。正確。<br/>
+                       因此，「不」正確的敘述是 (C)。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining questions 9-40 follow the same structure -->
+             <!-- Question 9 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#9</div>
+                     <div class="evaluation-criterion">2.2 風險處理實務</div>
+                 </div>
+                 <div class="question-content">下列何者可被用來確認資料的<span class="term-cn">完整性</span> (<span class="term-en">Integrity</span>)?</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-abbr">SHA-512</span></div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-abbr">3DES</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-abbr">RC4</span></div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">EC-ElGamal</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">確保資料完整性的機制通常使用<span class="term-cn">密碼雜湊函數</span>。<br/>
+                         (A) <span class="term-abbr">SHA-512</span> (<span class="term-en">Secure Hash Algorithm 512-bit</span>) 是一種<span class="highlight">密碼雜湊函數</span>，可以產生固定長度的<span class="term-cn">雜湊值</span>，用於<span class="highlight">驗證資料完整性</span>。<br/>
+                         (B) <span class="term-abbr">3DES</span> 是<span class="highlight">對稱加密</span>演算法。<br/>
+                         (C) <span class="term-abbr">RC4</span> 是<span class="highlight">對稱流加密</span>演算法。<br/>
+                         (D) <span class="term-abbr">EC-ElGamal</span> 是基於<span class="highlight">橢圓曲線</span>的 <span class="term-en">ElGamal</span> <span class="highlight">非對稱加密</span>演算法。<br/>
+                        因此，可用來確認資料完整性的是 (A) <span class="term-abbr">SHA-512</span>。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Question 10 -->
+            <div class="question-card" data-evaluation-content-id="3.2">
+                 <div class="question-header">
+                     <div class="question-id">#10</div>
+                     <div class="evaluation-criterion">3.2 防護與應變實務</div>
+                 </div>
+                 <div class="question-content">某公司在一次例行檢查中, <span class="term-cn">資安管理人員</span>發現一位員工正試圖使用透過<span class="highlight">手機網路</span>連至<span class="highlight">外部網路下載</span>軟體至其工作用<span class="highlight">筆記型電腦</span>, 此作法等於<span class="highlight">繞過公司防火牆</span>, 該員工解釋是為了安裝部門專案使用的 X 軟體, 關於上述狀況, 下列何種措施應<span class="highlight">優先</span>進行?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">重新設定公司<span class="term-cn">防火牆規則</span>讓 X 軟體可以下載並安裝</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">安裝<span class="highlight">網路型入侵偵測系統</span>進行監控, 提早發現類似不當行為</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">執行公司<span class="highlight">資安規範</span>, <span class="highlight">移除軟體</span>使用</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">訪談</span>該員工, 重新進行<span class="highlight">需求分析</span></div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">員工試圖繞過公司<span class="term-cn">防火牆</span>安裝軟體，這是一個<span class="highlight">明顯違反資安規定</span>的行為。<br/>
+                         (A) 在<span class="highlight">未經評估</span>該軟體安全性及必要性之前，<span class="highlight">不應</span>直接修改<span class="term-cn">防火牆規則</span>允許下載。<br/>
+                         (B) 安裝 <span class="term-abbr">IDS</span> 是<span class="highlight">長期</span>的安全<span class="highlight">監控</span>措施，<span class="highlight">無法</span>解決當前<span class="highlight">已發生</span>的違規行為。<br/>
+                         (C) 該員工的行為（繞過<span class="term-cn">防火牆</span>下載安裝軟體）<span class="highlight">已違反</span>資安規範。應<span class="highlight">立即制止</span>該行為，並依規範<span class="highlight">移除</span>未經授權安裝的軟體，這是<span class="highlight">符合資安規範</span>的處理方式。<br/>
+                         (D) 雖然事後可能需要<span class="highlight">了解</span>員工的需求（為什麼需要這個軟體），但<span class="highlight">當下</span>應<span class="highlight">優先處理違規行為本身</span>，<span class="highlight">阻止潛在風險</span>（安裝的軟體可能是惡意的或有漏洞）。<br/>
+                        因此，應<span class="highlight">優先</span>進行的措施是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 11-40 follow the same structure -->
+
+            <!-- Question 11 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+                 <div class="question-header">
+                     <div class="question-id">#11</div>
+                     <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                 </div>
+                 <div class="question-content">某公司在員工個人電腦登入後會強制跳出提醒訊息:「請遵守本公司<span class="term-cn">資訊安全規範</span>, 避免<span class="term-cn">機敏資料</span>外洩」, 此提醒屬於下列何種<span class="term-cn">控制措施</span>?</div>
+                 <div class="options-container">
+                     <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">管理的</span> (<span class="term-en">Administrative</span>)、<span class="highlight">威嚇性</span> (<span class="term-en">Deterrent</span>)</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">管理的 (<span class="term-en">Administrative</span>)、預防性 (<span class="term-en">Preventive</span>)</div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">技術的 (<span class="term-en">Technical</span>)、威嚇性 (<span class="term-en">Deterrent</span>)</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">技術的 (<span class="term-en">Technical</span>)、預防性 (<span class="term-en">Preventive</span>)</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content">分析控制措施的類型：
+                         <ul>
+                             <li>**管理性/行政性 (Administrative):** 透過<span class="highlight">政策、程序、標準、指引、規範、訓練</span>等方式來管理安全。</li>
+                             <li>**技術性/邏輯性 (Technical/Logical):** 透過<span class="highlight">軟硬體</span>機制來實現控制（如<span class="term-cn">防火牆</span>、<span class="term-cn">加密</span>、<span class="term-cn">存取控制</span>列表）。</li>
+                             <li>**實體性 (Physical):** 保護<span class="highlight">物理環境</span>和設施（如門鎖、監視器、滅火器）。</li>
+                         </ul>
+                        分析控制措施的目的：
+                         <ul>
+                             <li>**預防性 (Preventive):** <span class="highlight">阻止</span>事件發生。</li>
+                             <li>**偵測性 (Detective):** <span class="highlight">發現</span>已發生或正在發生的事件。</li>
+                             <li>**矯正性 (Corrective):** <span class="highlight">修復</span>事件造成的損害或恢復正常。</li>
+                             <li>**威嚇性 (Deterrent):** <span class="highlight">嚇阻</span>攻擊者不要嘗試攻擊（例如警告標語、處罰規定）。</li>
+                             <li>**補償性 (Compensating):** 在主要控制措施<span class="highlight">無法實施</span>時，提供<span class="highlight">替代</span>的保護。</li>
+                         </ul>
+                        跳出提醒訊息「請遵守...規範，避免...外洩」：
+                         <ul>
+                             <li>這是一種<span class="highlight">宣導規範</span>的方式，屬於<span class="highlight">管理性</span>控制。</li>
+                             <li>其目的是<span class="highlight">提醒</span>員工注意規範，<span class="highlight">警告</span>他們不要違規，帶有<span class="highlight">嚇阻</span>的意味。</li>
+                         </ul>
+                        因此，此措施屬於 (A) 管理的、威嚇性。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 12-40 follow the same structure -->
+             <!-- Question 12 -->
+            <div class="question-card" data-evaluation-content-id="2.2">
+                 <div class="question-header">
+                     <div class="question-id">#12</div>
+                     <div class="evaluation-criterion">2.2 風險處理實務</div>
+                 </div>
+                 <div class="question-content">如附圖所示, 關於<span class="term-cn">營運持續管理系統</span> (<span class="term-en">Business Continuity Management System</span>, <span class="term-abbr">BCMS</span>) 的執行項目排序, 下列何者較<span class="highlight">正確</span>?<br/>1. 建立<span class="term-cn">營運持續策略</span> (<span class="term-en">Business Continuity Strategy</span>, <span class="term-abbr">BCS</span>)<br/>2. 撰寫<span class="term-cn">緊急應變計畫</span> (<span class="term-en">Emergency Plan</span>)<br/>3. 撰寫<span class="term-cn">營運持續計畫</span> (<span class="term-en">Business Continuity Planning</span>, <span class="term-abbr">BCP</span>)<br/>4. <span class="term-cn">營運持續計畫演練</span> (<span class="term-en">Business Continuity Planning Exercise</span>)<br/>5. 執行<span class="term-cn">營運衝擊分析</span> (<span class="term-en">Business Impact Analysis</span>, <span class="term-abbr">BIA</span>)</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">1->2->3->5->4</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">5->1->2->3->4</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">5->2->3->1->4</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">1->2->3->4->5</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content"><span class="term-cn">營運持續管理</span> (<span class="term-abbr">BCM</span>) 的流程通常遵循 <span class="term-abbr">PDCA</span> (Plan-Do-Check-Act) 循環，其中規劃階段 (<span class="term-en">Plan</span>) 的大致順序為：
+                         <ol>
+                             <li>**了解組織 (Understanding the organization):** 包含業務目標、<span class="highlight">利害關係方</span>需求等。</li>
+                             <li>**業務衝擊分析 (Business Impact Analysis, BIA):** <span class="highlight">識別關鍵業務流程</span>，評估中斷影響，確定恢復目標 (<span class="term-abbr">RTO</span>, <span class="term-abbr">RPO</span>)。(5)</li>
+                             <li>**風險評鑑 (Risk Assessment):** 識別可能導致中斷的風險。</li>
+                             <li>**營運持續策略 (Business Continuity Strategy):** 根據 <span class="term-abbr">BIA</span> 和風險評鑑結果，<span class="highlight">決定</span>採取何種<span class="highlight">恢復策略</span>（例如，備援方式、資源配置）。(1)</li>
+                             <li>**建立與實施 BCM 回應程序:**
+                                 <ul>
+                                     <li><span class="term-cn">緊急應變計畫</span> (<span class="term-en">Emergency Response Plan</span>): 應對<span class="highlight">初期緊急狀況</span>（如人員疏散、生命安全）。(2)</li>
+                                     <li><span class="term-cn">營運持續計畫</span> (<span class="term-abbr">BCP</span>): 描述如何在<span class="highlight">中斷期間</span>維持<span class="highlight">關鍵業務</span>運作。</li>
+                                     <li><span class="term-cn">災難復原計畫</span> (<span class="term-abbr">DRP</span>): 描述如何<span class="highlight">恢復 IT 系統</span>。(包含在 3 中)</li>
+                                 </ul>
+                             </li>
+                             <li>**演練與測試 (Exercising and Testing):** <span class="highlight">定期演練</span>計畫以確保其有效性。(4)</li>
+                         </ol>
+                        根據這個邏輯，排序應為 5 -> 1 -> (2, 3) -> 4。選項 (B) 5->1->2->3->4 最符合這個流程順序（將緊急應變和營運持續計畫視為策略確定後的具體計畫制定）。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Remaining questions 13-40 follow the same structure -->
+            <!-- Question 13 -->
+            <div class="question-card" data-evaluation-content-id="2.1">
+                 <div class="question-header">
+                     <div class="question-id">#13</div>
+                     <div class="evaluation-criterion">2.1 風險分析與評估</div>
+                 </div>
+                 <div class="question-content">在進行<span class="term-cn">營運衝擊分析</span> (<span class="term-en">Business Impact Analysis</span>, <span class="term-abbr">BIA</span>) 時, 下列三項評估的<span class="highlight">先後順序</span>為何? 1.<span class="term-cn">產品與服務</span> (<span class="term-en">Products and services</span>)、2.<span class="term-cn">流程</span> (<span class="term-en">Processes</span>)、3.<span class="term-cn">活動</span> (<span class="term-en">Activities</span>)</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">3->2->1</div></div>
+                     <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">1->2->3</span></div></div>
+                     <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">2->1->3</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">1->3->2</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content"><span class="term-abbr">BIA</span> 的分析過程通常是<span class="highlight">由上而下</span>的邏輯：
+                         1.  首先識別組織<span class="highlight">提供</span>的關鍵<span class="term-cn">產品與服務</span> (1)。這是組織存在的根本目的。
+                         2.  然後分析支持這些<span class="term-cn">產品與服務</span>所<span class="highlight">必需</span>的關鍵<span class="term-cn">業務流程</span> (2)。
+                         3.  接著<span class="highlight">分解</span>每個關鍵<span class="term-cn">流程</span>，識別構成這些流程的具體<span class="term-cn">作業活動</span> (3)。
+                         4.  最後分析執行這些<span class="term-cn">活動</span>所<span class="highlight">依賴</span>的資源（如人員、系統、設備、供應商等）。
+                         評估中斷對每個層級的影響，並確定恢復時間目標。
+                         因此，評估的先後順序是 產品與服務 -> 流程 -> 活動，即 1 -> 2 -> 3。
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Remaining questions 14-40 follow the same structure -->
+             <!-- Question 14 -->
+            <div class="question-card" data-evaluation-content-id="1.2">
+                 <div class="question-header">
+                     <div class="question-id">#14</div>
+                     <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                 </div>
+                 <div class="question-content">關於<span class="term-cn">縱深防禦</span> (<span class="term-en">Defense in Depth</span>), 下列敘述何者「不」正確?</div>
+                 <div class="options-container">
+                     <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">縱深防禦</span>又稱為<span class="term-cn">階層式防禦</span> (<span class="term-en">Layered Defense</span>) 或<span class="term-cn">洋蔥式防禦</span> (<span class="term-en">Onion Defense</span>)</div></div>
+                     <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">縱深防禦</span>對資訊資產套用<span class="highlight">多層安全防護</span>, 若部分防護失效仍可透過其餘機制降低受駭風險</div></div>
+                     <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">縱深防禦</span><span class="highlight">僅能應用於實體控制</span>之情境以發揮最大效益 (如: IDC 資料中心)</div></div>
+                     <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">透過「<span class="highlight">網路</span><span class="term-cn">存取控制</span> > <span class="highlight">伺服器</span><span class="term-cn">存取控制</span> > <span class="highlight">應用程式</span><span class="term-cn">存取控制</span> > <span class="highlight">資料</span><span class="term-cn">存取控制</span>」此四層架構, 即可稱為<span class="term-cn">縱深防禦</span>之存取控制模式</div></div>
+                 </div>
+                 <div class="explanation-container">
+                     <div class="explanation-header">答案解析</div>
+                     <div class="explanation-content"><span class="term-cn">縱深防禦</span>：<br/>
+                         (A) 這些都是<span class="term-cn">縱深防禦</span>的別稱，強調其<span class="highlight">層層防護</span>的特性。正確。<br/>
+                         (B) 描述了<span class="term-cn">縱深防禦</span>的核心理念：<span class="highlight">多層防護提供冗餘</span>，單點失效<span class="highlight">不至於</span>導致全盤崩潰。正確。<br/>
+                         (C) <span class="term-cn">縱深防禦</span>是一個<span class="highlight">廣泛</span>的概念，可以應用於<span class="highlight">所有安全層面</span>，包括<span class="highlight">實體</span>控制、<span class="highlight">技術</span>控制和<span class="highlight">管理</span>控制。<例如，網路分段、多因子認證、加密、防毒、入侵偵測、安全意識訓練等都是縱深防禦的不同層面。<span class="highlight">將其侷限於實體控制是錯誤的</span>。<br/>
+                         (D) 描述了一個在<span class="highlight">存取控制</span>方面實現<span class="highlight">縱深防禦</span>的<span class="highlight">多層次</span>架構範例。正確。<br/>
+                        因此，「不」正確的敘述是 (C)。
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Remaining questions 15-40 follow the same structure -->
+                        <!-- Question 15 -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                            <div class="question-header">
+                                <div class="question-id">#15</div>
+                                <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                            </div>
+                            <div class="question-content">關於<span class="term-cn">網站應用程式防護</span>, 下列敘述何者<span class="highlight">正確</span>?</div>
+                            <div class="options-container">
+                                <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">為有效降低網站應用程式受駭風險, <span class="term-cn">原始碼檢測</span>不可於程式開發過程中執行, 待開發完成後再一次性執行以達最大效益</div></div>
+                                <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">網頁應用程式防火牆</span> (<span class="term-en">Web Application Firewall</span>, <span class="term-abbr">WAF</span>) 可有效避免遭受駭客攻擊, 且若啟用特徵碼定期更新機制, 則受駭風險已降至最低, 網站應用程式之<span class="term-cn">安全性測試</span>便可忽略</div></div>
+                                <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">網站應用程式所使用之元件若發現弱點, 透過<span class="term-cn">網頁應用程式防火牆</span> (<span class="term-en">Web Application Firewall</span>, <span class="term-abbr">WAF</span>) 套用<span class="term-cn">虛擬修補</span> (<span class="term-en">Virtual patching</span>) 能有效阻擋攻擊, 則不需再對該元件進行修復</div></div>
+                                <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">網站應用程式應定期執行安全檢測</span> (如: <span class="term-cn">原碼檢測</span>、<span class="term-cn">弱點掃描</span>、<span class="term-cn">滲透測試</span>), 並對檢出之<span class="highlight">安全弱點進行修復</span>, 若<span class="highlight">無法修復則需實施補償性控制</span>措施來降低安全風險</div></div>
+                            </div>
+                            <div class="explanation-container">
+                                <div class="explanation-header">答案解析</div>
+                                <div class="explanation-content">
+                                    (A) <span class="highlight">錯誤</span>。<span class="term-cn">原始碼檢測</span> (<span class="term-en">SAST</span>) <span class="highlight">應盡早</span>在開發生命週期中（<span class="term-en">Shift-Left</span>）<span class="highlight">持續進行</span>，以便及早發現並修復問題，成本最低，效益最高。一次性執行並非最佳實踐。<br/>
+                                    (B) <span class="highlight">錯誤</span>。<span class="term-abbr">WAF</span> 是重要的<span class="highlight">防禦層</span>，但<span class="highlight">不能完全取代</span>應用程式自身的安全性測試。<span class="term-abbr">WAF</span> 可能被繞過，且無法防禦所有類型的漏洞（如<span class="term-cn">商業邏輯</span>漏洞）。<span class="highlight">安全性測試仍然必要</span>。<br/>
+                                    (C) <span class="highlight">錯誤</span>。<span class="term-cn">虛擬修補</span> (<span class="term-en">Virtual Patching</span>) 是一種<span class="highlight">臨時性</span>或<span class="highlight">補償性</span>措施，用於在無法立即修補底層漏洞時提供保護。但它<span class="highlight">並未真正修復</span>元件的漏洞。<理想情況下，<span class="highlight">應盡快修復</span>元件本身，以<span class="highlight">根除</span>風險。<br/>
+                                    (D) <span class="highlight">正確</span>。這是<span class="highlight">安全開發生命週期</span> (<span class="term-en">SSDLC</span>) 和<span class="highlight">持續安全維護</span>的<span class="highlight">標準做法</span>。定期透過各種方式（<span class="term-en">SAST</span>, <span class="term-en">DAST</span>, <span class="term-cn">滲透測試</span>）檢測弱點，並<span class="highlight">優先修補</span>。若無法修補（例如使用停止支援的第三方元件），則必須實施<span class="term-cn">補償性控制</span>（如 <span class="term-abbr">WAF</span> 規則、加強監控）來<span class="term-cn">降低殘餘風險</span>。
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Question 16 -->
+                        <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#16</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">某公司從事國際型科技大廠組裝代工業務, 在合作業務上, 嚴禁將未上市產品資訊外洩, 包含: 未上市產品間諜照、設計圖...等, 相關資訊檔案讀取使用僅限制公司少數高階技術人員可以讀取, 不能外洩到公司以外其他地方使用。關於上述狀況, 下列<span class="term-cn">風險管理</span>敘述何者<span class="highlight">正確</span>? (複選)</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">公司與員工間簽屬相關<span class="term-cn">保密協定</span>與同意限制規範, 並進行必要<span class="term-cn">技術管制</span>手段, 如: 手機必須放置在公司設定手機電腦保管區、嚴禁拍照裝置與私人電腦攜入公司廠區</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">對公司電腦, 限制<span class="term-cn">外接儲存裝置</span>的存取、<span class="term-cn">電腦畫面擷取</span>、與<span class="term-cn">工具軟體使用限制</span>, 以降低公司機密資料外洩風險</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">公司成立相對應<span class="term-cn">資安防護</span>措施, 如: 防止駭客入侵竊取、電子郵件的<span class="term-cn">附件過濾</span>、對公司內外<span class="term-cn">流量封包監控</span></div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">公司不應限制禁止員工上網, 這是員工午休時基本人權權利</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">此風險情境涉及<span class="highlight">保護高度機密的商業資訊</span>（客戶未上市產品資訊），防止內部人員洩密或外部攻擊竊取。<br/>
+                                     (A) <span class="highlight">正確</span>。<span class="term-cn">管理措施</span>（<span class="term-cn">保密協定</span>）和<span class="term-cn">實體/技術管制</span>（限制手機、拍照裝置）是<span class="highlight">防止資料外洩</span>的<span class="highlight">必要手段</span>。<br/>
+                                     (B) <span class="highlight">正確</span>。<限制<span class="term-cn">資料傳輸管道</span>（USB）、<span class="highlight">防止螢幕側錄</span>（畫面擷取）、<span class="highlight">控管可能被濫用</span>的工具軟體，都是<span class="highlight">常見</span>的<span class="term-cn">端點資料外洩防護</span> (<span class="term-abbr">DLP</span>) 措施。<br/>
+                                     (C) <span class="highlight">正確</span>。除了防止內部洩密，也需要<span class="highlight">防禦外部威脅</span>（駭客入侵）、<span class="highlight">監控資料流出管道</span>（郵件附件過濾、網路流量監控）。<br/>
+                                     (D) <span class="highlight">錯誤</span>。基於<span class="highlight">保護商業機密</span>和<span class="highlight">防止惡意軟體</span>引入的考量，公司<span class="highlight">有權</span>在工作場所和使用公司設備時<span class="highlight">限制員工的上網行為</span>（例如禁止訪問特定網站、限制下載）。這<span class="highlight">不必然</span>侵犯基本人權，尤其是在涉及高度機密資訊的環境下，<span class="highlight">安全需求優先級更高</span>。
+                                     *註：本題為複選題，正確選項為 A, B, C。*
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 17 -->
+                        <div class="question-card" data-evaluation-content-id="1.1">
+                             <div class="question-header">
+                                 <div class="question-id">#17</div>
+                                 <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+                             </div>
+                             <div class="question-content">下列何者「不」是用來在建置<span class="term-cn">資訊安全管理系統</span>時, 透過<span class="term-cn">量化資安目標</span>來協助組織瞭解是否落實所訂定之<span class="term-cn">資安政策</span>的做法? (複選)</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">全面導入</span><span class="term-cn">資安管理系統</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">檔案伺服器每年中毒次數<span class="highlight">低於 2 次</span></div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">密碼設定 <span class="highlight">12 碼</span>, 文、數字與符號混合</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">全面導入</span>垃圾郵件過濾系統</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">題目要求找出「不」是<span class="term-cn">量化資安目標</span>的選項。<span class="term-cn">量化目標</span>是指可以<span class="highlight">具體測量</span>並<span class="highlight">評估達成程度</span>的目標。<br/>
+                                     (A) 「全面導入<span class="term-cn">資安管理系統</span>」是一個<span class="highlight">行動或專案</span>，而不是一個<span class="highlight">可持續測量</span>的量化目標。如何定義「全面」？導入本身不代表落實政策。<span class="highlight">不是</span>量化目標。<br/>
+                                     (B) 「檔案伺服器每年中毒次數低於 2 次」是一個<span class="highlight">清晰、可測量、有時限</span>的目標。可以透過事件記錄來<span class="highlight">追蹤達成率</span>。是量化目標。<br/>
+                                     (C) 「密碼設定 12 碼, 文、數字與符號混合」描述的是一項<span class="highlight">控制措施</span>或<span class="highlight">政策要求</span>，而不是一個衡量政策<span class="highlight">整體落實成效</span>的量化目標。雖然可以檢查密碼設定是否符合要求，但它本身更像是一個<span class="highlight">手段</span>而非<span class="highlight">結果</span>目標。<span class="highlight">不是</span>典型的量化資安目標（更像是控制實施的指標）。<br/>
+                                     (D) 「全面導入垃圾郵件過濾系統」同 (A)，是一個<span class="highlight">行動或專案</span>，<span class="highlight">不是</span>量化目標。導入後的成效（如垃圾郵件攔截率）才是量化目標。<span class="highlight">不是</span>量化目標。<br/>
+                                     因此，<span class="highlight">不是</span>量化目標的選項是 (A)、(C)、(D)。
+                                     *註：本題為複選題，正確選項為 A, C, D。*
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 18 -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                             <div class="question-header">
+                                 <div class="question-id">#18</div>
+                                 <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                             </div>
+                             <div class="question-content"><span class="term-cn">密碼學</span> (<span class="term-en">Cryptography</span>) 除了<span class="term-cn">機密性</span> (<span class="term-en">Confidentiality</span>) 之外, 還可以保護下列何者特性? (複選)</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">完整性</span> (<span class="term-en">Integrity</span>)</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">可用性</span> (<span class="term-en">Availability</span>)</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">不可否認性</span> (<span class="term-en">Non-Repudiation</span>)</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">鑑別性</span> (<span class="term-en">Authenticity</span>)</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content"><span class="term-cn">密碼學</span>技術提供的安全特性：<br/>
+                                     <ul>
+                                         <li><span class="term-cn">機密性</span> (<span class="term-en">Confidentiality</span>): 主要透過<span class="highlight">加密</span>（對稱或非對稱）來實現，確保只有授權者能讀取資訊。</li>
+                                         <li><span class="term-cn">完整性</span> (<span class="term-en">Integrity</span>): 透過<span class="highlight">雜湊函數</span> (<span class="term-en">Hash Function</span>) 或<span class="highlight">訊息鑑別碼</span> (<span class="term-abbr">MAC</span>) 來實現，確保資料在傳輸或儲存過程中未被竄改。 (A)</li>
+                                         <li><span class="term-cn">可用性</span> (<span class="term-en">Availability</span>): <span class="highlight">密碼學本身</span>通常<span class="highlight">不直接</span>提供可用性。可用性主要依賴系統架構、備援、負載平衡等。 (B)</li>
+                                         <li><span class="term-cn">不可否認性</span> (<span class="term-en">Non-Repudiation</span>): 主要透過<span class="highlight">數位簽章</span>（使用非對稱加密的私鑰簽署）來實現，證明訊息確實由某人發送且無法否認。 (C)</li>
+                                         <li><span class="term-cn">鑑別性</span> (<span class="term-en">Authenticity</span>) / <span class="term-cn">身份驗證</span> (<span class="term-en">Authentication</span>): 透過<span class="highlight">數位簽章</span>、<span class="term-abbr">MAC</span> 或基於密碼學的<span class="highlight">挑戰-回應</span>協議來驗證訊息來源或使用者身份的真實性。(D)</li>
+                                     </ul>
+                                    因此，除了<span class="term-cn">機密性</span>，<span class="term-cn">密碼學</span>還可以保護 (A) <span class="term-cn">完整性</span>、(C) <span class="term-cn">不可否認性</span>、(D) <span class="term-cn">鑑別性</span>。
+                                     *註：本題PDF標示答案為A, C, D。Page 5 OCR D選項為 Authenticity，非 Availability，在此修正。*
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 19 -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                            <div class="question-header">
+                                <div class="question-id">#19</div>
+                                <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                            </div>
+                            <div class="question-content">某公司正準備規劃其<span class="term-cn">識別及存取管理</span> (<span class="term-en">Identity and Access Management</span>) 機制, 下列何者是<span class="highlight">可選擇</span>的<span class="term-cn">存取控制</span>類型? (複選)</div>
+                            <div class="options-container">
+                                <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">強制存取控制</span> (<span class="term-en">Mandatory Access Control</span>, <span class="term-abbr">MAC</span>)</div></div>
+                                <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">識別存取控制</span> (<span class="term-en">Identity-Based Access Control</span>, <span class="term-abbr">IBAC</span>)</div></div>
+                                <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">規則基礎存取控制</span> (<span class="term-en">Rule-Based Access Control</span>, <span class="term-abbr">RuBAC</span>)</div></div>
+                                <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">自主存取控制</span> (<span class="term-en">Discretionary Access Control</span>, <span class="term-abbr">DAC</span>)</div></div>
+                            </div>
+                            <div class="explanation-container">
+                                <div class="explanation-header">答案解析</div>
+                                <div class="explanation-content">常見的<span class="term-cn">存取控制</span>模型類型：<br/>
+                                    (A) <span class="term-cn">強制存取控制</span> (<span class="term-abbr">MAC</span>): 基於<span class="highlight">安全標籤</span>和系統<span class="highlight">強制策略</span>，由<span class="highlight">管理員</span>集中控制，使用者<span class="highlight">無法自行</span>變更權限。是一種可選擇的類型。<br/>
+                                    (B) <span class="term-cn">識別存取控制</span> (<span class="term-abbr">IBAC</span>): 這<span class="highlight">不是</span>一個廣泛認可的標準存取控制模型術語。存取控制<span class="highlight">通常</span>都基於某種形式的身份識別，但 <span class="term-abbr">IBAC</span> 本身並<span class="highlight">不代表</span>一種獨特的模型分類，相較於 <span class="term-abbr">MAC</span>, <span class="term-abbr">DAC</span>, <span class="term-abbr">RBAC</span>, <span class="term-abbr">ABAC</span> 等。<br/>
+                                    (C) <span class="term-cn">規則基礎存取控制</span> (<span class="term-abbr">RuBAC</span> / <span class="term-abbr">RBAC</span> - <span class="term-en">Role-Based</span>): 基於預先定義的<span class="highlight">規則</span>（如防火牆規則）或<span class="highlight">角色</span>（<span class="term-en">Role-Based Access Control</span>，通常縮寫為 <span class="term-abbr">RBAC</span>）來授予權限。是一種可選擇的類型。<br/>
+                                    (D) <span class="term-cn">自主存取控制</span> (<span class="term-abbr">DAC</span>): 資源的<span class="highlight">擁有者</span>可以<span class="highlight">自行決定</span>誰可以存取該資源以及<span class="highlight">授予何種權限</span>（如 <span class="term-en">Unix</span> 的 <span class="term-en">rwx</span> 權限）。是一種可選擇的類型。<br/>
+                                   其他常見類型還有<span class="term-cn">屬性基礎存取控制</span> (<span class="term-en">Attribute-Based Access Control</span>, <span class="term-abbr">ABAC</span>)。<br/>
+                                  因此，可選擇的存取控制類型包括 (A)、(C)、(D)。
+                                    *註：本題為複選題，正確選項為 A, C, D。*
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Question 20 -->
+                        <div class="question-card" data-evaluation-content-id="2.1">
+                             <div class="question-header">
+                                 <div class="question-id">#20</div>
+                                 <div class="evaluation-criterion">2.1 風險分析與評估</div>
+                             </div>
+                             <div class="question-content">下列哪些是進行<span class="term-cn">營運衝擊分析</span> (<span class="term-en">Business Impact Analysis</span>, <span class="term-abbr">BIA</span>) 時需考量的<span class="highlight">因素</span>? (複選)</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">財務衝擊</span> (<span class="term-en">Financial Impact</span>)</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">政治衝擊</span> (<span class="term-en">Political Impact</span>)</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">商譽衝擊</span> (<span class="term-en">Reputational Impact</span>)</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">法規衝擊</span> (<span class="term-en">Legal Impact</span>)</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content"><span class="term-cn">營運衝擊分析</span> (<span class="term-abbr">BIA</span>) 旨在評估業務流程<span class="highlight">中斷</span>可能對組織造成的<span class="highlight">各種影響</span>，以確定流程的關鍵性及恢復目標。常見的衝擊考量因素包括：<br/>
+                                     (A) <span class="term-cn">財務衝擊</span>: 如<span class="highlight">收入損失</span>、<span class="highlight">額外支出</span>、<span class="highlight">罰款</span>等。是<span class="highlight">核心</span>考量因素。<br/>
+                                     (B) <span class="term-cn">政治衝擊</span>: 通常<span class="highlight">不是</span> BIA 的<span class="highlight">直接</span>考量因素，除非組織的業務與政治活動高度相關（如政府機構、遊說團體）。對<span class="highlight">一般企業</span>而言較少考慮。<br/>
+                                     (C) <span class="term-cn">商譽衝擊</span>: 如<span class="highlight">客戶信心</span>下降、<span class="highlight">品牌形象</span>受損、<span class="highlight">媒體負面報導</span>等。是<span class="highlight">重要</span>的考量因素，尤其對<span class="term-cn">服務業</span>或<span class="term-cn">品牌導向</span>企業。<br/>
+                                     (D) <span class="term-cn">法規衝擊</span>: 如<span class="highlight">違反合約</span>義務、<span class="highlight">未能履行</span>法律或監管要求、<span class="highlight">遭受處罰</span>等。是<span class="highlight">重要</span>的考量因素，尤其在<span class="highlight">受監管</span>行業。<br/>
+                                    其他還可能考慮<span class="term-cn">營運衝擊</span>（如生產力下降）、<span class="term-cn">客戶衝擊</span>（如服務中斷）、<span class="term-cn">供應鏈衝擊</span>等。<br/>
+                                   因此，需考量的因素包括 (A)、(C)、(D)。
+                                     *註：本題為複選題，正確選項為 A, C, D。*
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 21 (Start of Group Questions) -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                            <div class="question-header">
+                                <div class="question-id">#21</div>
+                                <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                            </div>
+                            <div class="question-content">【題組】某公司的<span class="term-cn">資安人員</span>依據公司設備狀況規劃以下<span class="term-cn">網路架構</span>設計圖：<br/> 
+                                <img src="image/109_規_21.png" class="responsive-img">
+                                (圖示包含 Internet, Router, Firewall, DMZ (MailServer, IIS+MS-SQL 192.168.10.5), OFFICE (Wireless_Router_N, iMac 192.168.10.100, Laptop, Printer))<br/>
+                            根據上列資訊，請回答下列問題：<br/>
+                            21. 題組背景描述如附圖。請問該<span class="term-cn">網路架構</span>設計中, 存在下列哪些<span class="highlight">問題</span>? (複選)</div>
+                            <div class="options-container">
+                                <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">OFFICE</span> 與 <span class="term-abbr">DMZ</span> <span class="highlight">未區分網段</span></div></div>
+                                <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">伺服器與資料庫</span>放在<span class="highlight">同一台</span></div></div>
+                                <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">自行架設<span class="term-cn">郵件伺服器</span><span class="highlight">安全性不足</span></div></div>
+                                <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">印表機應該使用<span class="highlight">無線分享</span>以增加便利性</div></div>
+                            </div>
+                            <div class="explanation-container">
+                                <div class="explanation-header">答案解析</div>
+                                <div class="explanation-content">分析圖示網路架構的問題：<br/>
+                                    (A) <span class="highlight">問題</span>。<span class="term-cn">OFFICE</span> 區的 <span class="term-abbr">iMac</span> IP 位址是 192.168.10.100，<span class="term-abbr">DMZ</span> 區的 <span class="term-cn">IIS+MS-SQL</span> 伺服器 IP 位址是 192.168.10.5。它們屬於<span class="highlight">同一個網段</span> (192.168.10.0/24)。<span class="term-cn">DMZ</span> 區應與內部<span class="term-cn">OFFICE</span> 區使用<span class="highlight">不同</span>的、<span class="highlight">隔離</span>的網段，以防止 <span class="term-abbr">DMZ</span> 設備被攻陷後直接危及內部網路。<br/>
+                                    (B) <span class="highlight">問題</span>。圖中顯示 <span class="term-cn">IIS</span> (<span class="term-en">Web Server</span>) 和 <span class="term-cn">MS-SQL</span> (<span class="term-en">Database Server</span>) <span class="highlight">安裝在同一台</span>伺服器上 (192.168.10.5)。從安全角度看，<span class="highlight">Web 伺服器</span>（通常暴露在較高風險的 <span class="term-abbr">DMZ</span>）和<span class="highlight">資料庫伺服器</span>（儲存敏感資料）<span class="highlight">應分開</span>部署在不同的機器甚至不同的網段（多層式架構），以<span class="highlight">降低風險</span>。<br/>
+                                    (C) <span class="highlight">潛在問題</span>。在 <span class="term-abbr">DMZ</span> 自行架設<span class="term-cn">郵件伺服器</span> (<span class="term-cn">MailServer</span>) 需要非常<span class="highlight">專業的安全配置和維護</span>（防垃圾郵件、防病毒、防中繼、防漏洞攻擊）。若<span class="highlight">管理不當</span>，很容易成為<span class="highlight">安全隱患</span>或被濫用。相較於使用專業的雲端郵件服務，自架伺服器的安全<span class="highlight">挑戰通常更大</span>，可能<span class="highlight">安全性不足</span>。<br/>
+                                    (D) <span class="highlight">不一定是問題，甚至可能引入風險</span>。印表機的有線或無線連接方式<span class="highlight">取決於管理需求</span>。使用無線分享雖然方便，但也可能<span class="highlight">增加</span>被未授權訪問或攻擊的<span class="highlight">風險點</span>，需要妥善設定安全機制。<這<span class="highlight">不是</span>此架構的主要安全問題。<br/>
+                                   因此，存在的問題是 (A)、(B)、(C)。
+                                    *註：本題為複選題，PDF OCR Page 6 顯示答案為 A, B, C。*
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Question 22 -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                            <div class="question-header">
+                                <div class="question-id">#22</div>
+                                <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                            </div>
+                            <div class="question-content">【題組】背景描述如前圖。<br/>
+                            22. 承上題, 若要進行<span class="term-cn">網路架構改善</span>, 可採取下列何種<span class="highlight">強化措施</span>?</div>
+                            <div class="options-container">
+                                <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">伺服器與資料庫</span>應該<span class="highlight">區分在不同網段</span></div></div>
+                                <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">增加一個 <span class="term-cn">MAIL Server</span> 做<span class="term-cn">備援</span></div></div>
+                                <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">採取 <span class="term-abbr">HA</span> 機制多一台印表機</div></div>
+                                <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-abbr">Mac</span> 電腦應該要限制上網</div></div>
+                            </div>
+                            <div class="explanation-container">
+                                <div class="explanation-header">答案解析</div>
+                                <div class="explanation-content">針對 Q21 發現的問題進行改善：<br/>
+                                    (A) <span class="highlight">正確</span>。解決 Q21-(B) 的問題。將<span class="term-cn">Web伺服器</span> (<span class="term-cn">IIS</span>) 和<span class="term-cn">資料庫伺服器</span> (<span class="term-cn">MS-SQL</span>) <span class="highlight">分開</span>部署，並且理想情況下，資料庫伺服器應放置在比 <span class="term-abbr">DMZ</span> <span class="highlight">更安全</span>的內部網段，Web伺服器透過<span class="term-cn">防火牆</span>規則與之通訊（多層式架構）。<span class="highlight">區分在不同網段</span>是重要的強化措施。<br/>
+                                    (B) <span class="highlight">不一定</span>是優先措施。增加 <span class="term-cn">Mail Server</span> 備援可以提高郵件服務的<span class="term-cn">可用性</span>，但<span class="highlight">不能解決</span> Q21-(A) 網段劃分不清或 Q21-(C) 自架郵件伺服器<span class="highlight">本身</span>的安全性問題。<br/>
+                                    (C) <span class="highlight">不相關</span>。<span class="term-abbr">HA</span> (<span class="term-cn">高可用性</span>) 是針對<span class="highlight">關鍵服務</span>（如伺服器、網路設備）的，<span class="highlight">增加一台印表機</span>不是 <span class="term-abbr">HA</span> 的應用場景，也<span class="highlight">不能解決</span>架構的主要安全問題。<br/>
+                                    (D) <span class="highlight">不一定</span>必要或有效。限制 <span class="term-abbr">Mac</span> 上網可能影響員工工作，且是否需要限制<span class="highlight">取決於公司的安全政策</span>，與圖中主要的<span class="highlight">伺服器區域</span>劃分問題<span class="highlight">關聯不大</span>。且如果需要連外，應透過<span class="term-cn">防火牆</span>控管。<br/>
+                                   因此，最直接且重要的強化措施是 (A)。
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Question 23 -->
+                        <div class="question-card" data-evaluation-content-id="4.1">
+                             <div class="question-header">
+                                 <div class="question-id">#23</div>
+                                 <div class="evaluation-criterion">4.1 安全維運</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前圖。<br/>
+                             23. 承上題, 在此架構下, 下列何者「不」是定期需要執行的<span class="term-cn">資安維運</span>任務?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">定期<span class="term-cn">備份</span>與<span class="term-cn">演練</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">每半年做一次<span class="term-cn">防毒掃描</span></div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="highlight">每兩年</span>做一次<span class="term-cn">資料備份</span></div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">不需向主管機關報告</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">定期<span class="term-cn">資安維運</span>任務：<br/>
+                                     (A) 定期<span class="term-cn">備份</span>（例如，針對 <span class="term-cn">MailServer</span>, <span class="term-cn">IIS+MS-SQL</span>, 甚至重要的客戶端資料）和<span class="term-cn">演練</span>還原是<span class="highlight">非常重要</span>的維運任務。<br/>
+                                     (B) 定期進行<span class="term-cn">防毒掃描</span>（在伺服器和客戶端）是必要的。頻率可能是每天、每週或每月，具體取決於政策，<span class="highlight">半年一次</span>頻率<span class="highlight">偏低</span>，但仍算定期任務。<br/>
+                                     (C) <span class="term-cn">資料備份</span>的頻率<span class="highlight">取決於資料變動率和 RPO</span>（復原點目標）。對於郵件、網站和資料庫等系統，<span class="highlight">每兩年才備份一次</span>是<span class="highlight">完全不夠</span>的，可能導致大量資料遺失。<備份應至少每天或每週進行。<這是「不」正確的任務描述。<br/>
+                                     (D) 除非該公司屬於<span class="term-cn">資通安全管理法</span>規範的特定對象，且發生了達到通報標準的資安事件，否則例行的維運任務<span class="highlight">通常不需要</span>向外部主管機關報告。<br/>
+                                    因此，最不正確的描述是 (C)，備份頻率過低。
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 24 -->
+                        <div class="question-card" data-evaluation-content-id="1.2">
+                            <div class="question-header">
+                                <div class="question-id">#24</div>
+                                <div class="evaluation-criterion">1.2 資安管理實務/架構規劃</div>
+                            </div>
+                            <div class="question-content">【題組】背景描述如前圖。<br/>
+                            24. 若要設定<span class="term-cn">防火牆內對外</span>的連線, <span class="highlight">僅開放對外</span>的服務及<span class="highlight">網頁瀏覽</span>, 下列何者<span class="highlight">正確</span>?</div>
+                            <div class="options-container">
+                                <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="highlight">Allow all</span></div></div>
+                                <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">Allow <span class="term-abbr">http port 80</span></div></div>
+                                <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">Allow <span class="term-abbr">http port 1443</span></div></div>
+                                <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">Deny <span class="term-abbr">smtp 125</span></div></div>
+                            </div>
+                            <div class="explanation-container">
+                                <div class="explanation-header">答案解析</div>
+                                <div class="explanation-content">設定內部網路（<span class="term-cn">OFFICE</span> 區）對外連線規則，僅允許網頁瀏覽和必要服務：<br/>
+                                    <ul>
+                                        <li>網頁瀏覽需要允許 <span class="term-abbr">HTTP</span> (TCP <span class="highlight">port 80</span>) 和 <span class="term-abbr">HTTPS</span> (TCP port 443) 的出站連線。</li>
+                                        <li>可能還需要允許 <span class="term-abbr">DNS</span> (UDP/TCP port 53) 查詢。</li>
+                                        <li>防火牆規則應遵循<span class="highlight">預設拒絕，明確允許</span>的原則。</li>
+                                    </ul>
+                                   (A) `Allow all` <span class="highlight">過於寬鬆</span>，不符合「僅開放」的要求。<br/>
+                                   (B) `Allow http port 80` 是允許<span class="highlight">非加密網頁瀏覽</span>的<span class="highlight">必要規則</span>之一。<br/>
+                                   (C) 端口 `1443` <span class="highlight">不是標準</span>的 HTTP 或 HTTPS 端口。（有時用作備用 HTTPS，但 443 才是標準）。<br/>
+                                   (D) `Deny smtp 125` 語法錯誤（端口應為 25），且這是一條<span class="highlight">拒絕</span>規則。題目要求的是<span class="highlight">開放</span>（允許）規則。<br/>
+                                  在選項中，(B) 是開放網頁瀏覽<span class="highlight">所需</span>的一條正確的允許規則。雖然通常還需要允許 HTTPS (443)，但 (B) 本身是正確的。
+                                </div>
+                            </div>
+                        </div>
+            
+                         <!-- Question 25 (Start of Group Questions) -->
+                         <div class="question-card" data-evaluation-content-id="2.1">
+                             <div class="question-header">
+                                 <div class="question-id">#25</div>
+                                 <div class="evaluation-criterion">2.1 風險分析與評估</div>
+                             </div>
+                             <div class="question-content">【題組】某公司為一跨國企業, 公司員工約 10,000 人, 所有員工皆配備一台<span class="term-cn">筆記型電腦</span>, 身為<span class="term-cn">資安專家</span>的你, 正在評估<span class="term-cn">筆記型電腦</span>的安全風險, 並對公司高層提出建議。<br/>
+                             目前已搜集到以下資訊:<br/>
+                             每台<span class="term-cn">筆記型電腦</span>價值: 30,000<br/>
+                             <span class="term-cn">筆記型電腦</span>遺失, 價值將 100% 受損<br/>
+                             每年遺失數量 10 台<br/>
+                             同時, <span class="term-cn">資安專家</span>已完成<span class="term-cn">資料防護軟體</span>評估, 以避免<span class="term-cn">筆記型電腦</span>遺失時對公司造成的損失, 產品生命週期為四年, 廠商報價如下:<br/>
+                             <span class="term-cn">全硬碟加密軟體</span>: 500,000, 使用期間每年維護費用: 75,000<br/>
+                             <span class="term-cn">遠端資料清除工具</span>: 100,000, 使用期間每年維護費用: 20,000<br/>
+                             根據上列資訊，請回答下列問題：<br/>
+                             25. 請問你正在進行的<span class="term-cn">風險分析</span>方法為下列何者?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">定性風險分析</span> (<span class="term-en">Qualitative Risk Analysis</span>)</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">定量風險分析</span> (<span class="term-en">Quantitative Risk Analysis</span>)</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">協同風險分析</span> (<span class="term-en">Collaborative Risk Analysis</span>)</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">風險分析矩陣</span> (<span class="term-en">Risk Analysis Matrix</span>)</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     <span class="term-cn">風險分析</span>方法主要分為<span class="term-cn">定性</span>和<span class="term-cn">定量</span>兩種：
+                                     <ul>
+                                         <li><span class="term-cn">定性風險分析</span> (<span class="term-en">Qualitative</span>): 使用<span class="highlight">描述性</span>的詞語（如高、中、低）來評估風險的<span class="highlight">可能性和影響</span>，通常基於經驗和判斷，<span class="highlight">不涉及</span>具體的貨幣價值。常使用<span class="term-cn">風險矩陣</span> (D) 作為工具。</li>
+                                         <li><span class="term-cn">定量風險分析</span> (<span class="term-en">Quantitative</span>): 嘗試為風險分配<span class="highlight">具體的數值</span>，特別是<span class="highlight">貨幣價值</span>。它計算<span class="term-cn">年度損失期望值</span> (<span class="term-abbr">ALE</span>)、<span class="term-cn">單次損失期望值</span> (<span class="term-abbr">SLE</span>) 和<span class="term-cn">年發生率</span> (<span class="term-abbr">ARO</span>)。</li>
+                                     </ul>
+                                     題組中提供了<span class="highlight">具體的數字</span>：資產價值 (30,000)、損失百分比 (100%)、年發生次數 (10次)，以及控制措施的成本（初始費用和年維護費）。這些<span class="highlight">數值化</span>的資訊是用來進行<span class="highlight">量化</span>計算（例如計算 <span class="term-abbr">ALE</span> 和評估控制措施的成本效益）的基礎。<br/>
+                                     (C) <span class="term-cn">協同風險分析</span>不是標準的風險分析方法分類術語。<br/>
+                                     因此，這裡進行的是 (B) <span class="term-cn">定量風險分析</span>。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 26 -->
+                         <div class="question-card" data-evaluation-content-id="2.1">
+                             <div class="question-header">
+                                 <div class="question-id">#26</div>
+                                 <div class="evaluation-criterion">2.1 風險分析與評估</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             26. 公司<span class="term-cn">筆記型電腦</span>的<span class="term-cn">年度損失期望值</span> (<span class="term-en">Annualized Loss Expectancy</span>) 為下列何者?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">75,000</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">300,000</span></div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">30,000</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">1,200,000</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     計算<span class="term-cn">年度損失期望值</span> (<span class="term-abbr">ALE</span>) 的公式為：<br/>
+                                     <span class="term-abbr">ALE</span> = <span class="term-cn">單次損失期望值</span> (<span class="term-abbr">SLE</span>) × <span class="term-cn">年發生率</span> (<span class="term-abbr">ARO</span>)<br/><br/>
+                                     首先計算 <span class="term-abbr">SLE</span>：<br/>
+                                     <span class="term-abbr">SLE</span> = 資產價值 (<span class="term-en">Asset Value</span>, <span class="term-abbr">AV</span>) × 暴露因子 (<span class="term-en">Exposure Factor</span>, <span class="term-abbr">EF</span>)<br/>
+                                     <span class="term-abbr">AV</span> = 30,000 (每台筆電價值)<br/>
+                                     <span class="term-abbr">EF</span> = 100% = 1 (遺失時價值完全損失)<br/>
+                                     <span class="term-abbr">SLE</span> = 30,000 × 1 = 30,000 元 (每次遺失事件的預期損失)<br/><br/>
+                                     接著計算 <span class="term-abbr">ALE</span>：<br/>
+                                     <span class="term-abbr">ARO</span> = 10 次/年 (每年遺失數量)<br/>
+                                     <span class="term-abbr">ALE</span> = <span class="term-abbr">SLE</span> × <span class="term-abbr">ARO</span> = 30,000 × 10 = 300,000 元/年<br/><br/>
+                                     因此，公司筆記型電腦遺失的<span class="term-cn">年度損失期望值</span>為 300,000 元。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 27 -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#27</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             27. 正在評估的<span class="term-cn">資料防護軟體</span>, 每年的<span class="highlight">年度花費</span>為下列何者?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">695,000</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">980,000</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">300,000</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">245,000</span></div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     題目要求計算正在評估的<span class="highlight">兩種</span><span class="term-cn">資料防護軟體</span>（全硬碟加密 和 遠端清除）<span class="highlight">合併</span>的「每年」<span class="highlight">年度花費</span>。<br/>
+                                     計算年度花費時，需要考慮<span class="highlight">初始投資成本</span>（需要<span class="highlight">攤提</span>到每年）和<span class="highlight">每年的維護費用</span>。<br/>
+                                     產品生命週期為 4 年。<br/><br/>
+                                     1. <span class="term-cn">全硬碟加密軟體</span>：
+                                        *   初始成本: 500,000
+                                        *   年維護費: 75,000
+                                        *   年攤提初始成本: 500,000 / 4 = 125,000 元/年
+                                        *   年總花費 = 年攤提 + 年維護費 = 125,000 + 75,000 = 200,000 元/年<br/><br/>
+                                     2. <span class="term-cn">遠端資料清除工具</span>：
+                                        *   初始成本: 100,000
+                                        *   年維護費: 20,000
+                                        *   年攤提初始成本: 100,000 / 4 = 25,000 元/年
+                                        *   年總花費 = 年攤提 + 年維護費 = 25,000 + 20,000 = 45,000 元/年<br/><br/>
+                                     兩種軟體的<span class="highlight">合併年度總花費</span> = 200,000 + 45,000 = <span class="highlight">245,000</span> 元/年。<br/><br/>
+                                     選項分析：
+                                     (A) 695,000 = 500,000 + 100,000 + 75,000 + 20,000 (未攤提初始成本，直接加總第一年費用)
+                                     (B) 980,000 = (500,000 + 75,000 * 4) + (100,000 + 20,000 * 4) (計算四年總花費)
+                                     (C) 300,000 (可能是 Q26 的 ALE)
+                                     (D) 245,000 (正確的年均花費)
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 28 -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#28</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             28. 根據分析結果, <span class="term-cn">資安專家</span>應對公司提出下列何種<span class="highlight">建議</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">接受風險</span>, 購買防護軟體費用過高</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="highlight">導入資料防護軟體</span>以<span class="highlight">降低風險</span></div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">資料不足, 需重新進行評估</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">接受風險</span>, <span class="term-cn">筆記型電腦</span>遺失數量不多</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     這是一個<span class="term-cn">成本效益分析</span> (<span class="term-en">Cost-Benefit Analysis</span>) 的決策問題。<br/>
+                                     1.  不採取措施的風險成本：<span class="term-abbr">ALE</span> = 300,000 元/年 (來自 Q26)。
+                                     2.  採取控制措施（導入兩種<span class="term-cn">資料防護軟體</span>）的成本：年均花費 = 245,000 元/年 (來自 Q27)。<br/><br/>
+                                     比較兩者：
+                                     控制措施的年成本 (245,000) <span class="highlight">低於</span>不採取措施的年預期損失 (<span class="term-abbr">ALE</span> = 300,000)。<br/>
+                                     這表示導入這些<span class="term-cn">資料防護軟體</span>在<span class="highlight">經濟上是合理的</span>，可以有效<span class="highlight">降低</span>因筆電遺失導致的<span class="highlight">資料外洩風險</span>（雖然題目只計算了硬體損失，但資料外洩的潛在損失可能更高，軟體價值在此體現）。<br/><br/>
+                                     因此，<span class="term-cn">資安專家</span>應提出的建議是：<br/>
+                                     (A) <span class="highlight">錯誤</span>。費用 (245,000) 低於預期損失 (300,000)，並非過高。<br/>
+                                     (B) <span class="highlight">正確</span>。導入措施的成本<span class="highlight">小於</span>預期損失，<span class="highlight">符合成本效益</span>，應導入以<span class="term-cn">降低風險</span>（風險緩解）。<br/>
+                                     (C) <span class="highlight">錯誤</span>。提供的資料足以進行<span class="term-cn">定量分析</span>和決策。<br/>
+                                     (D) <span class="highlight">錯誤</span>。雖然遺失數量 (10台/年) 相對於總數 (10,000台) 比例不高，但<span class="term-abbr">ALE</span> (300,000) 是一個<span class="highlight">不小的數目</span>，且有成本效益更優的<span class="term-cn">風險處理</span>方案（導入軟體），因此<span class="term-cn">接受風險</span><span class="highlight">不是</span>最佳選擇。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 29 (Start of Group Questions) -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#29</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】為因應 2019 冠狀病毒疾病疫情, 中央防疫中心也提升至一級開設, 對此, 金管會表示, 國內銀行業也積極因應, 目前已有 13 家銀行採取<span class="term-cn">異地辦公</span>, A 銀行決定將資訊部門的系統管理人員及其代理人分別安排在不同的辦公地點辦公。<br/>
+                             根據上列資訊，請回答下列問題：<br/>
+                             29. 請問該<span class="term-cn">異地辦公</span>的規劃與<span class="term-cn">營運持續管理</span>有下列何種關聯?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">與<span class="term-cn">營運持續管理</span>無關, 應屬於<span class="term-cn">職業衛生安全管理</span> (<span class="term-en">Occupational Health and Safety Assessment Series</span>, <span class="term-abbr">OHSAS</span>) 的議題</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">與<span class="term-cn">資料復原目標</span> (<span class="term-en">Recovery Point Objective</span>, <span class="term-abbr">RPO</span>) 的達成較有關</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">與<span class="term-cn">復原目標時間</span> (<span class="term-en">Recovery Time Objective</span>, <span class="term-abbr">RTO</span>) 的達成較有關</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">屬於政治因應, 配合主管機關要求</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     <span class="term-cn">異地辦公</span>（或<span class="term-cn">分散辦公</span>）是一種<span class="term-cn">營運持續策略</span>，旨在<span class="highlight">降低</span>因單一地點發生<span class="highlight">突發事件</span>（如疫情、火災、停電）導致<span class="highlight">關鍵人員無法工作</span>，進而造成<span class="highlight">業務中斷</span>的風險。<br/>
+                                     (A) <span class="highlight">錯誤</span>。<span class="term-cn">異地辦公</span>直接關係到如何在<span class="highlight">災難或中斷</span>情境下<span class="highlight">維持營運</span>，是 <span class="term-abbr">BCM</span> 的<span class="highlight">核心策略</span>之一。雖然也涉及員工健康安全 (<span class="term-abbr">OHSAS</span>)，但其主要目的是<span class="term-cn">業務連續性</span>。<br/>
+                                     (B) <span class="highlight">錯誤</span>。<span class="term-abbr">RPO</span>（復原點目標）關乎<span class="highlight">可容忍的資料損失量</span>，主要透過<span class="highlight">備份頻率</span>來達成。<span class="term-cn">異地辦公</span>主要影響的是<span class="highlight">人員</span>和<span class="highlight">流程</span>的<span class="highlight">恢復速度</span>。<br/>
+                                     (C) <span class="highlight">正確</span>。<span class="term-abbr">RTO</span>（復原時間目標）是指<span class="highlight">業務流程</span>必須在<span class="highlight">中斷後多久時間內恢復</span>到可接受的運作水平。<span class="term-cn">異地辦公</span>確保即使主要辦公地點無法運作，<span class="highlight">關鍵人員</span>仍可在<span class="highlight">備援地點</span>繼續工作，從而<span class="highlight">縮短</span>服務中斷時間，<span class="highlight">達成 RTO</span> 目標。<br/>
+                                     (D) <span class="highlight">部分正確但非核心關聯</span>。雖然配合主管機關要求是一個<span class="highlight">觸發因素</span>，但<span class="term-cn">異地辦公</span>的<span class="highlight">根本目的</span>和在 <span class="term-abbr">BCM</span> 中的作用是<span class="highlight">確保營運韌性</span>，與 <span class="term-abbr">RTO</span> 的達成<span class="highlight">直接相關</span>。<br/>
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 30 -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#30</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             30. 請問 A 銀行資訊部門關鍵成員<span class="term-cn">異地辦公</span>的相關程序、作法與規定, 應納入下列何種<span class="term-cn">程序文件</span>中較為合適?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">事故管理計畫</span> (<span class="term-en">Incident Management Plan</span>)</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">營運持續計畫</span> (<span class="term-en">Business Continuity Plan</span>)</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">營運復原計畫</span> (<span class="term-en">Business Resumption Plan</span>)</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">災害復原計畫</span> (<span class="term-en">Disaster Recovery Plan</span>)</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     各類計畫的焦點：
+                                     <ul>
+                                         <li><span class="term-cn">事故管理計畫</span> (<span class="term-en">Incident Management Plan</span>): 主要處理<span class="highlight">資訊安全事件</span>（如駭客入侵、病毒感染）的<span class="highlight">偵測、應變、處理和學習</span>過程。</li>
+                                         <li><span class="term-cn">營運持續計畫</span> (<span class="term-en">Business Continuity Plan</span>, <span class="term-abbr">BCP</span>): 描述如何在<span class="highlight">重大中斷事件</span>（包括災難、疫情等）發生時，<span class="highlight">維持關鍵業務流程</span>的<span class="highlight">持續運作</span>或在<span class="highlight">可接受的時間內恢復</span>。</li>
+                                         <li><span class="term-cn">營運復原計畫</span> (<span class="term-en">Business Resumption Plan</span>): 通常被視為 <span class="term-abbr">BCP</span> 的一部分或相似概念，側重於中斷後業務流程的<span class="highlight">恢復</span>。</li>
+                                         <li><span class="term-cn">災害復原計畫</span> (<span class="term-en">Disaster Recovery Plan</span>, <span class="term-abbr">DRP</span>): 通常<span class="highlight">聚焦於 IT 系統</span>和<span class="highlight">基礎設施</span>在災難後的<span class="highlight">恢復</span>，是 <span class="term-abbr">BCP</span> 的一個<span class="highlight">重要子計畫</span>。</li>
+                                     </ul>
+                                     <span class="term-cn">異地辦公</span>是為了應對可能影響主要辦公地點的<span class="highlight">中斷事件</span>（如疫情），確保<span class="highlight">關鍵人員</span>能夠繼續執行<span class="highlight">關鍵業務流程</span>（如系統管理）。這完全符合 <span class="term-abbr">BCP</span> 的範疇。因此，<span class="term-cn">異地辦公</span>的程序、作法與規定應納入 (B) <span class="term-cn">營運持續計畫</span>中。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 31 -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#31</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             31. 關於 A 銀行<span class="term-cn">異地辦公地點</span>的<span class="highlight">考量及選擇</span>, 下列敘述何者較「不」正確?</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">應與<span class="highlight">系統異地備援</span>的設置<span class="highlight">位置一致</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">如系統發生異地中斷, <span class="term-cn">系統管理員</span>可由<span class="highlight">遠端連線操控</span>, 應可考量採<span class="highlight">居家辦公</span></div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">可依<span class="term-cn">營運衝擊分析</span>後的<span class="highlight">流程或服務</span>的重要性來決定哪些<span class="highlight">角色需要異地辦公</span></div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">隨著資訊科技的進步, <span class="term-cn">異地辦公</span>的選擇應著重在<span class="highlight">工作的執行</span>, 而不是辦公室地點的選擇</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     考量<span class="term-cn">異地辦公地點</span>：
+                                     (A) <span class="highlight">不正確</span>。<span class="term-cn">人員</span>的<span class="term-cn">異地辦公地點</span>（<span class="term-en">Work Area Recovery Site</span>）和<span class="term-cn">系統</span>的<span class="term-cn">異地備援中心</span>（<span class="term-en">Data Center Recovery Site</span>）<span class="highlight">不必</span>在同一地點。將兩者分開甚至可以<span class="highlight">進一步分散風險</span>（避免單點故障同時影響人和系統）。<span class="term-cn">異地辦公</span>地點的選擇更側重於<span class="highlight">交通便利性、基礎設施、人員安全</span>等因素。<br/>
+                                     (B) <span class="highlight">正確</span>。如果<span class="term-cn">系統管理</span>任務可以透過<span class="highlight">安全的遠端連線</span>（如 <span class="term-abbr">VPN</span>）完成，那麼<span class="term-cn">居家辦公</span>可以作為<span class="term-cn">異地辦公</span>的一種形式，提供更大的<span class="highlight">彈性</span>和<span class="highlight">成本效益</span>，尤其在疫情等情境下。<br/>
+                                     (C) <span class="highlight">正確</span>。<span class="term-abbr">BIA</span> 的結果會<span class="highlight">識別</span>出哪些是<span class="highlight">關鍵業務流程</span>和<span class="highlight">支持這些流程</span>的<span class="highlight">關鍵人員</span>。組織應<span class="highlight">優先</span>為這些關鍵角色規劃<span class="term-cn">異地辦公</span>方案。<br/>
+                                     (D) <span class="highlight">正確</span>。現代<span class="term-cn">異地辦公</span>的<span class="highlight">重點</span>在於確保員工<span class="highlight">擁有必要的工具、連線和安全環境</span>來<span class="highlight">執行其工作職責</span>，無論他們身在何處（可能是另一個辦公室、居家、或其他地點），而不僅僅是找一個物理上的替代辦公室。<br/>
+                                    因此，較「不」正確的敘述是 (A)。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 32 -->
+                         <div class="question-card" data-evaluation-content-id="2.2">
+                             <div class="question-header">
+                                 <div class="question-id">#32</div>
+                                 <div class="evaluation-criterion">2.2 風險處理實務</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             32. 除了<span class="term-cn">異地辦公地點</span>的選擇外, 下列何項亦可增加疫情發生時的<span class="term-cn">營運持續能力</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">接班人計畫</span></div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text"><span class="term-cn">代理人計畫</span></div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">工作輪休計畫</span></div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">員工進修計畫</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     增加疫情期間<span class="term-cn">營運持續能力</span>的措施，主要是確保<span class="highlight">關鍵職能</span>能<span class="highlight">持續執行</span>，即使<span class="highlight">原負責人員</span>因故（如生病、隔離）<span class="highlight">無法工作</span>。<br/>
+                                     (A) <span class="term-cn">接班人計畫</span> (<span class="term-en">Succession Planning</span>): 主要針對<span class="highlight">長期</span>的<span class="highlight">領導層</span>或<span class="highlight">關鍵職位</span>空缺，培養<span class="highlight">未來</span>的接替人選。與<span class="highlight">應對短期、突發</span>的疫情<span class="highlight">關聯較小</span>。<br/>
+                                     (B) <span class="term-cn">代理人計畫</span> (<span class="term-en">Delegation of Authority / Acting Appointments</span>): <span class="highlight">預先指定</span>並<span class="highlight">授權</span>某人在<span class="highlight">原負責人缺席</span>時，<span class="highlight">暫時代理</span>其職務和權責。這對於確保疫情期間<span class="highlight">關鍵決策和作業不中斷</span>非常重要。<br/>
+                                     (C) <span class="term-cn">工作輪休計畫</span>: 輪休本身是<span class="highlight">正常排班</span>，但在疫情期間，"輪班"（例如 A/B 組輪流上班或<span class="term-cn">異地辦公</span>）可以<span class="highlight">減少</span>人員<span class="highlight">同時感染</span>的風險，屬於一種<span class="term-cn">風險降低</span>措施，但<span class="highlight">核心</span>在於有人可以接替工作。<br/>
+                                     (D) 員工進修計畫: 著重於<span class="highlight">提升</span>員工<span class="highlight">長期</span>的技能和知識，與<span class="highlight">應對當下</span>的營運中斷<span class="highlight">無直接關係</span>。<br/>
+                                    因此，最能直接增加疫情發生時<span class="term-cn">營運持續能力</span>（確保有人能接手工作）的是 (B) <span class="term-cn">代理人計畫</span>。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 33 (Start of Group Questions) -->
+                         <div class="question-card" data-evaluation-content-id="1.1">
+                             <div class="question-header">
+                                 <div class="question-id">#33</div>
+                                 <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+                             </div>
+                             <div class="question-content">【題組】近來有愈來愈多公司更積極擁抱新興科技, 期望透過更大量的科技應用, 提升公司整體營運能力, 也希望從中找到新的商機, 強化公司競爭力。A 公司為著名<span class="term-cn">電商公司</span>, 同時十分注重<span class="term-cn">資訊安全</span>, 去年已完成全公司 <span class="term-abbr">ISO/IEC 27001</span> 導入與驗證, 今年為強化公司競爭力, 決議將公司主要<span class="term-cn">電商網站</span>由 <span class="term-abbr">IDC</span> 機房移入<span class="term-cn">雲端</span>, 同時相關<span class="term-cn">辦公自動化服務</span> (<span class="term-en">Office Automation</span>, <span class="term-abbr">OA</span>) 也積極使用<span class="term-cn">雲端 Solution</span>。<br/>
+                             根據上列資訊，請回答下列問題：<br/>
+                             33. 就 <span class="term-abbr">ISO/IEC 27001</span> 而言, 若考量公司重要服務 (<span class="term-cn">電商網站</span>) 由<span class="highlight">地端移入雲端</span>一事, 下列敘述何者較<span class="highlight">適當</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">由於是將<span class="term-cn">電商網站</span>由 <span class="term-abbr">IDC</span> 機房移入<span class="term-cn">雲端</span>, 整體系統功能未進行調整, 所以<span class="highlight">無須</span>針對此一作業進行<span class="term-cn">風險評估</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">由於是將<span class="term-cn">電商網站</span>由 <span class="term-abbr">IDC</span> 機房移入<span class="term-cn">雲端</span>, 與 <span class="term-abbr">ISO</span> 先前的驗證情況大不相同, 所以應於工作結束後<span class="highlight">立即進行</span> <span class="term-abbr">ISO/IEC 27001</span> <span class="highlight">重新驗證</span></div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">電商網站</span>由 <span class="term-abbr">IDC</span> 機房移入<span class="term-cn">雲端</span>, 屬<span class="highlight">重大服務調整</span>, 所以應針對此一作業進行<span class="term-cn">風險評估</span></div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">由於是將<span class="term-cn">電商網站</span>由 <span class="term-abbr">IDC</span> 機房移入<span class="term-cn">雲端</span>, <span class="term-cn">雲端平台</span>的<span class="highlight">安全性高</span>, 所以無需重新評估該網站的<span class="term-cn">資安防護</span>機制</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     <span class="term-abbr">ISO/IEC 27001</span> 強調<span class="term-cn">風險管理</span>和<span class="term-cn">持續改善</span>。將核心系統從地端遷移到雲端是一項<span class="highlight">重大的變更</span>，會引入新的<span class="highlight">運作模式、技術架構、供應商關係</span>以及<span class="highlight">風險</span>。<br/>
+                                     (A) <span class="highlight">錯誤</span>。即使功能不變，<span class="highlight">底層架構和運作環境</span>的改變（地端 vs 雲端）會帶來<span class="highlight">新的風險</span>（如雲端配置錯誤、供應商風險、<span class="term-cn">共享責任模型</span>下的安全職責劃分等），因此<span class="highlight">必須</span>進行<span class="term-cn">風險評估</span>。<br/>
+                                     (B) <span class="highlight">錯誤</span>。<span class="highlight">不一定需要</span>「立即重新驗證」。但此重大變更<span class="highlight">必須</span>納入 <span class="term-abbr">ISMS</span> 的管理範圍，進行<span class="term-cn">風險評估</span>和<span class="term-cn">變更管理</span>，並在<span class="highlight">後續的內部稽核、管理審查和外部監督/重新驗證稽核</span>中進行審查，確保 <span class="term-abbr">ISMS</span> 仍然有效且涵蓋新的雲端環境。<br/>
+                                     (C) <span class="highlight">正確</span>。將核心<span class="term-cn">電商網站</span>遷移上雲是<span class="highlight">重大變更</span>，涉及技術、流程、甚至可能影響業務連續性。根據 <span class="term-abbr">ISO/IEC 27001</span> 的要求，組織應對影響<span class="term-cn">資訊安全</span>的<span class="highlight">變更進行評估和控制</span>，因此<span class="highlight">必須</span>針對此遷移作業進行<span class="term-cn">風險評估</span>。<br/>
+                                     (D) <span class="highlight">錯誤</span>。<span class="term-cn">雲端平台</span>本身可能提供某些安全功能，但<span class="highlight">整體安全性</span>取決於<span class="highlight">客戶的配置和管理</span>（<span class="term-cn">共享責任模型</span>）。客戶<span class="highlight">仍需</span>負責應用程式層、資料、身份存取管理等的安全防護，並<span class="highlight">重新評估</span>原有的<span class="term-cn">資安防護</span>機制在雲端環境下的<span class="highlight">適用性和有效性</span>。不能假設雲端就等於絕對安全。<br/>
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 34 -->
+                         <div class="question-card" data-evaluation-content-id="3.1">
+                             <div class="question-header">
+                                 <div class="question-id">#34</div>
+                                 <div class="evaluation-criterion">3.1 弱點、威脅分類與攻擊手法</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             34. 因應<span class="term-cn">資通系統</span>使用<span class="term-cn">雲服務</span>, <span class="term-cn">資通系統</span>開始面臨新的風險, 請問下列何種風險與<span class="term-cn">資通系統</span>在<span class="term-cn">雲端環境</span>的關聯度<span class="highlight">最高</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">帳號劫持</span> (<span class="term-en">Account hijacking</span>)</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">不安全的介面與 <span class="term-abbr">APIs</span> (<span class="term-en">Insecure interfaces and APIs</span>)</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">資料外洩</span> (<span class="term-en">Data breaches</span>)</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="highlight">有限的雲端使用可見性</span> (<span class="term-en">Limited cloud usage visibility</span>)</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     題目問的是在<span class="term-cn">雲端環境</span>下，哪種風險的<span class="highlight">關聯度最高</span>，或者說<span class="highlight">更具雲端特性</span>。<br/>
+                                     (A) <span class="term-cn">帳號劫持</span>：在地端和雲端都<span class="highlight">可能發生</span>，但雲端環境下管理介面和 <span class="term-abbr">API</span> 的暴露可能<span class="highlight">增加</span>此風險。<br/>
+                                     (B) 不安全的介面與 <span class="term-abbr">APIs</span>：雲服務<span class="highlight">大量依賴</span> <span class="term-abbr">API</span> 進行管理和整合，<span class="term-abbr">API</span> 的安全性<span class="highlight">至關重要</span>，是雲端特有的<span class="highlight">重要攻擊面</span>。<br/>
+                                     (C) <span class="term-cn">資料外洩</span>：在地端和雲端都<span class="highlight">可能發生</span>，雲端環境下的<span class="highlight">錯誤配置</span>（如公開的存儲桶）是常見原因。<br/>
+                                     (D) <span class="highlight">有限的雲端使用可見性</span>：由於雲端基礎設施由<span class="highlight">供應商管理</span>，客戶對於底層設施和某些操作的<span class="highlight">可見性</span>（<span class="term-en">Visibility</span>）<span class="highlight">受到限制</span>。這使得<span class="highlight">監控</span>、<span class="highlight">稽核</span>和<span class="highlight">事故應變</span>變得<span class="highlight">更具挑戰性</span>，是雲端環境<span class="highlight">普遍存在</span>且<span class="highlight">關聯度非常高</span>的一個特性風險。<客戶<span class="highlight">難以完全掌握</span>雲端資源的使用情況和潛在的影子 IT（<span class="term-en">Shadow IT</span>）。<br/>
+                                     雖然 A, B, C 都是雲端風險，但 D (<span class="term-cn">有限的可見性</span>) 更能<span class="highlight">體現</span>從地端遷移到雲端後所面臨的<span class="highlight">根本性挑戰</span>之一，它可能<span class="highlight">導致</span>其他風險（如未被發現的錯誤配置、未經授權的存取）<span class="highlight">難以被察覺</span>。因此，其<span class="highlight">關聯度最高</span>。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 35 -->
+                         <div class="question-card" data-evaluation-content-id="3.1">
+                             <div class="question-header">
+                                 <div class="question-id">#35</div>
+                                 <div class="evaluation-criterion">3.1 弱點、威脅分類與攻擊手法</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             35. A 公司某日收到上個月<span class="term-cn">雲端平台</span>的帳號, 發現<span class="highlight">帳單費用爆增</span>, 經過清查後發現<span class="term-cn">雲端平台</span>存有<span class="highlight">不知名的挖礦程式</span>正在執行, 導致雲端使用費大增, 請問下列何者最「不」可能是遭駭客植入挖礦程式的原因?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text"><span class="term-cn">資通系統</span>的<span class="term-cn">識別及存取管理</span> (<span class="term-en">Identity and Access Management</span>, <span class="term-abbr">IAM</span>) 相關<span class="highlight">帳密或存取金鑰外洩</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">主機作業系統或<span class="term-cn">資通系統</span>具<span class="term-cn">遠端程式碼執行</span> (<span class="term-en">Remote Code Execution</span>, <span class="term-abbr">RCE</span>) 漏洞</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text"><span class="term-cn">雲端</span>所使用的系統<span class="highlight">映像檔受感染</span>, 系統維護人員下載並執行不明來源的映像檔 (<span class="term-en">Docker Image</span>)</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text"><span class="term-cn">雲端</span>之<span class="term-cn">電商網站</span>具有安全的弱點, 遭駭客利用進行 <span class="highlight">Billion Laugh Attack</span> 所導致</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     分析駭客植入挖礦程式的可能途徑：
+                                     (A) <span class="highlight">可能原因</span>。如果攻擊者獲取了具有足夠權限的 <span class="term-abbr">IAM</span> 帳密或<span class="term-cn">存取金鑰</span> (<span class="term-en">Access Key</span>)，他們就可以登入雲端平台，<span class="highlight">創建</span>或<span class="highlight">控制</span>虛擬機/容器，並<span class="highlight">部署</span>挖礦程式。<br/>
+                                     (B) <span class="highlight">可能原因</span>。如果雲端上的虛擬機或應用程式存在 <span class="term-abbr">RCE</span> 漏洞，攻擊者可以利用該漏洞<span class="highlight">遠端執行</span>任意程式碼，包括<span class="highlight">下載和執行</span>挖礦程式。<br/>
+                                     (C) <span class="highlight">可能原因</span>。如果維護人員使用了<span class="highlight">來源不明或已被竄改</span>的作業系統映像檔或容器映像檔 (<span class="term-en">Docker Image</span>)，這些映像檔可能<span class="highlight">預先</span>就被植入了挖礦程式或其他惡意軟體。<br/>
+                                     (D) 「<span class="highlight">不</span>」<span class="highlight">可能原因</span>。**<span class="term-en">Billion Laughs Attack</span>** 是一種<span class="term-cn">拒絕服務攻擊</span> (<span class="term-en">Denial of Service</span>, <span class="term-abbr">DoS</span>)，它利用 <span class="term-abbr">XML</span> 實體擴展的特性，導致 <span class="term-abbr">XML</span> 解析器<span class="highlight">消耗大量記憶體和 CPU 資源</span>，最終<span class="highlight">耗盡系統資源</span>而<span class="highlight">當機</span>或<span class="highlight">停止服務</span>。這種攻擊的目的是<span class="highlight">癱瘓服務</span>，而<span class="highlight">不是</span>在系統上<span class="highlight">植入或執行</span>挖礦程式。<br/>
+                                    因此，最不可能導致被植入挖礦程式的原因是 (D)。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Question 36 -->
+                         <div class="question-card" data-evaluation-content-id="1.1">
+                             <div class="question-header">
+                                 <div class="question-id">#36</div>
+                                 <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             36. <span class="term-cn">電商平台</span>移至<span class="term-cn">雲端</span>後, 相關系統維運作業也因應調整, 請問下列敘述何者具有潛在<span class="term-cn">資安合規風險</span>? (複選)</div>
+                             <div class="options-container">
+                                 <div class="option-item correct" data-option="A"><div class="option-label">A</div><div class="option-text">因應<span class="term-cn">雲端</span>作業環境與加強效率, <span class="highlight">程式開發人員</span>將同時具有<span class="term-cn">雲端平台的操作權限</span>, 程式開發完成後可<span class="highlight">直接進行程式更新</span>作業, 縮短作業時間</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">為確保資料的<span class="term-cn">雲端安全性</span>, <span class="term-cn">資料庫管理人員</span>要求資料在寫入資料庫前, 針對<span class="term-cn">機敏資料欄位</span>, 需對資料本身<span class="highlight">加密</span>後才可存入資料庫</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">為<span class="highlight">一致化管理</span>作為, 針對在<span class="term-cn">雲端</span>上的<span class="term-cn">資通系統</span>, 皆<span class="highlight">未強制</span>要求租用或安裝額外的<span class="term-cn">資安防護機制</span>, 以<span class="highlight">減低成本</span>並簡化維運作業</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">由於<span class="term-cn">雲端</span>的<span class="highlight">高可用性</span>, 針對在<span class="term-cn">雲端</span>上的<span class="term-cn">資通系統</span>, <span class="highlight">不需再修訂業務持續計畫</span></div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     評估雲端維運作業的潛在<span class="term-cn">資安合規風險</span>：<br/>
+                                     (A) <span class="highlight">有風險</span>。讓<span class="highlight">開發人員</span>擁有<span class="highlight">直接部署到生產環境</span>（雲端平台操作權限）的權力，違反了<span class="term-cn">職責分離</span> (<span class="term-en">Segregation of Duties</span>, <span class="term-abbr">SoD</span>) 原則。這可能導致未經充分測試或未授權的程式碼被部署，增加錯誤或惡意程式碼引入的風險。<合規性標準（如 <span class="term-abbr">ISO 27001</span> A.12.1.2, A.14.2.3）通常要求<span class="highlight">開發、測試、生產環境分離</span>，並有<span class="highlight">嚴格的變更管理</span>流程。<br/>
+                                     (B) <span class="highlight">無明顯風險</span>（甚至是良好實踐）。對<span class="term-cn">靜態資料</span>（<span class="term-en">Data at Rest</span>）中的<span class="term-cn">機敏欄位</span>進行<span class="highlight">加密</span>，是保護資料<span class="term-cn">機密性</span>的<span class="highlight">重要措施</span>，符合許多合規要求（如 <span class="term-abbr">GDPR</span>, <span class="term-abbr">PCI DSS</span>）。<br/>
+                                     (C) <span class="highlight">有風險</span>。雖然雲端供應商提供基礎設施安全，但客戶<span class="highlight">仍需</span>根據<span class="term-cn">風險評估</span>結果，為部署在雲端的系統實施<span class="highlight">適當的安全控制</span>（<span class="term-cn">共享責任模型</span>）。<span class="highlight">完全不使用</span>額外防護機制（如 <span class="term-abbr">WAF</span>、<span class="term-cn">端點安全</span>、<span class="term-cn">安全監控</span>）可能<span class="highlight">無法滿足</span>合規要求或<span class="highlight">充分降低</span>風險。<僅為了降低成本而犧牲必要的安全措施是<span class="highlight">不合規</span>的。<br/>
+                                     (D) <span class="highlight">有風險</span>。雖然雲端提供<span class="highlight">高可用性</span>的<span class="highlight">基礎設施</span>，但業務持續性<span class="highlight">不僅僅是</span>基礎設施的問題。應用程式層的故障、資料損毀、供應商中斷、人員問題等<span class="highlight">仍然可能發生</span>。<組織<span class="highlight">仍需</span>根據新的雲端架構<span class="highlight">重新評估</span>業務衝擊，並<span class="highlight">修訂</span>其<span class="term-cn">業務持續計畫</span> (<span class="term-abbr">BCP</span>) 和<span class="term-cn">災難復原計畫</span> (<span class="term-abbr">DRP</span>)，以涵蓋雲端環境下的特定風險和恢復程序。<認為雲端高可用性就等於不需要 BCP 是<span class="highlight">錯誤</span>且<span class="highlight">有風險</span>的假設。<br/>
+                                    因此，具有潛在<span class="term-cn">資安合規風險</span>的敘述是 (A)、(C)、(D)。
+                                     *註：本題為複選題，正確選項為 A, C, D。*
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 37 (Start of Group Questions) -->
+                        <div class="question-card" data-evaluation-content-id="4.1">
+                             <div class="question-header">
+                                 <div class="question-id">#37</div>
+                                 <div class="evaluation-criterion">4.1 安全維運</div>
+                             </div>
+                             <div class="question-content">【題組】ABC 公司導入 <span class="term-abbr">ISO/IEC 27001</span> <span class="term-cn">資訊安全管理系統</span>, 並透過第三方稽核單位執行部分單位驗證。<br/>
+                             內部公告且遵循之資安事件(故)通報與處理規範如下：<br/>
+                             <img src="image/109_規_37.png" class="responsive-img">
+                             <br/>
+                             根據上列資訊，請回答下列問題：<br/>
+                             37. ABC 公司網管人員於定期審查內部<span class="term-cn">網域伺服器日誌</span>時發現疑似<span class="highlight">未經授權存取</span>, 下列敘述何者<span class="highlight">正確</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">尚未確認對內部系統造成影響, <span class="highlight">不需要</span>進行<span class="term-cn">資安通報</span></div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">尚未確認為駭客所為, <span class="highlight">不需要</span>進行<span class="term-cn">資安通報</span></div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">待確認為駭客所為且影響內部系統後, 再進行通報</div></div>
+                                 <div class="option-item correct" data-option="D"><div class="option-label">D</div><div class="option-text">雖未確認駭客所為或影響內部系統, <span class="highlight">仍應儘速通報</span></div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     <span class="term-cn">資安事件通報</span>的原則是<span class="highlight">及早發現、及早通報、及早處理</span>。<br/>
+                                     發現「疑似<span class="highlight">未經授權存取</span>」的日誌記錄，即使<span class="highlight">尚未完全確認</span>攻擊者身份或造成的實際影響，這已經是一個<span class="highlight">潛在的安全事件跡象</span>。<br/>
+                                     (A) <span class="highlight">錯誤</span>。不能等到確認影響才通報，<span class="highlight">早期通報</span>有助於<span class="highlight">及時應對</span>，防止事態擴大。<br/>
+                                     (B) <span class="highlight">錯誤</span>。同上，<span class="highlight">不需要</span>等到確認是駭客才通報。未經授權存取本身就是<span class="highlight">異常</span>，需要調查。<br/>
+                                     (C) <span class="highlight">錯誤</span>。延遲通報可能錯失處理良機。<br/>
+                                     (D) <span class="highlight">正確</span>。根據<span class="term-cn">資安事件處理</span>的最佳實踐，一旦偵測到<span class="highlight">任何可疑</span>或<span class="highlight">異常</span>的活動（如疑似未經授權存取），就應該<span class="highlight">立即啟動通報程序</span>，讓相關的<span class="term-cn">資安團隊</span>或<span class="term-cn">負責人員</span>（如規範中的單位主管或更高層級）知曉，以便<span class="highlight">進行評估和調查</span>。即使最終確認是誤報或影響輕微，<span class="highlight">及早通報</span>也比延誤處理要好。<br/>
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 38 -->
+                        <div class="question-card" data-evaluation-content-id="4.1">
+                             <div class="question-header">
+                                 <div class="question-id">#38</div>
+                                 <div class="evaluation-criterion">4.1 安全維運</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             38. ABC 公司其內部專責<span class="term-cn">資安團隊</span>對<span class="term-cn">日誌</span>進行關聯分析後, 已有跡證顯示部分內部伺服器遭受駭客接管且取得<span class="term-cn">系統管理者權限</span>, 下列敘述何者「最」正確?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">此受駭情況可能影響<span class="term-cn">商譽</span>, 應由<span class="term-cn">資安長</span>裁示後續處置</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">已轉交專責<span class="term-cn">資安團隊</span>處理, <span class="highlight">不需要</span>進行<span class="term-cn">資安通報程序</span></div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">此為內部系統受駭, 進行通報並 <span class="highlight">48 小時處理完成</span>即可</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">此受駭狀況非同小可, 應於<span class="highlight">當日</span>處理完成並<span class="highlight">每小時</span>回報部門主管, 待處理完成後再通知總經理</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     事件定性：內部伺服器被駭客接管並取得管理員權限。這屬於<span class="highlight">內部系統受駭</span>。<br/>
+                                     參照內部規範表格：
+                                     <ul>
+                                         <li>內部系統無法使用或受駭，屬於<span class="highlight">等級 2</span> 事件。</li>
+                                         <li>等級 2 要求：更新時效 12 小時，<span class="highlight">處理時效 48 小時</span>，通報層級：部門主管。</li>
+                                     </ul>
+                                     分析選項：
+                                     (A) 雖然可能影響商譽，且最終可能需要<span class="term-cn">資安長</span>介入，但<span class="highlight">當下應遵循既定</span>的通報和處理程序。<br/>
+                                     (B) <span class="highlight">錯誤</span>。<span class="term-cn">資安團隊</span>處理是事件應變的一環，但<span class="highlight">仍需遵循</span>正式的<span class="term-cn">通報程序</span>，向規定的層級（部門主管）報告。<br/>
+                                     (C) <span class="highlight">正確</span>。根據規範，此事件（內部系統受駭）屬於<span class="highlight">等級 2</span>，應進行通報（向部門主管），並在 <span class="highlight">48 小時內處理完成</span>。<br/>
+                                     (D) <span class="highlight">錯誤</span>。規範中<span class="highlight">沒有要求</span>當日完成、每小時回報或通知總經理（等級 2 的通報層級是部門主管）。此描述更像是<span class="highlight">等級 4</span> 事件的處理強度。<br/>
+                                    因此，最符合內部規範的正確敘述是 (C)。
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 39 -->
+                        <div class="question-card" data-evaluation-content-id="4.1">
+                             <div class="question-header">
+                                 <div class="question-id">#39</div>
+                                 <div class="evaluation-criterion">4.1 安全維運</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             39. ABC 公司已於規範之時間內進行<span class="term-cn">資料採證</span>、<span class="term-cn">分析</span>、<span class="term-cn">弱點修正</span>與<span class="term-cn">資料還原</span>後, 目前服務已恢復正常運作, 下列敘述何者<span class="highlight">正確</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">服務恢復後應立即針對此事故執行<span class="term-cn">風險評鑑</span>, 擬定<span class="term-cn">資訊安全風險處理計畫</span>並執行之</div></div>
+                                 <div class="option-item correct" data-option="B"><div class="option-label">B</div><div class="option-text">應對事故進行分析並<span class="highlight">了解可能成因</span>, 應用此知識來<span class="highlight">降低發生機率</span>, 或類似事件再發生所造成之影響</div></div>
+                                 <div class="option-item" data-option="C"><div class="option-label">C</div><div class="option-text">服務雖已恢復但無法確保未來不再受駭, 應立即召開<span class="term-cn">管理審查會議</span>, 討論與爭取改善措施所需資源</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">縱使服務恢復, 但仍導致<span class="term-cn">資訊安全關鍵績效指標</span>無法達成, 需立即調整<span class="term-cn">關鍵績效指標</span>項目以確保合規性</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     事件處理完成後的<span class="term-cn">事後活動</span> (<span class="term-en">Post-Incident Activity</span>)，這是<span class="term-cn">事件應變</span>生命週期的<span class="highlight">最後階段</span>，也是 <span class="term-abbr">ISMS</span> <span class="highlight">持續改善</span>的一環。<br/>
+                                     (A) <span class="highlight">不完全正確</span>。<span class="term-cn">風險評鑑</span>和<span class="term-cn">風險處理</span>是 <span class="term-abbr">ISMS</span> 的<span class="highlight">常規</span>活動，不一定在每次事件後都「立即」重新完整執行一遍。但事件的<span class="highlight">檢討結果</span>應<span class="highlight">回饋</span>到風險評估中。<br/>
+                                     (B) <span class="highlight">正確</span>。這是<span class="term-cn">事後分析</span> (<span class="term-en">Post-Mortem Analysis</span>) 或<span class="term-cn">經驗學習</span> (<span class="term-en">Lessons Learned</span>) 的<span class="highlight">核心目的</span>。透過<span class="highlight">分析事件的根本原因</span>、攻擊路徑、應對過程的優缺點，<span class="highlight">找出可以改進</span>的地方（如強化控制措施、修補漏洞、更新程序），以<span class="highlight">防止</span>類似事件再次發生，或<span class="highlight">減輕</span>未來事件的影響。<br/>
+                                     (C) <span class="highlight">不一定需要</span>「立即」召開<span class="term-cn">管理審查會議</span>。<span class="term-cn">管理審查</span>是 <span class="term-abbr">ISMS</span> 的<span class="highlight">定期</span>活動（例如每年一次）。重大事件的<span class="highlight">檢討結果</span>應在<span class="highlight">下次</span>管理審查中報告，並根據需要爭取資源，但<span class="highlight">不需</span>為每次事件都立即召開。<br/>
+                                     (D) <span class="highlight">不正確</span>。<如果事件導致 <span class="term-abbr">KPI</span> 未達成，應該<span class="highlight">分析原因</span>並<span class="highlight">採取改進措施</span>以<span class="highlight">未來能達成</span>目標，而<span class="highlight">不是</span>為了合規而<span class="highlight">隨意調整 KPI</span> 使其容易達成。調整 KPI 應基於業務目標或環境的<span class="highlight">實質變化</span>。<br/>
+                                    因此，事件後最重要且正確的活動是 (B) 進行分析並從中學習。
+                                 </div>
+                             </div>
+                         </div>
+            
+                        <!-- Question 40 -->
+                        <div class="question-card" data-evaluation-content-id="1.1">
+                             <div class="question-header">
+                                 <div class="question-id">#40</div>
+                                 <div class="evaluation-criterion">1.1 ISMS建置實務與法規遵循</div>
+                             </div>
+                             <div class="question-content">【題組】背景描述如前。<br/>
+                             40. 若未來 ABC 公司新的核心系統屬於「<span class="term-cn">資通安全管理法</span>」所定義之<span class="term-cn">特定非公務機關</span>, 其未涉及<span class="term-cn">關鍵基礎設施</span>維運之核心<span class="term-cn">資通系統</span>遭<span class="highlight">輕微竄改</span>, 下列敘述何者<span class="highlight">正確</span>?</div>
+                             <div class="options-container">
+                                 <div class="option-item" data-option="A"><div class="option-label">A</div><div class="option-text">為<span class="highlight">第一級</span><span class="term-cn">資通安全事件</span>, 應於知悉事件後 <span class="highlight">72 小時</span>內完成損害控制, 並於指定時間內送交改善報告</div></div>
+                                 <div class="option-item" data-option="B"><div class="option-label">B</div><div class="option-text">為<span class="highlight">第二級</span><span class="term-cn">資通安全事件</span>, 應於知悉事件後 <span class="highlight">48 小時</span>內完成復原作業, 並於指定時間內送交改善報告</div></div>
+                                 <div class="option-item correct" data-option="C"><div class="option-label">C</div><div class="option-text">為<span class="highlight">第三級</span><span class="term-cn">資通安全事件</span>, 應於知悉事件後 <span class="highlight">36 小時</span>內完成損害控制或復原作業, 並於指定時間內送交改善報告</div></div>
+                                 <div class="option-item" data-option="D"><div class="option-label">D</div><div class="option-text">為<span class="highlight">第四級</span><span class="term-cn">資通安全事件</span>, 應於知悉事件後 <span class="highlight">24 小時</span>內完成損害控制或復原作業, 並於指定時間內送交改善報告</div></div>
+                             </div>
+                             <div class="explanation-container">
+                                 <div class="explanation-header">答案解析</div>
+                                 <div class="explanation-content">
+                                     根據台灣《<span class="term-cn">資通安全事件通報及應變辦法</span>》對<span class="term-cn">特定非公務機關</span>的<span class="term-cn">資通安全事件</span>分級與應變時限：
+                                     <ul>
+                                         <li>核心<span class="term-cn">資通系統</span><span class="highlight">未涉及國家或社會公益</span>（如<span class="term-cn">關鍵基礎設施</span>）、<span class="highlight">未涉及公務機密</span>、<span class="highlight">未嚴重影響</span>機關核心業務運作，但系統資訊<span class="highlight">遭竄改</span>，通常被歸類為<span class="highlight">第三級</span>事件。（第一級通常是非核心系統異常，第二級是核心業務受影響或非核心系統無法運作，第四級是涉及國家或社會公益、機密外洩、核心業務停頓等）。</li>
+                                         <li>事件等級與處理時效：
+                                             <ul>
+                                                 <li>第一級：知悉後 72 小時內完成損害控制或復原。</li>
+                                                 <li>第二級：知悉後 36 小時內完成損害控制或復原。</li>
+                                                 <li>**第三級**：知悉後 <span class="highlight">24 小時</span>內完成損害控制或復原。（*更正：根據最新法規，2021年8月修正後，二、三、四級應變時限有調整。但依109年考試當時或常見理解，可能時限不同。此處按題目選項提供的時限反推等級*）</li>
+                                                 <li>第四級：知悉後 8 小時內完成損害控制或復原。</li>
+                                             </ul>
+                                         </li>
+                                     </ul>
+                                     *重新檢視選項與等級定義*：
+                                     核心系統<span class="highlight">遭竄改</span>，影響通常比「功能異常」嚴重，但若描述為「輕微竄改」且未涉及關鍵基礎設施，其等級界定可能落在二或三級之間。
+                                     讓我們檢查選項提供的<span class="highlight">處理時限</span>是否符合法規對應等級：
+                                     (A) 第一級：72小時（選項正確，但等級定義不符「核心系統遭竄改」）
+                                     (B) 第二級：48小時（選項<span class="highlight">處理時限與常見法規不符</span>，法規通常是36或更短）
+                                     (C) 第三級：<span class="highlight">36小時</span>（選項處理時限<span class="highlight">符合部分版本或理解</span>的第二級事件時限。如果"輕微竄改"定義為第三級，此時限不符。）
+                                     (D) 第四級：24小時（選項處理時限<span class="highlight">符合部分版本或理解</span>的第三級事件時限。但等級定義不符「輕微竄改且未涉關鍵基礎設施」）
+            
+                                     *再次查核*：依據 108 年發布，109 年適用的《<span class="term-cn">資通安全事件通報及應變辦法</span>》第 9 條附件三：
+                                     - 第三級事件定義包括「核心業務運作<span class="highlight">遭影響或停頓</span>，但未達第四級事件之程度者」或「核心<span class="term-cn">資通系統</span>資訊或<span class="highlight">資通系統遭嚴重竄改</span>者」。
+                                     - 第三級事件處理時效：「損害控制或復原：<span class="highlight">二十四小時</span>」。
+            
+                                     - 第二級事件定義包括「非核心業務運作遭影響或停頓」或「核心業務運作遭影響或停頓，但未達第三級事件之程度者」或「核心<span class="term-cn">資通系統</span>資訊或<span class="highlight">資通系統遭竄改</span>」。
+                                     - 第二級事件處理時效：「損害控制或復原：<span class="highlight">三十六小時</span>」。
+            
+                                     根據上述 108/109 年的規定，「核心<span class="term-cn">資通系統遭竄改</span>」屬於<span class="highlight">第二級</span>事件，應在<span class="highlight">36小時</span>內完成損害控制或復原。
+            
+                                     對照選項：
+                                     (A) 等級錯，時效對應等級錯。
+                                     (B) 等級對，但時效 48 小時錯（應為 36）。
+                                     (C) 選項描述為「第三級，36小時」。等級與時效<span class="highlight">不匹配</span>法規（第三級應為24h）。
+                                     (D) 選項描述為「第四級，24小時」。等級錯，時效對應法規的第三級。
+            
+                                     *結論*：本題選項與 108/109 年的法規規定存在<span class="highlight">不一致</span>。但如果必須選擇一個「相對」正確的，且題目強調是「輕微」竄改（可能降低了事件等級的判斷），或者考試當時的參考基準不同。
+                                     如果我們假設「輕微竄改」被判定為<span class="highlight">第二級</span>，那麼處理時效應為 <span class="highlight">36 小時</span>。選項 (C) 提供了 36 小時，但標為第三級。選項 (B) 標為第二級，但時效錯誤。
+                                     如果我們假設「核心系統遭竄改」無論輕微都算<span class="highlight">第三級</span>（按某些早期草案或解讀），那麼時效應為 <span class="highlight">24 小時</span>。選項 (D) 提供了 24 小時，但標為第四級。
+                                     *PDF 答案顯示為 C*。這意味著出題者可能將「核心系統遭輕微竄改」歸類為<span class="highlight">第三級</span>事件，並且處理時效認定為 <span class="highlight">36 小時</span>（這與 108/109 年的法規<span class="highlight">第二級時效</span>相符，但與<span class="highlight">第三級定義</span>不符）。儘管存在矛盾，按答案選擇 (C)。
+                                 </div>
+                             </div>
+                         </div>
+            
+                         <!-- Message area for no results -->
+                         <div id="noResultsMessage"></div>
+            
+                    </div> <!-- End questions-container -->
+
+             <!-- Message area for no results -->
+             <div id="noResultsMessage"></div>
+
+        </div> <!-- End questions-container -->
+
+        <a href="#" class="back-to-top" id="backToTop">↑</a>
+    </div> <!-- End container -->
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

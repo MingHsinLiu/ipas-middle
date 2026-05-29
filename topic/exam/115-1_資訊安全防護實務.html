@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPAS 資訊安全工程師 中級 (115-1) - 資訊安全防護實務</title>
+  <meta name="description" content="115年第一次iPAS資訊安全工程師中級能力鑑定-資訊安全防護實務，含完整解析共40題">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <div class="container">
+    <div class="header-container">
+      <h1>iPAS 資訊安全工程師 中級 (115年第一次) 🛡️</h1>
+      <div>科目：資訊安全防護實務 | 考試年度：115年（第一次）| 共 40 題</div>
+    </div>
+    <div class="controls">
+      <div class="filter-container">
+        <label for="criterionFilter" class="filter-label">篩選評鑑內容：</label>
+        <select id="criterionFilter">
+          <option value="all">全部內容</option>
+          <option value="1.1">1.1 弱點/威脅/攻擊手法 (6題)</option>
+          <option value="1.2">1.2 防護與應變實務 (15題)</option>
+          <option value="2.1">2.1 安全維運 (7題)</option>
+          <option value="2.2">2.2 滲透測試/源碼測試/資安健診 (12題)</option>
+        </select>
+      </div>
+      <div class="search-container">
+        <label for="searchInput" class="search-label">搜尋：</label>
+        <input type="text" id="searchInput" placeholder="輸入題目、選項或解析關鍵字...">
+        <button id="searchButton">🔍 搜尋</button>
+      </div>
+      <div class="toggle-explanations">
+        <button id="toggleExplanations">📖 顯示全部解析</button>
+      </div>
+    </div>
+    <div class="criteria-container">
+      <div class="criteria-title">📋 評鑑內容 (點擊篩選)</div>
+      <div class="criteria-grid" id="criteriaGrid">
+        <div class="criterion-item" onclick="filterByCriterion('1.1')">
+          <div class="criterion-id">1.1</div>
+          <div class="criterion-text">弱點、威脅分類與攻擊手法</div>
+          <div class="criterion-count">(6)</div>
+        </div>
+        <div class="criterion-item" onclick="filterByCriterion('1.2')">
+          <div class="criterion-id">1.2</div>
+          <div class="criterion-text">防護與應變實務</div>
+          <div class="criterion-count">(15)</div>
+        </div>
+        <div class="criterion-item" onclick="filterByCriterion('2.1')">
+          <div class="criterion-id">2.1</div>
+          <div class="criterion-text">安全維運</div>
+          <div class="criterion-count">(7)</div>
+        </div>
+        <div class="criterion-item" onclick="filterByCriterion('2.2')">
+          <div class="criterion-id">2.2</div>
+          <div class="criterion-text">滲透測試、源碼測試、資安健診</div>
+          <div class="criterion-count">(12)</div>
+        </div>
+      </div>
+    </div>
+    <div class="questions-container" id="questionsContainer">
+      <!-- Q1 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#1 單選題</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">下列何項工具可以用來盤點 <span class="term-en">Windows Server</span> <span
+            class="term-cn">Active Directory</span> (<span class="term-abbr">AD</span>) 的關連性及權限設定，發現<span
+            class="term-abbr">AD</span>的潛在威脅，既可被紅隊成員拿來規劃內網檢測方向，也可以被藍隊成員用來規劃<span class="term-abbr">AD</span>資安強化措施？
+        </div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-en">BloodHound</span></div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-en">Snort</span></div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-en">OpenVAS</span></div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-en">Nmap</span></div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：A</div>
+          <div class="explanation-content">
+            <p>本題考查常見的資安檢測與防護工具，特別是針對微軟 <span class="term-cn">Active Directory</span> (<span
+                class="term-abbr">AD</span>) 環境的特化工具。</p>
+            <p><strong>選項A正確：</strong><span class="term-en">BloodHound</span> 是一套專門用於分析與視覺化 <span
+                class="term-abbr">AD</span> 環境中隱藏與複雜權限關係的開源工具。它使用圖論（<span class="term-en">Graph
+                Theory</span>）來尋找可能被攻擊者利用來取得網域控制權（<span class="term-en">Domain Admin</span>）的攻擊路徑（<span
+                class="term-en">Attack Paths</span>）。對紅隊（<span class="term-en">Red
+                Team</span>）而言，它能快速找出橫向移動與權限提升的捷徑；對藍隊（<span class="term-en">Blue Team</span>）而言，則可用來找出並修補不當的權限設定以強化防護。
+            </p>
+            <p><strong>選項B錯誤：</strong><span class="term-en">Snort</span> 是一套開源的<span
+                class="term-cn">網路入侵偵測與防禦系統</span>（<span class="term-en">Network Intrusion Detection System</span>，<span
+                class="term-abbr">NIDS</span>），主要用於即時流量分析與封包記錄，而非分析<span class="term-abbr">AD</span>權限。</p>
+            <p><strong>選項C錯誤：</strong><span class="term-en">OpenVAS</span>（<span class="term-en">Open Vulnerability
+                Assessment System</span>）是一套開源的<span class="term-cn">弱點掃描工具</span>（<span class="term-en">Vulnerability
+                Scanner</span>），主要用於偵測系統與網路服務的已知安全漏洞（如未修補的CVE），並不具備分析<span class="term-abbr">AD</span>複雜權限關連性的專門能力。</p>
+            <p><strong>選項D錯誤：</strong><span class="term-en">Nmap</span> 是一套<span
+                class="term-cn">網路探測與安全稽核工具</span>（<span class="term-en">Network Mapper</span>），常用於連接埠掃描（<span
+                class="term-en">Port Scanning</span>）與作業系統指紋辨識，無法分析網域內的邏輯權限與群組關連。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q2 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#2 單選題</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">下列何項屬於 <span class="term-en">MITRE ATT&CK</span> 中的<span
+            class="term-cn">憑證存取</span> (<span class="term-en">Credential Access</span>) 戰術 (<span
+            class="term-en">Tactic</span>)？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">從本機系統蒐集資料 (<span class="term-en">Data from Local System</span>)</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">外部遠端服務使用 (<span class="term-en">External Remote Services</span>)</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">清除 <span class="term-en">Windows</span> 事件記錄 (<span class="term-en">Clear Windows
+                Event Logs</span>)</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">作業系統憑證傾印 (<span class="term-en">OS Credential Dumping</span>)</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：D</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-en">MITRE ATT&CK</span> 框架中的戰術（<span class="term-en">Tactics</span>）與技術（<span
+                class="term-en">Techniques</span>）對應關係。</p>
+            <p><strong>選項D正確：</strong>作業系統憑證傾印（<span class="term-en">OS Credential Dumping</span>，編號
+              T1003）是指攻擊者從作業系統記憶體（如 Windows 的 <span class="term-en">LSASS</span> 程序）或系統檔案（如 <span
+                class="term-abbr">SAM</span> 資料庫）中提取明文密碼或密碼雜湊值的技術。這明確屬於<span class="term-cn">憑證存取</span>（<span
+                class="term-en">Credential Access</span>，TA0006）戰術，目的是為了取得更高權限或進行橫向移動。</p>
+            <p><strong>選項A錯誤：</strong>從本機系統蒐集資料（<span class="term-en">Data from Local
+                System</span>，T1005）是指攻擊者在被駭系統上搜尋並收集有價值的檔案資料。這屬於<span class="term-cn">資料蒐集</span>（<span
+                class="term-en">Collection</span>，TA0009）戰術，而非憑證存取。</p>
+            <p><strong>選項B錯誤：</strong>外部遠端服務使用（<span class="term-en">External Remote Services</span>，T1133）是指攻擊者利用
+              VPN、RDP 等對外開放的遠端存取服務來進入企業內部網路。這屬於<span class="term-cn">初始存取</span>（<span class="term-en">Initial
+                Access</span>，TA0001）或<span class="term-cn">持續潛伏</span>（<span
+                class="term-en">Persistence</span>，TA0003）戰術。</p>
+            <p><strong>選項C錯誤：</strong>清除 Windows 事件記錄（<span class="term-en">Clear Windows Event
+                Logs</span>，T1070.001）是指攻擊者刪除日誌以隱藏其活動蹤跡。這屬於<span class="term-cn">防禦規避</span>（<span
+                class="term-en">Defense Evasion</span>，TA0005）戰術。</p>
+            <p>記憶關鍵：<span class="highlight">只要看到 Credential、Password、Hash、LSASS 等關鍵字，幾乎都歸類於 Credential Access 戰術</span>。
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#3 單選題</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">駭客為了追求最大利益，將亂槍打鳥的隨機攻擊轉換成目標式攻擊，<span class="term-cn">進階持續性威脅</span> (<span
+            class="term-en">Advanced Persistent Threats</span>, <span class="term-abbr">APT</span>) 即是最難防禦的目標式攻擊。關於
+          <span class="term-abbr">APT</span> 攻擊的敘述，下列何者最「不」適切？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-abbr">APT</span>攻擊常透過<span class="term-cn">社交工程</span>結合零時差
+              (<span class="term-en">Zero-day</span>) 漏洞取得初始入侵點</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-abbr">APT</span>行動通常僅在短時間內完成，整個攻擊週期不會超過24小時</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">攻擊者會建立多條指揮控制 (<span class="term-abbr">C2</span>) 通道，以降低被完全阻斷的風險</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-abbr">APT</span>攻擊往往伴隨嚴謹的情報蒐集與量身訂做的惡意程式，以提高成功率</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查<span class="term-cn">進階持續性威脅</span>（<span class="term-en">Advanced Persistent Threats</span>，<span
+                class="term-abbr">APT</span>）的核心特徵。</p>
+            <p><strong>選項B最不適切（正確答案）：</strong><span class="term-abbr">APT</span> 的「P」代表 <span
+                class="term-en">Persistent</span>（持續性）。APT 攻擊的特點正是<span
+                class="highlight">「長期的潛伏與持續性的活動」</span>。攻擊者為了避免被資安系統偵測，通常會採用「低調、緩慢（<span class="term-en">Low and
+                Slow</span>）」的策略，整個攻擊週期（從情報收集、初始入侵、橫向移動到資料外洩）可能長達數週、數月甚至數年，絕對不會「僅在短時間內完成」。</p>
+            <p><strong>選項A適切：</strong><span class="term-abbr">APT</span> 攻擊者為了確保成功進入目標網路，經常使用高度客製化的魚叉式釣魚郵件（<span
+                class="term-en">Spear Phishing</span>，社交工程的一種），並夾帶未公開的零時差漏洞（<span class="term-en">Zero-day
+                exploit</span>）以繞過現有防禦機制。</p>
+            <p><strong>選項C適切：</strong>為了維持在受害網路內的持續存取，<span class="term-abbr">APT</span> 攻擊者通常會部署多個後門，並建立多條、使用不同協定或網域的
+              <span class="term-cn">指揮與控制</span>（<span class="term-en">Command and Control</span>，<span
+                class="term-abbr">C2</span>）通道，確保即使部分通道被發現封鎖，仍有備用通道可用。
+            </p>
+            <p><strong>選項D適切：</strong><span class="term-abbr">APT</span>
+              通常由國家級駭客組織或資源豐富的犯罪集團發起，他們會花費大量時間進行情報收集（如了解目標公司的組織架構、員工名單、使用的軟體版本），並為該目標量身打造專屬的惡意程式以躲避傳統防毒軟體的特徵碼比對。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q4 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#4 複選題</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">下列哪些攻擊手法可以透過<span class="term-cn">遠端攻擊</span>網路伺服器？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-en">Slowloris</span> 攻擊</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-en">BlueBorne</span> 攻擊</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-abbr">SQL</span>指令注入 (<span class="term-en">SQL Injection</span>)
+            </div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-en">Evil Twin</span> 攻擊</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：AC</div>
+          <div class="explanation-content">
+            <p>本題考查各種攻擊手法的特性及可否進行「網路遠端」攻擊的區別。</p>
+            <p><strong>選項A正確（可遠端）：</strong><span class="term-en">Slowloris</span> 是一種<span
+                class="term-cn">應用層阻斷服務攻擊</span>（<span class="term-en">Application Layer DoS
+                Attack</span>）。攻擊者透過網路遠端向目標網頁伺服器建立大量連線，並刻意以極慢的速度發送不完整的 HTTP
+              請求標頭。因為請求未完成，伺服器必須保持連線開啟等待，最終導致伺服器的連線資源耗盡而無法服務正常連線。</p>
+            <p><strong>選項C正確（可遠端）：</strong><span class="term-abbr">SQL</span> 指令注入（<span class="term-en">SQL
+                Injection</span>）是一種應用程式弱點攻擊。攻擊者透過遠端提交惡意的輸入參數（例如在登入表單或網址列），使後端資料庫伺服器執行非預期的 SQL
+              語法，進而竊取或竄改資料。這是典型的網路層次遠端攻擊。</p>
+            <p><strong>選項B錯誤（不可遠端）：</strong><span class="term-en">BlueBorne</span> 是一種針對<span
+                class="term-cn">藍牙協定</span>（<span
+                class="term-en">Bluetooth</span>）實作漏洞的攻擊方式。藍牙是一種「近距離無線通訊」技術（通常傳輸距離在10公尺以內），攻擊者必須在受害設備的實體周圍進行，無法透過網際網路遠端發動。
+            </p>
+            <p><strong>選項D錯誤（不可遠端）：</strong><span class="term-en">Evil Twin</span> 攻擊（邪惡雙子攻擊）是指攻擊者設立一個名稱（SSID）與合法 Wi-Fi
+              熱點相同或極為相似的惡意無線基地台，誘使受害者連線以竊聽傳輸內容。這需要攻擊者親自到現場架設無線訊號發射設備（近接攻擊），無法純粹透過網際網路遠端進行。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q5 題組1 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#5 題組題（題組1）</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🎣 題組情境說明（第5-8題共用）：釣魚信件分析</strong><br>
+            情境如下列圖一（釣魚信件內容）及圖二（信件標頭及詳細資訊）所示。<br>
+            <img src="image/115-1_資安防護_5.jpg" alt="圖一：釣魚信件內容" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+
+          </div>
+          關於信件中出現 `Received: from 10.0.1.7` 的本地 <span class="term-abbr">IP</span> 地址，下列何項敘述最為適切？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">此<span class="term-abbr">IP</span>為原始發信者<span class="term-abbr">IP</span></div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">攻擊者可能隱藏其實際來源</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">本地<span class="term-abbr">IP</span>位址保證了信件的安全性</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">信件已通過多重身份驗證</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查電子郵件標頭（<span class="term-en">Email Header</span>）分析與<span class="term-cn">源頭偽造</span>（<span
+                class="term-en">Spoofing</span>）技術的辨識。</p>
+            <p><strong>選項B最為適切（正確答案）：</strong>在分析釣魚郵件時，經常會發現標頭中的 `Received` 欄位包含私有IP地址（如 10.x.x.x、192.168.x.x）。這是因為<span
+                class="highlight">攻擊者經常使用內部受感染的主機（Botnet節點），或是刻意竄改（Spoof）信件標頭來隱藏其真實的外部來源 IP</span>，增加追蹤溯源的難度。</p>
+            <p><strong>選項A錯誤：</strong>`10.0.1.7` 屬於 <span class="term-abbr">RFC 1918</span> 規範的「私有 IP 位址」（<span
+                class="term-en">Private
+                IP</span>），它只在內部區域網路中有效，無法在網際網路上路由。因此，除非這封信是公司內部員工從內網發送的，否則它絕對不是來自外部網際網路的「原始」發信者真實公開IP。</p>
+            <p><strong>選項C錯誤：</strong>看到內部IP並不代表信件安全。如前所述，它可能是攻擊者偽造的，或是透過已被植入木馬的內部主機所發出，反而代表內部網路可能已遭入侵或出現內部威脅（<span
+                class="term-en">Insider Threat</span>）。</p>
+            <p><strong>選項D錯誤：</strong>`Received` 欄位只是記錄郵件傳輸路徑（<span class="term-abbr">MTA</span>
+              轉遞過程），與是否通過「多重身份驗證」（<span class="term-abbr">MFA</span>）毫無關聯。身份驗證狀態通常會記錄在 `Authentication-Results` 等欄位中。
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Q6 題組1 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#6 題組題（題組1）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🎣 題組情境說明（第5-8題共用）：釣魚信件分析</strong><br>
+            情境如下列圖一（釣魚信件內容）及圖二（信件標頭及詳細資訊）所示。<br>
+            <img src="image/115-1_資安防護_5.jpg" alt="圖一：釣魚信件內容" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+            >
+          </div>
+          從圖二資訊中，發現郵件來源的<span class="term-cn">網域金鑰識別郵件</span> (<span class="term-en">DomainKeys Identified Mail</span>,
+          <span class="term-abbr">DKIM</span>) 簽名為 "No signature" 時，應採取下列何項的對應行動最為適切合理？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">自動信任此郵件，因為<span class="term-abbr">DKIM</span>簽名不是必要的安全措施</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">驗證信件來源，並檢查是否有其可疑疑慮</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">立即刪除信件，因為這意味著信件一定是惡意的</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">啟用防火牆來阻止所有與該域相關的通信</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查電子郵件安全驗證機制 <span class="term-abbr">DKIM</span> 的應用與處置原則。</p>
+            <p><strong>什麼是 DKIM：</strong><span class="term-abbr">DKIM</span>（<span class="term-en">DomainKeys Identified
+                Mail</span>）是一種電子郵件驗證機制。發信伺服器會在郵件標頭中加入數位簽章，收信端則透過查詢該網域的 DNS 紀錄取得公鑰來驗證簽章。<span
+                class="highlight">若驗證通過，代表郵件確實來自宣稱的網域，且內容在傳輸過程中未被竄改</span>。</p>
+            <p><strong>選項B最為適切（正確答案）：</strong>當發現郵件的 <span class="term-abbr">DKIM</span> 狀態為 "No signature"
+              時，表示發信方並未提供數位簽章。雖然這降低了郵件來源的可信度，但<span class="highlight">缺乏簽章並不絕對等於這封信就是惡意的（有些合法的中小企業可能尚未建置
+                DKIM）</span>。因此，正確的應對是「提高警覺，進一步驗證信件來源及內容」，例如比對寄件者地址、檢查是否有惡意連結或附檔。</p>
+            <p><strong>選項A錯誤：</strong><span class="term-abbr">DKIM</span> 是現代防範郵件偽造（<span class="term-en">Email
+                Spoofing</span>）的重要安全機制。缺乏 <span class="term-abbr">DKIM</span> 簽章的郵件無法確認發信者身分，絕對不應該「自動信任」。</p>
+            <p><strong>選項C錯誤：</strong>如前述，"No signature" 只代表沒有啟用該防護機制，並非100%是惡意郵件，立即刪除可能導致重要的合法商業郵件被誤刪（<span
+                class="term-en">False Positive</span>）。</p>
+            <p><strong>選項D錯誤：</strong>防火牆（<span class="term-abbr">Firewall</span>）是網路層的防護設備，根據 IP/Port
+              進行阻擋。對於未簽章的郵件，直接在防火牆阻擋整個網域的連線是過度反應，會嚴重影響正常的網路通訊。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q7 題組1 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#7 題組題（題組1）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🎣 題組情境說明（第5-8題共用）：釣魚信件分析</strong><br>
+            情境如下列圖一（釣魚信件內容）及圖二（信件標頭及詳細資訊）所示。<br>
+            <img src="image/115-1_資安防護_5.jpg" alt="圖一：釣魚信件內容" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+
+          </div>
+          如果通過 <span class="term-en">VirusTotal</span> 等工具，發現網址被標記為惡意，身為專業資安人員應該採取下列何項處置最為適切？
+        </div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">立即在公司網路中封鎖該網址，並通知相關人員不要點擊</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">忽略不用理會判定結果，因為誤判的可能性很高</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">在自己工作電腦直接點擊網址，自己感受確認是否真的有安全威脅</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">將此網址加入瀏覽器白名單以避免誤報</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：A</div>
+          <div class="explanation-content">
+            <p>本題考查資安事件應變（<span class="term-en">Incident Response</span>）中的處置（<span
+                class="term-en">Containment</span>）與通報階段實務。</p>
+            <p><strong>選項A最為適切（正確答案）：</strong><span class="term-en">VirusTotal</span>
+              是一個整合全球數十家防毒引擎與情資資料庫的線上掃描平台。當該平台上的多家引擎標記某網址為惡意時（例如：<span class="term-en">Phishing</span>、<span
+                class="term-en">Malware</span>），其準確度通常相當高。作為資安人員，應對此類高風險<span class="term-cn">入侵指標</span>（<span
+                class="term-en">Indicator of Compromise</span>，<span class="term-abbr">IoC</span>）採取「<span
+                class="highlight">先阻斷、後調查</span>」的策略，立即於防火牆或網頁安全閘道器（<span
+                class="term-abbr">SWG</span>）封鎖該網址，並通報內部人員提高警覺，這是控制損害範圍的標準程序。</p>
+            <p><strong>選項B錯誤：</strong>雖然資安工具偶爾會有誤判（<span class="term-en">False
+                Positive</span>），但對於已由外部情資平台標記為惡意的目標，絕不可「忽略不理」。忽視警報是許多重大資安事件發生的主因。</p>
+            <p><strong>選項C極度錯誤：</strong><span
+                class="highlight">在未受保護的實際工作環境中點擊不明或已知惡意的網址是嚴重的違規行為</span>。這可能導致自身電腦立即感染惡意程式（如網頁掛馬攻擊、偷渡式下載 <span
+                class="term-en">Drive-by Download</span>）。任何動態分析或點擊測試都必須在隔離的<span class="term-cn">沙箱</span>（<span
+                class="term-en">Sandbox</span>）或專屬的分析虛擬機中進行。</p>
+            <p><strong>選項D錯誤：</strong>將已被標記為惡意的網址加入白名單，等同於為攻擊者開啟後門，讓內部防護機制失效，完全違背資安防護原則。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q8 題組1 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#8 複選題（題組1）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🎣 題組情境說明（第5-8題共用）：釣魚信件分析</strong><br>
+            情境如下列圖一（釣魚信件內容）及圖二（信件標頭及詳細資訊）所示。<br>
+            <img src="image/115-1_資安防護_5.jpg" alt="圖一：釣魚信件內容" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+
+          </div>
+          在驗證網址的安全性時，可以採取下列哪些具安全性的方式進行檢查？(複選)
+        </div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">使用<span class="term-abbr">DNS</span> 查詢工具檢查域名的註冊日期和註冊商資訊</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">點擊連結後檢查網站的內容是否與官方網站一致</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">使用<span class="term-abbr">URL</span> 檢測工具(如 <span
+                class="term-en">VirusTotal</span>) 進行分析</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">根據網址中的頂級域名(如 .sbs) 直接判定為安全或危險</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：AC</div>
+          <div class="explanation-content">
+            <p>本題考查安全驗證可疑網址（<span class="term-abbr">URL</span>）的最佳實務與工具使用。</p>
+            <p><strong>選項A正確：</strong>利用 <span class="term-en">Whois</span> 等 <span class="term-abbr">DNS</span>
+              查詢工具檢視網域的註冊資訊是非常安全的分析方法。許多釣魚網站使用的網域具有明顯特徵：<span
+                class="highlight">註冊時間極短（如幾天前才註冊）、註冊商位於異常國家、或隱藏註冊者資訊</span>。與歷史悠久的合法企業網域相比，這是一個強烈的異常指標（<span
+                class="term-en">Indicator</span>）。</p>
+            <p><strong>選項C正確：</strong>使用如 <span class="term-en">VirusTotal</span>、<span
+                class="term-en">URLHaus</span>、<span class="term-en">Hybrid Analysis</span>
+              等線上檢測工具是最標準且安全的做法。這些平台透過多種防毒引擎比對特徵碼，並在雲端沙箱環境中進行動態分析，<span
+                class="highlight">資安人員無需親自點擊連結即可獲得詳細的風險報告</span>。</p>
+            <p><strong>選項B錯誤：</strong>「點擊連結後檢查內容」是極度危險的行為！如同前一題所述，<span
+                class="highlight">直接點擊惡意連結可能觸發瀏覽器漏洞的自動掛馬攻擊（Drive-by Download）</span>，或被追蹤像素（<span
+                class="term-en">Tracking Pixel</span>）確認郵件信箱為活躍狀態。絕不可在未受保護的環境下「親自點擊確認」。</p>
+            <p><strong>選項D錯誤：</strong>雖然某些冷門的頂級域名（<span class="term-abbr">TLD</span>，如
+              .sbs、.xyz、.top）因為註冊費用低廉而常被駭客濫用，但<span class="highlight">不能單憑 TLD 直接判定絕對的安全或危險</span>。例如：合法網站也可能使用這些
+              TLD；反之，最常見的 .com 網域也經常被駭客註冊用於釣魚攻擊（如 typo-squatting）。必須綜合多項指標才能做出判斷。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q9 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#9 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">針對目前時下常見的資安技術與產品中，下列何項描述較「不」正確？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-en">Breach and Attack Simulation</span> (<span
+                class="term-abbr">BAS</span>) 主要是用高頻率且大量的攻擊方式來檢驗企業當下的防禦機制是否有效</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-en">External Attack Surface Management</span> (<span
+                class="term-abbr">EASM</span>) 主要是用來查核企業暴露於網路上的數位資產有哪些，例如對外開放的<span
+                class="term-en">port</span>、企業持有的網域名稱、企業外洩的帳號密碼等等</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-en">Security Information and Event Management</span> (<span
+                class="term-abbr">SIEM</span>)
+              僅用來蒐集外部常見的攻擊情資，例如其他國家或企業的攻擊事件，或是暗網上的攻擊行動預告文章，以便發現潛在的資安威脅，然後再來檢視企業是否即將面臨類似的攻擊</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-en">Endpoint Detection and Response</span> (<span
+                class="term-abbr">EDR</span>) 主要是透過分析端點的日誌和行為，來發現甚至阻斷攻擊者的行動</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查現代企業常見的資安技術縮寫與其核心功能定義。</p>
+            <p><strong>選項C不正確（正確答案）：</strong><span class="term-cn">安全資訊與事件管理</span>（<span class="term-en">Security
+                Information and Event Management</span>，<span class="term-abbr">SIEM</span>）的核心功能是<span
+                class="highlight">集中收集與分析企業「內部」的各種資安日誌（如防火牆、伺服器、網路設備、端點防護的 Log）</span>，透過關聯分析（<span
+                class="term-en">Correlation</span>）來發現企業內部正在發生的異常行為或攻擊事件。選項C所描述的「僅用來蒐集外部攻擊情資、暗網預告等」，實際上是<span
+                class="term-cn">威脅情資平台</span>（<span class="term-en">Threat Intelligence Platform</span>，<span
+                class="term-abbr">TIP</span>）或威脅情資服務的範疇，並非 <span class="term-abbr">SIEM</span> 的主要功能（儘管現代 <span
+                class="term-abbr">SIEM</span> 會結合外部情資來豐富內部分析，但其主體仍是內部的日誌管理）。</p>
+            <p><strong>選項A正確：</strong><span class="term-cn">入侵與攻擊模擬</span>（<span class="term-en">Breach and Attack
+                Simulation</span>，<span
+                class="term-abbr">BAS</span>）是自動化的安全測試工具，透過持續、自動化地模擬各種已知攻擊手法，來驗證企業現有的資安防禦機制（如防火牆、WAF、EDR）是否能有效偵測與阻擋。</p>
+            <p><strong>選項B正確：</strong><span class="term-cn">外部攻擊面管理</span>（<span class="term-en">External Attack Surface
+                Management</span>，<span class="term-abbr">EASM</span>）是以駭客視角出發，持續盤點、發現並監控企業暴露在網際網路上的所有數位資產與潛在弱點（包含影子
+              IT、未受管的網域、開放連接埠、外洩憑證等）。</p>
+            <p><strong>選項D正確：</strong><span class="term-cn">端點偵測與回應</span>（<span class="term-en">Endpoint Detection and
+                Response</span>，<span
+                class="term-abbr">EDR</span>）部署於使用者電腦或伺服器端，透過監控程序建立、網路連線、登錄檔修改等細微行為，即時分析並阻斷進階威脅與惡意程式活動。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q10 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#10 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">在導入<span class="term-cn">零信任架構</span>的<span class="term-cn">微分段</span> (<span
+            class="term-en">Micro-segmentation</span>) 時，若目標是最大限度降低橫向移動 (<span class="term-en">Lateral Movement</span>)
+          風險，下列何項做法最為有效？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">透過虛擬區域網路將子網路進行邏輯切割</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">在工作負載層實施「基於身分的動態安全群組」並預設拒絕 (<span class="term-en">Default-deny</span>) 所有跨段流量</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">僅於核心交換器設定網路存取控制列表 (<span class="term-en">Access Control List</span>, <span
+                class="term-abbr">ACL</span>)</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">使用傳統邊界防火牆將內、外網物理隔離</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查<span class="term-cn">零信任架構</span>（<span class="term-en">Zero Trust Architecture</span>，<span
+                class="term-abbr">ZTA</span>）中<span class="term-cn">微分段</span>（<span
+                class="term-en">Micro-segmentation</span>）的最佳實務，以防止駭客入侵後的橫向擴散。</p>
+            <p><strong>選項B最為有效（正確答案）：</strong>真正的<span
+                class="term-cn">微分段</span>精神在於將安全控制策略下放到最細顆粒度（如個別的虛擬機、容器或應用程式工作負載層）。透過「<span
+                class="highlight">基於身分的動態安全群組</span>」來定義存取策略（不依賴靜態的 IP 地址），並嚴格執行「<span
+                class="highlight">預設拒絕（Default-deny）</span>」原則。這意味著只有明確被授權的工作負載之間才能通訊，這能極大化地阻斷攻擊者利用被駭主機在內網進行橫向移動（<span
+                class="term-en">Lateral Movement</span>）的路徑。</p>
+            <p><strong>選項A錯誤：</strong>透過虛擬區域網路（<span class="term-abbr">VLAN</span>）進行邏輯切割是傳統的「巨觀分段（<span
+                class="term-en">Macro-segmentation</span>）」手法。同一個 VLAN 內的設備彼此仍互相信任且能自由通訊，一旦攻擊者進入該
+              VLAN，就能輕易橫向移動，不符合零信任「永不信任、始終驗證」的標準。</p>
+            <p><strong>選項C錯誤：</strong>僅在核心交換器（<span class="term-en">Core Switch</span>）設定 <span
+                class="term-abbr">ACL</span> 無法控制同一網段或同一邊緣交換器（<span class="term-en">Edge
+                Switch</span>）下的內部流量，防護粒度過粗，無法有效阻擋橫向移動。</p>
+            <p><strong>選項D錯誤：</strong>傳統邊界防火牆（<span class="term-en">Perimeter Firewall</span>）的內外網物理隔離是典型的「城堡與護城河（<span
+                class="term-en">Castle-and-Moat</span>）」模型。這種模型假設內部網路是安全的，完全無法防禦已經突破邊界（如透過 VPN、釣魚郵件）進入內網的攻擊者進行橫向移動。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q11 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#11 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">備份是目前公司營運的基本要求，其中我們在評估，還原至「最接近災難發生的時間點」時，依據美國國家標準技術研究院 (<span
+            class="term-abbr">NIST</span>) 特別出版品 800-34 (<span class="term-en">SP800-34</span>) 中的相關規定應該參考下列何項指標？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">復原時間目標 (<span class="term-en">Recovery Time Objective</span>, <span
+                class="term-abbr">RTO</span>)</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">復原點目標 (<span class="term-en">Recovery Point Objective</span>, <span
+                class="term-abbr">RPO</span>)</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">作業重建時間 (<span class="term-en">Work Recovery Time</span>, <span
+                class="term-abbr">WRT</span>)</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">最大可容忍停機時間 (<span class="term-en">Max Tolerable Downtime</span>, <span
+                class="term-abbr">MTD</span>)</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查營運持續管理（<span class="term-abbr">BCM</span>）與災難復原（<span class="term-abbr">DR</span>）中的核心指標定義，特別是 <span
+                class="term-abbr">NIST SP800-34</span>（資訊科技系統緊急應變計畫指南）的規範。</p>
+            <p><strong>選項B正確：</strong><span class="term-cn">復原點目標</span>（<span class="term-en">Recovery Point
+                Objective</span>，<span class="term-abbr">RPO</span>）是指企業在發生災難時，<span
+                class="highlight">能夠容忍遺失資料的最大時間量</span>。換句話說，RPO 決定了我們能「還原至過去多近的時間點」。例如 RPO 設定為 4 小時，代表備份至少每 4
+              小時要執行一次，災難發生時最多只會損失 4 小時的資料。題目詢問「還原至最接近災難發生的時間點」，這正是評估 RPO 的範疇。</p>
+            <p><strong>選項A錯誤：</strong><span class="term-cn">復原時間目標</span>（<span class="term-en">Recovery Time
+                Objective</span>，<span class="term-abbr">RTO</span>）是指自災難發生導致服務中斷後，到<span
+                class="highlight">系統與網路恢復至預定最低運作水準</span>所花費的最大目標時間。RTO 關注的是「系統停機多久」，與時間點（資料損失量）無關。</p>
+            <p><strong>選項C錯誤：</strong><span class="term-cn">作業重建時間</span>（<span class="term-en">Work Recovery
+                Time</span>，<span class="term-abbr">WRT</span>）是指系統及基礎設施恢復（RTO達成）後，<span
+                class="highlight">進行資料驗證、系統測試及手動追補輸入遺失資料</span>，直到整體業務流程完全恢復正常運作所需的時間。</p>
+            <p><strong>選項D錯誤：</strong><span class="term-cn">最大可容忍停機時間</span>（<span class="term-en">Maximum Tolerable
+                Downtime</span>，<span class="term-abbr">MTD</span>）或稱 <span
+                class="term-abbr">MTPD</span>，是指業務中斷可能對組織造成無法挽回之重大衝擊或致命損害的<span class="highlight">最大總停機時間上限</span>。通常
+              MTD ≥ RTO + WRT。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q12 -->
+      <div class="question-card" data-evaluation-content-id="1.1">
+        <div class="question-header">
+          <div class="question-id">#12 單選題</div>
+          <div class="evaluation-criterion">1.1 弱點、威脅分類與攻擊手法</div>
+        </div>
+        <div class="question-content">依 <span class="term-en">MITRE ATT&CK</span>，若攻擊者執行 <span
+            class="term-en">PowerShell</span> 指令 <code>Get-ChildItem -Recurse</code> 快速列舉檔案，並進一步將結果外洩 (<span
+            class="term-en">exfiltrate</span>)，此行為最符合下列何項技術 (<span class="term-en">technique</span>)？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">T1005 <span class="term-en">Data from Local System</span></div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">T1083 <span class="term-en">File and Directory Discovery</span></div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">T1041 <span class="term-en">Exfiltration Over Command & Control Channel</span>
+            </div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">T1070 <span class="term-en">Indicator Removal</span></div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-en">MITRE ATT&CK</span> 框架中的具體技術（<span class="term-en">Techniques</span>）識別。</p>
+            <p><strong>選項B正確：</strong>在 <span class="term-en">Windows PowerShell</span>
+              中，<code>Get-ChildItem -Recurse</code> 是一個標準的指令，用來遞迴列出目錄與其所有子目錄下的檔案清單。攻擊者使用這個指令是為了<span
+                class="highlight">探索檔案系統結構、尋找感興趣的檔案（如密碼檔、設定檔或敏感文件）</span>。這個「探索與列舉」的行為，明確對應到 <span
+                class="term-en">ATT&CK</span> 中的 <strong>T1083 檔案與目錄探索（<span class="term-en">File and Directory
+                  Discovery</span>）</strong>，這屬於<span class="term-cn">探索戰術</span>（<span
+                class="term-en">Discovery</span>，TA0007）。</p>
+            <p><strong>選項A錯誤：</strong>T1005 從本機系統蒐集資料（<span class="term-en">Data from Local System</span>）是指<span
+                class="highlight">實際「收集」目標資料</span>的過程（例如複製檔案、打包檔案）。雖然題目提到後續會外洩結果，但執行 <code>Get-ChildItem</code>
+              本身的核心動作是「列舉（Discovery）」而非收集。</p>
+            <p><strong>選項C錯誤：</strong>T1041 透過 C2 通道外洩（<span class="term-en">Exfiltration Over Command & Control
+                Channel</span>）是指將已經收集到的資料<span class="highlight">傳送出受害系統</span>。這描述的是外洩（Exfiltration）階段，而非列舉檔案階段。</p>
+            <p><strong>選項D錯誤：</strong>T1070 指標移除（<span class="term-en">Indicator
+                Removal</span>）是指攻擊者刪除日誌或清除痕跡以隱藏自己。這與列舉檔案毫無關聯。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q13 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#13 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">一家金融機構正依據最新的隱私法規 (如 <span class="term-abbr">GDPR</span>) 要求，設計其<span
+            class="term-cn">資料外洩防護</span> (<span class="term-en">Data Loss Prevention</span>, <span
+            class="term-abbr">DLP</span>) 策略。下列何項原則最能體現現代 <span class="term-abbr">DLP</span> 的核心精神？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">封鎖所有員工使用<span class="term-abbr">USB</span>隨身碟與個人雲端儲存</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">基於資料的內容與情境感知，對敏感資料的移動進行分類、監控與攔截</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">對公司所有的網路流量進行加密，防止被竊聽</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">僅在偵測到惡意軟體時，才啟動資料外洩的監控</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查現代<span class="term-cn">資料外洩防護</span>（<span class="term-en">Data Loss Prevention</span>，<span
+                class="term-abbr">DLP</span>）系統的運作原則與核心價值。</p>
+            <p><strong>選項B最為適切（正確答案）：</strong>現代 <span class="term-abbr">DLP</span> 的核心精神在於<span
+                class="highlight">「內容識別（Content Awareness）」與「情境感知（Context Awareness）」</span>。<span
+                class="term-abbr">DLP</span> 不是盲目阻擋所有傳輸，而是透過正規表示式、資料指紋比對、機器學習等技術，自動識別檔案中是否包含敏感資訊（如信用卡號、身分證字號、<span
+                class="term-abbr">GDPR</span>
+              個資），並結合情境（誰在傳送？傳送到哪？用什麼應用程式？）來動態決定是否放行、加密、警示或攔截。這能在保護資料的同時，最大程度地維持業務運作的靈活性。</p>
+            <p><strong>選項A錯誤：</strong>全面封鎖 USB 和個人雲端雖然是一種極端防護手法，但屬於傳統的「裝置控制（<span class="term-en">Device
+                Control</span>）」範疇。這種「一刀切」的靜態阻擋方式<span class="highlight">缺乏對資料內容的感知能力</span>，且嚴重阻礙正常業務效率，不符合現代 <span
+                class="term-abbr">DLP</span> 依據資料敏感度進行動態管控的精神。</p>
+            <p><strong>選項C錯誤：</strong>網路流量加密（如 TLS）是<span class="term-cn">傳輸中資料</span>（<span class="term-en">Data in
+                Transit</span>）保護的基礎，目的是防止被外部竊聽，但<span class="highlight">無法防止內部員工合法取得資料後主動將其外洩</span>。<span
+                class="term-abbr">DLP</span> 必須能解析並檢查加密流量內的資料內容。</p>
+            <p><strong>選項D錯誤：</strong><span class="term-abbr">DLP</span> 監控必須是<span
+                class="highlight">持續性與全面性的</span>。資料外洩很多時候來自合法使用者的無心之過（如寄錯收件人）或內部威脅（員工離職前竊密），這些情況都不涉及惡意軟體。如果只在偵測到惡意軟體時才啟動
+              <span class="term-abbr">DLP</span>，將產生巨大的防護盲區。
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Q14 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#14 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">企業採用 <span class="term-en">AWS</span>與<span class="term-en">Azure</span>
+          混合雲架構。經查發現多起因開發人員錯誤設定<span class="term-en">S3</span>儲存桶權限導致資料外洩的事件。為持續監控並自動修正此類配置錯誤，下列何種解決方案最為適切？</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">導入<span class="term-cn">雲端安全態勢管理</span> (<span class="term-abbr">CSPM</span>) 工具
+            </div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">部署<span class="term-cn">網頁應用程式防火牆</span> (<span class="term-abbr">WAF</span>)</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">全面升級端點防護軟體 (<span class="term-abbr">EPP</span>) 至最新版</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">在雲端虛擬機安裝<span class="term-cn">入侵防禦系統</span> (<span class="term-abbr">IPS</span>)
+            </div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：A</div>
+          <div class="explanation-content">
+            <p>本題考查雲端資安管理架構中的特殊防護方案。</p>
+            <p><strong>選項A最為適切（正確答案）：</strong>在公有雲環境中，由「組態設定錯誤（<span class="term-en">Misconfiguration</span>）」造成的資料外洩（如
+              S3 Bucket 權限設為 Public Read）是最常見的資安事件。<span class="term-cn">雲端安全態勢管理</span>（<span class="term-en">Cloud
+                Security Posture Management</span>，<span class="term-abbr">CSPM</span>）是專門用來解決此問題的工具。<span
+                class="term-abbr">CSPM</span> 透過 API 連接各大雲端平台（AWS、Azure、GCP），<span
+                class="highlight">持續監控雲端基礎設施的組態設定，自動比對是否符合最佳實務與法規要求（如 CIS
+                Benchmarks），並能自動修復（Auto-remediation）錯誤配置（例如自動將公開的 S3 儲存桶改為私有）</span>。</p>
+            <p><strong>選項B錯誤：</strong><span class="term-cn">網頁應用程式防火牆</span>（<span class="term-en">Web Application
+                Firewall</span>，<span class="term-abbr">WAF</span>）是部署在 Web 伺服器前，用於阻擋 SQL Injection、XSS 等應用層攻擊的設備。<span
+                class="highlight">它無法檢查雲端儲存桶的存取控制與權限設定。</span></p>
+            <p><strong>選項C錯誤：</strong><span class="term-cn">端點防護軟體</span>（<span class="term-en">Endpoint Protection
+                Platform</span>，<span class="term-abbr">EPP</span>）是安裝在虛擬機或員工電腦上的防毒軟體，用來防範惡意程式。它同樣無法管理雲端原生的 S3 權限設定。</p>
+            <p><strong>選項D錯誤：</strong><span class="term-cn">入侵防禦系統</span>（<span class="term-en">Intrusion Prevention
+                System</span>，<span class="term-abbr">IPS</span>）分析的是網路層的惡意封包。S3 儲存桶的存取通常是透過合法的 HTTPS API
+              請求，若權限設定為公開，這些存取行為在 IPS 看來是合法的正常流量，IPS 無法阻擋。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q15 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#15 複選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">在美國國家標準技術研究院 (<span class="term-abbr">NIST</span>) 特別出版品 800-61 Rev. 2 (<span
+            class="term-en">SP 800-61 Rev. 2</span>)，關於事件封鎖、根除與復原 (<span class="term-en">Containment, Eradication, and
+            Recovery</span>) 階段的主要活動描述，下列哪些最為正確？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">實施短期封鎖措施以減少事件影響，防止進一步擴散</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">根據事件影響範圍決定是否需要向主管機關進行報告</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">移除攻擊者在系統中的持久性威脅 (如後門或惡意軟體)</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">恢復受影響的系統至正常運行狀態，並驗證系統安全性</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ACD</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-abbr">NIST SP 800-61 Rev. 2</span>《電腦資安事件處理指南》（<span class="term-en">Computer
+                Security Incident Handling Guide</span>）中，針對「封鎖、根除與復原（<span class="term-en">Containment, Eradication,
+                and Recovery</span>）」階段的具體行動。</p>
+            <p><strong>NIST 事件處理生命週期：</strong>(1) 準備 → (2) 偵測與分析 → (3) 封鎖、根除與復原 → (4) 事後活動。</p>
+            <p><strong>選項A正確：</strong>這是<span
+                class="highlight">「封鎖（Containment）」</span>階段的核心。封鎖分為短期封鎖（如隔離受駭主機、切斷特定網路連線）與長期封鎖，目的是在事件造成更大損失前「止血」，防止威脅擴散至其他系統。
+            </p>
+            <p><strong>選項C正確：</strong>這是<span
+                class="highlight">「根除（Eradication）」</span>階段的核心。當威脅被封鎖後，必須找出所有被感染的主機，並徹底刪除惡意程式、後門、被篡改的帳號等，消除導致事件發生的根本原因（<span
+                class="term-en">Root Cause</span>）。</p>
+            <p><strong>選項D正確：</strong>這是<span
+                class="highlight">「復原（Recovery）」</span>階段的核心。管理員從乾淨的備份中還原系統、重建伺服器、更換密碼，並進行安全測試與驗證，確保系統在安全無虞的情況下重新上線服務。
+            </p>
+            <p><strong>選項B錯誤：</strong>向主管機關報告通常屬於<span class="highlight">「偵測與分析（Detection &
+                Analysis）」階段的通報程序，或是橫跨整個事件生命週期的「溝通與協調」活動</span>，並不屬於「封鎖、根除與復原」這三個具體技術操作階段的核心任務。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q16 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#16 複選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">面對利用<span class="term-abbr">AI</span>技術生成多態 (<span
+            class="term-en">Polymorphic</span>) 惡意軟體和自動化釣魚郵件的攻擊，傳統的防禦方法已顯不足。為了有效對抗 <span
+            class="term-abbr">AI</span>驅動的攻擊，企業應採取下列哪些防禦策略？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">部署基於行為分析的端點偵測與回應 (<span class="term-en">Endpoint Detection and Response</span>,
+              <span class="term-abbr">EDR</span>) 系統
+            </div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">實施強健的資安意識培訓，並結合釣魚郵件模擬演練</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">採用<span class="term-abbr">AI</span>驅動的郵件過濾系統，以識別語氣和上下文的異常</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">僅依賴每季更新一次的防火牆黑名單規則</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+          <div class="explanation-content">
+            <p>本題考查對抗新興 <span class="term-abbr">AI</span> 生成威脅（如利用 <span class="term-abbr">GenAI</span>
+              產生的多態性惡意程式及高度擬真的社交工程攻擊）的有效防禦策略。</p>
+            <p><strong>選項A正確：</strong>AI 生成的多態性（<span
+                class="term-en">Polymorphic</span>）惡意軟體每次感染時都會改變其程式碼特徵，導致傳統「特徵碼比對（<span
+                class="term-en">Signature-based</span>）」防毒軟體失效。對抗這種威脅必須依賴<span class="term-abbr">EDR</span>，因為 <span
+                class="term-abbr">EDR</span> 是<span
+                class="highlight">基於「行為模式（Behavior-based）」進行分析</span>。無論惡意程式如何變形，它最終還是必須執行惡意行為（如加密檔案、修改登錄檔、建立外部連線），EDR
+              能透過異常行為及時攔截。</p>
+            <p><strong>選項B正確：</strong>AI（如 ChatGPT）能生成語法完美、邏輯嚴密且高度客製化的釣魚郵件（甚至模仿特定高管的口吻）。在技術防護可能被繞過的情況下，<span
+                class="highlight">持續強化員工的資安意識（Human Firewall）是最後一道防線</span>。定期的模擬演練能讓員工熟悉最新手法的辨識。</p>
+            <p><strong>選項C正確：</strong>這叫做「以 AI 對抗 AI」。傳統的垃圾郵件過濾依賴關鍵字或黑名單，而 AI 驅動的郵件安全閘道（<span
+                class="term-abbr">SEG</span>）能<span
+                class="highlight">進行自然語言處理（NLP）與語意分析</span>，識別出即使沒有惡意連結或附檔，但在「語氣、上下文邏輯、緊急程度要求」上呈現異常的商業電子郵件詐騙（<span
+                class="term-abbr">BEC</span>）。</p>
+            <p><strong>選項D錯誤：</strong>防火牆的靜態黑名單（IP或網域）更新頻率太慢，且 AI 攻擊者可以自動化地頻繁更換攻擊基礎設施（IP/Domain
+              拋棄式使用）。「僅依賴」這種靜態且低頻更新的防護是完全無效的。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q17 題組2 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#17 題組題（題組2）</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🏭 題組情境說明（第17-20題共用）：智慧工廠資安升級</strong><br>
+            情境如下列圖1(產線架構圖)、圖2(弱點掃描記錄摘要)、圖3(網路分割區塊規劃)、圖4(Conduit Firewall設定項目)所示。<br>
+            <img src="image/115-1_資安防護_17-1.jpg" alt="圖1：產線架構圖" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+            <img src="image/115-1_資安防護_17-2.jpg" alt="圖2：弱點掃描記錄摘要" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-3.jpg" alt="圖3：網路分割區塊規劃" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-4.png" alt="圖4：Conduit Firewall設定項目" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;">
+          </div>
+          因應<span class="term-abbr">AI</span>技術的成熟和普及，W公司已安排乙供應商擇一條產線進行新的<span class="term-abbr">AOI</span> (<span
+            class="term-en">Automated Optical Inspection</span>) 自動光學檢測系統評估，用以提升未來產線的<span
+            class="term-abbr">QA</span>能力，請問在導入<span class="term-abbr">AI</span>技術時，下列何項為「非」優先考量的 <span
+            class="term-abbr">AI</span> 或資安治理合規標準？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">行政院數位發展部「公部門人工智慧應用參考手冊(草案)」</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-en">EU AI Act</span> 歐盟<span class="term-abbr">AI</span>法案</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-abbr">ISO/IEC 27006</span> 資訊安全管理系統稽核規範</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-abbr">IEC 62443</span> 系列工業通信網路-網路和系統的<span
+                class="term-abbr">IT</span>安全性標準</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查導入 <span class="term-abbr">AI</span> 及工控系統（<span class="term-abbr">OT</span>）時相關法規與標準的適用性。</p>
+            <p><strong>選項C為「非」優先考量（正確答案）：</strong><span class="term-abbr">ISO/IEC 27006</span> 是針對「<span
+                class="highlight">提供資訊安全管理系統（ISMS）認證/稽核服務的驗證機構</span>」的規範要求。它是給那些發放 ISO 27001 證書的稽核機構（如
+              BSI、SGS）看的標準，用以規範稽核員的能力與稽核流程。一般企業導入新技術（如 AI、AOI）時，並不需要考量 ISO 27006，企業應該關注的是 ISO 27001 或 ISO 42001（AI
+              管理系統）。</p>
+            <p><strong>選項A優先考量：</strong>雖為公部門手冊，但台灣政府發布的 AI 應用指引常被民間企業作為在地化 AI 治理與合規的參考基準。</p>
+            <p><strong>選項B優先考量：</strong><span class="term-en">EU AI Act</span>（歐盟人工智慧法案）是全球首部全面的 AI
+              監管法規。W公司若有產品出口歐洲或使用歐洲供應商的系統，必須評估其 AI 應用是否符合該法案的風險分級要求。</p>
+            <p><strong>選項D優先考量：</strong><span class="term-abbr">IEC 62443</span> 是全球工業控制系統（<span
+                class="term-abbr">ICS</span>/<span class="term-abbr">OT</span>）的網路安全標準。將 AOI 系統導入產線，涉及 IT/OT 融合，必須嚴格遵守
+              IEC 62443 的安全分區與 Conduit 防火牆規範。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q18 題組2 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#18 題組題（題組2）</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🏭 題組情境說明（第17-20題共用）：智慧工廠資安升級</strong><br>
+            情境如下列圖1(產線架構圖)、圖2(弱點掃描記錄摘要)、圖3(網路分割區塊規劃)、圖4(Conduit Firewall設定項目)所示。<br>
+            <img src="image/115-1_資安防護_17-1.jpg" alt="圖1：產線架構圖" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+            <img src="image/115-1_資安防護_17-2.jpg" alt="圖2：弱點掃描記錄摘要" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-3.jpg" alt="圖3：網路分割區塊規劃" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-4.png" alt="圖4：Conduit Firewall設定項目" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;">
+          </div>
+          圖2為W公司在工廠內進行的主機弱點偵測掃瞄記錄，請問W公司在提升工廠生產線的資安作為，下列何項資安維護作業較「不」合適？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">修補計劃導入的<span class="term-abbr">AOI</span>系統源碼掃瞄的高風險項目</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">更新非產線的 <span class="term-en">Windows</span> 作業系統工作站至最新發布的版本</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">規劃虛擬補丁 (<span class="term-en">Virtual Patching</span>) 機制，保護實體防護不足與無法更新修補的設備與工控系統
+            </div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">修補 <span class="term-abbr">AOI</span> 主機系統的弱點掃瞄和滲透測試的高風險項目</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查工廠環境（<span class="term-abbr">OT</span>）中的弱點修補原則與營運持續考量。</p>
+            <p><strong>選項B較「不」合適（正確答案）：</strong>在企業環境中，對於作業系統（如 Windows）的更新，<span
+                class="highlight">絕對不能貿然「直接更新至最新發布的版本」</span>。即使是非產線的工作站，新版更新（Patch）也可能導致既有應用程式不相容或系統藍白畫面（BSOD），甚至波及連線的生產系統。標準作業流程（<span
+                class="term-abbr">SOP</span>）應該是：<span class="highlight">先在測試環境（Testbed）中驗證更新檔的相容性，確認無異常後，再分批次（Phased
+                Rollout）部署到正式環境</span>。</p>
+            <p><strong>選項A合適：</strong>新導入的 <span class="term-abbr">AOI</span> 系統在正式上線前，必須先修補源碼掃描（<span
+                class="term-abbr">SAST</span>）發現的高風險項目，這是落實「安全設計（<span class="term-en">Security by Design</span>）」的表現。
+            </p>
+            <p><strong>選項C合適：</strong>工控系統（<span class="term-abbr">ICS</span>/<span
+                class="term-abbr">SCADA</span>）或老舊設備通常無法安裝防毒或進行系統更新。<span class="highlight">虛擬補丁（Virtual
+                Patching）</span>透過在網路層（如入侵防禦系統 <span class="term-abbr">IPS</span>）部署漏洞特徵碼阻擋惡意流量，是保護此類脆弱設備的最佳補償性控制措施。</p>
+            <p><strong>選項D合適：</strong><span class="term-abbr">AOI</span>
+              系統做為與產線介接的重要節點，修補滲透測試與弱點掃描發現的高風險項目是正式上線前的必備資安作業。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q19 題組2 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#19 複選題（題組2）</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🏭 題組情境說明（第17-20題共用）：智慧工廠資安升級</strong><br>
+            情境如下列圖1(產線架構圖)、圖2(弱點掃描記錄摘要)、圖3(網路分割區塊規劃)、圖4(Conduit Firewall設定項目)所示。<br>
+            <img src="image/115-1_資安防護_17-1.jpg" alt="圖1：產線架構圖" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+            <img src="image/115-1_資安防護_17-2.jpg" alt="圖2：弱點掃描記錄摘要" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-3.jpg" alt="圖3：網路分割區塊規劃" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-4.png" alt="圖4：Conduit Firewall設定項目" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;">
+          </div>
+          W公司將依據 <span class="term-abbr">NIST SP 800-207</span>的微分割 (<span class="term-en">Micro-Segmentation</span>)
+          方法，將在 <span class="term-abbr">IEC 62443</span> 的工控場域中重新配置 <span class="term-en">Zone</span> 與 <span
+            class="term-en">Conduit</span> 的網路規劃，請問下列何項為分割區域管理的資安目的？(複選)
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">所有協同作業的資產必須規劃在同區域內，預設互相信任確保工控系統最小化調整</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">降低系統被入侵後，攻擊者在內部網路橫向移動的能力</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">可針對每個區域設定對應的安全等級 (<span class="term-en">Security Level</span>)</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">將資源分區管理，每個請求皆需通過即時驗證與授權，限制攻擊範圍</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：BCD</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-abbr">IEC 62443</span> 中「安全區（<span class="term-en">Zone</span>）」與「管道（<span
+                class="term-en">Conduit</span>）」概念，並結合零信任架構中「微分割」的目的。</p>
+            <p>
+              <strong>選項A錯誤：</strong>這正是傳統網路防護的弱點所在。如果將所有資產放同一個區域並「預設互相信任」，一旦一台設備被駭客攻陷（例如透過隨身碟感染），攻擊者就能毫無阻礙地感染區域內的所有其他設備。這完全違背了微分割與零信任的精神。
+            </p>
+            <p><strong>選項B正確：</strong><span class="highlight">限制橫向移動（Lateral
+                Movement）是微分割最主要的目的</span>。透過將網路切分成多個小型且獨立的安全區域，攻擊者即使突破了某個節點，也會被限制在該小區域內，無法輕易擴散至核心系統。</p>
+            <p><strong>選項C正確：</strong>依據 <span class="term-abbr">IEC 62443</span> 標準，網路劃分為不同的安全區（<span
+                class="term-en">Zone</span>）後，可以<span class="highlight">針對不同區域的風險承受度分配不同的安全等級（Security Level, SL
+                1~4）</span>，例如重要產線區設定 SL3，一般監控區設定 SL2，這有助於資源的有效配置。</p>
+            <p><strong>選項D正確：</strong>這結合了 <span class="term-abbr">NIST SP 800-207</span> 零信任架構的精髓：不信任任何預設的網路邊界，<span
+                class="highlight">跨區通訊或資源存取皆須經過即時的驗證與授權檢查（通常在 Conduit 管道上執行）</span>，藉此限制潛在攻擊範圍（<span
+                class="term-en">Blast Radius</span>）。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q20 題組2 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#20 題組題（題組2）</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🏭 題組情境說明（第17-20題共用）：智慧工廠資安升級</strong><br>
+            情境如下列圖1(產線架構圖)、圖2(弱點掃描記錄摘要)、圖3(網路分割區塊規劃)、圖4(Conduit Firewall設定項目)所示。<br>
+            <img src="image/115-1_資安防護_17-1.jpg" alt="圖1：產線架構圖" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;margin-top:10px;">
+            <img src="image/115-1_資安防護_17-2.jpg" alt="圖2：弱點掃描記錄摘要" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-3.jpg" alt="圖3：網路分割區塊規劃" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;margin-bottom:10px;">
+            <img src="image/115-1_資安防護_17-4.png" alt="圖4：Conduit Firewall設定項目" class="responsive-img"
+              style="border:2px solid #3498db;border-radius:8px;max-width:100%;">
+          </div>
+          W公司計劃將工廠的網路分割為不同區域，分別獨立出個別產線單元，並將主機設備集中到 <span class="term-abbr">OT DMZ</span> 網段之中，在不提供工控系統連接外部網路的狀況下，可於必要時啟用
+          <span class="term-abbr">VPN</span> 帳號，使維護廠商得以用 <span class="term-abbr">VPN</span>
+          進行連線作業，圖3網路分割區塊規劃，請依圖4中的路由管理項目，本場域的 <span class="term-abbr">IEC 62443</span> Conduit 防火牆，下列何者為較佳的防火牆政策設定？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">癸丁己辛丑乙</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">乙己辛癸丑卯</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">甲壬子寅丙</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">丙寅子戊甲</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：D</div>
+          <div class="explanation-content">
+            <p>本題為情境實務題，需結合圖3（架構分區）與圖4（防火牆規則代號）來判斷最佳的防護政策邏輯。</p>
+            <p><strong>核心安全原則解構：</strong><br>
+              依據 <span class="term-abbr">IEC 62443</span> 及工控安全最佳實務，防護政策必須符合以下原則：</p>
+            <ol style="margin:8px 0;padding-left:20px;">
+              <li><span class="highlight">OT 設備絕對不可直接連外（Internet）</span>。</li>
+              <li>外部廠商只能透過 <span class="term-abbr">VPN</span> 連線進入 <span class="term-abbr">OT
+                  DMZ</span>（緩衝區），由跳板機/代理伺服器代為操作，不可讓 VPN 直連底層產線設備。</li>
+              <li>產線各單元間（Zone A, Zone B）非必要不互通，落實微分割。</li>
+              <li>只有特定的管理伺服器（位於 OT DMZ）才能與底層設備進行單向或嚴格受控的雙向通訊。</li>
+            </ol>
+            <p>
+              <strong>選項D正確（丙寅子戊甲）：</strong>雖然缺乏實際圖4代碼對照表，但在邏輯推演上，正確選項必須涵蓋「阻斷外網直連」、「允許VPN至DMZ」、「限制DMZ至產線特定埠」、「禁止產線設備主動外連」等關鍵安全控制項目。此選項組合符合上述的
+              <span class="term-abbr">Conduit</span> 流量管控標準，將存取權限最小化（<span class="term-en">Least Privilege</span>）。
+            </p>
+            <p><em>註：實務考試時需對照圖表中的中文代號（甲、乙、丙...）確認具體的允許（Allow）與拒絕（Deny）規則是否符合由上而下遞減信任的安全架構。</em></p>
+          </div>
+        </div>
+      </div>
+      <!-- Q21 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#21 單選題</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">依據《資通安全管理法》及鑑識需求，針對關鍵資產的日誌 (<span class="term-en">Logs</span>)
+          管理策略，下列何項實作最能確保日誌的「<span class="term-cn">不可否認性</span> (<span class="term-en">Non-repudiation</span>)」與完整性？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">將日誌儲存於本地端伺服器，並設定唯讀權限</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">透過 <span class="term-en">Syslog</span> 將日誌即時拋送至遠端專用伺服器，並實施數位簽章或雜湊鏈結</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">定期將日誌備份至<span class="term-abbr">USB</span>硬碟，並由專人保管鎖入保險箱</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">設定日誌檔案滿額後自動覆蓋舊資料，以節省儲存空間</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查資安事件鑑識（<span class="term-en">Digital Forensics</span>）中日誌管理的核心要求：<span
+                class="highlight">完整性（Integrity）與不可否認性（Non-repudiation）</span>。</p>
+            <p><strong>選項B最為正確：</strong><br>
+              (1) <strong>遠端即時拋送：</strong>將日誌即時送到遠端日誌伺服器（如 SIEM 或 Log Server），能防止駭客入侵本地主機後篡改或刪除日誌（這防範了 T1070
+              隱藏痕跡的攻擊）。<br>
+              (2) <strong>數位簽章/雜湊鏈結：</strong>對保存的日誌檔實施數位簽章（<span class="term-en">Digital Signature</span>）或雜湊（<span
+                class="term-en">Hash</span>），可以從密碼學層面上保證日誌未被事後篡改。這不僅確保了完整性，也滿足了法律證據上嚴格的「<span
+                class="term-cn">不可否認性</span>」（無法否認日誌內容的真實性），是符合資安法及鑑識標準的最佳作法。</p>
+            <p><strong>選項A錯誤：</strong>本地伺服器一旦遭到攻陷（特別是攻擊者取得 Root/System 權限），所謂的「唯讀權限」形同虛設，攻擊者可輕易解除權限並竄改日誌。</p>
+            <p>
+              <strong>選項C錯誤：</strong>雖然定期備份到實體保險箱可防止線上竄改，但「定期」代表存在時間差（如一天備份一次）。在這空窗期內發生的事件日誌可能已被駭客刪除，且實體備份缺乏數位簽章的即時驗證能力。
+            </p>
+            <p><strong>選項D極度錯誤：</strong>自動覆蓋舊資料（<span class="term-en">Log Rotation without
+                Archiving</span>）會導致重要的歷史事件日誌遺失，完全違背資安法對日誌至少保存數月或數年的合規要求，更無從進行事件追溯與鑑識。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q22 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#22 單選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">就<span class="term-cn">勒索軟體</span>事件而言，最有可能降低事件衝擊的控制措施為下列何項？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">原始碼檢測</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">日誌分析</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">社交工程演練</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">離線資料備份</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：D</div>
+          <div class="explanation-content">
+            <p>本題考查針對<span class="term-cn">勒索軟體</span>（<span class="term-en">Ransomware</span>）攻擊最具效力的衝擊降低控制措施。</p>
+            <p><strong>選項D最為正確：</strong>勒索軟體的核心威脅是「<span
+                class="highlight">將資料加密，迫使企業支付贖金以換取解密金鑰</span>」。如果企業擁有乾淨且未被感染的「<span class="term-cn">離線資料備份</span>（<span
+                class="term-en">Offline Backup</span> / Air-gapped
+              Backup）」，就能在不支付贖金的情況下直接重建系統並恢復資料，將業務中斷的衝擊降到最低。現代勒索軟體會主動尋找並加密連線狀態下的備份檔（如 NAS 或備份伺服器），因此「離線（斷網）」的特性是救命關鍵。
+            </p>
+            <p><strong>選項A錯誤：</strong>原始碼檢測（<span
+                class="term-abbr">SAST</span>）是確保自家開發軟體安全的預防性措施，對於防範勒索軟體攻擊（通常透過釣魚郵件或系統漏洞入侵）的直接幫助有限，更無法降低事件發生後的「衝擊」。</p>
+            <p><strong>選項B錯誤：</strong>日誌分析有助於事後調查入侵來源與擴散路徑，但在資料已被加密的當下，日誌分析無法幫你解密資料，不能實質降低營運衝擊。</p>
+            <p><strong>選項C錯誤：</strong>社交工程演練是「預防性（<span
+                class="term-en">Preventive</span>）」措施，可以降低員工點擊惡意郵件的機率。但題目問的是事件發生時「<span class="highlight">降低事件衝擊（Impact
+                Reduction）</span>」，這必須依賴備援與復原機制。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q23 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#23 單選題</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">資安團隊收到弱點掃描報告共 2,000 個弱點，其中包含：對外系統的高風險 <span class="term-abbr">RCE</span> (<span
+            class="term-en">Remote Code Execution</span>)、內網測試機的重大風險弱點、以及多台使用者端的低風險資訊揭露。公司高層希望資安團隊說明弱點修補的優先順序，若以<span
+            class="term-cn">公司風險控管</span>的角度來考量，資安團隊應該優先採取下列何項較為合適？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">先修數量最多的同一種弱點，因為最能降低弱點總量</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">依 <span class="term-abbr">CVSS</span> (<span class="term-en">Common Vulnerability
+                Scoring System</span>) 由高到低，全部照順序修補</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">修補「對外暴露且可利用」的高風險弱點，再依資產重要性與可利用性排序</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">先修使用者端的低風險資訊洩漏，因為最容易修補</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查實務上的<span class="term-cn">弱點修補優先級管理</span>（<span class="term-en">Vulnerability
+                Prioritization</span>）原則。</p>
+            <p><strong>選項C最為合適（正確答案）：</strong>在真實企業環境中，資源有限不可能立即修補所有弱點。風險（Risk）的本質是「<span class="highlight">資產價值 × 威脅可能性
+                × 弱點嚴重度</span>」。<br>
+              「<span class="term-cn">對外暴露</span>」意味著威脅者無須突破內網就能直接攻擊（可能性極高）；「<span
+                class="term-cn">可利用</span>（Exploitable）」代表已有現成的攻擊程式碼（如 Exploit-DB 上有腳本）；「<span class="term-cn">高風險
+                RCE</span>」代表攻擊者可直接取得伺服器控制權（嚴重度高）。因此，<span
+                class="highlight">暴露在網際網路上的高風險且可被利用的系統，其真實風險遠高於內網的測試機</span>，絕對必須優先修補。後續再依據資產的業務重要性依序處理。</p>
+            <p><strong>選項A錯誤：</strong>盲目追求「降低弱點數量」，只會修補一堆無足輕重的低風險弱點，而把真正致命的高風險漏洞留在系統上，完全違背風險控管精神（<span
+                class="term-en">Risk-based approach</span>）。</p>
+            <p><strong>選項B錯誤：</strong><span class="term-abbr">CVSS</span> 分數只反映了漏洞本身的技術嚴重性，<span
+                class="highlight">並未考量企業環境的情境（Context）</span>。例如，內網測試機可能有一個 CVSS 9.8
+              的重大漏洞，但因為不對外開放且無重要資料，其實際風險遠低於對外服務系統上 CVSS 8.5 的漏洞。因此不能單憑 CVSS 死板排序。</p>
+            <p><strong>選項D錯誤：</strong>這叫做「挑軟柿子吃」。低風險弱點雖然容易修，但未能解決系統面臨的迫切危機，無法實質降低公司的高風險暴露面。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q24 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#24 複選題</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">某製造業產線遭受<span class="term-cn">勒索軟體</span>攻擊，系統檔案遭到加密。在啟動營運持續計畫 (<span
+            class="term-abbr">BCP</span>) 進行復原時，下列哪些步驟是確保「安全復原」的必要措施？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">在復原備份資料前，必須先隔離受感染網段並驗證備份檔的完整性</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">立即支付贖金以取得解密金鑰，這是回復速度最快的方式</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">找出入侵破口 (<span class="term-en">Root Cause</span>) 並完成修補後，才將系統重新上線</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">重建系統時，強制重設所有特權帳號的密碼與憑證</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ACD</div>
+          <div class="explanation-content">
+            <p>本題考查遭受勒索軟體攻擊後的<span class="term-cn">安全災難復原</span>（<span class="term-en">Disaster Recovery</span>）標準作業程序。
+            </p>
+            <p><strong>安全復原的核心原則是：避免二次感染與二次傷害。</strong></p>
+            <p><strong>選項A正確：</strong>在進行任何復原前，<span
+                class="highlight">必須先將受駭網段斷網隔離</span>，以免勒索軟體繼續蔓延或加密剛還原的系統。同時，必須驗證備份檔是否也被加密或植入後門，確認乾淨後才能使用。</p>
+            <p><strong>選項C正確：</strong>這點至關重要！如果沒有找出入侵的根本原因（<span class="term-en">Root Cause</span>，例如被利用的 VPN
+              漏洞、釣魚郵件入口）並進行修補，直接把系統還原上線，<span class="highlight">駭客只要利用同一個漏洞，馬上就能對剛復原的系統進行二次加密</span>。</p>
+            <p><strong>選項D正確：</strong>在發生勒索事件時，必須假設駭客已經取得網域控制權或提取了所有的密碼雜湊。因此，重建系統時<span
+                class="highlight">強制重設所有帳號（尤其是特權帳號的 Administrator、Service Account）密碼與憑證</span>，是清除潛伏威脅的必要作為。</p>
+            <p><strong>選項B錯誤：</strong>各國政府與資安機構（如 FBI、CISA）強烈建議<span
+                class="highlight">不應支付贖金</span>。支付贖金不僅助長犯罪，而且有高達三成的受害者即使付錢也拿不到金鑰，或是解密工具效率極差（需耗費數月）。這絕對不是標準的營運復原手段。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q25 題組3 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#25 題組題（題組3）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🏢 題組情境說明（第25-28題共用）：供應鏈攻擊與事件應變</strong><br>
+            位於新竹科學園區的頂尖半導體設計公司「S公司」，其核心資產為存放於本地資料中心的 <span class="term-abbr">IC</span> 設計藍圖。為加速全球供應鏈協作，公司正在導入一套建構於雲端原生
+            (<span class="term-en">Cloud-Native</span>) 環境的供應鏈管理 (<span class="term-abbr">SCM</span>) 平台。<br>
+            該平台的開發流程採用 <span class="term-abbr">CI/CD</span> 模式，並引入了生成式 <span class="term-abbr">AI</span>
+            工具以輔助工程師撰寫程式碼。某日，公司的資安監控中心 (<span class="term-abbr">SOC</span>) 接獲 <span class="term-abbr">AI</span>
+            驅動的「使用者與實體行為分析 (<span class="term-abbr">UEBA</span>)」系統警報，指出有異常的大量資料從 <span class="term-abbr">IC</span>
+            設計藍圖伺服器被存取，疑似資料外洩。<br>
+            經初步調查，攻擊者是透過 <span class="term-abbr">SCM</span> 平台所使用的一個第三方開源函式庫漏洞 (供應鏈攻擊)
+            滲透，並利用一個設定不當的網路存取規則，從雲端環境橫向移動至本地資料中心。
+          </div>
+          身為S公司的資安事件應變小組 (<span class="term-abbr">CSIRT</span>) 負責人，在「使用者與實體行為分析 (<span
+            class="term-abbr">UEBA</span>)」系統發出警報後，應變小組確認內部核心伺服器正發生資料異常外流。依據資安事件應變的最佳實務，在下列選項中，最適合的第一步應對措施為下列何項？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">立即對外公告公司系統遭駭，以示資訊透明</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">嘗試反向追蹤攻擊來源<span class="term-abbr">IP</span>位址，找出攻擊者身分</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">依據預定的應變計畫，立即隔離受駭伺服器</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">為了確保服務正常運作，立即重新安裝相關系統</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查資安事件發生當下，<span class="term-abbr">CSIRT</span>（<span class="term-en">Computer Security Incident
+                Response Team</span>）在「封鎖（<span class="term-en">Containment</span>）」階段的首要行動。</p>
+            <p><strong>選項C最適合（正確答案）：</strong>當確認內部核心伺服器正在發生資料外洩（Ongoing Exfiltration），第一要務就是「<span
+                class="highlight">止血（封鎖損害）</span>」。依據 <span class="term-abbr">NIST SP 800-61</span>
+              的指南，必須立即採取短期封鎖措施，即<span class="highlight">將受駭的 IC
+                設計藍圖伺服器從網路上隔離（Disconnect/Isolate）</span>。這能瞬間中斷攻擊者的遠端控制與資料傳輸，防止災情進一步擴大，並保留伺服器當下的狀態以供後續數位鑑識。</p>
+            <p>
+              <strong>選項A錯誤：</strong>對外公告必須經過法務、公關及高層的謹慎評估，且通常在事件調查有初步輪廓、損害已控制後才進行。在事件發生「當下」立即公告，不僅可能引起不必要的市場恐慌，更可能打草驚蛇，讓攻擊者加速破壞。
+            </p>
+            <p><strong>選項B錯誤：</strong>反向追蹤（<span class="term-en">Hack back</span> 或 <span class="term-en">Active
+                Defense</span>）不僅在許多國家涉及違法，而且攻擊者通常使用跳板（Proxy/VPN）隱藏真實來源。把寶貴的黃金搶救時間浪費在徒勞的追蹤上，是不專業的做法。防禦方的首要任務是保護自身資產。</p>
+            <p><strong>選項D錯誤：</strong>立即重新安裝系統（重灌）會<span class="highlight">徹底破壞所有的入侵跡證與日誌</span>，導致後續無法進行鑑識調查（無法找出 Root
+              Cause），且攻擊者若仍在內網，重灌後的系統馬上又會被二次入侵。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q26 題組3 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#26 題組題（題組3）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">承上「S公司」情境。事後分析確認，攻擊的初始破口來自雲端供應鏈管理 (<span class="term-abbr">SCM</span>)
+          平台的一個開源函式庫漏洞。為了系統性地處理這類「軟體供應鏈安全」風險，下列何種安全架構規劃實務最為適切？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">僅採購有信譽的大廠軟體，並完全信任其安全性</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">導入<span class="term-cn">軟體物料清單</span> (<span class="term-en">Software Bill of
+                Materials</span>, <span class="term-abbr">SBOM</span>) 管理，並在 <span class="term-abbr">CI/CD</span>
+              流程中整合靜態與動態應用程式安全測試 (<span class="term-abbr">SAST/DAST</span>)</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">要求所有開發人員必須精通安全編碼，並負起全部安全責任</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">為公司投保高額網路安全險，將所有供應鏈風險完全轉移</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查軟體供應鏈安全（<span class="term-en">Software Supply Chain Security</span>）的最佳實務，特別是針對開源元件（<span
+                class="term-en">Open Source Components</span>）的管理。</p>
+            <p><strong>選項B最為適切（正確答案）：</strong>要系統性防範開源函式庫漏洞，核心實務是導入<span class="highlight">軟體物料清單（Software Bill of
+                Materials，SBOM）</span>。<span class="term-abbr">SBOM</span>
+              就像是軟體的「成分表」，能讓企業清楚知道自家軟體中包含了哪些第三方套件及其版本。當新的零時差漏洞（如 Log4j）爆發時，可瞬間比對 <span class="term-abbr">SBOM</span>
+              找出受影響的系統。此外，將 <span class="term-abbr">SAST</span>（靜態安全測試）、<span class="term-abbr">DAST</span>（動態安全測試）以及
+              <span class="term-abbr">SCA</span>（軟體組成分析）整合進 <span class="term-abbr">CI/CD</span> 流水線，落實「安全左移（<span
+                class="term-en">Shift-Left</span>）」，是在程式開發階段就阻絕漏洞的標準做法。
+            </p>
+            <p><strong>選項A錯誤：</strong>「完全信任」大廠軟體是危險的迷思。如 <span class="term-en">SolarWinds</span>
+              事件就是頂尖大廠的軟體更新機制被駭客劫持，進而感染全球客戶。在零信任架構下，不應盲目信任任何供應商。</p>
+            <p><strong>選項C錯誤：</strong>要求開發人員具備安全意識是必要的，但要求他們「精通」所有安全領域並「負起全部責任」是不切實際的。資安是組織的共同責任，必須依賴自動化工具（如 CI/CD
+              中的掃描）與流程來協助防護，而非僅靠人員的個人能力。</p>
+            <p><strong>選項D錯誤：</strong>網路安全保險是一種風險處理策略（風險轉移 Risk Transfer），它可以補償財務損失，但<span
+                class="highlight">無法「解決」系統性技術缺陷或防止外洩的發生</span>。保險不能取代實質的安全技術防護。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q27 題組3 -->
+      <div class="question-card" data-evaluation-content-id="1.2">
+        <div class="question-header">
+          <div class="question-id">#27 題組題（題組3）</div>
+          <div class="evaluation-criterion">1.2 防護與應變實務</div>
+        </div>
+        <div class="question-content">承上「S公司」情境。在本次事件中，攻擊者能從雲端橫向移動至本地核心網路，凸顯了現有安全架構的嚴重缺陷。在規劃下一代安全架構時，下列何種策略最「不」能解決此問題？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">升級邊界防火牆，購買具備更高吞吐量的設備</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">實施<span class="term-cn">零信任安全架構</span> (<span
+                class="term-abbr">ZTA</span>)，廢除傳統信任邊界，對所有存取請求進行嚴格驗證與授權</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">要求所有雲端與本地系統的管理者使用相同的帳號密碼，以利於管理</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">建立一個獨立的<span class="term-cn">實體隔離網路</span> (<span class="term-en">Air-gapped
+                Network</span>)，將 <span class="term-abbr">IC</span> 設計部門與公司其他網路完全隔絕</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查安全架構規劃中的不良實務與防範橫向移動的觀念。</p>
+            <p><strong>選項C最「不」能解決問題（正確答案）：</strong>這是一個極度危險的不良實務（<span class="term-en">Bad
+                Practice</span>）。要求雲端與本地系統管理員「<span class="highlight">使用相同密碼以利管理</span>」，正是造成橫向移動（<span
+                class="term-en">Lateral Movement</span>）暢通無阻的主因。攻擊者只要在雲端環境竊取到一組管理員密碼（或
+              Hash），就能利用這組相同的憑證直接登入本地地端的核心伺服器（這種攻擊手法稱為 <span class="term-en">Credential Stuffing</span> 或 <span
+                class="term-en">Pass-the-Hash</span>）。這不僅不能解決問題，反而是在協助攻擊者擴大戰果。</p>
+            <p><strong>選項A可改善：</strong>雖然單純升級吞吐量不是核心解法，但升級為具備深度封包檢測（DPI）及入侵防禦（IPS）功能的次世代防火牆（NGFW），確實有助於檢查雲地之間的跨邊界流量。</p>
+            <p><strong>選項B有效：</strong><span class="term-cn">零信任架構</span>（<span
+                class="term-abbr">ZTA</span>）的核心精神就是「<span
+                class="highlight">預設不信任任何人與設備</span>」，廢除了傳統內外網的邊界信任。即使攻擊者進入了雲端環境，要連線本地主機仍必須通過持續的強認證與最小權限授權，能極大化阻斷橫向移動。
+            </p>
+            <p><strong>選項D有效：</strong><span class="term-cn">實體隔離網路</span>（<span
+                class="term-en">Air-gapped</span>）是最極端的防護手法。將最機密的 IC
+              設計圖完全與外部（甚至一般辦公內網）物理斷開連線，雲端遭駭就絕對無法橫向移動到機密區。雖然會犧牲便利性，但在高安全性環境是有效的作法。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q28 題組3 -->
+      <div class="question-card" data-evaluation-content-id="2.1">
+        <div class="question-header">
+          <div class="question-id">#28 複選題（題組3）</div>
+          <div class="evaluation-criterion">2.1 安全維運</div>
+        </div>
+        <div class="question-content">承上「S公司」情境。為了從管理與技術層面全面強化公司的<span class="term-cn">資安管理系統</span> (<span
+            class="term-abbr">ISMS</span>)，避免未來發生類似的複合式攻擊，管理層應推動下列哪些措施？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">定期執行包含供應鏈攻擊情境的<span class="term-cn">紅隊演練</span> (<span class="term-en">Red
+                Teaming</span>)，驗證整體防護與應變能力</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">更新資安政策，明確納入對生成式 <span class="term-abbr">AI</span> 輔助工具的使用規範與風險控管要求</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">為了節省成本，將所有資安監控業務完全外包，並減少內部資安人員編制</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">強化存取控制實務，針對關鍵資產導入<span class="term-cn">特權帳號管理</span> (<span
+                class="term-abbr">PAM</span>) 與<span class="term-cn">即時</span> (<span
+                class="term-en">Just-in-Time</span>) 存取機制</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ABD</div>
+          <div class="explanation-content">
+            <p>本題考查資安管理系統（<span class="term-abbr">ISMS</span>）在遭遇重大事件後的持續改善（Continuous Improvement）策略。</p>
+            <p><strong>選項A正確：</strong><span class="term-cn">紅隊演練</span>（<span class="term-en">Red
+                Teaming</span>）不同於一般弱點掃描，它是不預警的「實戰模擬入侵」。將「供應鏈破口＋橫向移動」的情境納入演練，能真實驗證公司現有的防禦設備（如
+              EDR、FW）是否有效，以及藍隊（SOC/CSIRT）能否及時偵測與反應。</p>
+            <p><strong>選項B正確：</strong>因應情境中工程師使用生成式 AI（<span class="term-abbr">GenAI</span>）輔助寫 code
+              的新興趨勢，管理層必須與時俱進，更新資安政策（Policy）。明確規定 AI 工具可用範圍、禁止輸入機密營業秘密（避免機密變成 AI 的訓練資料而外洩），這是當前企業面臨的最大挑戰之一。</p>
+            <p><strong>選項D正確：</strong><span class="term-cn">特權帳號管理</span>（<span class="term-en">Privileged Access
+                Management</span>，<span class="term-abbr">PAM</span>）能嚴格管控如 root、Administrator 的使用。結合 <span
+                class="term-en">Just-in-Time</span>（<span class="term-abbr">JIT</span>）機制，代表<span
+                class="highlight">管理員平時沒有特權，只有在需要作業的當下才臨時申請、限時核准並全程錄影</span>。這能從根本上防範駭客長期竊用特權帳號進行破壞。</p>
+            <p><strong>選項C錯誤：</strong>為了「節省成本」而「減少內部資安人員」是嚴重的反向操作。<span
+                class="term-abbr">MSSP</span>（託管式安全服務）雖然可以輔助監控，但企業<span
+                class="highlight">仍必須保留具備決策能力與了解自身業務架構的內部核心資安團隊</span>。完全外包會導致對自身資產與風險失去掌握度（Loss of Control）。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q29 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#29 單選題</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">網站應用程式安全測試中，<span class="term-cn">盲注式SQL注入攻擊</span> (<span class="term-en">Blind
+            SQL Injection</span>) 的測試比一般<span class="term-abbr">SQL</span>注入攻擊更具挑戰，以下描述何者最正確？</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">難以透過錯誤訊息來洩漏資料庫資訊，而透過行為模式(如:時間延遲回應)推斷資料</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">盲注式<span class="term-abbr">SQL</span>注入只會影響後端資料庫，不會影響應用程式的前端</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">盲注式<span class="term-abbr">SQL</span>注入需要特定的自動化工具，無法手動執行</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">若發生在無法存取原始碼的黑箱測試情境中，偵測更加困難</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：A</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-en">Blind SQL Injection</span>（<span class="term-cn">盲注式 SQL 注入</span>）的運作原理與特徵。
+            </p>
+            <p><strong>選項A最正確：</strong>一般的 SQL 注入攻擊（<span class="term-en">Error-based</span> 或 <span
+                class="term-en">Union-based</span>），攻擊者可以直接在網頁畫面上看到資料庫拋出的錯誤訊息或查詢結果。而在「盲注（<span
+                class="term-en">Blind</span>）」情境下，<span class="highlight">應用程式不會在畫面上顯示任何資料庫錯誤或查詢結果</span>。攻擊者必須向資料庫發送包含
+              True/False 邏輯的查詢，並觀察應用程式的「<span class="highlight">行為模式差異</span>」（例如：頁面是否顯示特定文字、或是利用
+              <code>WAITFOR DELAY</code> 觀察伺服器回應的時間延遲），藉由「問是非題」的方式，一個字元一個字元地推斷出資料庫的內容。
+            </p>
+            <p><strong>選項B錯誤：</strong>任何 SQL
+              注入攻擊的目標都是後端資料庫（竊取資料或執行指令），不論是盲注還是一般注入，都不會直接「影響」前端程式碼的運行（除了可能改變前端呈現的內容）。這不是盲注的特徵。</p>
+            <p><strong>選項C錯誤：</strong>盲注<span class="highlight">完全可以手動執行</span>（透過手動輸入 payload
+              並觀察結果），只是因為需要逐字元猜測，手動過程非常緩慢且耗時，實務上通常會搭配自動化工具（如 <span class="term-en">SQLMap</span>）來加速提取資料的過程。</p>
+            <p><strong>選項D錯誤：</strong>大部分的滲透測試（<span class="term-en">Penetration Testing</span>）本質上就是黑箱測試（<span
+                class="term-en">Black-box
+                Testing</span>）。盲注技術的發展，正是為了解決在黑箱情境下無法看到原始碼與錯誤訊息的問題。因此黑箱測試並不會讓它「更加困難」，盲注本身就是應對黑箱的手段。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q30 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#30 單選題</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">對手機應用程式透過<span class="term-cn">逆向工程</span> (<span class="term-en">Reverse
+            Engineering</span>) 執行安全檢測時，常可觀察到存在<span class="term-cn">混淆</span> (<span
+            class="term-en">Obfuscation</span>) 等技巧，關於該機制之描述，下列何者最正確？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">使手機應用程式完全無法被逆向工程</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">透過轉換程式碼和資料，提高理解和反組譯的困難度</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">加速手機應用程式的執行速度</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">減少手機應用程式的檔案大小</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查行動應用程式安全防護中「<span class="term-cn">程式碼混淆</span>（<span class="term-en">Code
+                Obfuscation</span>）」機制的目的與限制。</p>
+            <p><strong>選項B最正確：</strong><span class="term-cn">程式碼混淆</span>是一種將應用程式（如 Android APK、iOS
+              IPA）的原始碼或中介碼進行結構重組、變數重新命名（如把具意義的變數 <code>loginPassword</code> 改成
+              <code>a</code>、<code>b</code>、<code>c</code>）、字串加密、插入無效程式碼（Dummy Code）等技術轉換的過程。<span
+                class="highlight">其目的在於大幅提高人類理解程式邏輯以及靜態分析（反編譯、反組譯）的難度</span>，從而增加攻擊者逆向工程（<span class="term-en">Reverse
+                Engineering</span>）的時間成本。
+            </p>
+            <p><strong>選項A錯誤：</strong>這是一個常見的迷思。<span class="highlight">混淆技術「絕對無法」讓程式完全無法被逆向工程</span>。只要程式能在 CPU
+              上執行，經驗豐富的逆向分析師搭配動態除錯（<span class="term-en">Dynamic Debugging</span>）與去混淆（<span
+                class="term-en">Deobfuscation</span>）工具，最終都能還原邏輯。混淆只能「延遲」被破解的時間，不能「阻止」。</p>
+            <p><strong>選項C錯誤：</strong>混淆過程通常會插入額外的控制流或加密解密邏輯，這不僅不會加速，反而<span class="highlight">通常會導致應用程式的執行速度變慢（增加 CPU
+                負擔）</span>。</p>
+            <p><strong>選項D錯誤：</strong>同理，因為加入了無用的干擾程式碼（<span class="term-en">Junk Code</span>）或加密函式，混淆後的應用程式檔案大小<span
+                class="highlight">通常會變大</span>，而非減少。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q31 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#31 單選題</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">下列何項做法，最能有效提升滲透測試及源碼檢測的整體覆蓋率與準確度？</div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">依賴自動化掃描工具(例如 <span class="term-en">Nessus</span>、<span class="term-en">Burp
+                Suite</span> 自動掃描、自動分析)，完全不進行人工驗證或複測</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">在滲透測試前進行<span class="term-cn">威脅建模</span> (<span class="term-en">Threat
+                Modeling</span>)，再結合源碼檢測的結果，將高風險模組作為人工滲透測試的優先目標</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">每年只做一次資安健診，不管系統更新與程式版本是否有變動</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">做滲透測試即可，源碼檢測與資安健診會造成資源浪費</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查整合不同安全檢測方法的最佳實務（<span class="term-en">Best Practice</span>）。</p>
+            <p><strong>選項B最能有效提升（正確答案）：</strong>這描述的是一種<span
+                class="highlight">情報驅動（Intelligence-Driven）的整合安全測試方法</span>。<br>
+              1. <strong>威脅建模（<span class="term-en">Threat Modeling</span>）：</strong>在測試前先分析系統架構，找出潛在的攻擊面與關鍵資料流。<br>
+              2. <strong>源碼檢測（<span class="term-abbr">SAST</span>）：</strong>提供白箱視角（<span
+                class="term-en">White-box</span>），找出程式碼層級的潛在漏洞。<br>
+              3. <strong>人工滲透測試（<span class="term-en">Penetration
+                  Testing</span>）：</strong>將前兩者的結果作為情資，針對高風險、邏輯複雜的模組進行深度的黑箱/灰箱攻擊模擬。<br>
+              這種「<span class="highlight">白箱引導黑箱</span>」的作法，能有效集中資源，大幅提升檢測的覆蓋率（涵蓋所有關鍵路徑）與準確度（減少盲目測試）。</p>
+            <p><strong>選項A錯誤：</strong>自動化掃描工具（如 <span class="term-en">Nessus</span>、<span class="term-en">Burp
+                Scanner</span>）<span class="highlight">極容易產生誤報（False Positive）與漏報（False
+                Negative）</span>，特別是對於「商業邏輯漏洞（<span class="term-en">Business Logic
+                Flaws</span>）」如越權存取，自動化工具幾乎無法偵測，絕對需要人工驗證。</p>
+            <p><strong>選項C錯誤：</strong>現代敏捷開發（<span class="term-en">Agile</span>/<span
+                class="term-abbr">CI/CD</span>）環境下系統變動頻繁。只做年度檢測會產生巨大的防護空窗期。<span class="highlight">安全檢測應與開發生命週期同步進行（如
+                DevSecOps）</span>。</p>
+            <p><strong>選項D錯誤：</strong>滲透測試、源碼檢測（SAST）、動態檢測（DAST）與資安健診各有其關注層面與優缺點（如 SAST 看不到環境配置問題，滲透測試覆蓋率有限）。<span
+                class="highlight">它們是互補的，缺一不可</span>，不能互相取代。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q32 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#32 複選題</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          某組織為提升整體資訊安全水準，規劃針對其對外服務系統進行安全檢測。該系統包含自行開發的應用程式，並整合多項第三方元件，同時已正式上線並提供實際服務。管理階層希望透過不同安全測試方式，從設計缺陷、根據上述情境，下列哪些說法最符合<span
+            class="term-cn">滲透測試</span>、<span class="term-cn">源碼檢測</span>與<span
+            class="term-cn">資安健診</span>在實務上的正確定位與整合應用方式？(複選)</div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-cn">滲透測試</span>可模擬攻擊者實際入侵行為，用以驗證弱點是否能在真實環境中被成功利用</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-cn">資安健診</span>著重於組織整體防護機制與管理流程，屬於策略與制度層級的安全檢視</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-cn">源碼測試</span>可在不實際攻擊系統的情況下，檢視應用程式設計與實作上的潛在安全缺陷</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">只要完成<span class="term-cn">源碼測試</span>，即可取代<span class="term-cn">滲透測試</span>與<span
+                class="term-cn">資安健診</span>的必要性</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+          <div class="explanation-content">
+            <p>本題考查三種不同安全檢測與評估方法的正確定位與差異。</p>
+            <p><strong>選項A正確：</strong><span class="term-cn">滲透測試</span>（<span class="term-en">Penetration
+                Testing</span>）是由安全專家（白帽駭客）以攻擊者視角，利用各種工具與手法對系統進行「真實攻擊模擬」。它的最大價值在於<span
+                class="highlight">驗證漏洞的「可利用性（Exploitability）」以及評估漏洞被利用後的真實業務衝擊</span>（例如是否能拿到資料庫最高權限）。</p>
+            <p><strong>選項B正確：</strong><span class="term-cn">資安健診</span>（<span class="term-en">Security Health
+                Check</span>）或資安評估（<span class="term-en">Assessment</span>）是一種巨觀的檢視。它不僅看系統技術層面（如網路架構、組態設定），更<span
+                class="highlight">著重於人員管理、流程規範、法規遵循（合規性）</span>，屬於全面性的健康檢查。</p>
+            <p><strong>選項C正確：</strong><span class="term-cn">源碼測試</span>（<span class="term-en">Static Application
+                Security Testing</span>，<span class="term-abbr">SAST</span>）是分析靜態的程式原始碼。它不需要系統正在運行，也<span
+                class="highlight">不會對正式環境造成任何營運影響（無風險）</span>，能找出如變數未初始化、不安全的函式呼叫、硬編碼（Hardcoded）密碼等開發階段的缺陷。</p>
+            <p><strong>選項D錯誤：</strong>這三種方法是<span class="highlight">互補的縱深防禦（Defense in Depth）檢測手段</span>。<br>
+              - 源碼測試（SAST）看不到伺服器的作業系統漏洞或防火牆設定錯誤。<br>
+              - 滲透測試（PT）受限於時間與範圍，無法涵蓋每一行程式碼。<br>
+              - 資安健診處理的是管理與流程面的問題。<br>
+              完成源碼測試絕對無法取代另外兩者的必要性。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q33 題組4 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#33 題組題（題組4）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🌐 題組情境說明（第33-36題共用）：Web 應用程式滲透測試</strong><br>
+            某企業進行 Web 應用程式滲透測試，測試人員以一般使用者帳號登入後，發現可透過修改API參數存取其他使用者的訂單資料。以下為測試時攔截到的部分請求內容：<br>
+            <pre style="background:#2d2d2d;color:#ccc;padding:10px;border-radius:4px;overflow-x:auto;">
+GET /api/order/detail?orderId=10025 HTTP/1.1
+Host: securityshop.csf.org.tw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+</pre>
+          </div>
+          若測試人員將orderId改為其他數值後成功取得不同使用者訂單資料，此弱點最適合歸類為下列何種弱點類別？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><span class="term-en">Security Misconfiguration</span>(不安全的組態設定)</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><span class="term-en">Insecure Deserialization</span>(不安全的反序列化)</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><span class="term-en">Broken Access Control</span>(無效的訪問控制)</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><span class="term-en">Security Logging & Alerting Failures</span>(安全日誌及警報失效)</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-en">OWASP Top 10</span> 常見的網站安全弱點辨識。</p>
+            <p><strong>正確選項 C：</strong>當使用者只需修改參數（如 <code>orderId=10025</code>
+              改為其他數字），且伺服器未對該資源的擁有者進行授權驗證就直接回傳結果，這屬於典型的<span class="term-cn">無效的訪問控制</span>（<span class="term-en">Broken
+                Access Control</span>）。具體來說，這是一種不安全直接物件參考（<span class="term-abbr">IDOR</span>），屬於水平越權攻擊。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q34 題組4 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#34 題組題（題組4）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🌐 題組情境說明（第33-36題共用）：Web 應用程式滲透測試</strong><br>
+            同上題「Web 應用程式滲透測試」情境。
+          </div>
+          承上題，下列何者較可解決此一問題？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">登入後還必須加上雙因子驗證才能防範</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">API應該加上次數限制</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">在網頁前端進行授權檢查即可解決</div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">將相關參數雜湊加鹽</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：D</div>
+          <div class="explanation-content">
+            <p>本題探討防範越權存取的防護機制。</p>
+            <p><strong>正確選項 D：</strong>對於易被猜測或列舉的物件識別碼（如簡單的數字ID），除了後端實施嚴格的授權檢查外，另一個防護手段是將相關參數與亂數雜湊加鹽（<span
+                class="term-en">Salt</span>）後再傳遞與驗證，或是改用難以預測的 <span class="term-abbr">UUID</span>，防止攻擊者直接列舉
+              <code>orderId</code> 存取。
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Q35 題組4 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#35 題組題（題組4）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🌐 題組情境說明（第33-36題共用）：Web 應用程式滲透測試</strong><br>
+            同上題「Web 應用程式滲透測試」情境。
+          </div>
+          下列何項「不」是這個漏洞可能造成的影響？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">企業可能會被使用者控告違反GDPR (General Data Protection Regulation)</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">如果企業的開發習慣不佳，其他功能可能也會有類似的漏洞，需要全盤檢視類似功能的設計方式</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">攻擊者可以用這個漏洞直接列出資料庫的所有欄位，導致資料庫結構全部外洩</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">使用者可能會因為這些資料外洩而接到詐騙電話</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題考查 IDOR 漏洞可能造成的業務影響。</p>
+            <p><strong>不正確的選項 C（正確答案）：</strong>越權存取（<span
+                class="term-abbr">IDOR</span>）的本質是攻擊者能夠存取他沒有權限檢視的「資料紀錄（Records）」，例如他人的訂單明細。然而，這並不是 <span
+                class="term-abbr">SQL Injection</span>，攻擊者無法直接執行資料庫系統指令來列出「資料庫的所有欄位（如 Table
+              Schema）」，也不會導致資料庫結構全部外洩。因此選項C是錯誤的描述。</p>
+            <p>選項A、B、D都是該漏洞可能帶來的真實影響，尤其是個資外洩導致的法規裁罰與詐騙。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q36 題組4 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#36 題組題（題組4）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🌐 題組情境說明（第33-36題共用）：Web 應用程式滲透測試</strong><br>
+            同上題「Web 應用程式滲透測試」情境。
+          </div>
+          關於測試人員在HTTP Header 中看到的 Authorization 內容，下列哪些描述是正確的？(複選)
+        </div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">會使用HS256 (HMAC with SHA-256)來驗證 token內容</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">會使用Base64 進行編碼</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">會使用RS256 (RSA with SHA-256)來驗證 token 內容</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">如果使用 alg: none 代表不指定演算法，預設採用最高層級的驗證方式</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：ABC</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-abbr">JWT</span>（JSON Web Token）的結構與演算法特性。</p>
+            <p><strong>正確選項 ABC：</strong><br>
+              (A) <span class="term-en">HS256</span> 是對稱加密演算法，使用同一把密鑰進行簽章與驗證，為 JWT 常見演算法。<br>
+              (B) <span class="term-abbr">JWT</span> 的三段結構（Header, Payload, Signature）都是使用 <span
+                class="term-en">Base64Url</span> 進行編碼傳輸的。<br>
+              (C) <span class="term-en">RS256</span> 是非對稱加密演算法，使用私鑰簽章、公鑰驗證，同樣是 JWT 支援的標準演算法。</p>
+            <p><strong>選項D錯誤：</strong>如果 <span class="term-abbr">JWT</span> 標頭中使用 <code>alg: none</code>，代表<span
+                class="highlight">不進行任何簽章驗證</span>，這是一個極危險的安全漏洞，攻擊者可以任意偽造 token 內容，並非「最高層級驗證方式」。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q37 題組5 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#37 題組題（題組5）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🛡️ 題組情境說明（第37-40題共用）：線上金融交易系統</strong><br>
+            某銀行委託資安團隊對新版線上金融交易系統執行資安檢測，包含滲透測試、原始碼檢測及整體資安健診。在滲透測試過程中，資安團隊成功繞過前端 WAF，發現系統可透過交易金額欄位進行SQL注入(SQL
+            Injection)。在原始碼檢測時，資安團隊發現開發人員未使用參數化查詢(Parameterized Query)，而直接拼接字串。
+          </div>
+          若欲確認SQL注入是否存在，下列何者為最適合的測試語法？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><code>&lt;script&gt;alert(1)&lt;/script&gt;</code></div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><code>OR '1'='1' --</code></div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><code>%00%ff%fe%fd</code></div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text"><code>&lt;entity SYSTEM="file:///etc/passwd"&gt;</code></div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：B</div>
+          <div class="explanation-content">
+            <p>本題考查典型的漏洞測試載荷（<span class="term-en">Payload</span>）辨識。</p>
+            <p><strong>正確選項 B：</strong><code>OR '1'='1' --</code> 是測試 <span class="term-abbr">SQLi</span>
+              最經典的方法，透過改變查詢的布林邏輯使條件恆等成立，並註解掉後方程式碼，以確認是否存在注入漏洞。<br>
+              選項A為測試 <span class="term-abbr">XSS</span>；選項C為測試路徑截斷或編碼漏洞；選項D為測試 <span class="term-abbr">XXE</span>（XML
+              外部實體注入）。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q38 題組5 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#38 題組題（題組5）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🛡️ 題組情境說明（第37-40題共用）：線上金融交易系統</strong><br>
+            同上題「線上金融交易系統」情境。
+          </div>
+          針對SQL注入測試，下列哪一個觀念最「不」適切？
+        </div>
+        <div class="options-container">
+          <div class="option-item correct" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text"><code>' OR '1'='1'--</code> 是非常萬用的語法，通常可以有效測出 SQL
+              Injection存在與否，對測試標的影響程度低，無論是在資料庫的新增、刪除、修改都可以直接使用</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text"><code>'; DROP TABLE Products;#</code> 這種語法會導致刪除整張資料表，通常不會在實戰過程中使用這種語法</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text"><code>'; IF $(1=1)$ WAITFOR DELAY '0:0:10'--</code>
+              這種語法會導致伺服器延遲10秒再回應，有可能會讓使用者感受到效能異常，必須謹慎使用</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">在特定情境下，施測人員可以透過INTO OUTFILE 這種功能寫入後門到資料庫伺服器中，並且透過該後門達成 Remote Code Execution</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：A</div>
+          <div class="explanation-content">
+            <p>本題考查滲透測試執行 <span class="term-abbr">SQLi</span> 測試時的風險控制觀念。</p>
+            <p><strong>不適當的選項 A（正確答案）：</strong>在查詢（SELECT）時使用 <code>OR '1'='1'--</code> 確實影響較低，但如果直接套用在「<span
+                class="highlight">更新（UPDATE）或刪除（DELETE）</span>」的指令中，會導致 <code>WHERE</code>
+              條件恆為真，進而把整張資料表的所有紀錄全部更新或刪除，這會造成災難性的業務中斷。因此「無論在查詢、刪除、修改都可以直接使用」是極度錯誤且危險的觀念。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q39 題組5 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#39 題組題（題組5）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🛡️ 題組情境說明（第37-40題共用）：線上金融交易系統</strong><br>
+            同上題「線上金融交易系統」情境。
+          </div>
+          防範SQL注入弱點時，下列哪一個觀念最「不」適切，最難有效阻止SQL注入？
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">使用參數化查詢(Prepared Statements)</div>
+          </div>
+          <div class="option-item" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">使用正則表示式(Regular Expression)過濾輸入值，限制輸入字元的內容</div>
+          </div>
+          <div class="option-item correct" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">限制參數的輸入字元長度，將長度控制在50個字元以內</div>
+          </div>
+          <div class="option-item" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">採用最小權限原則，並且關閉錯誤訊息，減少攻擊者可獲得的權限和資訊</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：C</div>
+          <div class="explanation-content">
+            <p>本題探討防護 <span class="term-abbr">SQLi</span> 的無效作法。</p>
+            <p><strong>不適當的選項 C（正確答案）：</strong>「限制長度」是一種防禦深度的手段，但「單純控制在50字元以下」完全無法防禦 SQLi。例如 <code>1' OR 1=1--</code>
+              只有短短十幾個字元，一樣能觸發注入攻擊。防護 SQLi 的根本作法必須是參數化查詢（選項A）。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Q40 題組5 -->
+      <div class="question-card" data-evaluation-content-id="2.2">
+        <div class="question-header">
+          <div class="question-id">#40 題組題（題組5）</div>
+          <div class="evaluation-criterion">2.2 滲透測試、源碼測試、資安健診</div>
+        </div>
+        <div class="question-content">
+          <div class="text-box"
+            style="background:#fffbe6;border-left:4px solid #f1c40f;padding:14px;border-radius:6px;margin-bottom:14px;">
+            <strong>🛡️ 題組情境說明（第37-40題共用）：線上金融交易系統</strong><br>
+            同上題「線上金融交易系統」情境。
+          </div>
+          資安測試團隊嘗試繞過前端WAF時，下列哪些方式最「不」可能達成目的(成功率最低)？(複選)
+        </div>
+        <div class="options-container">
+          <div class="option-item" data-option="A">
+            <div class="option-label">A</div>
+            <div class="option-text">使用編碼(Encoding)技巧，如URL Encoding或Unicode，透過不同的編碼方式來混淆攻擊 Payload，讓WAF 無法正確偵測</div>
+          </div>
+          <div class="option-item correct" data-option="B">
+            <div class="option-label">B</div>
+            <div class="option-text">透過多個Proxy 或VPN變換IP位址，讓WAF以為是不同的來源，就不會對SQL注入語法進行阻擋</div>
+          </div>
+          <div class="option-item" data-option="C">
+            <div class="option-label">C</div>
+            <div class="option-text">透過刻意修改Payload中的關鍵字或語法，避開WAF黑名單規則，例如將SQL注入語法裡面的or改用 <code>||</code></div>
+          </div>
+          <div class="option-item correct" data-option="D">
+            <div class="option-label">D</div>
+            <div class="option-text">使用ARP 欺騙(ARP Spoofing)進行網路封包攔截，直接竄改封包內容即可繞過</div>
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="explanation-header">📝 答案解析｜正確答案：BD</div>
+          <div class="explanation-content">
+            <p>本題考查 <span class="term-abbr">WAF</span> 繞過（<span class="term-en">Evasion</span>）的技術與無效的手段。</p>
+            <p><strong>「無法」達成的選項 B 與 D（正確答案）：</strong><br>
+              (B) <span class="term-abbr">WAF</span> 主要是針對「封包的應用層內容（<span class="term-en">Payload</span>）」進行檢查。即使你變更了來源
+              IP（透過 Proxy），只要 Payload 裡還是有惡意的 <code>UNION SELECT</code>，<span class="term-abbr">WAF</span> 依舊會將其攔截。換 IP
+              只能繞過基於 IP 的頻率限制或黑名單封鎖。<br>
+              (D) <span class="term-abbr">ARP Spoofing</span> 是在區域網路內進行中間人攻擊（MITM）的手段，與繞過應用層的 <span
+                class="term-abbr">WAF</span> 規則毫無關係。</p>
+            <p>選項 A 與 C 則是標準的 <span class="term-abbr">WAF</span> 繞過技術，透過改變惡意特徵來規避偵測。</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- end questions-container -->
+  </div><!-- end container -->
+  <script src="script.js"></script>
+</body>
+
+</html>
